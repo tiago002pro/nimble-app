@@ -1,0 +1,14 @@
+.base_content {
+    width: calc(100% -250px);
+    height: 100%;
+    left: 50px;
+    position: relative;
+    display: flex;
+    transition: all 0.3s ease;
+    }
+  
+  .base_content.active {
+    width: calc(100% - 250px);
+    left: 250px;
+    position: none;
+  }
