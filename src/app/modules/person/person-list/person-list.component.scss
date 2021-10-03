@@ -1,0 +1,95 @@
+.person-list-component {
+    .board-list {
+        width: 100vw;
+        height: 100vh;
+        padding: 10px 10px 10px 10px;
+        display: inline-flex;
+        background-size: contain;
+        color: #000 !important;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .content-area {
+        background-color: #FFF;
+        padding: 50px;
+        z-index: auto;
+        overflow-y: auto;
+    }
+
+    .content-title {
+        margin-bottom: 20px;
+    }
+
+    .new-person-button {
+        float: right;
+        margin-bottom: 10px;
+    }
+
+    .table-data {
+        width: 80vw;
+    }
+
+    .table .thead-dark {
+        color: #fff;
+        background-color: #212529;
+        border-color: #32383e;
+    }
+
+    .icon-edit a {
+        color: #343a40;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .icon-edit i {
+        margin-left: 12px;
+    }
+
+    .page-item a {
+        display: inline;
+        cursor: pointer;
+    }
+
+    .page-link {
+        border-radius: 50px !important;
+        margin-left: 8px !important;
+    }
+
+    .pagination-item {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-left: 8px;
+        background: #343a40;
+        cursor: pointer;
+    }
+
+    .pagination-item {
+        color: #fff;
+        font-weight: 400;
+    }
+
+    .pagination-item a:hover {
+        text-decoration: none;
+    }
+
+    .pagination-arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-left: 8px;
+        cursor: pointer;
+    }
+
+    .pagination-arrow svg {
+        color: #343a40;
+    }
+
+    .limite {
+        display: none;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="nb-input-cpfcnpj">
+    <div class="input-text">
+        <input type="text"
+            placeholder="{{placeholder}}"
+            value="{{value}}"
+            [ngModel]="value"
+            (ngModelChange)="onChange($event)">
+    </div>
+</div>
+<!-- [textMask]="typePerson == 'pj' ? {mask: cnpj} : {mask: cpf}" -->

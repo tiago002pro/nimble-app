@@ -1,0 +1,39 @@
+<div class="nb-person-data">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Dados pessoais</h4>
+        </div>
+    </div>
+    <div class="row box">
+        <!-- <div class="col-md-6">
+            <label class="input-label">Razão Social</label>
+            <app-nb-input-text [placeholder]="'Ex.: Nimble Sistemas'" [value]="entity?.name"></app-nb-input-text>
+        </div>
+        <div class="col-md-6">
+            <label class="input-label">Nome Fantasia</label>
+            <app-nb-input-text [placeholder]="'Ex.: Nimble LTDA'" [value]="entity?.shortName"></app-nb-input-text>
+        </div> -->
+        <div class="col-md-6">
+            <label class="input-label">Nome</label>
+            <app-nb-input-text [placeholder]="'Ex.: Tiago Oliveira Barbosa'" [value]="entity?.name" ></app-nb-input-text>
+        </div>
+        <div class="col-md-3">
+            <label class="input-label">Gênero</label>
+            <app-nb-input-text [placeholder]="'Ex.: Masculino'" [value]="entity?.gender"></app-nb-input-text>
+        </div>
+    </div>
+    <div class="row box">
+        <div class="col-md-6" *ngFor="let email of entity?.emails">
+            <label class="input-label">Email</label>
+            <app-nb-input-text [placeholder]="'Ex.: email@outlook.com'" [value]="email.email"></app-nb-input-text>
+        </div>
+        <div class="col-md-3" *ngFor="let phone of entity?.phones">
+            <label class="input-label">Telefone</label>
+            <app-nb-input-phone [placeholder]="'Ex.: +55 (44) 95555-4444'" [value]="phone.phone"></app-nb-input-phone>
+        </div>
+        <div class="col-md-3" *ngFor="let phone of entity?.phones">
+            <label class="input-label">Tipo</label>
+            <app-nb-input-text [placeholder]="'Ex.: Celular'" [value]="phone.phoneType"></app-nb-input-text>
+        </div>
+    </div>
+</div>

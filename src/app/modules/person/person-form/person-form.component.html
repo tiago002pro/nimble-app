@@ -1,0 +1,29 @@
+<div class="nb-person-form">
+    <div class="board-form">
+        <div class="content-area">
+            <div class="content-title">
+                <h2>Cadastrar {{rule}}</h2>
+            </div>
+            <div class="content-form">
+                <div class="content-data-left">
+                    <div class="content-person">
+                        <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson"></app-nb-person-documents>
+                    </div>
+                    <div class="content-person">
+                        <app-nb-person-data [entity]="entity" [typePerson]="typePerson"></app-nb-person-data>
+                    </div>
+                    <div class="content-person">
+                        <app-nb-person-location [entity]="entity"></app-nb-person-location>
+                    </div>
+                </div>
+            </div>
+            <div class="content-data-right">
+                <!-- <div class="person-image"></div> -->
+            </div>
+            <div class="button">
+                <button (click)="save()" type="button" class="btn btn-dark">Salvar</button>
+                <div class="button-back"><a>Voltar</a></div>
+            </div>
+        </div>
+    </div>
+</div>
