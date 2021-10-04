@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nb-input-text',
@@ -8,13 +8,16 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 export class NbInputTextComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
+  @Output() ngModel = new EventEmitter()
 
   public pf: boolean = true;
   
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
+  onChange(value: String) {
+    this.ngModel.emit(value)
+  }
 }

@@ -7,24 +7,24 @@
     <div class="row box">
         <div class="col-md-3">
             <label class="input-label">CPF ou CNPJ</label>
-            <app-nb-input-cpfcnpj [placeholder]="''" [value]="document" [typePerson]="typePerson"></app-nb-input-cpfcnpj>
+            <app-nb-input-cpfcnpj [placeholder]="''" [value]="document" [typePerson]="typePerson" (ngModel)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-input-cpfcnpj>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" *ngIf="typePerson == 'pf'">
             <label class="input-label">RG</label>
-            <app-nb-input-text [placeholder]="''" [value]="entity?.rg"></app-nb-input-text>
+            <app-nb-input-text [placeholder]="''" [value]="entity?.rg" (ngModel)="reciveRg($event)"></app-nb-input-text>
         </div>
-        <!-- <div class="col-md-3">
+        <div class="col-md-3" *ngIf="typePerson == 'pj'">
             <label class="input-label">IE</label>
-            <app-nb-input-text [placeholder]="''" [value]="entity?.ie"></app-nb-input-text>
-        </div> -->
-        <div class="col-md-3">
-            <label class="input-label">Data de Nascimento</label>
-            <app-nb-input-date [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation"></app-nb-input-date>
+            <app-nb-input-text [placeholder]="''" [value]="entity?.ie" (ngModel)="reciveIe($event)"></app-nb-input-text>
         </div>
-        <!-- <div class="col-md-3">
+        <div class="col-md-3" *ngIf="typePerson == 'pf'">
+            <label class="input-label">Data de Nascimento</label>
+            <app-nb-input-date [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation" (ngModel)="reciveDate($event)"></app-nb-input-date>
+        </div>
+        <div class="col-md-3" *ngIf="typePerson == 'pj'">
             <label class="input-label">Data de Fundação</label>
-            <app-nb-input-date [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation"></app-nb-input-date>
-        </div> -->
+            <app-nb-input-date [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation" (ngModel)="reciveDate($event)"></app-nb-input-date>
+        </div>
     </div>
             
 </div>

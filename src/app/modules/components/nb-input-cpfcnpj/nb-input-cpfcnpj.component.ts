@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nb-input-cpfcnpj',
@@ -9,10 +9,10 @@ export class NbInputCpfcnpjComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value!: String;
   @Input() typePerson!: String
-
+  @Output() ngModel = new EventEmitter()
+  @Output() type = new EventEmitter()
   public cpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
   public cnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
-
 
   constructor() { }
 
@@ -20,20 +20,14 @@ export class NbInputCpfcnpjComponent implements OnInit {
   }
 
   onChange(value: String) {
-    console.log("doc", value);
-    
-    if (value.length == 14) {
-      console.log("pj");
-      
+    if (value.length == 13) {
       this.typePerson = 'pj'
+      this.ngModel.emit(value)
     } else {
-      console.log("pf");
-
       this.typePerson = 'pf'
+      this.ngModel.emit(value)
     }
-
-    console.log("typePerson", this.typePerson);
-
+    this.type.emit(this.typePerson)
   }
 
 }

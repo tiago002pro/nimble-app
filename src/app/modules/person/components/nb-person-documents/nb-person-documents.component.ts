@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Person } from '../../interface/person.interface';
 
 @Component({
@@ -10,16 +10,34 @@ export class NbPersonDocumentsComponent implements OnInit {
   @Input() entity!: Person
   @Input() typePerson!: String
   @Input() document!: String
+  @Output() doc = new EventEmitter()
+  @Output() type = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
-    if (this.entity.cnpj) {
-      this.document = this.entity.cnpj
-    } else if (this.entity.cpf) {
-      this.document = this.entity.cpf
-    } else {
-      this.document = ''
-    }
+    this.typePerson = 'pf'
+  }
+
+  reciveDocument(value: String) {
+    this.document = value
+    this.doc.emit(this.document)
+    this.type.emit(this.typePerson)
+  }
+
+  reciveRg(value: String) {
+    this.entity.rg = value
+  }
+
+  reciveIe(value: String) {
+    this.entity.ie = value
+  }
+
+  reciveDate(value: String) {
+    this.entity.dateofbirthorfondation = value
+  }
+
+  reciveTypePerson(value: String) {
+    this.typePerson = value
   }
 
 }

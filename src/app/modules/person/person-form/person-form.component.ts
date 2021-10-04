@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PersonAddress } from '../interface/person.address.interface';
+import { PersonEmail } from '../interface/person.email.interface';
 import { Person } from '../interface/person.interface';
+import { PersonPhone } from '../interface/person.phone.interface';
 import { PersonService } from '../service/person.service';
 
 @Component({
@@ -10,10 +13,12 @@ import { PersonService } from '../service/person.service';
 })
 export class PersonFormComponent implements OnInit {
   entity!: Person
-  title = "Clientes"
+  phone!: PersonPhone
+  email!: any
+  address!: PersonAddress
   rule!: String
-  document!: String
-  typePerson!: String
+  document: String = ''
+  typePerson: String = 'pf'
   
   constructor(
     private route: ActivatedRoute,
@@ -24,55 +29,52 @@ export class PersonFormComponent implements OnInit {
     console.log("route", this.route);
     this.rule = this.route.snapshot.params.rule
     
-    this.entity = { name: "Tiago Barbosa", cpf: "12930951000149", rg: "12345678", dateofbirthorfondation: "01012020", gender: "Masculino"}
-    this.entity.addresses = [{zipCode: "55555555", premisse: "Av Tiradentes", number: "700", neighbourhood: "Centro", location: "Maringá", state: "PR", information: "Mercado Camilo", country: "Brasil"}]
-    this.entity.emails = [{email: "tiago@gmail.com"}]
-    this.entity.phones = [{phone: "44988041230", phoneType: "Comercial"}]
-    this.entity.documents = []
-    this.entity.ruleList = [{rule: "Cliente"}]
+    this.entity = {}
+    this.entity.addresses = [{}]
+    this.entity.emails = [{}]
+    this.entity.phones = [{}]
+    this.entity.documents = [{}]
+    this.entity.ruleList = [{}]
 
-    // this.entity = {}
-    // this.entity.addresses = [{}]
-    // this.entity.emails = [{}]
-    // this.entity.phones = [{}]
-    // this.entity.documents = [{}]
-    // this.entity.ruleList = [{}]
-
-    console.log("entityentity", this.entity);
-    
+    this.email = {}
+    this.phone = {}
+    this.address = {}
   }
 
   save() {
-    console.log("Save", this.entity);
-    // try {
-    //   this.entity.ruleList = [{rule: this.rule}]
-    //   if (this.typePerson == 'pf') {
-    //     this.personService.createIndividual(this.entity)
-    //   } else {
-    //     this.personService.createJuridicalPerson(this.entity)
-    //   }
+    if (this.document.length == 11) {
+      this.entity.cpf = this.document
+    } else {
+      this.entity.cnpj = this.document
+    }
+
+    this.entity.phones = [this.phone]
+    this.entity.emails = [this.email]
+    this.entity.addresses = [this.address]
+    this.entity.ruleList = [{rule: this.rule}]
+
+      if (this.typePerson == 'pf') {
+        this.personService.createIndividual(this.entity)
+      } else {
+        this.personService.createJuridicalPerson(this.entity)
+      }
       // swal({
       //   title: "Cadastro realizado com sucesso!",
       //   icon: "success",
       // });
-    //   history.back()
-      
-    // } catch(e) {
-    //   console.log("Error Save Person");
-    // }
-    
+      history.back()
+      location.reload()
   }
 
   back() {
     history.back()  
   }
 
-  verifyDocument() {
-  if (this.document.length == 14) {
-    this.entity.cnpj = this.document
-  } else {
-    this.entity.cpf = this.document
+  reciveDocument(value: String) {
+    this.document = value
   }
-}
 
+  reciveTypePerson(value: String) {
+    this.typePerson = value
+  }
 }

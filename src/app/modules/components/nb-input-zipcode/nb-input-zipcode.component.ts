@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nb-input-zipcode',
@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NbInputZipcodeComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
+  @Output() ngModel = new EventEmitter()
+  
   public zipcode = [/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]
 
   constructor() { }
@@ -15,4 +17,7 @@ export class NbInputZipcodeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChange(value: String) {
+    this.ngModel.emit(value)
+  }
 }

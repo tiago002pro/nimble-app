@@ -7,13 +7,13 @@
             <div class="content-form">
                 <div class="content-data-left">
                     <div class="content-person">
-                        <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson"></app-nb-person-documents>
+                        <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
                     </div>
                     <div class="content-person">
-                        <app-nb-person-data [entity]="entity" [typePerson]="typePerson"></app-nb-person-data>
+                        <app-nb-person-data [entity]="entity" [phone]="phone" [email]="email" [typePerson]="typePerson"></app-nb-person-data>
                     </div>
                     <div class="content-person">
-                        <app-nb-person-location [entity]="entity"></app-nb-person-location>
+                        <app-nb-person-location [entity]="entity" [address]="address"></app-nb-person-location>
                     </div>
                 </div>
             </div>

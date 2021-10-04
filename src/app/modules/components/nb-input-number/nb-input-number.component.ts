@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nb-input-number',
@@ -8,10 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NbInputNumberComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
+  @Output() ngModel = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onChange(value: String) {
+    this.ngModel.emit(value)
+  }
 }
