@@ -9,6 +9,7 @@ export class NbInputZipcodeComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()
+  withoutCharacters!: String
   
   public zipcode = [/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]
 
@@ -18,6 +19,7 @@ export class NbInputZipcodeComponent implements OnInit {
   }
 
   onChange(value: String) {
-    this.ngModel.emit(value)
+    this.withoutCharacters = value.replace(/[^0-9]/g, '');
+    this.ngModel.emit(this.withoutCharacters)
   }
 }

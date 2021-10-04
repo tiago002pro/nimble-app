@@ -15,7 +15,7 @@ export class NbInputNumberComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange(value: String) {
+  onChange(value: String) {   
     this.ngModel.emit(value)
   }
 }

@@ -8,9 +8,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NbInputCpfcnpjComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value!: String;
-  @Input() typePerson!: String
+  typePerson: String = 'pf'
   @Output() ngModel = new EventEmitter()
   @Output() type = new EventEmitter()
+  withoutCharacters!: String
   
   public cpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
   public cnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
@@ -21,14 +22,14 @@ export class NbInputCpfcnpjComponent implements OnInit {
   }
 
   onChange(value: String) {
-    if (value.length == 13) {
+    this.withoutCharacters = value.replace(/[^0-9]/g, '');
+    if (this.withoutCharacters.length == 14) {
       this.typePerson = 'pj'
-      this.ngModel.emit(value)
+      this.type.emit(this.typePerson)
     } else {
       this.typePerson = 'pf'
-      this.ngModel.emit(value)
+      this.type.emit(this.typePerson)
     }
-    this.type.emit(this.typePerson)
+    this.ngModel.emit(this.withoutCharacters)
   }
-
 }

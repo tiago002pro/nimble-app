@@ -1,10 +1,5 @@
 <div class="nb-input-date">
     <div class="input-text">
-        <input type="text"
-            [textMask]="{mask: date}"
-            placeholder="{{placeholder}}"
-            value="{{value}}"
-            [ngModel]="value"
-            (ngModelChange)="onChange($event)">
+        <input type="date" placeholder="{{placeholder}}" value="{{value}}" [ngModel]="value" (ngModelChange)="onChange($event)">
     </div>
 </div>

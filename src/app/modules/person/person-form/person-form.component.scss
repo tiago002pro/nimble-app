@@ -7,37 +7,29 @@
         background-size: contain;
         color: #000 !important;
     }
-    
     .content-area {
         background-color: #FFF;
-        padding: 20px;
+        padding: 50px;
         z-index: auto;
     }
-
     .content-title {
         margin-left: 80px;
         margin-top: 20px;
     }
-
     .content-form {
         width: 80vw;
         display: flex;
     }
-
     .content-data-left {
         width: 60vw;
         padding: 40px 80px 40px 80px;
     }
-    
-    .content-person {
-    }
-
+    .content-person {}
     .button {
         display: grid;
         justify-content: center;
         text-align: center;
     }
-    
     .button button {
         width: 200px;
         height: 50px;
@@ -48,19 +40,16 @@
             overflow-y: auto;
         }
     }
-
     .button-back {
         margin-top: 10px;
         cursor: pointer;
     }
-
     .content-data-right {
         width: 20vw;
         padding-right: 80px;
         display: flex;
         justify-content: center;
     }
-
     .person-image {
         width: 16vw;
         height: 30vh;

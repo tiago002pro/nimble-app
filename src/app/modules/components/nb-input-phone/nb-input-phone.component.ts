@@ -9,8 +9,9 @@ export class NbInputPhoneComponent implements OnInit {
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()
+  withoutCharacters!: String
   
-  public phone = ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/,  /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  public phone = ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 
   constructor() { }
 
@@ -18,6 +19,7 @@ export class NbInputPhoneComponent implements OnInit {
   }
 
   onChange(value: String) {
-    this.ngModel.emit(value)
+    this.withoutCharacters = value.replace(/[^0-9]/g, '');
+    this.ngModel.emit(this.withoutCharacters)
   }
 }

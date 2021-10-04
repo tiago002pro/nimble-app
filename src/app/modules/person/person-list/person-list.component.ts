@@ -17,6 +17,9 @@ export class PersonListComponent implements OnInit {
   ruleTitle: any
   totalPages!: any
 
+  public cpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+  public cnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+
   constructor(
     private route: ActivatedRoute,
     private personService: PersonService,
@@ -64,8 +67,13 @@ export class PersonListComponent implements OnInit {
         )
         setTimeout(() => {
           location.reload()
-        }, 500)
+        }, 3000)
       }
     })
+  }
+
+  insertMask(valeu: String) {
+    console.log(valeu);
+    
   }
 }
