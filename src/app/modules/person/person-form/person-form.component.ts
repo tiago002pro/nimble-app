@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { PersonAddress } from '../interface/person.address.interface';
-import { PersonEmail } from '../interface/person.email.interface';
 import { Person } from '../interface/person.interface';
 import { PersonPhone } from '../interface/person.phone.interface';
 import { PersonService } from '../service/person.service';
