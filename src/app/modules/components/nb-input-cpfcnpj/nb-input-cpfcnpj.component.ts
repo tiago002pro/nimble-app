@@ -11,6 +11,7 @@ export class NbInputCpfcnpjComponent implements OnInit {
   @Input() typePerson!: String
   @Output() ngModel = new EventEmitter()
   @Output() type = new EventEmitter()
+  
   public cpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
   public cnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
 

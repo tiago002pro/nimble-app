@@ -61,9 +61,10 @@
         border-radius: 30px;
         line-height: 30px;
         text-align: center;
-        margin-left: 8px;
         background: #343a40;
         cursor: pointer;
+        margin-left: 4px;
+        margin-right: 4px;
     }
 
     .pagination-item {
@@ -76,17 +77,17 @@
     }
 
     .pagination-arrow {
-        width: 30px;
         height: 30px;
         border-radius: 30px;
         line-height: 30px;
         text-align: center;
-        margin-left: 8px;
         cursor: pointer;
     }
 
     .pagination-arrow svg {
         color: #343a40;
+        height: 20px;
+        width: 50px;
     }
 
     .limite {

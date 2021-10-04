@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'person-list/client/:rule', component: PersonListComponent },
   { path: 'person-list/provider/:rule', component: PersonListComponent },
   { path: 'person-list/employee/:rule', component: PersonListComponent },
+  { path: 'person-form/edit/:id', component: PersonFormComponent },
+
 ];
 
 @NgModule({

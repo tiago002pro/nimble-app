@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import { PersonAddress } from '../interface/person.address.interface';
 import { PersonEmail } from '../interface/person.email.interface';
 import { Person } from '../interface/person.interface';
@@ -26,19 +27,22 @@ export class PersonFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("route", this.route);
     this.rule = this.route.snapshot.params.rule
-    
-    this.entity = {}
-    this.entity.addresses = [{}]
-    this.entity.emails = [{}]
-    this.entity.phones = [{}]
-    this.entity.documents = [{}]
-    this.entity.ruleList = [{}]
 
-    this.email = {}
-    this.phone = {}
-    this.address = {}
+    if (this.route.snapshot.params.id) {
+      this.getPersonById(this.route.snapshot.params.id)
+    } else {
+      this.entity = {}
+      this.entity.addresses = [{}]
+      this.entity.emails = [{}]
+      this.entity.phones = [{}]
+      this.entity.documents = [{}]
+      this.entity.ruleList = [{}]
+  
+      this.email = {}
+      this.phone = {}
+      this.address = {}
+    }
   }
 
   save() {
@@ -53,17 +57,19 @@ export class PersonFormComponent implements OnInit {
     this.entity.addresses = [this.address]
     this.entity.ruleList = [{rule: this.rule}]
 
-      if (this.typePerson == 'pf') {
-        this.personService.createIndividual(this.entity)
-      } else {
-        this.personService.createJuridicalPerson(this.entity)
-      }
-      // swal({
-      //   title: "Cadastro realizado com sucesso!",
-      //   icon: "success",
-      // });
-      history.back()
-      location.reload()
+    if (this.typePerson == 'pf') {
+      this.personService.createIndividual(this.entity)
+    } else {
+      this.personService.createJuridicalPerson(this.entity)
+    }
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    history.back()
   }
 
   back() {
@@ -76,5 +82,14 @@ export class PersonFormComponent implements OnInit {
 
   reciveTypePerson(value: String) {
     this.typePerson = value
+  }
+
+  async getPersonById(id: any) {
+    this.entity = await this.personService.loadById(id).toPromise().then(response => response)
+    if (this.entity.cpf) {
+      this.document = this.entity.cpf
+    } else if (this.entity.cnpj){
+      this.document = this.entity.cnpj
+    }
   }
 }

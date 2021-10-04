@@ -14,7 +14,7 @@ export class NbPersonDocumentsComponent implements OnInit {
   @Output() type = new EventEmitter()
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.typePerson = 'pf'
   }
 
@@ -39,5 +39,4 @@ export class NbPersonDocumentsComponent implements OnInit {
   reciveTypePerson(value: String) {
     this.typePerson = value
   }
-
 }

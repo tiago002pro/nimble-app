@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ResponsePageable } from 'src/app/components/shared/model/reponsePageable.model';
+import { Person } from '../interface/person.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +21,11 @@ export class PersonService {
   ) { }
 
   createJuridicalPerson(entity: any) {
-    console.log("entity");
-    
-    return this.http.post((this.urlProd) + '/api/person-juridica/form', entity)
+    return this.http.post((this.url) + '/api/person-juridica/form', entity).subscribe(result => {console.log(result)})
   }
 
   createIndividual(entity: any)  {
-    return this.http.post((this.urlProd) + '/api/person-individual/form', entity)
+    return this.http.post((this.url) + '/api/person-individual/form', entity).subscribe(result => {console.log(result)})
   }
 
   getPersonList(page: any) {
@@ -35,14 +33,14 @@ export class PersonService {
   }
 
   getPersonListByRule(rule: String, page: number) {
-    return this.http.get<ResponsePageable>((this.urlProd) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size=10') 
+    return this.http.get<ResponsePageable>((this.url) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size=10') 
   }
 
   loadById(id: any) {
-    return this.http.get(`${this.url}/api/person/${id}`)
+    return this.http.get<Person>((this.url) + '/api/person/' + (id))
   }
 
   deleteById(id: any) {
-    this.http.delete(`${this.url}/api/person/delete/${id}`)
+    this.http.delete((this.url) + '/api/person/delete/' + (id)).subscribe(result => {console.log(result)})
   }
 }
