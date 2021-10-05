@@ -10,24 +10,15 @@ import Swal from 'sweetalert2';
 export class AppComponent implements OnInit{
   showMenu = true
   validated = false
-  login: String = 'Teste'
-  password: String = 'Testeee'
+  login!: String
+  password!: String
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onChange(value: String) {
-    console.log("login", this.login);
-    console.log("password", this.password);
-    
-
-  }
-
   doLogin() {
-    console.log("login", this.login);
-    console.log("password", this.password);
     if (this.login == 'Teste' && this.password == 'Teste') {
       this.validated = true
 
@@ -39,10 +30,6 @@ export class AppComponent implements OnInit{
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
-          // const b = Swal.getHtmlContainer().querySelector('b')
-          // timerInterval = setInterval(() => {
-          //   b.textContent = Swal.getTimerLeft()
-          // }, 100)
         },
         willClose: () => {
           clearInterval(timerInterval)
