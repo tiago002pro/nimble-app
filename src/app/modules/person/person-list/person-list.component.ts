@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResponsePageable } from 'src/app/components/shared/model/reponsePageable.model';
 import Swal from 'sweetalert2';
-import { Person } from '../interface/person.interface';
 import { PersonService } from '../service/person.service';
 
 @Component({

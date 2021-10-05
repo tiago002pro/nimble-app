@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { PersonService } from './modules/person/service/person.service';
 
 
 @Component({
@@ -9,16 +10,18 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent implements OnInit{
   showMenu = true
-  validated = false
+  validated = true
   login!: String
   password!: String
 
-  constructor() { }
+  constructor(
+    private personService: PersonService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  doLogin() {
+  async doLogin() {
     if (this.login == 'Teste' && this.password == 'Teste') {
       this.validated = true
 
