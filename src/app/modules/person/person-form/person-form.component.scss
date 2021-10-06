@@ -1,60 +1,54 @@
 .nb-person-form {
-    .board-form {
-        width: 100vw;
-        height: 100vh;
-        padding: 30px;
-        display: inline-flex;
-        background-size: contain;
-        color: #000 !important;
-    }
-    .content-area {
-        background-color: #FFF;
-        padding: 50px;
-        z-index: auto;
-        margin-left: 230px;
-    }
-    .content-title {
-        margin-left: 80px;
-        margin-top: 20px;
-    }
+
+
     .content-form {
-        width: 80vw;
         display: flex;
     }
+
     .content-data-left {
         width: 60vw;
-        padding: 40px 80px 40px 80px;
+        padding: 40px 0px 40px 0px;
     }
-    .content-person {}
+
     .button {
         display: grid;
         justify-content: center;
         text-align: center;
     }
+
     .button button {
         width: 200px;
         height: 50px;
         font-size: 24px;
     }
+
     @media (max-width: 900px) {
         .content-area {
             overflow-y: auto;
         }
     }
+
     .button-back {
         margin-top: 10px;
         cursor: pointer;
     }
+
     .content-data-right {
         width: 20vw;
-        padding-right: 80px;
         display: flex;
         justify-content: center;
+        margin-bottom: 10px;
     }
+    
     .person-image {
-        width: 16vw;
-        height: 30vh;
-        background: url(https://firebasestorage.googleapis.com/v0/b/nimble-dcb73.appspot.com/o/brooklyn_nine_nine1.jpg_399056758.jpg?alt=media&token=7d192c2b-7c31-4937-8b1b-a5abfc7becb0);
-        border-radius: 50%;
+        width: 14vw;
+        height: 25vh;
+        background: rgba(2, 5, 7, 0.192);
+        // background: url(https://firebasestorage.googleapis.com/v0/b/nimble-dcb73.appspot.com/o/brooklyn_nine_nine1.jpg_399056758.jpg?alt=media&token=7d192c2b-7c31-4937-8b1b-a5abfc7becb0);
+        // border-radius: 50%;
+    }
+
+    .content-data .input-group {
+        width: 14vw;
     }
 }

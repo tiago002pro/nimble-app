@@ -7,40 +7,32 @@
     <div *ngFor="let address of entity?.addresses">
         <div class="row box">
             <div class="col-md-3">
-                <label class="input-label">CEP</label>
-                <app-nb-input-zipcode [placeholder]="'Ex.: 99999-999'" [value]="address?.zipCode" (ngModel)="reciveZipCode($event)"></app-nb-input-zipcode>
+                <app-nb-input-zipcode [label]="'CEP'" [placeholder]="'Ex.: 99999-999'" [value]="address?.zipCode" (ngModel)="reciveZipCode($event)"></app-nb-input-zipcode>
             </div>
             <div class="col-md-7">
-                <label class="input-label">Logradouro</label>
-                <app-nb-input-text [placeholder]="'Ex.: Av Tiradentes'" [value]="address?.premisse" (ngModel)="recivePremisse($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Logradouro'" [placeholder]="'Ex.: Av Tiradentes'" [value]="address?.premisse" (ngModel)="recivePremisse($event)"></app-nb-input-text>
             </div>
             <div class="col-md-2">
-                <label class="input-label">Número</label>
-                <app-nb-input-text [placeholder]="'Ex.: 778'" [value]="address?.number" (ngModel)="reciveNumber($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Número'" [placeholder]="'Ex.: 778'" [value]="address?.number" (ngModel)="reciveNumber($event)"></app-nb-input-text>
             </div>
         </div>
         <div class="row box">
             <div class="col-md-7">
-                <label class="input-label">Bairro</label>
-                <app-nb-input-text [placeholder]="'Ex.: Zona 1'" [value]="address?.neighbourhood" (ngModel)="reciveNeighbourhood($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Bairro'" [placeholder]="'Ex.: Zona 1'" [value]="address?.neighbourhood" (ngModel)="reciveNeighbourhood($event)"></app-nb-input-text>
             </div>
             <div class="col-md-3">
-                <label class="input-label">Cidade</label>
-                <app-nb-input-text [placeholder]="'Ex.: Maringá'" [value]="address?.location" (ngModel)="reciveLocation($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Cidade'" [placeholder]="'Ex.: Maringá'" [value]="address?.location" (ngModel)="reciveLocation($event)"></app-nb-input-text>
             </div>
             <div class="col-md-2">
-                <label class="input-label">Estado</label>
-                <app-nb-input-text [placeholder]="'Ex.: Paraná'" [value]="address?.state" (ngModel)="reciveState($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Estado'" [placeholder]="'Ex.: Paraná'" [value]="address?.state" (ngModel)="reciveState($event)"></app-nb-input-text>
             </div>
         </div>
         <div class="row box">
             <div class="col-md-9">
-                <label class="input-label">Complemento</label>
-                <app-nb-input-text [placeholder]="'Ex.: Mercado X'" [value]="address?.information" (ngModel)="reciveInformation($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'Complemento'" [placeholder]="'Ex.: Mercado X'" [value]="address?.information" (ngModel)="reciveInformation($event)"></app-nb-input-text>
             </div>
             <div class="col-md-3">
-                <label class="input-label">País</label>
-                <app-nb-input-text [placeholder]="'Ex.: Brasil'" [value]="address?.country" (ngModel)="reciveCountry($event)"></app-nb-input-text>
+                <app-nb-input-text [label]="'País'" [placeholder]="'Ex.: Brasil'" [value]="address?.country" (ngModel)="reciveCountry($event)"></app-nb-input-text>
             </div>
         </div>
     </div>

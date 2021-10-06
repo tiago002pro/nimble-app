@@ -6,11 +6,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./nb-input-cpfcnpj.component.scss']
 })
 export class NbInputCpfcnpjComponent implements OnInit {
+  @Input() label: String | undefined;
   @Input() placeholder: String | undefined;
   @Input() value!: String;
-  typePerson: String = 'pf'
   @Output() ngModel = new EventEmitter()
   @Output() type = new EventEmitter()
+  typePerson: String = 'pf'
   withoutCharacters!: String
   
   public cpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]

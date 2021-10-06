@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./nb-input-date.component.scss']
 })
 export class NbInputDateComponent implements OnInit {
+  @Input() label: String | undefined;
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()

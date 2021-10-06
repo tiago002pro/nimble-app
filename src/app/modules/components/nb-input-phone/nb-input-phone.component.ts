@@ -6,6 +6,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./nb-input-phone.component.scss']
 })
 export class NbInputPhoneComponent implements OnInit {
+  @Input() label: String | undefined;
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()

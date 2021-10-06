@@ -9,7 +9,7 @@ import { PersonService } from './modules/person/service/person.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  showMenu = true
+  showMenu!: Boolean 
   validated = true
   login!: String
   password!: String
@@ -53,5 +53,7 @@ export class AppComponent implements OnInit{
     }
   }
 
-
+  reciveHideMenu(value: String) {
+    this.showMenu = value == 'true'
+  }
 }

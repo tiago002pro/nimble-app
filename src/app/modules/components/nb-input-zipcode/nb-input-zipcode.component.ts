@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./nb-input-zipcode.component.scss']
 })
 export class NbInputZipcodeComponent implements OnInit {
+  @Input() label: String | undefined;
   @Input() placeholder: String | undefined;
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()

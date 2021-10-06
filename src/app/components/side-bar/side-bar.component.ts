@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,9 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-  showdropDowMenu1 = true
-  showdropDowMenu2 = true
+  showdropDowMenu1 = false
+  showdropDowMenu2 = false
   showMenu = true;
+  @Output() hideMenu = new EventEmitter()
 
   constructor() { }
 
@@ -17,6 +18,8 @@ export class SideBarComponent implements OnInit {
 
   seeMenu() {
     this.showMenu = !this.showMenu
+    const menu = this.showMenu.toString()
+    this.hideMenu.emit(menu)
   }
 
   dropDow1() {
@@ -26,5 +29,4 @@ export class SideBarComponent implements OnInit {
   dropDow2() {
     this.showdropDowMenu2 = !this.showdropDowMenu2
   }
-
 }

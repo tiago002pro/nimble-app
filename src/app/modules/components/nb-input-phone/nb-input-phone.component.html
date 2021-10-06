@@ -1,5 +1,11 @@
 <div class="nb-input-phone">
+    <label class="input-label">{{label}}</label>
     <div class="input-text">
-        <input type="text" [textMask]="{mask: phone}" placeholder="{{placeholder}}" value="{{value}}" [ngModel]="value" (ngModelChange)="onChange($event)">
+        <input type="text"
+               [textMask]="{mask: phone}"
+               placeholder="{{placeholder}}"
+               value="{{value}}"
+               [ngModel]="value"
+               (ngModelChange)="onChange($event)">
     </div>
 </div>

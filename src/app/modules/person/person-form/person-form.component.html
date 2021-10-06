@@ -1,29 +1,31 @@
 <div class="nb-person-form">
-    <div class="board-form">
-        <div class="content-area">
-            <div class="content-title">
-                <h2>Cadastrar {{rule}}</h2>
+    <div>
+        <h2>Cadastrar {{rule}}</h2>
+    </div>
+    <div class="content-form">
+        <div class="content-data-left">
+            <div class="content-person">
+                <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
             </div>
-            <div class="content-form">
-                <div class="content-data-left">
-                    <div class="content-person">
-                        <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
-                    </div>
-                    <div class="content-person">
-                        <app-nb-person-data [entity]="entity" [phone]="phone" [email]="email" [typePerson]="typePerson"></app-nb-person-data>
-                    </div>
-                    <div class="content-person">
-                        <app-nb-person-location [entity]="entity" [address]="address"></app-nb-person-location>
-                    </div>
-                </div>
+            <div class="content-person">
+                <app-nb-person-data [entity]="entity" [phone]="phone" [email]="email" [typePerson]="typePerson"></app-nb-person-data>
             </div>
-            <div class="content-data-right">
-                <!-- <div class="person-image"></div> -->
-            </div>
-            <div class="button">
-                <button (click)="save()" type="button" class="btn btn-dark">Salvar</button>
-                <div class="button-back"><a (click)="back()">Voltar</a></div>
+            <div class="content-person">
+                <app-nb-person-location [entity]="entity" [address]="address"></app-nb-person-location>
             </div>
         </div>
+        <div class="content-data-right">
+            <div class="content-data">
+                <div class="person-image"></div>
+                <div class="input-group mb-3">
+                    <!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
+                    <input type="file" class="form-control">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button (click)="save()" type="button" class="btn btn-dark">Salvar</button>
+        <div class="button-back"><a (click)="back()">Voltar</a></div>
     </div>
 </div>
