@@ -10,7 +10,7 @@ import { PersonService } from './modules/person/service/person.service';
 })
 export class AppComponent implements OnInit{
   showMenu!: Boolean 
-  validated = true
+  validated = false
   login!: String
   password!: String
 

@@ -7,8 +7,7 @@ import { Person } from '../interface/person.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  url: String = 'http://localhost:8080'
-  urlProd = 'https://nimble-backend.herokuapp.com' 
+  url: String = 'https://nimble-back.herokuapp.com/' 
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,10 +29,6 @@ export class PersonService {
 
   updateIndividual(entity: any)  {
     return this.http.put((this.url) + '/api/person-individual/form', entity).subscribe(result => {console.log(result)})
-  }
-
-  getPersonList(page: any) {
-    return this.http.get(`${this.url}/api/person/get/person-list/?page=${page}&size=10`)
   }
 
   getPersonListByRule(rule: String, page: number) {
