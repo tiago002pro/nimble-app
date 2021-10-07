@@ -43,9 +43,26 @@
     .person-image {
         width: 14vw;
         height: 25vh;
-        background: rgba(2, 5, 7, 0.192);
-        // background: url(https://firebasestorage.googleapis.com/v0/b/nimble-dcb73.appspot.com/o/brooklyn_nine_nine1.jpg_399056758.jpg?alt=media&token=7d192c2b-7c31-4937-8b1b-a5abfc7becb0);
-        // border-radius: 50%;
+        // background: rgba(2, 5, 7, 0.089);
+        border: 2px solid rgba(2, 5, 7, 0.089);
+        display: flex;
+        justify-content: center;
+        border-radius: 2px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+    }
+    
+    .person-image svg {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(2, 5, 7, 0.411);
+    }
+
+    .person-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .content-data .input-group {
