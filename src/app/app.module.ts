@@ -22,6 +22,9 @@ import { NbInputPhoneComponent } from './modules/components/nb-input-phone/nb-in
 import { NbInputZipcodeComponent } from './modules/components/nb-input-zipcode/nb-input-zipcode.component';
 import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/nb-input-cpfcnpj.component';
 import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-input-number.component';
+import { KanbanComponent } from './modules/kanban/kanban.component';
+import { CardComponent } from './modules/kanban/components/card/card.component';
+import { BoardComponent } from './modules/kanban/components/board/board.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-
     NbInputZipcodeComponent,
     NbInputCpfcnpjComponent,
     NbInputNumberComponent,
+    KanbanComponent,
+    CardComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

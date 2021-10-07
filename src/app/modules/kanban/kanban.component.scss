@@ -1,0 +1,141 @@
+.kanban-frame {
+    background-color: #97979704;
+    margin-left: 10px;
+    .frame-zone {
+        width: 100vw;
+        height: 100vh;
+        display: inline-flex;
+        background-size: contain;
+        color: #000 !important;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .frame-zone {
+        z-index: auto;
+        width: 85vw;
+        display: flex;
+        overflow-x: scroll;
+    }
+    .boards {
+        height: 40px;
+        margin-top: 20px;
+        display: flex;
+    }
+    .board {
+        margin: 0 10px;
+        border-radius: 3px;
+        background: rgba(129, 129, 129, 0.199);
+        border: 1px solid #FD951F11;
+    }
+    .new-board a {
+        width: 260px;
+        height: 40px;
+        padding-left: 10px;
+        line-height: 40px;
+        display: flex;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #FFF;
+    }
+    .new-board i {
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .new-board:hover {
+        text-decoration: none;
+        background-color: rgba(146, 146, 146, 0.356);
+        color: #131313;
+    }
+}
+
+.kanban-boards {
+    .boards {
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+    }
+    .board {
+        margin: 0 10px;
+        border-radius: 3px;
+        background: #ebecf0;
+        border: 1px solid #FD951F11;
+    }
+    .text-area {
+        height: 30px;
+        font-weight: 600;
+        color: #131313;
+        margin: 10px;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+    .dropzone {
+        overflow-y: auto;
+        max-height: 77vh;
+    }
+    .new-card a {
+        text-decoration: none;
+    }
+    .final-board {
+        width: 260px;
+        height: 30px;
+        margin: 10px;
+        padding-left: 10px;
+        line-height: 30px;
+        display: flex;
+        border-radius: 5px;
+        font-size: 15px;
+        color: #7b7e89;
+    }
+    .final-board i {
+        line-height: 30px;
+        font-size: 20px;
+    }
+    .final-board:hover {
+        text-decoration: none;
+        background-color: #ced2df;
+        color: #131313;
+    }
+}
+
+.kanban-cards {
+    .cards {
+        width: 260px;
+        padding: 16px;
+        margin: 0px 10px 10px 10px;
+        border-radius: 3px;
+        font-style: 18px;
+        background: #f5f5f5;
+        color: #000;
+        box-shadow: 0 2px 2px -1px #131313;
+    }
+    .status {
+        width: 30px;
+        height: 8px;
+        margin-bottom: 5px;
+        border-radius: 8px;
+        background: #FFF;
+    }
+    .green {
+        background: #23d2aC;
+    }
+    .blue {
+        background: #33adff;
+    }
+    .red {
+        background: red;
+    }
+    .hightlight {
+        background-color: #FD951F08;
+    }
+    .cards,
+    .dropzone {
+        transition: 400ms;
+    }
+    .is-dragging {
+        cursor: move;
+        opacity: 0.3;
+    }
+    .over {
+        background-color: #4cd13711;
+    }
+}

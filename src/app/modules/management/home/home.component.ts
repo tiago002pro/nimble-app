@@ -23,6 +23,8 @@ export class HomeComponent{
     'Walk dog'
   ];
 
+  list = [1, 2, 3, 4]
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
