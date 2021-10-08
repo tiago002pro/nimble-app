@@ -19,7 +19,6 @@ export class PersonFormComponent implements OnInit {
   rule!: String
   document: String = ''
   typePerson: String = 'pf'
-  img: String = 'https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/EXn0f2IWAAIOLlV.jpg?alt=media&token=7e10012b-4cdf-4856-b541-f3935335b49a'
   
   constructor(
     private route: ActivatedRoute,
