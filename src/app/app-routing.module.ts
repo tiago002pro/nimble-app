@@ -5,7 +5,7 @@ import { PersonFormComponent } from './modules/person/person-form/person-form.co
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'person-form/:rule', component: PersonFormComponent },
   { path: 'person-list/client/:rule', component: PersonListComponent },
   { path: 'person-list/provider/:rule', component: PersonListComponent },
