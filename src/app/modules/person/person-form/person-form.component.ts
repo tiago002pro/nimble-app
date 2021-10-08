@@ -57,7 +57,7 @@ export class PersonFormComponent implements OnInit {
     this.entity.ruleList = [{rule: this.rule}]
 
     if (this.typePerson == 'pf') {
-      this.personService.updateIndividual(this.entity)
+      this.personService.createIndividual(this.entity)
     } else {
       this.personService.createJuridicalPerson(this.entity)
     }
