@@ -7,7 +7,8 @@ import { Person } from '../interface/person.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  url: String = 'https://nimble-back.herokuapp.com/' 
+  // url: String = 'https://nimble-back.herokuapp.com/' 
+  url: String = 'http://localhost:8080'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -44,6 +45,13 @@ export class PersonService {
   }
 
   validateLogin(login: String, password: String) {
-    return this.http.get((this.url) + 'api/user/validate-login?login='+(login)+'&password='+(password)).subscribe(result => result)
+    return this.http.get((this.url) + '/api/user/validate-login?login='+(login)+'&password='+(password)).subscribe(result => result)
   }
+
+  authenticatedUser(username: String) {
+    return this.http.get<any>((this.url) + '/api/authenticated/user?username=' + (username))
+  }
+  
+
+
 }
