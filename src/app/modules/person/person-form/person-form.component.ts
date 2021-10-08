@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseError } from '@firebase/util';
 import Swal from 'sweetalert2';
 import { PersonAddress } from '../interface/person.address.interface';
 import { Person } from '../interface/person.interface';
