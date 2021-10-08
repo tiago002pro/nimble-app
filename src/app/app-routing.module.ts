@@ -7,13 +7,10 @@ import { PersonListComponent } from './modules/person/person-list/person-list.co
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'person-form/:rule', component: PersonFormComponent },
-  { path: 'person-form/:rule', component: PersonFormComponent },
-  { path: 'person-form/:rule', component: PersonFormComponent },
   { path: 'person-list/client/:rule', component: PersonListComponent },
   { path: 'person-list/provider/:rule', component: PersonListComponent },
   { path: 'person-list/employee/:rule', component: PersonListComponent },
   { path: 'person-form/edit/:id', component: PersonFormComponent },
-
 ];
 
 @NgModule({
