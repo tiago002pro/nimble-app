@@ -22,6 +22,8 @@ import { NbInputPhoneComponent } from './modules/components/nb-input-phone/nb-in
 import { NbInputZipcodeComponent } from './modules/components/nb-input-zipcode/nb-input-zipcode.component';
 import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/nb-input-cpfcnpj.component';
 import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-input-number.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { PersonService } from './modules/person/service/person.service';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 
 @NgModule({
@@ -52,7 +54,7 @@ import { KanbanComponent } from './modules/kanban/kanban.component';
     BrowserAnimationsModule,
     DragDropModule,
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

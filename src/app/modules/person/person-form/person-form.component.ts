@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseError } from '@firebase/util';
 import Swal from 'sweetalert2';
 import { PersonAddress } from '../interface/person.address.interface';
 import { Person } from '../interface/person.interface';
@@ -20,7 +19,6 @@ export class PersonFormComponent implements OnInit {
   rule!: String
   document: String = ''
   typePerson: String = 'pf'
-  img: String = 'https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/EXn0f2IWAAIOLlV.jpg?alt=media&token=7e10012b-4cdf-4856-b541-f3935335b49a'
   
   constructor(
     private route: ActivatedRoute,
@@ -59,7 +57,7 @@ export class PersonFormComponent implements OnInit {
     this.entity.ruleList = [{rule: this.rule}]
 
     if (this.typePerson == 'pf') {
-      this.personService.updateIndividual(this.entity)
+      this.personService.createIndividual(this.entity)
     } else {
       this.personService.createJuridicalPerson(this.entity)
     }

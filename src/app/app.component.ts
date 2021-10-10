@@ -13,15 +13,21 @@ export class AppComponent implements OnInit{
   validated = true
   login!: String
   password!: String
+  user!: any
 
   constructor(
     private personService: PersonService
-  ) { }
+  ) {
+    this.personService.authenticatedUser(this.login)
+   }
 
   ngOnInit(): void {
   }
 
   async doLogin() {
+    this.user = await this.personService.authenticatedUser(this.login).toPromise().then(response => response)
+    console.log("user", this.user);
+    
     if (this.login == 'Teste' && this.password == 'Teste') {
       this.validated = true
 
