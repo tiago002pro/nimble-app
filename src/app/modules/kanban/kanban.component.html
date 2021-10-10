@@ -1,17 +1,47 @@
 <div class="kanban-frame">
-    <div class="board-wrapper">
-        <div class="board-columns" cdkDropListGroup>
-            <div class="board-column" *ngFor="let column of board.columns">
-                <div class="column-title">
-                    {{ column.name }}
-                </div>
-                <div class="tasks-container"
-                    cdkDropList
-                    [cdkDropListData]="column.tasks"
-                    (cdkDropListDropped)="drop($event)">
-                    <div class="task" *ngFor="let item of column.tasks" cdkDrag>
-                        {{ item }}
+    <div class="frame-zone" cdkDropListGroup>
+        <div class="frame" *ngFor="let column of board.columns">
+            <div class="kanban-boards">
+                <div class="boards">
+                    <div class="board">
+                        <div class="text-board">{{ column.name }}</div>
+                        <div class="dropzone"
+                            cdkDropList
+                            [cdkDropListData]="column.tasks"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="kanban-cards" *ngFor="let card of column.tasks" cdkDrag>
+                                <div class="cards">
+                                    <div>
+                                        <h5>click</h5>
+                                    </div>
+                                    <div class="status red"></div>
+                                    <div class="content">{{card}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-card">
+                            <a>
+                                <div class="button-new-card">
+                                    <i class='bx bx-plus'></i>
+                                    <div>Novo Card</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="last-board">
+            <div [ngClass]="showInput == false ? 'new-column' : 'new-column-input'">
+                <div class="new-board">
+                    <a (click)="newList()">
+                        <i class='bx bx-plus'></i>
+                        <div>Nova Lista</div>
+                    </a>
+                </div>
+                <div [ngClass]="showInput == false ? 'input-text hide' : 'input-text'">
+                    <input type="text"
+                        class="form-control">
                 </div>
             </div>
         </div>
