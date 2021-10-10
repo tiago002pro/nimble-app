@@ -1,5 +1,7 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { Board } from './models/board.model';
+import { Column } from './models/columns.model';
 
 @Component({
   selector: 'app-kanban',
@@ -13,6 +15,39 @@ export class KanbanComponent implements OnInit {
     {id: 3, title: 'Done', cards: [{title: 'Terminados', description: 'AAAAAAAA', status: 'red'}, {title: 'Terminados5', description: 'AAAAAAAA', status: 'green'}, {title: 'Terminados'}, {title: 'Terminados', description: 'AAAAAAAA',}, {title: 'Terminados'}, {title: 'Terminados', description: 'AAAAAAAA',}, {title: 'Terminados5'}, {title: 'Terminados'}, {title: 'Terminados'}, {title: 'Terminados'}, {title: 'Terminados5'}, {title: 'Terminados'}, {title: 'Terminados'}, ]},
     {id: 4, title: 'Test', cards: [{}]}
   ]
+
+  board: Board = new Board("Test Board", [
+    new Column('Ideas', [
+      "Some ramdom idea",
+      "This is another ramdom idea",
+      "build an awesome application"
+    ]),
+    new Column('Research', [
+      "Lorem ipsum",
+      "foo",
+      "la la la"
+    ]),
+    new Column('Todo', [
+      'Get to work',
+      'Pick up groceries',
+      'Go home',
+      'Fall asleep'
+    ]),
+    new Column('Done', [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ]),
+  ])
+
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log("board", this.board);
+    
+  }
 
   todo = [
     'Get to work',
@@ -28,13 +63,6 @@ export class KanbanComponent implements OnInit {
     'Check e-mail',
     'Walk dog'
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log("a", this.columns[0].cards);
-    
-  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
