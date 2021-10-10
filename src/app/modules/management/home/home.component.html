@@ -8,3 +8,50 @@
 </section> -->
 
 <router-outlet></router-outlet>
+
+
+<div class="kanban-frame">
+    <div class="frame-zone" cdkDropListGroup>
+        <div class="frame" *ngFor="let column of board.columns">
+            <div class="kanban-boards">
+                <div class="boards">
+                    <div class="board">
+                        <div class="text-area">{{ column.name }}</div>
+                        <div class="dropzone"
+                            cdkDropList
+                            [cdkDropListData]="column.tasks"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="kanban-cards" *ngFor="let card of column.tasks" cdkDrag>
+                                <div class="cards">
+                                    <div>
+                                        <h5>click</h5>
+                                    </div>
+                                    <div class="status red"></div>
+                                    <div class="content">{{card}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-card">
+                            <a>
+                                <div class="final-board">
+                                    <i class='bx bx-plus'></i>
+                                    <div>Novo Card</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boards">
+            <div class="board">
+                <div class="new-board">
+                    <a>
+                        <i class='bx bx-plus'></i>
+                        <div>Nova Lista</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
