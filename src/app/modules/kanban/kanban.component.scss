@@ -35,7 +35,9 @@
 
         .dropzone {
             overflow-y: auto;
+            min-height: 0.5vh;
             max-height: 77vh;
+            // height: 50px;
         }
 
         .new-card a {
@@ -55,9 +57,9 @@
             color: #7b7e89;
         }
 
-        .button-new-card i {
-            line-height: 30px;
-            font-size: 20px;
+        .button-new-card svg {
+            width: 15px;
+            margin: 5px;
         }
 
         .button-new-card:hover {
@@ -83,7 +85,7 @@
     
         .new-column-input {
             margin: 0 10px;
-            height: 10vh;
+            height: 14.5vh;
             border-radius: 3px;
             background: rgba(129, 129, 129, 0.199);
             border: 1px solid #FD951F11;
@@ -102,11 +104,17 @@
             color: #FFF;
             cursor: pointer;
         }
-        .new-board i {
-            line-height: 40px;
+
+        .button-new-board {
             font-size: 20px;
         }
-    
+
+        .button-new-board svg{
+            width: 15px;
+            height: 15px;
+            margin: 10px;
+        }
+   
         input {
             background: transparent;
         }
@@ -135,6 +143,35 @@
             border-radius: 4px;
             border: 1px solid rgba(145, 145, 145, 0.589);
             color: #fff;
+        }
+
+        .input-bottom {
+            color: #ced2df;
+            margin-top: 7px;
+        }
+
+
+        .btn {
+            margin-left: 12px;
+        }
+
+        .input-bottom a {
+            cursor: pointer;
+        }
+
+        .input-bottom svg {
+            margin-left: 78px;
+            width: 25px;
+            height: 25px;
+            transition: 0.3s ease;
+        }
+
+        .input-bottom svg:hover {
+            margin-left: 78px;
+            width: 40px;
+            height: 40px;
+            transition: 0.3s ease;
+            transform: rotate(360deg);
         }
     }
 }

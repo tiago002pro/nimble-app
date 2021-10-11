@@ -10,6 +10,7 @@ import { Column } from './models/columns.model';
 })
 export class KanbanComponent implements OnInit {
   showInput: boolean = false
+  list!: String
 
   board: Board = new Board("Test Board", [
     new Column('Ideas', [
@@ -17,37 +18,30 @@ export class KanbanComponent implements OnInit {
       "This is another ramdom idea",
       "build an awesome application"
     ]),
-    new Column('Research', [
-      "Lorem ipsum",
-      "foo",
-      "la la la"
-    ]),
     new Column('Todo', [
       'Get to work',
       'Pick up groceries',
-      'Go home',
-      'Fall asleep'
     ]),
     new Column('Done', [
-      'Get up',
-      'Brush teeth',
-      'Take a shower',
-      'Check e-mail',
-      'Walk dog'
     ]),
   ])
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log("board", this.board);
-    
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>, column: Column) {
+    console.log("event,", event);
+    console.log("column,", column);
+    
     if (event.previousContainer === event.container) {
+      console.log("IF");
+      
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      console.log("else");
+      
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
@@ -59,4 +53,19 @@ export class KanbanComponent implements OnInit {
     this.showInput = !this.showInput
   }
 
+  closeInputNewList() {
+    this.showInput = !this.showInput
+  }
+
+  newCard(column: Column) {
+    column.tasks.push('New Card on "'+ column.name+'"')
+  }
+
+  saveList() {
+    this.board.columns.push(new Column(this.list, []))
+  }
+
+  onChange(value: String) {
+    this.list = value
+  }
 }
