@@ -31,9 +31,8 @@ export class KanbanComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  drop(event: CdkDragDrop<string[]>, column: Column) {
+  drop(event: CdkDragDrop<string[]>) {
     console.log("event,", event);
-    console.log("column,", column);
     
     if (event.previousContainer === event.container) {
       console.log("IF");
@@ -63,9 +62,14 @@ export class KanbanComponent implements OnInit {
 
   saveList() {
     this.board.columns.push(new Column(this.list, []))
+    this.showInput = !this.showInput
   }
 
   onChange(value: String) {
     this.list = value
+  }
+
+  deleteList(index: any) {
+    this.board.columns.splice(index, 1)
   }
 }

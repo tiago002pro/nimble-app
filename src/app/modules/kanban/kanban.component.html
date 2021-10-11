@@ -1,30 +1,38 @@
 <div class="kanban-frame">
     <div class="frame-zone" cdkDropListGroup>
-        <div class="frame" *ngFor="let column of board.columns">
-            <div class="kanban-boards">
-                <div class="boards">
-                    <div class="board">
-                        <div class="text-board">{{ column.name }}</div>
-                        <div class="dropzone"
-                            cdkDropList
-                            [cdkDropListData]="column.tasks"
-                            (cdkDropListDropped)="drop($event, column)">
-                            <div class="kanban-cards" *ngFor="let card of column.tasks" cdkDrag>
-                                <div class="cards">
-                                    <div class="content">{{card}}</div>
-                                    <!-- <div class="status red"></div> -->
+        <div class="frame" *ngFor="let column of board.columns; let i = index">
+            <div class="frame-dropzone">
+                <div class="kanban-boards">
+                    <div class="boards">
+                        <div class="board">
+                            <div class="text-board">{{ column.name }}
+                                <a (click)="deleteList(i)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="dropzone"
+                                cdkDropList
+                                [cdkDropListData]="column.tasks"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="kanban-cards" *ngFor="let card of column.tasks" cdkDrag>
+                                    <div class="cards">
+                                        <div class="content">{{card}}</div>
+                                        <!-- <div class="status red"></div> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="new-card">
-                            <a (click)="newCard(column)">
-                                <div class="button-new-card">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                        <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
-                                    </svg>
-                                    <div>Novo Card</div>
-                                </div>
-                            </a>
+                            <div class="new-card">
+                                <a (click)="newCard(column)">
+                                    <div class="button-new-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                                        </svg>
+                                        <div>Novo Card</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -32,7 +40,7 @@
         </div>
         <div class="last-board">
             <div [ngClass]="showInput == false ? 'new-column' : 'new-column-input'">
-                <div class="new-board">
+                <div  [ngClass]="showInput == false ? 'new-board' : 'new-board.active'">
                     <a (click)="newList()">
                         <div class="button-new-board">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -42,14 +50,14 @@
                         </div>
                     </a>
                 </div>
-                <div [ngClass]="showInput == false ? 'input-text hide' : 'input-text'">
+                <div [ngClass]="showInput == true ? 'input-text' : 'hide-input'">
                     <input type="text"
                         placeholder="Insira o título da lista.."
                         class="form-control"
                         [ngModel]="list"
                         (ngModelChange)="onChange($event)">
                     <div class="input-bottom">
-                        <button type="button" class="btn btn-light" (click)="saveList()">Salvar Lista</button>
+                        <button type="button" class="btn btn-dark" (click)="saveList()">Salvar Lista</button>
                         <a (click)="closeInputNewList()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>

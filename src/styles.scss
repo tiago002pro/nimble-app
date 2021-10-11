@@ -2,7 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -18,7 +18,7 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
   display: flex;  
-  background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/plant-leaves-dark.jpg?alt=media&token=f10c1c9e-aa59-440e-aa22-c794b62b58eb)no-repeat;
+  background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/andrew-neel-jtsW--Z6bFw-unsplash.jpg?alt=media&token=57d69b3c-a1ca-4529-8d88-50ed9a6f3d32)no-repeat;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -26,4 +26,22 @@ body {
 
 html {
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d1b31;
+}
+
+::-webkit-scrollbar-corner {
+  // background-color: red;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #6c63c4;
 }
