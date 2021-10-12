@@ -1,0 +1,146 @@
+.frame-zone {
+    width: 100vw;
+    height: 100vh;
+    display: inline-flex;
+    z-index: auto;
+    overflow-x: scroll;
+    background-size: contain;
+    color: #000 !important;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.frame-dropzone {
+    width: 80vw;
+    height: 80vh;
+    overflow-x: auto;
+    display: inline-flex;
+    
+// .cdk-drag-preview {
+//     box-sizing: border-box;
+//     border-radius: 4px;
+//     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+//                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+//                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+// }
+
+// .cdk-drag-placeholder {
+//     opacity: 0;
+// }
+
+// .cdk-drag-animating {
+//     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+// }
+
+// .frame-dropzone.cdk-drop-list-dragging .frame-data:not(.cdk-drag-placeholder) {
+//     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+// }
+}
+
+.last-board {
+}
+
+.new-column {
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 3px;
+    background: rgba(129, 129, 129, 0.199);
+    transition: 0.3s ease;
+}
+
+.new-column-input {
+    width: 260px;
+    height: 135px;
+    margin: 0 10px;
+    border-radius: 3px;
+    background: #ebecf0;
+    transition: 0.3s ease;
+}
+
+.new-board a {
+    width: 260px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.active {
+    color: #000;
+}
+
+.button-new-board {
+    height: 40px;
+    font-weight: 800;
+    padding-left: 10px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+.button-new-board svg{
+    width: 15px;
+    height: 15px;
+    margin: 0 8px 4px 8px;
+}
+
+input {
+    background: transparent;
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: #fff;
+    box-shadow: 0 0 2px #fff;
+}
+
+.hide-input {
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.input-text {
+    transition: 0.3s ease;
+}
+
+.input-text input {
+    width: 90%;
+    height: 40px;
+    padding: 20px;
+    font-size: 18px;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid rgba(145, 145, 145, 0.589);
+    color: #121212;
+}
+
+.input-bottom {
+    color: #ced2df;
+    margin-top: 7px;
+}
+
+
+.btn {
+    margin-left: 12px;
+}
+
+.input-bottom a {
+    cursor: pointer;
+}
+
+.input-bottom svg {
+    margin-left: 78px;
+    width: 25px;
+    height: 25px;
+    transition: 0.3s ease;
+}
+
+.input-bottom svg:hover {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s ease;
+    transform: rotate(360deg);
+    color: #121212;
+}

@@ -1,7 +1,9 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDragEnter, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { Board } from './models/board.model';
 import { Column } from './models/columns.model';
+import { Kanban } from './models/kanban.model';
+import { Task } from './models/tasks.model';
 
 @Component({
   selector: 'app-kanban',
@@ -14,24 +16,44 @@ export class KanbanComponent implements OnInit {
 
   board: Board = new Board("Test Board", [
     new Column('Ideas', [
-      "Some ramdom idea",
-      "This is another ramdom idea",
-      "build an awesome application"
+      new Task("Some ramdom idea"),
+      new Task("This is another ramdom idea"),
+      new Task("build an awesome application")
     ]),
     new Column('Todo', [
-      'Get to work',
-      'Pick up groceries',
+      new Task('Get to work'),
+      new Task('Pick up groceries')
     ]),
     new Column('Done', [
     ]),
   ])
 
+  kanban: Kanban = new Kanban("Quadro 1", [
+    new Board("Board 1", [
+      new Column('Ideas', [
+        new Task('One'),
+        new Task('Two'),
+        new Task('Three'),
+      ]),
+      new Column('Todo', [
+        new Task('Four'),
+        new Task('Five'),
+
+      ]),
+      new Column('Done', [
+        new Task('Six'),
+      ]),
+    ])
+  ])
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log("boars", this.board);
+    
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop1(event: CdkDragDrop<Column[]>) {
     console.log("event,", event);
     
     if (event.previousContainer === event.container) {
@@ -48,6 +70,27 @@ export class KanbanComponent implements OnInit {
     }
   }
 
+  drop2(event: CdkDragDrop<Task[]>) {
+    console.log("event,", event);
+    
+    if (event.previousContainer === event.container) {
+      console.log("IF");
+      
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      console.log("else");
+      
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+    }
+  }
+
+  entered(event: CdkDragEnter) {
+    moveItemInArray(this.board.columns, event.item.data, event.container.data);
+  }
+
   newList() {
     this.showInput = !this.showInput
   }
@@ -57,7 +100,7 @@ export class KanbanComponent implements OnInit {
   }
 
   newCard(column: Column) {
-    column.tasks.push('New Card on "'+ column.name+'"')
+    column.tasks.push( new Task('New Card on "'+ column.name+'"'))
   }
 
   saveList() {
