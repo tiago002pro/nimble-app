@@ -24,6 +24,8 @@ import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/n
 import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-input-number.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { PersonService } from './modules/person/service/person.service';
+import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
+import { KanbanColumnComponent } from './modules/kanban-board/components/kanban-column/kanban-column.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { PersonService } from './modules/person/service/person.service';
     NbInputZipcodeComponent,
     NbInputCpfcnpjComponent,
     NbInputNumberComponent,
+    KanbanBoardComponent,
+    KanbanColumnComponent,
   ],
   imports: [
     BrowserModule,

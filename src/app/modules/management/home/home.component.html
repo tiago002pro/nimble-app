@@ -7,4 +7,18 @@
     </div>
 </section> -->
 
-<router-outlet></router-outlet>
+<div *ngIf="validated">
+    <div>
+        <app-side-bar (hideMenu)="reciveHideMenu($event)"></app-side-bar>
+    </div>
+    <div [ngClass]="showMenu == false ? 'base_content' : 'base_content active'">
+        <div class="board">
+            <div class="content-area">
+                <div class="data">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  

@@ -47,3 +47,37 @@
         height: 500px;
     }
 }
+
+.base_content {
+    width: calc(100% -250px);
+    height: 100%;
+    left: 50px;
+    position: relative;
+    display: flex;
+    transition: all 0.3s ease;
+    left: 110px;
+}
+
+.base_content.active {
+    left: 240px;
+    position: none;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    display: inline-flex;
+    background-size: contain;
+    color: #000 !important;
+}
+.content-area {
+    background-color: #FFF;
+    padding: 50px;
+    z-index: auto;
+}
+
+.data {
+    width: 80vw;
+    padding: 40px 80px 40px 80px;
+}
