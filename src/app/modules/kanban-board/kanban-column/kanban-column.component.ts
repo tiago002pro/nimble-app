@@ -1,8 +1,8 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
-import { Card } from '../../models/card.model';
-import { Column } from '../../models/column.model';
-import { Kanban } from '../../models/kanban.model';
+import { Card } from '../models/card.model';
+import { Column } from '../models/column.model';
+import { Kanban } from '../models/kanban.model';
 
 @Component({
   selector: 'app-kanban-column',

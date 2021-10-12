@@ -25,7 +25,7 @@ import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-
 import { APP_BASE_HREF } from '@angular/common';
 import { PersonService } from './modules/person/service/person.service';
 import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
-import { KanbanColumnComponent } from './modules/kanban-board/components/kanban-column/kanban-column.component';
+import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanban-column.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,8 @@ import { KanbanColumnComponent } from './modules/kanban-board/components/kanban-
     BrowserAnimationsModule,
     DragDropModule,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}, PersonService],
+  // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}, PersonService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
