@@ -27,7 +27,8 @@
                                         placeholder="Insira o título da lista.."
                                         class="form-control"
                                         [ngModel]="list"
-                                        (ngModelChange)="onChange($event)">
+                                        (ngModelChange)="onChange($event)"
+                                        (keyup.enter)="saveList()">
                                     <div class="input-bottom">
                                         <button type="button" class="btn btn-dark" (click)="saveList()">Salvar Lista</button>
                                         <a (click)="closeInputNewList()">
