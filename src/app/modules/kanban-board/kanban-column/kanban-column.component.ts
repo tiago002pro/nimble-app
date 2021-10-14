@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from '../../modal';
 import { Card } from '../models/card.model';
 import { Column } from '../models/column.model';
 import { Kanban } from '../models/kanban.model';
@@ -16,7 +17,9 @@ export class KanbanColumnComponent implements OnInit {
   @Input() kanban!: Kanban
   @Input() culumnDropList!: any
 
-  constructor() { }
+  constructor(
+    public modalService: ModalService
+  ) { }
 
   ngOnInit(): void {
     
@@ -39,5 +42,15 @@ export class KanbanColumnComponent implements OnInit {
 
   deleteList(index: any) {
     this.kanban.boards[0].columns.splice(index, 1)
+  }
+
+  
+
+  openModal(id: String) {
+    this.modalService.open(id.toString());
+  }
+
+  closeModal(id: String) {
+    this.modalService.close(id.toString());
   }
 }

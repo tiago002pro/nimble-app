@@ -13,10 +13,14 @@
         [cdkDropListData]="column.cards"
         id="{{column.name}}" 
         cdkDropList>
-        <div class="kanban-cards" *ngFor="let card of column.cards"  cdkDrag>
+        <div class="kanban-cards" *ngFor="let card of column.cards" (click)="openModal(card.name)" cdkDrag>
             <div class="cards">
                 <div class="content">{{card.name}}</div>
                 <div class="status red"></div>
+                <app-modal id="{{card.name}}" [card]="card">
+                    <app-modal-card></app-modal-card>
+                    <button (click)="closeModal(card.name);">Close</button>
+                </app-modal>
             </div>
         </div>
     </div>

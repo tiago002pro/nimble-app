@@ -26,6 +26,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { PersonService } from './modules/person/service/person.service';
 import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
 import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanban-column.component';
+import { ModalModule } from './modules/modal';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanb
     TextMaskModule,
     BrowserAnimationsModule,
     DragDropModule,
+    ModalModule
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}, PersonService],
   providers: [],
