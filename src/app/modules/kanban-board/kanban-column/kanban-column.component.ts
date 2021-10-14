@@ -14,6 +14,7 @@ export class KanbanColumnComponent implements OnInit {
   @Input() column!: Column
   @Input() indexColumn!: number
   @Input() kanban!: Kanban
+  @Input() culumnDropList!: any
 
   constructor() { }
 
@@ -22,15 +23,9 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<Card[]>) {
-    console.log("event,", event);
-    
     if (event.previousContainer === event.container) {
-      console.log("IF");
-      
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log("else");
-      
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,

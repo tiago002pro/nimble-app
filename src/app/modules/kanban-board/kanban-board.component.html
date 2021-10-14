@@ -1,17 +1,14 @@
-<div class="kanban-board">
+<div class="kanban-board" cdkDropListGroup>
     <div class="board">
         <div class="content-area">
-            <div class="frame-zone" cdkDropListGroup>
+            <div class="frame-zone">
                 <div *ngFor="let board of kanban.boards">
-                    <!-- <div class="frame-dropzone" 
+                    <div class="frame-dropzone" 
                         cdkDropList
                         cdkDropListOrientation = "horizontal"
-                        [cdkDropListData]="board.columns"
-                        (cdkDropListDropped)="drop($event)"> -->
-                    <div class="frame-dropzone">
-                        <!-- <div class="frame-data" *ngFor="let column of board.columns, ; let i = index" cdkDrag> -->
-                        <div class="frame-data" *ngFor="let column of board.columns, ; let i = index">
-                            <app-kanban-column [column]="column" [indexColumn]="i" [kanban]="kanban"></app-kanban-column>
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="frame-data" *ngFor="let column of board.columns, ; let i = index" cdkDrag>
+                            <app-kanban-column [column]="column" [indexColumn]="i" [kanban]="kanban" [culumnDropList]="culumnDropList"></app-kanban-column>
                         </div>
                         <div class="last-board">
                             <div [ngClass]="showInput == false ? 'new-column' : 'new-column-input'">

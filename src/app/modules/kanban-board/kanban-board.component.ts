@@ -32,6 +32,8 @@ export class KanbanBoardComponent implements OnInit {
     ])
   ])
 
+  culumnDropList = [...this.kanban.boards[0].columns.map(col => col.name)];
+
   showInput: boolean = false
   list!: String
 
@@ -40,22 +42,9 @@ export class KanbanBoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // drop(event: CdkDragDrop<Column[]>) {
-  //   console.log("event,", event);
-    
-  //   if (event.previousContainer === event.container) {
-  //     console.log("IF");
-      
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     console.log("else");
-      
-  //     transferArrayItem(event.previousContainer.data,
-  //                       event.container.data,
-  //                       event.previousIndex,
-  //                       event.currentIndex);
-  //   }
-  // }
+  drop(event: CdkDragDrop<Column[]>) {
+    moveItemInArray(this.kanban.boards[0].columns, event.previousIndex, event.currentIndex);
+  }
 
   newList() {
     this.showInput = !this.showInput

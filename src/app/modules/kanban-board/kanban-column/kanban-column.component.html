@@ -1,4 +1,4 @@
-<div class="frame">
+<div class="frame" cdkDropListGroup>
     <div class="frame-title">
         {{ column.name }}
         <a (click)="deleteList(indexColumn)">
@@ -8,10 +8,12 @@
         </a>
     </div>
     <div class="dropzone"
-        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="culumnDropList"
         [cdkDropListData]="column.cards"
-        (cdkDropListDropped)="drop($event)">
-        <div class="kanban-cards" *ngFor="let card of column.cards"  [cdkDragData]="card" cdkDrag>
+        id="{{column.name}}" 
+        cdkDropList>
+        <div class="kanban-cards" *ngFor="let card of column.cards"  cdkDrag>
             <div class="cards">
                 <div class="content">{{card.name}}</div>
                 <div class="status red"></div>
