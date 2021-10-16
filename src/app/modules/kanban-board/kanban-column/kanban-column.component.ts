@@ -37,7 +37,11 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   newCard(column: Column) {
-    column.cards.push(new Card('New Card on "'+ column.name+'"'))
+    column.cards.push(new Card(Math.trunc(this.getRandomArbitrary()).toString(), 'New Card on "'+ column.name+'"'))
+  }
+
+  getRandomArbitrary() {
+    return Math.random() * (999999 - 100000) + 100000;
   }
 
   deleteList(index: any) {

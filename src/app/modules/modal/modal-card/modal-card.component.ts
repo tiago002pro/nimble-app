@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from '../../kanban-board/models/card.model';
 
 @Component({
   selector: 'app-modal-card',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-card.component.scss']
 })
 export class ModalCardComponent implements OnInit {
+  @Input() card!: Card
+
+  value: String = 'Teste'
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
