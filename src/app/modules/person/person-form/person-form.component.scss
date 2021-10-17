@@ -1,5 +1,18 @@
 .nb-person-form {
+    .board {
+        width: 100vw;
+        height: 100vh;
+        padding: 30px;
+        display: inline-flex;
+        background-size: contain;
+        color: #000 !important;
+    }
 
+    .content-area {
+        background-color: #FFF;
+        padding: 50px;
+        z-index: auto;
+    }
 
     .content-form {
         display: flex;
