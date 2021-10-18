@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { ModalComponent } from './modal.component';
 import { ModalCardComponent } from './modal-card/modal-card.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     declarations: [ModalComponent, ModalCardComponent],
     exports: [ModalComponent, ModalCardComponent]
 })

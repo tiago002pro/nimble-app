@@ -10,21 +10,22 @@
     .title {
         font-size: 24px;
         font-weight: 800;
-
+        display: inline-flex;
     }
 
-    .title input {
-        // box-shadow: 0 0 0 0;
-        // border: 0 none;
-        // outline: 0;
-        width: auto;
+    .title textarea  {
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+        width: 100%;
+        resize: none;
     }
 
-    input:focus, select:focus {
-        // box-shadow: 0 0 0 0;
-        // border: 0 none;
-        // outline: 0;
-    } 
+    textarea:focus { 
+        outline: none !important;
+        border: 5px solid #000 !important;
+        // box-shadow: 2px 2px 10px #000 !important;
+    }
 }
 
 .content-form {

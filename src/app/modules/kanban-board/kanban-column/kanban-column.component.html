@@ -18,7 +18,7 @@
                 <div class="content">#{{card.reference}} - {{card.name}}</div>
                 <div class="status red"></div>
                 <app-modal id="{{card.name}}" [card]="card">
-                    <app-modal-card [card]="card"></app-modal-card>
+                    <app-modal-card [card]="card" [columnName]="column.name"></app-modal-card>
                 </app-modal>
             </div>
         </div>
