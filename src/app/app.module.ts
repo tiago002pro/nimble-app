@@ -27,6 +27,7 @@ import { PersonService } from './modules/person/service/person.service';
 import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
 import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanban-column.component';
 import { ModalModule } from './modules/modal';
+import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import { ModalModule } from './modules/modal';
     NbInputNumberComponent,
     KanbanBoardComponent,
     KanbanColumnComponent,
+    ModalCardTestComponent,
+
   ],
   imports: [
     BrowserModule,
