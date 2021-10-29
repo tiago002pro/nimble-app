@@ -14,14 +14,14 @@ export class KanbanBoardComponent implements OnInit {
   kanban: Kanban = new Kanban("Quadro 1", [
     new Board("Board 1", [
       new Column('Ideas', [
-        new Card('258745', 'Ideas that I need to make'),
+        new Card('258745', 'Ideas that I need to make', 'Tag', 'Description', 'Anexo', 'Activity'),
       ]),
       new Column('Todo', [
-        new Card('654789', 'What I have todo'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
 
       ]),
       new Column('Done', [
-        new Card( '321456', 'I finish this thinks'),
+        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
       ]),
     ])
   ])

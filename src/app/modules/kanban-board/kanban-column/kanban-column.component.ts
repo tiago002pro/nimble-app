@@ -37,7 +37,14 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   newCard(column: Column) {
-    column.cards.push(new Card(Math.trunc(this.getRandomArbitrary()).toString(), 'New Card on "'+ column.name+'"'))
+    column.cards.push(new Card(Math.trunc(
+      this.getRandomArbitrary()).toString(), 
+      'New Card on "'+ column.name+'"',
+      'Tag on "'+ column.name+'"',
+      'Description on "'+ column.name+'"',
+      'Attachment on "'+ column.name+'"',
+      'Activity on "'+ column.name+'"',
+    ))
   }
 
   getRandomArbitrary() {
