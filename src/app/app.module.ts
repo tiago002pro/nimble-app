@@ -27,6 +27,7 @@ import { PersonService } from './modules/person/service/person.service';
 import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
 import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanban-column.component';
 import { ModalModule } from './modules/modal';
+import { PersonModule } from './modules/person/person.module';
 
 @NgModule({
   declarations: [
@@ -34,17 +35,6 @@ import { ModalModule } from './modules/modal';
     BaseComponent,
     SideBarComponent,
     HomeComponent,
-    PersonFormComponent,
-    NbInputTextComponent,
-    NbPersonDataComponent,
-    NbPersonDocumentsComponent,
-    NbPersonLocationComponent,
-    PersonListComponent,
-    NbInputDateComponent,
-    NbInputPhoneComponent,
-    NbInputZipcodeComponent,
-    NbInputCpfcnpjComponent,
-    NbInputNumberComponent,
     KanbanBoardComponent,
     KanbanColumnComponent,
   ],
@@ -56,7 +46,8 @@ import { ModalModule } from './modules/modal';
     TextMaskModule,
     BrowserAnimationsModule,
     DragDropModule,
-    ModalModule
+    ModalModule,
+    PersonModule,
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}, PersonService],
   providers: [],
