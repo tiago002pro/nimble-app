@@ -16,7 +16,7 @@ export class ModalCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.sizeInputName = this.card.name.length
+    this.sizeInputName = this.card.title.length
     this.row = 1
   }
 

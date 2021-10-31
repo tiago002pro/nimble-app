@@ -5,9 +5,10 @@
                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
               </svg>
-            <textarea type="text" value="{{card.title}}" [(ngModel)]="card.title" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"></textarea>
+            <!-- <textarea type="text" value="{{card.name}}" [(ngModel)]="card.name" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"></textarea> -->
+            <textarea type="text" ngModel="Título digitado na textarea" rows="2" cols="56" ></textarea>
         </div>
-        <div class="name-list-card">Na lista <a href="#">{{columnName}}</a></div>
+        <div class="name-list-card">Na lista <a href="">columnName</a></div>
     </div>
     <div class="description">
         <div class="description-title">
@@ -18,7 +19,8 @@
             Descrição
         </div>
         <div class="description-textarea">
-            <textarea type="text" value="{{card.title}}" [(ngModel)]="card.title" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"  placeholder="Adicione uma descrição"></textarea>
+            <!-- <textarea type="text" value="{{card.name}}" [(ngModel)]="card.name" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"  placeholder="Adicione uma descrição"></textarea> -->
+            <textarea type="text" rows="1" cols="56" ></textarea>
             <div class="description-bnt" id="teste">
                 <button type="button" class="btn btn-dark">Salvar</button>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -39,23 +41,8 @@
         </div>
         <div class="activity-textarea">
             <img src="https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/EVXPfw7WAAIp8Sj.jpg?alt=media&token=10947a79-a012-4398-ae34-0beb1aa01f7d" alt="">
-            <textarea type="text" value="{{card.title}}" [(ngModel)]="card.title" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"  placeholder="Adicione uma descrição"></textarea>
+            <!-- <textarea type="text" value="{{card.name}}" [(ngModel)]="card.name" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"  placeholder="Adicione uma descrição"></textarea> -->
+            <textarea type="text" rows="1" cols="50" ></textarea>
         </div>
     </div>
-
-
-      <!-- <input type="text" 
-            class="form-list-item-name"           
-            value="{{teste}}"
-            [ngModel]="teste"
-            [size]="teste.length">
-      {{teste.length}} -->
-
-      <!-- <div class="input-text">
-        <input type="text"
-            value="{{value}}"
-            [ngModel]="value"
-            [size]="size"
-            (ngModelChange)="modelChanged($event)">
-    </div> -->
 </div>
