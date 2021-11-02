@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
@@ -15,6 +16,7 @@ import { NbPersonDocumentsComponent } from "./components/nb-person-documents/nb-
 import { NbPersonLocationComponent } from "./components/nb-person-location/nb-person-location.component";
 import { PersonFormComponent } from "./person-form/person-form.component";
 import { PersonListComponent } from "./person-list/person-list.component";
+import { PersonService } from "./service/person.service";
 
 @NgModule({
     declarations: [

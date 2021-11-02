@@ -2,8 +2,8 @@
     <div class="board">
         <div class="content-area">
             <div class="content-list">
-                <div>
-                    <h2>Lista de {{rule}}</h2>
+                <div class="title">
+                    Lista de {{rule}}
                 </div>
                 
                 <div class="new-person-button">
@@ -25,7 +25,7 @@
                     <tbody>
                         <tr *ngFor="let person of listPerson">
                             <th scope="row">{{person.id}}</th>
-                            <td>{{person.name}}</td>
+                            <td class="align-items">{{person.name}}</td>
                             <td>{{person.dateofbirthorfondation | date:"MM/dd/yyyy"}}</td>
                             <td>{{person.cpf}}{{person.cnpj}}</td>
                             <td class="icon-edit">
