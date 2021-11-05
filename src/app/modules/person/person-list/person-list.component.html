@@ -55,9 +55,9 @@
                         </svg>
                     </div>
                     <div *ngFor="let page of totalPages; let x = index">
-                        <a (click)="getListPerson(x)">
+                        <a (click)="getListPerson(x+1)">
                             <div class="pagination-item">
-                                {{x}}
+                                {{x+1}}
                             </div>
                         </a>
                     </div>
