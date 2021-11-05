@@ -1,49 +1,129 @@
-.main {
-    height: 94vh;
-    width: 85.5vw;
-    background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/plant-leaves-dark.jpg?alt=media&token=f10c1c9e-aa59-440e-aa22-c794b62b58eb)no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.main-inside {
-    height: 94vh;
-    width: 85.5vw;
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.area {
-    background: rbga(255, 255, 255, 0);
-    // backdrop-filter: blur(15px);
-}
-
-.title {
-    background: #fff;
-    text-align: center;
-    font-size: 20px;
-}
-
-.main h1 {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 80px;
-    text-align: center;
-    line-height: 80px;
-}
-
-@media (max-width: 1000px) {
-    .main h1 {
-        font-size: 40px;
-        line-height: 60px;
+.home-component {
+    .main {
+        height: 90vh;
+        width: 85vw;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 30px;
+        left: 30px;
     }
+    
+    .main-inside {
+        height: 90vh;
+        width: 85vw;
+        margin-top: 2vh;
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .area {
+        background: rbga(255, 255, 255, 0);
+        // backdrop-filter: blur(15px);
+    }
+    
     .title {
-        width: 1000px;
-        height: 500px;
+        background: #fff;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .main h1 {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 80px;
+        text-align: center;
+        line-height: 80px;
+    }
+    
+    @media (max-width: 1000px) {
+        .main h1 {
+            font-size: 40px;
+            line-height: 60px;
+        }
+        .title {
+            width: 1000px;
+            height: 500px;
+        }
+    }
+    
+    .base_content {
+        width: calc(100% -200px);
+        height: 100%;
+        left: 50px;
+        position: relative;
+        display: flex;
+        transition: all 0.3s ease;
+        left: 110px;
+    }
+    
+    .base_content.active {
+        left: 200px;
+        position: none;
+    }
+
+    @media(max-width: 1024px) {
+        .base_content {
+            width: calc(100% -150px);
+            left: 60px;
+        }
+        
+        .base_content.active {
+            left: 150px;
+        }
+    }
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    .sidenav {
+        width: 40vw;
+        height: 100vh;
+        background-color: #000;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    
+    .login-main-text {
+        margin-top: 20%;
+        padding: 60px;
+        color: #fff;
+    }
+    
+    .login-main-text h2 {
+        font-weight: 300;
+    }
+    
+    .main {
+        width: 60vw;
+        padding: 0px 10px;
+    }
+    
+    .main-login {
+        background-color: rgba(0, 0, 0, 0.205);
+        backdrop-filter: blur(15px);
+        width: 30vw;
+        padding: 50px;
+        margin: auto;
+        margin-top: 30vh;
+    }
+    
+    .form-group input {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .login-form button {
+        margin-left: 5px;
+    }
+    
+    .btn-black {
+        background-color: #000 !important;
+        color: #fff;
     }
 }

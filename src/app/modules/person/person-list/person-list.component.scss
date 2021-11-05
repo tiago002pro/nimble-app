@@ -1,5 +1,28 @@
 .person-list-component {
+    .board {
+        width: 100vw;
+        height: 100vh;
+        padding: 30px;
+        display: inline-flex;
+        background-size: contain;
+        color: #000 !important;
+    }
 
+    .content-area {
+        background-color: #FFF;
+        padding: 50px;
+        z-index: auto;
+    }
+
+    .content-list {
+        width: 80vw;
+        padding: 40px 0px 40px 0px;
+    }
+
+    .content-list .title {
+        font-size: 40px;
+        font-weight: 600;
+    }
 
     .new-person-button {
         float: right;
@@ -32,6 +55,19 @@
         margin-left: 8px !important;
     }
 
+    .table .thead-dark {
+        text-align: center;
+    } 
+
+    .table tbody {
+        text-align: center;
+    }
+
+    tbody .align-items {
+        text-align: initial;
+        padding-left: 10px
+    }
+
     .pagination-item {
         width: 30px;
         height: 30px;
@@ -55,7 +91,6 @@
 
     .pagination-arrow {
         height: 30px;
-        border-radius: 30px;
         line-height: 30px;
         text-align: center;
         cursor: pointer;
@@ -63,11 +98,59 @@
 
     .pagination-arrow svg {
         color: #343a40;
-        height: 20px;
-        width: 50px;
     }
     
     .limite {
         display: none;
+    }
+
+    @media(max-width: 1024px) {
+        .board {
+            padding: 20px;
+        }
+
+        .content-area {
+            padding: 20px;
+        }
+
+        .content-list {
+            width: 77vw;
+            padding: 10px 0px 10px 0px;
+        }
+
+        .content-list .title {
+            font-size: 20px;
+        }
+
+        .new-person-button {
+            margin-bottom: 5px;
+        }
+
+        .new-person-button button {
+            font-size: 10px;
+        }
+
+        .table .thead-dark {
+            font-size: 13px;
+        }
+
+        .table tbody {
+            font-size: 12px;
+        }
+
+        .pagination-item {
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            line-height: 20px;
+            margin-left: 2px;
+            margin-right: 2px;
+            font-size: 12px;
+        }
+
+        .pagination-arrow {
+            height: 20px;
+            line-height: 20px;
+        }
     }
 }

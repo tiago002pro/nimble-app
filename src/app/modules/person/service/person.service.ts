@@ -8,6 +8,7 @@ import { Person } from '../interface/person.interface';
 })
 export class PersonService {
   url: String = 'https://nimble-back.herokuapp.com/' 
+  // url: String = 'http://localhost:8080'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -41,9 +42,5 @@ export class PersonService {
 
   deleteById(id: any) {
     this.http.delete((this.url) + '/api/person/delete/' + (id)).subscribe(result => {console.log(result)})
-  }
-
-  validateLogin(login: String, password: String) {
-    return this.http.get((this.url) + 'api/user/validate-login?login='+(login)+'&password='+(password)).subscribe(result => result)
   }
 }
