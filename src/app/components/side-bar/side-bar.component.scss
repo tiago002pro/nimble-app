@@ -1,3 +1,11 @@
+$bg-color:#f2f3f8;
+$navbar-bg-color : #242939;
+$navbar-color:#6e7899;
+$sidebar-bg-color:#fff;
+$sidebar-color:#3d4465;
+$sidebar-icon-color:#c4cff9;
+$border-color: #f2f3f8;
+
 .side-bar-component {
     .open-menu-btn {
         position: absolute;
@@ -19,13 +27,14 @@
     .side-bar {
         background: rbga(255, 255, 255, 0);
         backdrop-filter: blur(15px);
-        width: 200px;
+        width: 260px;
         height: 100vh;
         position: absolute;
         top: 0;
         left: -100%;
         transition: 0.6s ease;
         transition-property: left;
+        background-color: $navbar-bg-color;
     }
     
     .side-bar.active {

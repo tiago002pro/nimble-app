@@ -18,10 +18,10 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
   display: flex;  
-  background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/andrew-neel-jtsW--Z6bFw-unsplash.jpg?alt=media&token=57d69b3c-a1ca-4529-8d88-50ed9a6f3d32)no-repeat;
+  // background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/andrew-neel-jtsW--Z6bFw-unsplash.jpg?alt=media&token=57d69b3c-a1ca-4529-8d88-50ed9a6f3d32)no-repeat;
   background-size: cover;
   background-position: center;
-  color: #fff;
+  // color: #fff;
 }
 
 html {
@@ -45,3 +45,11 @@ html {
   border-radius: 5px;
   background: #6c63c4;
 }
+
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+

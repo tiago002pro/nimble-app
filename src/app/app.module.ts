@@ -16,6 +16,7 @@ import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanb
 import { ModalModule } from './modules/modal';
 import { PersonModule } from './modules/person/person.module';
 import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-tes
     KanbanBoardComponent,
     KanbanColumnComponent,
     ModalCardTestComponent,
+    NavbarComponent,
 
   ],
   imports: [
