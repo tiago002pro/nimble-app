@@ -1,51 +1,27 @@
-.login {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+.app-component {
+    .base_content {
+        width: calc(100% -200px);
+        height: 100%;
+        left: 50px;
+        position: relative;
+        display: flex;
+        transition: all 0.3s ease;
+        left: 110px;
+    }
+    
+    .base_content.active {
+        left: 200px;
+        position: none;
+    }
 
-    .sidenav {
-        width: 40vw;
-        height: 100vh;
-        background-color: #000;
-        overflow-x: hidden;
-        padding-top: 20px;
-    }
-    
-    .login-main-text {
-        margin-top: 20%;
-        padding: 60px;
-        color: #fff;
-    }
-    
-    .login-main-text h2 {
-        font-weight: 300;
-    }
-    
-    .main {
-        width: 60vw;
-        padding: 0px 10px;
-    }
-    
-    .main-login {
-        background-color: rgba(0, 0, 0, 0.205);
-        backdrop-filter: blur(15px);
-        width: 30vw;
-        padding: 50px;
-        margin: auto;
-        margin-top: 30vh;
-    }
-    
-    .form-group input {
-        margin-top: 5px;
-        margin-bottom: 15px;
-    }
-    
-    .login-form button {
-        margin-left: 5px;
-    }
-    
-    .btn-black {
-        background-color: #000 !important;
-        color: #fff;
+    @media(max-width: 1024px) {
+        .base_content {
+            width: calc(100% -150px);
+            left: 60px;
+        }
+        
+        .base_content.active {
+            left: 150px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-export class ResponsePageable {
+export class Pageable {
     content: any[] | undefined;
     empty: boolean | undefined;
     first: boolean | undefined;
