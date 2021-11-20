@@ -10,9 +10,10 @@ export class AppComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
+    this.showMenu = true
   }
 
-  reciveHideMenu(value: String) {
-    this.showMenu = value == 'true'
+  reciveShowMenuOut(value: Boolean) {
+    this.showMenu = value
   }
 }

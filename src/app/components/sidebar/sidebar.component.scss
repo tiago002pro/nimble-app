@@ -1,11 +1,3 @@
-$bg-color:#f2f3f8;
-$navbar-bg-color : #242939;
-$navbar-color:#6e7899;
-$sidebar-bg-color:#fff;
-$sidebar-color:#3d4465;
-$sidebar-icon-color:#c4cff9;
-$border-color: #f2f3f8;
-
 .sidebar-component { 
     .sidebar {
         width: 260px;
@@ -13,12 +5,12 @@ $border-color: #f2f3f8;
         top: 0;
         left: -100%;
         transition-property: left;
-        position: absolute;
-        overflow: auto;
-        transition: 0.6s ease;
+        position: fixed;
+        overflow: hidden;
+        transition: 0.2s ease;
         background: rbga(255, 255, 255, 0);
         backdrop-filter: blur(15px);
-        background-color: $navbar-bg-color;
+        background-color: #242939;
     }
     
     .sidebar.active {
@@ -44,7 +36,7 @@ $border-color: #f2f3f8;
     }
     
     .item a:hover {
-        transition: 0.3s ease;
+        transition: 0.2s ease;
         background: #8621F8;
     }
 
@@ -60,7 +52,7 @@ $border-color: #f2f3f8;
     }
     
     .sub-menu {
-        background: $sidebar-color;
+        background: #3d4465;
         display: none;
         transition: 0.2s ease;
     }

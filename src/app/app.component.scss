@@ -4,14 +4,13 @@
         height: calc(100vh - 60px);
         left: 260px;
         top: 60px;
-        // background: red;
         position: fixed;
+        transition: 0.2s ease;
     }
-    
-    @media(max-width: 1024px) {
-        .page {
-            width: 74vw;
-            height: 91vh;
-        }
+
+    .hide {
+        width: calc(100vw - 0px);
+        left: 0px;
+        transition: 0.2s ease;
     }
 }

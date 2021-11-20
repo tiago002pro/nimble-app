@@ -1,8 +1,8 @@
 <div class="app-component">
-  <app-navbar></app-navbar>
+  <app-navbar [showMenuIn]="showMenu" (showMenuOut)="reciveShowMenuOut($event)"></app-navbar>
   <main>
-    <app-sidebar></app-sidebar>
-    <div class="page">
+    <app-sidebar [showMenuIn]="showMenu"></app-sidebar>
+    <div [ngClass]="showMenu ? 'page' : 'page hide'">
       <div class="board">
         <div class="content-area">
           <router-outlet></router-outlet>

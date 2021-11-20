@@ -1,11 +1,11 @@
 <div class="sidebar-component">
-    <div [ngClass]="showMenu == true ? 'sidebar active' : 'sidebar'">
+    <div [ngClass]="showMenuIn ? 'sidebar active' : 'sidebar'">
         <div class="menu" >
             <div class="item" *ngFor="let item of sidebarItem, let i = index">
                 <a class="sub-btn" (click)="dropDown(item.name)" routerLink="{{item.router}}">
                     <i class="{{item.icon}}"></i>
                     {{item.name}}
-                    <i *ngIf="item.sub.length > 0" [ngClass]="item.drop ? 'bi bi-caret-right-fill dropdown rotate' : 'bi bi-caret-right-fill dropdown'"></i>
+                    <i *ngIf="item.sub.length > 0 && showMenuIn" [ngClass]="item.drop ? 'bi bi-caret-right-fill dropdown rotate' : 'bi bi-caret-right-fill dropdown'"></i>
                 </a>
                 <div [ngClass]="item.drop ? 'sub-menu active' : 'sub-menu'" *ngFor="let sub of item.sub">
                     <a class="sub-item" routerLink="{{sub.router}}">{{sub.name}}</a>

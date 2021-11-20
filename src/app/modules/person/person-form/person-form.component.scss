@@ -11,8 +11,7 @@
     }
 
     .content-data-left {
-        width: 60vw;
-        // padding: 20px 0px 20px 0px;
+        width: 70vw;
     }
 
     .button {
@@ -39,7 +38,7 @@
     }
 
     .content-data-right {
-        width: 20vw;
+        width: 30vw;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
@@ -76,49 +75,5 @@
 
     .content-data .input-group .form-control {
         padding: 5px;
-    }
-
-    @media(max-width: 1024px) {
-        .board {
-            padding: 20px;
-        }
-
-        .content-area {
-            padding: 20px;
-        }
-
-        .content-data-left {
-            padding: 10px 0px 10px 0px;
-        }
-
-        .content-area .title {
-            font-size: 20px;
-        }
-
-        .button button {
-            width: 70px;
-            height: 30px;
-            font-size: 11px;
-        }
-
-        
-        .button-back {
-            font-size: 10px;
-        }
-
-        .person-image {
-            // width: 13vw;
-            height: 22vh;
-        }
-
-        .person-image svg {
-            width: 60px;
-        }
-        
-        .content-data .input-group .form-control {
-            font-size: 10px;
-            padding: 2px;
-        }
-
     }
 }

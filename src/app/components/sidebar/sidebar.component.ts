@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   sidebarItem : Array<any> = []
-  showdropDowMenu1 = false
-  showdropDowMenu2 = false
-  showMenu = true;
-  @Output() hideMenu = new EventEmitter()
+  @Input() showMenuIn!: Boolean
   constructor() { }
 
   ngOnInit(): void {
@@ -67,18 +64,9 @@ export class SidebarComponent implements OnInit {
     ]
   }
 
-  seeMenu() {
-    this.showMenu = !this.showMenu
-    const menu = this.showMenu.toString()
-    this.hideMenu.emit(menu)
-    this.sidebarItem.length
-  }
-
   dropDown(name: String) {
     this.sidebarItem.forEach(item => {
       if (item.name == name) {
-        console.log(item);
-        
         item.drop = !item.drop
       }
     })

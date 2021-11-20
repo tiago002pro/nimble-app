@@ -4,6 +4,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 
 * {
   margin: 0;
@@ -19,10 +24,15 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
   display: flex;  
-  // background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/andrew-neel-jtsW--Z6bFw-unsplash.jpg?alt=media&token=57d69b3c-a1ca-4529-8d88-50ed9a6f3d32)no-repeat;
-  // background-size: cover;
-  // background-position: center;
-  // color: #fff;
+  background: #FFF;
+
+  $bg-color:#f2f3f8;
+  $navbar-bg-color : #242939;
+  $navbar-color:#6e7899;
+  $sidebar-bg-color:#fff;
+  $sidebar-color:#3d4465;
+  $sidebar-icon-color:#c4cff9;
+  $border-color: #f2f3f8;
 }
 
 html {
@@ -47,11 +57,3 @@ html {
   border-radius: 5px;
   background: #6c63c4;
 }
-
-
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-
-
