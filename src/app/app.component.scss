@@ -1,27 +1,17 @@
 .app-component {
-    .base_content {
-        width: calc(100% -200px);
-        height: 100%;
-        left: 50px;
-        position: relative;
-        display: flex;
-        transition: all 0.3s ease;
-        left: 110px;
+    .page {
+        width: calc(100vw - 260px);
+        height: calc(100vh - 60px);
+        left: 260px;
+        top: 60px;
+        // background: red;
+        position: fixed;
     }
     
-    .base_content.active {
-        left: 200px;
-        position: none;
-    }
-
     @media(max-width: 1024px) {
-        .base_content {
-            width: calc(100% -150px);
-            left: 60px;
-        }
-        
-        .base_content.active {
-            left: 150px;
+        .page {
+            width: 74vw;
+            height: 91vh;
         }
     }
 }

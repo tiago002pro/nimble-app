@@ -6,7 +6,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { HomeComponent } from './modules/dashboard/home.component';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -17,16 +16,17 @@ import { ModalModule } from './modules/modal';
 import { PersonModule } from './modules/person/person.module';
 import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
     HomeComponent,
     KanbanBoardComponent,
     KanbanColumnComponent,
     ModalCardTestComponent,
     NavbarComponent,
+    SidebarComponent,
 
   ],
   imports: [

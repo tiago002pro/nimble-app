@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -19,8 +20,8 @@ body {
   scroll-behavior: smooth;
   display: flex;  
   // background: url(https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/andrew-neel-jtsW--Z6bFw-unsplash.jpg?alt=media&token=57d69b3c-a1ca-4529-8d88-50ed9a6f3d32)no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background-size: cover;
+  // background-position: center;
   // color: #fff;
 }
 
@@ -34,7 +35,8 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1d1b31;
+  border-radius: 5px;
+  // background: #1d1b31;
 }
 
 ::-webkit-scrollbar-corner {

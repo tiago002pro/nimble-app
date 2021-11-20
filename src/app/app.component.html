@@ -1,24 +1,17 @@
-<!-- <div class="app-component">
-    <div>
-        <app-navbar></app-navbar>
-        <app-side-bar (hideMenu)="reciveHideMenu($event)"></app-side-bar>
-    </div>
-    <div [ngClass]="showMenu == false ? 'base_content' : 'base_content active'">
-        <router-outlet></router-outlet>
-    </div>
-</div> -->
-
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="wrapper default-theme" class="pinned-sidebar">
-    <app-navbar></app-navbar>
-    <main>
-      <app-side-bar></app-side-bar>
-      <div class="pages container-fluid pt-4 pb-4 pl-4 pr-4 ">
-        <router-outlet></router-outlet>
-        <hr>
-        <!-- <app-footer></app-footer> -->
+<div class="app-component">
+  <app-navbar></app-navbar>
+  <main>
+    <app-sidebar></app-sidebar>
+    <div class="page">
+      <div class="board">
+        <div class="content-area">
+          <router-outlet></router-outlet>
+          <!-- <hr> -->
+          <!-- <app-footer></app-footer> -->
+        </div>
       </div>
-      <div class="overlay"></div>
-    </main>
-  </div>
+    </div>
+    <!-- <div class="overlay"></div> -->
+  </main>
+</div>
   
