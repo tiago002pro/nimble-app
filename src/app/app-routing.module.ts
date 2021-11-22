@@ -5,6 +5,9 @@ import { HomeComponent } from './modules/dashboard/home.component';
 import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { PersonFormComponent } from './modules/person/person-form/person-form.component';
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
+import { PaymentComponent } from './modules/finance/payment/payment.component';
+import { ReceivementComponent } from './modules/finance/receivement/receivement.component';
+import { ExtractComponent } from './modules/finance/extract/extract.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +18,9 @@ const routes: Routes = [
     { path: 'person-list/employee/:rule', component: PersonListComponent },
     { path: 'person-form/edit/:id', component: PersonFormComponent },
     { path: 'kanban-board', component: KanbanBoardComponent},
+    { path: 'payment', component: PaymentComponent},
+    { path: 'extract', component: ExtractComponent},
+    { path: 'receivement', component: ReceivementComponent},
     { path: 'modal-card', component: ModalCardTestComponent},
 ];
 

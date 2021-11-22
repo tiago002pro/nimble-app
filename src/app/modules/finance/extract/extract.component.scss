@@ -1,0 +1,57 @@
+.extract-component {
+    padding: 40px;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #242939;
+        border-bottom: 2px solid #8621F8;
+        margin-bottom: 20px;
+    }
+
+    .summary {
+        margin-bottom: 20px;
+    }
+
+    .summary-box {
+        width: 100%;
+        padding: 5px;
+        display: flex;
+
+        .box {
+            height: 80px;
+            width: calc(100% / 5);
+            padding: 10px;
+            border: 1px solid #24293986;
+            text-align: center;
+            display: inline-flex;
+            font-size: 80%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 3px;
+            font-weight: 600;
+        }
+
+        .box-name {
+            color: #242939b7;
+            float: left;
+        }
+
+        .box-value {
+        }
+
+        .negative {
+            color: rgb(255, 0, 0);
+        }
+
+        .positive {
+            color: rgb(7, 192, 7);
+        }
+
+        .box-value img {
+            width: 30px;
+            padding-right: 5px;
+        }
+    }
+}

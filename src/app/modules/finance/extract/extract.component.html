@@ -1,0 +1,20 @@
+<div class="extract-component">
+    <div class="title">Extrato</div>
+    <div class="summary">
+        Resumo
+        <div class="summary-box">
+            <div class="box" *ngFor="let box of summary">
+                <div class="box-name">{{box.name}}</div>
+                <div [ngClass]="box.value < 0 ? 'box-value negative' : 'box-value positive'">{{box.value |  currency:'BRL':true:'1.2-2'}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="summary">
+        Contas
+        <div class="summary-box">
+            <div class="box" *ngFor="let box of account">
+                <div [ngClass]="box.value < 0 ? 'box-value negative' : 'box-value positive'"><img src="{{box.url}}" alt="">{{box.value |  currency:'BRL':true:'1.2-2'}}</div>
+            </div>
+        </div>
+    </div>
+</div>
