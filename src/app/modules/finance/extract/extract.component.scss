@@ -1,72 +1,79 @@
 .extract-component {
-    padding: 40px;
+    margin: 40px;
+    background: #f2f3f8;
 
     .title {
         font-size: 20px;
         font-weight: 600;
-        color: #242939;
-        border-bottom: 2px solid #8621F8;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        color: #6c757d;
     }
 
-    .summary {
-        margin-bottom: 20px;
-    }
+    .extract-area {
+        padding: 20px;
+        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
+        background-color: #fff;
+        color: #6c757d !important;
 
-    .summary i {
-        position: absolute;
-    }
-
-    .summary-title {
-        line-height: 30px;
-        cursor: pointer;
-    }
-
-    .rotate {
-        transform: rotate(90deg);
-        transition: 0.2s ease;
-    }  
-
-    .summary-box {
-        width: 100%;
-        padding: 5px;
-        display: flex;
-
-        .box {
-            height: 80px;
-            // width: calc(100% / 5);
-            width: 200px;
-            padding: 10px;
-            border: 1px solid #24293986;
-            text-align: center;
-            display: inline-flex;
-            font-size: 80%;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 3px;
-            font-weight: 600;
+        .summary {
+            margin-bottom: 20px;
         }
-
-        .box-name {
-            color: #242939b7;
-            float: left;
+    
+        .summary i {
+            position: absolute;
         }
-
-        .box-value {
+    
+        .summary-title {
+            line-height: 30px;
+            cursor: pointer;
         }
-
-        .negative {
-            color: #fe0000;
-        }
-
-        .positive {
-            color: #03a555;
-        }
-
-        .box-value img {
-            width: 50px;
-            padding-right: 10px;
+    
+        .rotate {
+            transform: rotate(90deg);
+            transition: 0.2s ease;
+        }  
+    
+        .summary-box {
+            width: 100%;
+            padding: 5px;
+            display: flex;
+    
+            .box {
+                height: 80px;
+                // width: calc(100% / 5);
+                width: 200px;
+                padding: 10px;
+                border: 1px solid #6c757d59;
+                text-align: center;
+                display: inline-flex;
+                font-size: 80%;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 3px;
+                font-weight: 600;
+            }
+    
+            .box-name {
+                color: #242939b7;
+                float: left;
+            }
+    
+            .box-value {
+            }
+    
+            .negative {
+                color: #fe0000;
+            }
+    
+            .positive {
+                color: #03a555;
+            }
+    
+            .box-value img {
+                width: 50px;
+                padding-right: 10px;
+            }
         }
     }
 }

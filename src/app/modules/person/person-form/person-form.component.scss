@@ -1,23 +1,41 @@
 .nb-person-form {
     padding: 40px;
+    background: #f2f3f8;
+    color: #6c757d;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #6c757d;
+    }
 
     .content-form {
         display: flex;
-    }
-
-    .content-area .title {
-        font-size: 40px;
-        font-weight: 600;
+        padding: 20px;
+        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
+        background-color: #fff;
     }
 
     .content-data-left {
         width: 70vw;
     }
 
+    .content-data-right {
+        width: 30vw;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+
     .button {
         display: grid;
         justify-content: center;
         text-align: center;
+        padding: 20px;
+        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
+        background-color: #fff;
     }
 
     .button button {
@@ -37,12 +55,6 @@
         cursor: pointer;
     }
 
-    .content-data-right {
-        width: 30vw;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
     
     .person-image {
         width: 14vw;
@@ -77,3 +89,29 @@
         padding: 5px;
     }
 }
+
+.btn {
+    font-size: .9rem;
+
+    &.btn-lightning {
+      color: #f0f3ff;
+      background-color: #5b6582;
+      border-color: #5b6582;
+
+      &:hover {
+        background-color: #4c5671;
+      }
+    }
+
+    &.btn-outline-lightning {
+      color: #5b6582;
+      background-color: transparent;
+      border-color: #5b6582;
+
+      &:hover {
+        color: #f0f3ff;
+        background-color: #5b6582;
+        border-color: #5b6582;
+      }
+    }
+  }

@@ -1,9 +1,19 @@
 .nb-person-data {
     margin-bottom: 30px;
+
+    .sub-title {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #5b6582;
+    }
+
     h4 {
         font-weight: 600;
         color: #333333;
     }
+
     .box {
         margin-bottom: 10px;
     }

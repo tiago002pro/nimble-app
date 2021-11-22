@@ -1,13 +1,21 @@
 .person-list-component {
     padding: 40px;
+    background: #f2f3f8;
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #6c757d;
+    }
 
     .content-list {
+        padding: 20px;
+        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
+        background-color: #fff;
+        color: #6c757d;
     }
 
-    .content-list .title {
-        font-size: 40px;
-        font-weight: 600;
-    }
 
     .new-person-button {
         float: right;
