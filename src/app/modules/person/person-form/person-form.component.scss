@@ -11,18 +11,23 @@
     }
 
     .content-form {
-        display: flex;
+        display: grid;
+        // grid-template-columns: repeat(2, 1fr);
         padding: 20px;
         box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
         background-color: #fff;
     }
 
     .content-data-left {
-        width: 70vw;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        // width: 70vw;
     }
 
     .content-data-right {
-        width: 30vw;
+        grid-column-start: 4;
+        grid-column-end: 4;
+        // width: 30vw;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
@@ -30,12 +35,15 @@
 
 
     .button {
-        display: grid;
+        // display: grid;
+        grid-column-start: 1;
+        grid-column-end: 5;
         justify-content: center;
         text-align: center;
-        padding: 20px;
-        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
-        background-color: #fff;
+        margin-top: 40px;
+        // padding: 20px;
+        // box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
+        // background-color: #fff;
     }
 
     .button button {
