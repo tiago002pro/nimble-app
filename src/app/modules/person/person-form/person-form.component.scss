@@ -1,33 +1,16 @@
 .nb-person-form {
-    padding: 40px;
-    background: #f2f3f8;
-    color: #6c757d;
-
-    .title {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        color: #6c757d;
-    }
-
     .content-form {
         display: grid;
-        // grid-template-columns: repeat(2, 1fr);
-        padding: 20px;
-        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
-        background-color: #fff;
     }
 
     .content-data-left {
         grid-column-start: 1;
         grid-column-end: 3;
-        // width: 70vw;
     }
 
     .content-data-right {
         grid-column-start: 4;
         grid-column-end: 4;
-        // width: 30vw;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
@@ -35,34 +18,17 @@
 
 
     .button {
-        // display: grid;
         grid-column-start: 1;
         grid-column-end: 5;
         justify-content: center;
         text-align: center;
         margin-top: 40px;
-        // padding: 20px;
-        // box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
-        // background-color: #fff;
-    }
-
-    .button button {
-        width: 140px;
-        height: 50px;
-        font-size: 20px;
-    }
-
-    @media (max-width: 900px) {
-        .content-area {
-            overflow-y: auto;
-        }
     }
 
     .button-back {
         margin-top: 5px;
         cursor: pointer;
     }
-
     
     .person-image {
         width: 14vw;
@@ -97,29 +63,3 @@
         padding: 5px;
     }
 }
-
-.btn {
-    font-size: .9rem;
-
-    &.btn-lightning {
-      color: #f0f3ff;
-      background-color: #5b6582;
-      border-color: #5b6582;
-
-      &:hover {
-        background-color: #4c5671;
-      }
-    }
-
-    &.btn-outline-lightning {
-      color: #5b6582;
-      background-color: transparent;
-      border-color: #5b6582;
-
-      &:hover {
-        color: #f0f3ff;
-        background-color: #5b6582;
-        border-color: #5b6582;
-      }
-    }
-  }

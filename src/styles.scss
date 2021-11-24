@@ -46,7 +46,7 @@ html {
 
 ::-webkit-scrollbar-track {
   border-radius: 5px;
-  // background: #1d1b31;
+  background: #c4cff9;
 }
 
 ::-webkit-scrollbar-corner {
@@ -55,5 +55,12 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #6c63c4;
+  background: #3d4465;
+}
+
+.content-area {
+  padding: 20px;
+  background: #fff;
+  height: calc(100vh - 180px);
+  box-shadow: 7px 7px 2px rgb(91 101 130 / 10%);
 }

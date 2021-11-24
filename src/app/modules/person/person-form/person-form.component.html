@@ -1,6 +1,6 @@
 <div class="nb-person-form">
-    <div class="title">Cadastrar {{rule}}</div>
-    <div class="content-form">
+    <app-nb-title [title]="'Cadastrar ' + rule"></app-nb-title>
+    <div class="content-form content-area">
         <div class="content-data-left">
             <div class="content-person">
                 <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
@@ -25,8 +25,10 @@
             </div>
         </div>
         <div class="button">
-            <button (click)="save()" type="button" class="btn btn-lightning rounded-0 mb-2 mr-2">Salvar</button>
-            <div class="button-back"><a (click)="back()">Voltar</a></div>
+            <div class="form-group">
+                <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
+                <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back>
+            </div>
         </div>
     </div>
 </div>

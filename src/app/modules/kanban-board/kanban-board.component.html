@@ -1,7 +1,8 @@
 <div class="kanban-board" cdkDropListGroup>
+    <app-nb-title [title]="'Kanban'"></app-nb-title>
     <div class="frame-zone">
         <div *ngFor="let board of kanban.boards">
-            <div class="frame-dropzone" 
+            <div class="frame-dropzone content-area " 
                 cdkDropList
                 cdkDropListOrientation = "horizontal"
                 (cdkDropListDropped)="drop($event)">

@@ -1,20 +1,5 @@
 .extract-component {
-    margin: 40px;
-    background: #f2f3f8;
-
-    .title {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        color: #6c757d;
-    }
-
     .extract-area {
-        padding: 20px;
-        box-shadow: 1px 1px 2px rgb(91 101 130 / 10%);
-        background-color: #fff;
-        color: #6c757d !important;
-
         .summary {
             margin-bottom: 20px;
         }
@@ -40,7 +25,6 @@
     
             .box {
                 height: 80px;
-                // width: calc(100% / 5);
                 width: 200px;
                 padding: 10px;
                 border: 1px solid #6c757d59;

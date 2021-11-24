@@ -1,12 +1,8 @@
 <div class="person-list-component">
-    <div class="title">
-        Lista de {{rule}}
-    </div>
-    <div class="content-list">
+    <app-nb-title [title]="'Lista de ' + rule"></app-nb-title>
+    <div class="content-list content-area">
         <div class="new-person-button">
-            <button routerLink="/person-form/{{rule}}" type="button" class="btn btn-primary">
-                Novo {{ruleTitle}}
-            </button>
+            <app-nb-button [label]="'Novo'" routerLink="/person-form/{{rule}}" ></app-nb-button>
         </div>
         <div class="table-responsive-md">
             <table class="table table-hover">

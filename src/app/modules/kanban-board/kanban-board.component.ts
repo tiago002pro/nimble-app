@@ -18,7 +18,31 @@ export class KanbanBoardComponent implements OnInit {
       ]),
       new Column('Todo', [
         new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
+        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
 
+      ]),
+      new Column('Done', [
+        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
+      ]),
+      new Column('Done', [
+        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
+      ]),
+      new Column('Done', [
+        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
+      ]),
+      new Column('Done', [
+        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
       ]),
       new Column('Done', [
         new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
