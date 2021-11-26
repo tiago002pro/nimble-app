@@ -36,16 +36,6 @@ export class KanbanBoardComponent implements OnInit {
         new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
       ]),
       new Column('Done', [
-        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
-      ]),
-      new Column('Done', [
-        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
-      ]),
-      new Column('Done', [
-        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
-      ]),
-      new Column('Done', [
-        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
       ]),
     ])
   ])
