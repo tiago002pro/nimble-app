@@ -10,18 +10,18 @@ import { ReceivementComponent } from './modules/finance/receivement/receivement.
 import { ExtractComponent } from './modules/finance/extract/extract.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'person-form/:rule', component: PersonFormComponent },
-    { path: 'person-list/client/:rule', component: PersonListComponent },
-    { path: 'person-list/provider/:rule', component: PersonListComponent },
-    { path: 'person-list/employee/:rule', component: PersonListComponent },
-    { path: 'person-form/edit/:id', component: PersonFormComponent },
-    { path: 'kanban-board', component: KanbanBoardComponent},
-    { path: 'payment', component: PaymentComponent},
-    { path: 'extract', component: ExtractComponent},
-    { path: 'receivement', component: ReceivementComponent},
-    { path: 'modal-card', component: ModalCardTestComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'person-form/:rule', component: PersonFormComponent },
+  { path: 'person-list/client/:rule', component: PersonListComponent },
+  { path: 'person-list/provider/:rule', component: PersonListComponent },
+  { path: 'person-list/employee/:rule', component: PersonListComponent },
+  { path: 'person-form/edit/:id', component: PersonFormComponent },
+  { path: 'kanban-board', component: KanbanBoardComponent},
+  { path: 'payment', component: PaymentComponent},
+  { path: 'extract', component: ExtractComponent},
+  { path: 'receivement', component: ReceivementComponent},
+  { path: 'modal-card', component: ModalCardTestComponent},
 ];
 
 @NgModule({

@@ -56,13 +56,13 @@ export class SidebarComponent implements OnInit {
         drop: false,
         sub: []
       },
-      {
-        name: " Display Card",
-        icon: "bi bi-clipboard-data",
-        router: "modal-card",
-        drop: false,
-        sub: []
-      },
+      // {
+      //   name: " Display Card",
+      //   icon: "bi bi-clipboard-data",
+      //   router: "modal-card",
+      //   drop: false,
+      //   sub: []
+      // },
     ]
   }
 

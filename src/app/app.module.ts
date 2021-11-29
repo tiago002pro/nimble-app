@@ -36,6 +36,7 @@ import ptBr from '@angular/common/locales/pt';
 import { NbButtonComponent } from './modules/components/nb-button/nb-button.component';
 import { NbButtonBackComponent } from './modules/components/nb-button-back/nb-button-back.component';
 import { NbTitleComponent } from './modules/components/nb-title/nb-title.component';
+import { LoginComponent } from './views/login/login.component';
 registerLocaleData(ptBr)
 
 @NgModule({
@@ -64,6 +65,7 @@ registerLocaleData(ptBr)
     NbButtonComponent,
     NbButtonBackComponent,
     NbTitleComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   showMenu!: Boolean 
+  validated: Boolean = false
+
   constructor() {}
 
   ngOnInit(): void {
@@ -15,5 +17,9 @@ export class AppComponent implements OnInit{
 
   reciveShowMenuOut(value: Boolean) {
     this.showMenu = value
+  }
+
+  reciveValidatedLogin(value: Boolean) {
+    this.validated = value
   }
 }

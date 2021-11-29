@@ -1,4 +1,8 @@
-<div class="app-component">
+<div class="app-component" *ngIf="!validated">
+  <app-login (validatedLogin)="reciveValidatedLogin($event)"></app-login>
+</div>
+
+<div class="app-component" *ngIf="validated">
   <app-navbar [showMenuIn]="showMenu" (showMenuOut)="reciveShowMenuOut($event)"></app-navbar>
   <main>
     <app-sidebar [showMenuIn]="showMenu"></app-sidebar>
