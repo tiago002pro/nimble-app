@@ -1,163 +1,144 @@
 .kanban-board {
-    .board {
-        width: 100vw;
-        height: 100vh;
-        padding: 30px;
-        display: inline-flex;
-        background-size: contain;
-        color: #000 !important;
-    }
-
-    .content-area {
-        // background-color: #FFF;
-        padding: 50px;
+    .frame-zone {
         z-index: auto;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 400;
     }
-}
+  
+    .frame-dropzone {
+        width: 100%;
+        display: inline-flex;
+        overflow-x: scroll;
 
-.frame-zone {
-    width: 100vw;
-    height: 100vh;
-    display: inline-flex;
-    z-index: auto;
-    overflow-x: scroll;
-    background-size: contain;
-    color: #000 !important;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
-}
-
-.frame-dropzone {
-    width: 80vw;
-    height: 90vh;
-    overflow-x: auto;
-    display: inline-flex;
-
-    .cdk-drag-preview {
-        box-sizing: border-box;
-        border-radius: 4px;
-        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                    0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        .cdk-drag-preview {
+            box-sizing: border-box;
+            border-radius: 4px;
+            box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        }
+        
+        .cdk-drag-placeholder {
+            opacity: 0;
+        }
+        
+        .cdk-drag-animating {
+            transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+        }
+        
+        .frame-dropzone.cdk-drop-list-dragging .frame-data:not(.cdk-drag-placeholder) {
+            transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+        }
     }
-    
-    .cdk-drag-placeholder {
-        opacity: 0;
+  
+    .last-board {
+        color: #3d4465;
+
+        .new-column {
+            height: 40px;
+            margin: 5px;
+            border-radius: 3px;
+            background: rgba(129, 129, 129, 0.199);
+            transition: 0.3s ease;
+        }
+        
+        .new-column-input {
+            width: 260px;
+            height: 135px;
+            margin: 10px;
+            border-radius: 3px;
+            background: #ebecf0;
+            transition: 0.3s ease;
+            display: table;
+        }
+
+        .new-board {
+            width: 280px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #6e7899;
+            box-shadow: 1px 1px 2px 1px rgb(36 41 57 / 48%);
+        }
+
+        .new-board:hover {
+            color: #ced2df;
+            background-color: #242939;
+        }
+        
+        .new-board a {
+            display: flex;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .active {
+            color: #3d4465;
+        }
+        
+        .button-new-board {
+            font-weight: 800;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+        
+        input {
+            background: transparent;
+        }
+        
+        input:focus { 
+            outline: none !important;
+            border-color: #fff;
+            box-shadow: 0 0 2px #fff;
+        }
+        
+        .hide-input {
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+        
+        .input-text {
+            width: 280px;
+            transition: 0.3s ease;
+            box-shadow: 3px 3px 2px 1px rgb(36 41 57 / 48%);
+        }
+        
+        .input-text input {
+            width: 90%;
+            height: 40px;
+            font-size: 18px;
+            margin: auto;
+            border-radius: 4px;
+            border: 1px solid rgba(145, 145, 145, 0.589);
+            color: #121212;
+        }
+           
+        .new-list-bottom {
+            color: #ced2df;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+        
+        .new-list-bottom .close-input {
+            cursor: pointer;
+        }
+        
+        .close-input svg {
+            width: 25px;
+            height: 25px;
+            transition: 0.3s ease;
+            margin: 0.3rem;
+        }
+        
+        .close-input svg:hover {
+            width: 30px;
+            height: 30px;
+            transition: 0.3s ease;
+            transform: rotate(360deg);
+            color: #3d4465;
+            margin: 0.3rem;
+        }
     }
-    
-    .cdk-drag-animating {
-        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
-    
-    .frame-dropzone.cdk-drop-list-dragging .frame-data:not(.cdk-drag-placeholder) {
-        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
-}
-
-.last-board {
-}
-
-.new-column {
-    height: 40px;
-    margin: 0 10px;
-    border-radius: 3px;
-    background: rgba(129, 129, 129, 0.199);
-    transition: 0.3s ease;
-}
-
-.new-column-input {
-    width: 260px;
-    height: 135px;
-    margin: 0 10px;
-    border-radius: 3px;
-    background: #ebecf0;
-    transition: 0.3s ease;
-}
-
-.new-board a {
-    width: 260px;
-    height: 40px;
-    line-height: 40px;
-    display: flex;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-.active {
-    color: #000;
-}
-
-.button-new-board {
-    height: 40px;
-    font-weight: 800;
-    padding-left: 10px;
-    line-height: 40px;
-    text-transform: uppercase;
-}
-
-.button-new-board svg{
-    width: 15px;
-    height: 15px;
-    margin: 0 8px 4px 8px;
-}
-
-input {
-    background: transparent;
-}
-
-input:focus { 
-    outline: none !important;
-    border-color: #fff;
-    box-shadow: 0 0 2px #fff;
-}
-
-.hide-input {
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-.input-text {
-    transition: 0.3s ease;
-}
-
-.input-text input {
-    width: 90%;
-    height: 40px;
-    padding: 20px;
-    font-size: 18px;
-    margin: auto;
-    border-radius: 4px;
-    border: 1px solid rgba(145, 145, 145, 0.589);
-    color: #121212;
-}
-
-.input-bottom {
-    color: #ced2df;
-    margin-top: 7px;
-}
-
-
-.btn {
-    margin-left: 12px;
-}
-
-.input-bottom a {
-    cursor: pointer;
-}
-
-.input-bottom svg {
-    margin-left: 78px;
-    width: 25px;
-    height: 25px;
-    transition: 0.3s ease;
-}
-
-.input-bottom svg:hover {
-    width: 30px;
-    height: 30px;
-    transition: 0.3s ease;
-    transform: rotate(360deg);
-    color: #121212;
 }

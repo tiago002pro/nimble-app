@@ -137,3 +137,25 @@
     width: 80vw;
     display: flex;
 }
+
+
+.teste {
+    // background-color: aqua;
+    height: 500px;
+}
+
+.box {
+    // background: red;
+    width: 50px;
+    height: 50px;
+    animation: movement 3s infinite alternate;
+}
+
+@keyframes movement {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}

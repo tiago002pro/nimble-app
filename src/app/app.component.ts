@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
-import { PersonService } from './modules/person/service/person.service';
-
 
 @Component({
   selector: 'app-root',
@@ -10,14 +7,19 @@ import { PersonService } from './modules/person/service/person.service';
 })
 export class AppComponent implements OnInit{
   showMenu!: Boolean 
+  validated: Boolean = false
 
-  constructor(
-  ) {}
+  constructor() {}
 
   ngOnInit(): void {
+    this.showMenu = true
   }
 
-  reciveHideMenu(value: String) {
-    this.showMenu = value == 'true'
+  reciveShowMenuOut(value: Boolean) {
+    this.showMenu = value
+  }
+
+  reciveValidatedLogin(value: Boolean) {
+    this.validated = value
   }
 }

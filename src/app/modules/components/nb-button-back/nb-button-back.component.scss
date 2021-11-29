@@ -1,0 +1,15 @@
+.btn {
+  margin: 0.3rem;
+
+  &.btn-outline-lightning {
+    color: #5b6582;
+    background-color: transparent;
+    border-color: #5b6582;
+
+    &:hover {
+      color: #f0f3ff;
+      background-color: #5b6582;
+      border-color: #5b6582;
+    }
+  }
+}

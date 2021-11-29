@@ -1,0 +1,23 @@
+<div class="login-component">
+    <div class="login">
+        <div class="left-login">
+            <h1>Faça login<br>E entre para o nosso time</h1>
+            <img class="left-login-image"
+            src="https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/outer-space-animate.svg?alt=media&token=0d8be7c0-9490-4144-8280-507666970854" 
+            alt="">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <div class="textfield">
+                    <label for="user">Usuário</label>
+                    <input type="text" name="user" placeholder="Usuário" [(ngModel)]="login">
+                </div>
+                <div class="textfield">
+                    <label for="user">Senha</label>
+                    <input type="password" name="password" placeholder="Senha" [(ngModel)]="password">
+                </div>
+                <button class="btn-login" (click)=doLogin()>Login</button>
+            </div>
+        </div>
+    </div>
+</div>

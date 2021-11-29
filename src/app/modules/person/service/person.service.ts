@@ -1,6 +1,6 @@
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResponsePageable } from 'src/app/components/shared/model/reponsePageable.model';
+import { Pageable } from '../../../model/pageable.model';
 import { Person } from '../interface/person.interface';
 
 @Injectable({
@@ -33,7 +33,7 @@ export class PersonService {
   }
 
   getPersonListByRule(rule: String, page: number) {
-    return this.http.get<ResponsePageable>((this.url) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size=10') 
+    return this.http.get<Pageable>((this.url) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size=10') 
   }
 
   loadById(id: any) {
@@ -42,5 +42,13 @@ export class PersonService {
 
   deleteById(id: any) {
     this.http.delete((this.url) + '/api/person/delete/' + (id)).subscribe(result => {console.log(result)})
+  }
+
+  validateLogin(login: String, password: String) {
+    return this.http.get((this.url) + '/api/user/validate-login?login='+(login)+'&password='+(password)).subscribe(result => result)
+  }
+
+  authenticatedUser(username: String) {
+    return this.http.get<any>((this.url) + '/api/authenticated/user?username=' + (username))
   }
 }

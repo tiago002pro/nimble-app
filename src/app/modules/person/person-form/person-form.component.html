@@ -1,35 +1,33 @@
 <div class="nb-person-form">
-    <div class="board">
-        <div class="content-area">
-            <div class="title">Cadastrar {{rule}}</div>
-            <div class="content-form">
-                <div class="content-data-left">
-                    <div class="content-person">
-                        <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
-                    </div>
-                    <div class="content-person">
-                        <app-nb-person-data [entity]="entity" [phone]="phone" [email]="email" [typePerson]="typePerson"></app-nb-person-data>
-                    </div>
-                    <div class="content-person">
-                        <app-nb-person-location [entity]="entity" [address]="address"></app-nb-person-location>
-                    </div>
+    <app-nb-title [title]="'Cadastrar ' + rule"></app-nb-title>
+    <div class="content-form content-area">
+        <div class="content-data-left">
+            <div class="content-person">
+                <app-nb-person-documents [entity]="entity" [document]="document" [typePerson]="typePerson" (doc)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-person-documents>
+            </div>
+            <div class="content-person">
+                <app-nb-person-data [entity]="entity" [phone]="phone" [email]="email" [typePerson]="typePerson"></app-nb-person-data>
+            </div>
+            <div class="content-person">
+                <app-nb-person-location [entity]="entity" [address]="address"></app-nb-person-location>
+            </div>
+        </div>
+        <div class="content-data-right">
+            <div class="content-data">
+                <div class="person-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                        <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                    </svg>
                 </div>
-                <div class="content-data-right">
-                    <div class="content-data">
-                        <div class="person-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
-                                <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
-                            </svg>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control">
-                        </div>
-                    </div>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control">
                 </div>
             </div>
-            <div class="button">
-                <button (click)="save()" type="button" class="btn btn-dark">Salvar</button>
-                <div class="button-back"><a (click)="back()">Voltar</a></div>
+        </div>
+        <div class="button">
+            <div class="form-group">
+                <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
+                <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back>
             </div>
         </div>
     </div>

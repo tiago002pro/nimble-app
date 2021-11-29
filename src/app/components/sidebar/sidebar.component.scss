@@ -1,0 +1,72 @@
+.sidebar-component { 
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        transition-property: left;
+        position: fixed;
+        overflow: hidden;
+        transition: 0.2s ease;
+        background: rbga(255, 255, 255, 0);
+        backdrop-filter: blur(15px);
+        background-color: #242939;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+
+    .menu {
+        margin-top: 80px;
+    }
+    
+    .item {
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .item a {
+        padding: 5px 30px;
+        line-height: 60px;
+        font-size: 16px;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .item a:hover {
+        transition: 0.2s ease;
+        background: #8621F8;
+    }
+
+    .item i {
+        margin-right: 15px;
+        width: 16px;
+    }
+
+    a .dropdown {
+        position: absolute;
+        right: 0;
+        transition: 0.2s ease;
+    }
+    
+    .sub-menu {
+        background: #3d4465;
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    .sub-menu.active {
+        height: 70px;
+        display: block;
+    }
+    
+    .sub-menu a {
+        padding-left: 50px;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+    }
+}
