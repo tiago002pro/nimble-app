@@ -1,4 +1,6 @@
 .nb-input-cpfcnpj {
+    color: #242939;
+
     label {
         margin-bottom: 5px;
     }
@@ -9,18 +11,28 @@
         padding: 20px;
         font-size: 18px;
         border-radius: 2px;
-        border: 1px solid rgba(145, 145, 145, 0.589);
+        border: 1px solid rgb(110 120 153 / 57%);
+        color: #242939;
     }
 
-    @media(max-width: 1024px) {
-        label {
-            font-size: 12px;
-        }
-
-        .input-text input {
-            height: 30px;
-            padding: 10px;
-            font-size: 12px;
-        }
+    .input-text input:focus {
+        color: #242939;
+        border: 2px solid #242939;
     }
+
+    input::placeholder {
+        color: rgb(110 120 153 / 57%);
+    }
+
+    // @media(max-width: 1024px) {
+    //     label {
+    //         font-size: 12px;
+    //     }
+
+    //     .input-text input {
+    //         height: 30px;
+    //         padding: 10px;
+    //         font-size: 12px;
+    //     }
+    // }
 }

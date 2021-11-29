@@ -5,7 +5,7 @@
 
     .content-data-left {
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 4;
     }
 
     .content-data-right {
@@ -33,7 +33,8 @@
     .person-image {
         width: 14vw;
         height: 25vh;
-        border: 2px solid rgba(2, 5, 7, 0.089);
+        // border: 2px solid rgba(2, 5, 7, 0.089);
+        border: 2px solid rgb(110 120 153 / 57%);
         display: flex;
         justify-content: center;
         border-radius: 2px;
@@ -45,7 +46,8 @@
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        color: rgba(2, 5, 7, 0.411);
+        // color: rgba(2, 5, 7, 0.411);
+        color: #6e7899;
         width: 100px;
     }
 

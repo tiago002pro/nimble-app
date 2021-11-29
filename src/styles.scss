@@ -59,9 +59,19 @@ html {
   background: #3d4465;
 }
 
+::-webkit-input-placeholder {
+  color: rgb(110 120 153 / 57%);
+}
+
 .content-area {
   padding: 20px;
   background: #fff;
   height: calc(100vh - 180px);
   box-shadow: 7px 7px 2px rgb(91 101 130 / 10%);
+}
+
+.sub-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #242939;
 }
