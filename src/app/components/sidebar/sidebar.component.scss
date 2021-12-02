@@ -8,9 +8,8 @@
         position: fixed;
         overflow: hidden;
         transition: 0.2s ease;
-        background: rbga(255, 255, 255, 0);
-        backdrop-filter: blur(15px);
-        background-color: #242939;
+        background: #fff;
+        box-shadow: 7px 7px 2px rgb(91 101 130 / 10%);
     }
     
     .sidebar.active {
@@ -27,22 +26,23 @@
     }
     
     .item a {
-        padding: 5px 30px;
-        line-height: 60px;
+        padding: 5px 10px;
+        // line-height: 60px;
         font-size: 16px;
         display: block;
         text-decoration: none;
-        color: #fff;
+        color: #3d4465;
     }
     
     .item a:hover {
         transition: 0.2s ease;
-        background: #8621F8;
+        background: #6e78997a;
     }
 
     .item i {
         margin-right: 15px;
         width: 16px;
+        color: #c4cff9;
     }
 
     a .dropdown {
@@ -52,18 +52,18 @@
     }
     
     .sub-menu {
-        background: #3d4465;
+        // background: #3d4465;
         display: none;
         transition: 0.2s ease;
     }
 
     .sub-menu.active {
-        height: 70px;
+        // height: 70px;
         display: block;
     }
     
     .sub-menu a {
-        padding-left: 50px;
+        padding-left: 70px;
     }
 
     .rotate {
