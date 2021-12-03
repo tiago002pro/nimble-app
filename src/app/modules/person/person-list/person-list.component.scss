@@ -4,12 +4,6 @@
         margin-bottom: 10px;
     }
 
-    .table .thead-dark {
-        color: #fff;
-        background-color: #212529;
-        border-color: #32383e;
-    }
-
     .icon-edit a {
         color: #343a40;
         text-align: center;
@@ -17,7 +11,7 @@
     }
 
     .icon-edit i {
-        margin-left: 12px;
+        color: rgba(#3d4465, .9);
     }
 
     .page-item a {
@@ -34,21 +28,13 @@
         text-align: center;
     } 
 
-    .table tbody {
-        text-align: center;
-    }
-
-    .table thead {
-        text-align: center;
-    }
-
     .pagination-item {
         width: 30px;
         height: 30px;
         border-radius: 30px;
         line-height: 30px;
         text-align: center;
-        background: #343a40;
+        background: #3d4465;
         cursor: pointer;
         margin-left: 4px;
         margin-right: 4px;
@@ -71,7 +57,7 @@
     }
 
     .pagination-arrow svg {
-        color: #343a40;
+        color: #3d4465;
     }
     
     .limite {

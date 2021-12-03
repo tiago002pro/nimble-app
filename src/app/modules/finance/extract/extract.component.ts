@@ -9,6 +9,19 @@ export class ExtractComponent implements OnInit {
   summary: Array<any> = [{show: Boolean}, {item: Array<any>()}]
   account!: Array<any>
 
+  entries: Array<any> = [
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+    {date: '20/09/2021', historic: 'Depósito em cheque', document: "Nº 1589", value: 500.00, balance: 510.00},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
