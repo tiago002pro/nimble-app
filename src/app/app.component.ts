@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,16 @@ export class AppComponent implements OnInit{
   showMenu!: Boolean 
   validated: Boolean = false
 
-  constructor() {}
+  constructor(
+    private ngxService: NgxUiLoaderService
+  ) {}
 
   ngOnInit(): void {
     this.showMenu = true
+    this.ngxService.start()
+    setTimeout(() => {
+      this.ngxService.stop()
+    }, 2000)
   }
 
   reciveShowMenuOut(value: Boolean) {

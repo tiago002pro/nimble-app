@@ -37,7 +37,40 @@ import { NbButtonComponent } from './modules/components/nb-button/nb-button.comp
 import { NbButtonBackComponent } from './modules/components/nb-button-back/nb-button-back.component';
 import { NbTitleComponent } from './modules/components/nb-title/nb-title.component';
 import { LoginComponent } from './views/login/login.component';
+import { NgxUiLoaderConfig, NgxUiLoaderModule } from 'ngx-ui-loader';
 registerLocaleData(ptBr)
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig =
+{
+  "bgsColor": "red",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "rectangle-bounce-pulse-out-rapid",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#00ff88",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "double-bounce",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgb(32,27,44)",
+  "pbColor": "red",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+}
 
 @NgModule({
   declarations: [
@@ -76,6 +109,7 @@ registerLocaleData(ptBr)
     BrowserAnimationsModule,
     DragDropModule,
     ModalModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [
