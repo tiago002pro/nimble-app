@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -52,7 +52,7 @@ export class SidebarComponent implements OnInit {
       {
         name: "Relatórios",
         icon: "fas fa-chart-pie",
-        router: "",
+        router: "/report",
         drop: false,
         sub: []
       },

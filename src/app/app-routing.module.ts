@@ -8,6 +8,7 @@ import { PersonListComponent } from './modules/person/person-list/person-list.co
 import { PaymentComponent } from './modules/finance/payment/payment.component';
 import { ReceivementComponent } from './modules/finance/receivement/receivement.component';
 import { ExtractComponent } from './modules/finance/extract/extract.component';
+import { ReportComponent } from './modules/report/report/report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'extract', component: ExtractComponent},
   { path: 'receivement', component: ReceivementComponent},
   { path: 'modal-card', component: ModalCardTestComponent},
+  { path: 'report', component: ReportComponent},
 ];
 
 @NgModule({

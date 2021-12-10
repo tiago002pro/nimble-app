@@ -37,36 +37,37 @@ import { NbButtonComponent } from './modules/components/nb-button/nb-button.comp
 import { NbButtonBackComponent } from './modules/components/nb-button-back/nb-button-back.component';
 import { NbTitleComponent } from './modules/components/nb-title/nb-title.component';
 import { LoginComponent } from './views/login/login.component';
-import { NgxUiLoaderConfig, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ReportComponent } from './modules/report/report/report.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
 {
-  "bgsColor": "red",
-  "bgsOpacity": 0.5,
-  "bgsPosition": "bottom-right",
-  "bgsSize": 60,
-  "bgsType": "rectangle-bounce-pulse-out-rapid",
-  "blur": 5,
+  "bgsColor": "#00ff89",
+  "bgsOpacity": 1,
+  "bgsPosition": "center-center",
+  "bgsSize": 150,
+  "bgsType": "ball-spin-fade-rotating",
+  "blur": 9,
   "delay": 0,
   "fastFadeOut": true,
-  "fgsColor": "#00ff88",
+  "fgsColor": "#77ffc0",
   "fgsPosition": "center-center",
-  "fgsSize": 60,
-  "fgsType": "double-bounce",
-  "gap": 24,
+  "fgsSize": 140,
+  "fgsType": "three-strings",
+  "gap": 40,
   "logoPosition": "center-center",
   "logoSize": 120,
   "logoUrl": "",
   "masterLoaderId": "master",
   "overlayBorderRadius": "0",
   "overlayColor": "rgb(32,27,44)",
-  "pbColor": "red",
-  "pbDirection": "ltr",
-  "pbThickness": 3,
-  "hasProgressBar": true,
-  "text": "",
-  "textColor": "#FFFFFF",
+  "pbColor": "#6f3de7",
+  "pbDirection": "rtl",
+  "pbThickness": 10,
+  "hasProgressBar": false,
+  "text": "CARREGANDO",
+  "textColor": "#77ffc0",
   "textPosition": "center-center",
   "maxTime": -1,
   "minTime": 300
@@ -99,6 +100,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NbButtonBackComponent,
     NbTitleComponent,
     LoginComponent,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,6 +112,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     DragDropModule,
     ModalModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

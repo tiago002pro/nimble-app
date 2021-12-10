@@ -7,7 +7,7 @@ import { Person } from '../interface/person.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  url: String = 'https://nimble-back.herokuapp.com/' 
+  url: String = 'https://nimble-back.herokuapp.com' 
   // url: String = 'http://localhost:8080'
 
   httpOptions = {
@@ -25,7 +25,7 @@ export class PersonService {
   }
 
   createIndividual(entity: any)  {
-    return this.http.post((this.url) + '/api/person-individual/form', entity).subscribe(result => {console.log(result)})
+    return this.http.post((this.url) + '/api/person-individual/form', entity)
   }
 
   updateIndividual(entity: any)  {
