@@ -13,8 +13,8 @@
         [cdkDropListData]="column.cardList"
         id="{{column.name}}" 
         cdkDropList>
-        <div class="kanban-cards" *ngFor="let card of column.cardList" cdkDrag>
-            <div class="cards">
+        <div class="kanban-cards" *ngFor="let card of cards" cdkDrag>
+            <div class="cards" *ngIf="getCard(card, column.id)">
                 <div class="content">#{{card.id}} - {{card.title}}</div>
                 <div class="content">#{{column.name}}</div>
                 <div class="status red"></div>

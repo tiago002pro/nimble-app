@@ -22,6 +22,7 @@ export class KanbanBoardComponent implements OnInit {
   async ngOnInit() {
     this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
     console.log("this.kanban", this.kanban);
+    console.log("this.boardList", this.kanban.boardList[0].listCardList);
     
     this.culumnDropList = [...this.kanban.boardList[0].listCardList.map(col => col.name)];
   }

@@ -4,6 +4,7 @@ import { ModalService } from '../../modal';
 import { Card } from '../interface/kanban.card.interface';
 import { Kanban } from '../interface/kanban.interface';
 import { ListCard } from '../interface/kanban.listcard.interface';
+import { KanbanSevice } from '../service/kanban.service';
 
 @Component({
   selector: 'app-kanban-column',
@@ -16,23 +17,32 @@ export class KanbanColumnComponent implements OnInit {
   @Input() indexColumn!: number
   @Input() kanban!: Kanban
   @Input() culumnDropList!: any
+  cards!: Array<Card>
 
   constructor(
-    public modalService: ModalService
+    public modalService: ModalService,
+    public kanbanService: KanbanSevice,
   ) { }
 
-  ngOnInit(): void {
-    
+  async ngOnInit() {
+    this.cards = await this.kanbanService.getAllCards().toPromise().then(response => response)
   }
 
   drop(event: CdkDragDrop<Card[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log("event.previousContainer", event.previousContainer);
+      console.log("event.container", event.container);
+      
     } else {
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
+                        console.log("event.previousContainer.data", event.previousContainer.data);
+                        console.log("event.container.data", event.container.data);
+                        console.log("event.previousIndex", event.previousIndex);
+                        console.log("event.currentIndex", event.currentIndex);
     }
   }
 
@@ -63,5 +73,9 @@ export class KanbanColumnComponent implements OnInit {
 
   closeModal(id: String) {
     this.modalService.close(id.toString());
+  }
+
+  getCard(card: Card, id: any) {
+    return card.listCard?.id === id;
   }
 }

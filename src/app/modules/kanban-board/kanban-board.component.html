@@ -1,12 +1,12 @@
 <div class="kanban-board" cdkDropListGroup>
     <app-nb-title [title]="'Kanban'"></app-nb-title>
     <div class="frame-zone">
-        <div *ngFor="let board of kanban.boardList">
+        <div>
             <div class="frame-dropzone content-area " 
                 cdkDropList
                 cdkDropListOrientation = "horizontal"
                 (cdkDropListDropped)="drop($event)">
-                <div class="frame-data" *ngFor="let column of board.listCardList, ; let i = index" cdkDrag>
+                <div class="frame-data" *ngFor="let column of kanban.boardList[0].listCardList, ; let i = index" cdkDrag>
                     <app-kanban-column [column]="column" [indexColumn]="i" [kanban]="kanban" [culumnDropList]="culumnDropList"></app-kanban-column>
                 </div>
                 <div class="last-board">

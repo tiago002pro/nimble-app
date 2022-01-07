@@ -1,4 +1,5 @@
 import { Activity } from "./kanban.activity.interface";
+import { ListCard } from "./kanban.listcard.interface";
 
 export interface Card {
     id?: any,
@@ -6,4 +7,5 @@ export interface Card {
     description?: String,
     creationDate?: Date,
     activityList: Array<Activity>,
+    listCard?: ListCard,
 }
