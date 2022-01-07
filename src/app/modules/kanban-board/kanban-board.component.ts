@@ -1,7 +1,7 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { KanbanSevice } from './service/kanban.service';
-import { KanbanInterface } from './interface/kanban.interface';
+import { Kanban } from './interface/kanban.interface';
 import { ListCard } from './interface/kanban.listcard.interface';
 @Component({
   selector: 'app-kanban-board',
@@ -13,7 +13,7 @@ export class KanbanBoardComponent implements OnInit {
   culumnDropList!: any 
   showInput: boolean = false
   list!: String
-  kanban!: KanbanInterface
+  kanban!: Kanban
 
   constructor(
     private kanbanService: KanbanSevice,

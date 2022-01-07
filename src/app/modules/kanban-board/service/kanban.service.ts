@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { KanbanInterface } from "../interface/kanban.interface";
+import { Kanban } from "../interface/kanban.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +19,6 @@ export class KanbanSevice {
     ) {}
 
     getKanbanBoardById() {
-        return this.http.get<KanbanInterface>((this.url) + '/api/kanban/id')
+        return this.http.get<Kanban>((this.url) + '/api/kanban/id')
     }
 }

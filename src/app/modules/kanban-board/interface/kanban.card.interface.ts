@@ -1,6 +1,6 @@
 import { Activity } from "./kanban.activity.interface";
 
-export interface CardInterface {
+export interface Card {
     id?: any,
     title?: String,
     description?: String,

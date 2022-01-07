@@ -1,6 +1,6 @@
 ﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 import { ModalService } from '.';
-import { CardInterface } from '../kanban-board/interface/kanban.card.interface';
+import { Card } from '../kanban-board/interface/kanban.card.interface';
 
 @Component({
   selector: 'app-modal',
@@ -10,7 +10,7 @@ import { CardInterface } from '../kanban-board/interface/kanban.card.interface';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() id!: string;
-  @Input() card!: CardInterface
+  @Input() card!: Card
   
   private element: any;
 

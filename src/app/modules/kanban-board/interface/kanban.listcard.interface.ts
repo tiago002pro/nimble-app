@@ -1,7 +1,7 @@
-import { CardInterface } from "./kanban.card.interface";
+import { Card } from "./kanban.card.interface";
 
 export interface ListCard {
     id?: any,
     name?: String,
-    cardList: Array<CardInterface>,
+    cardList: Array<Card>,
 }

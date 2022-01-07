@@ -1,8 +1,8 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../modal';
-import { CardInterface } from '../interface/kanban.card.interface';
-import { KanbanInterface } from '../interface/kanban.interface';
+import { Card } from '../interface/kanban.card.interface';
+import { Kanban } from '../interface/kanban.interface';
 import { ListCard } from '../interface/kanban.listcard.interface';
 
 @Component({
@@ -14,7 +14,7 @@ export class KanbanColumnComponent implements OnInit {
 
   @Input() column!: ListCard
   @Input() indexColumn!: number
-  @Input() kanban!: KanbanInterface
+  @Input() kanban!: Kanban
   @Input() culumnDropList!: any
 
   constructor(
@@ -25,7 +25,7 @@ export class KanbanColumnComponent implements OnInit {
     
   }
 
-  drop(event: CdkDragDrop<CardInterface[]>) {
+  drop(event: CdkDragDrop<Card[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

@@ -1,7 +1,7 @@
-import { BoardInterface } from "./kanban.board.interface";
+import { Board } from "./kanban.board.interface";
 
-export interface KanbanInterface {
+export interface Kanban {
     id?: any,
     name?: String,
-    boardList: Array<BoardInterface>,
+    boardList: Array<Board>,
 }
