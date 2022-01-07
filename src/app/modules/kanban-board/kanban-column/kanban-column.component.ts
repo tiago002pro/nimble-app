@@ -1,9 +1,9 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../modal';
-import { Card } from '../models/card.model';
-import { Column } from '../models/column.model';
-import { Kanban } from '../models/kanban.model';
+import { CardInterface } from '../interface/kanban.card.interface';
+import { KanbanInterface } from '../interface/kanban.interface';
+import { ListCard } from '../interface/kanban.listcard.interface';
 
 @Component({
   selector: 'app-kanban-column',
@@ -12,9 +12,9 @@ import { Kanban } from '../models/kanban.model';
 })
 export class KanbanColumnComponent implements OnInit {
 
-  @Input() column!: Column
+  @Input() column!: ListCard
   @Input() indexColumn!: number
-  @Input() kanban!: Kanban
+  @Input() kanban!: KanbanInterface
   @Input() culumnDropList!: any
 
   constructor(
@@ -25,7 +25,7 @@ export class KanbanColumnComponent implements OnInit {
     
   }
 
-  drop(event: CdkDragDrop<Card[]>) {
+  drop(event: CdkDragDrop<CardInterface[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -36,15 +36,15 @@ export class KanbanColumnComponent implements OnInit {
     }
   }
 
-  newCard(column: Column) {
-    column.cards.push(new Card(Math.trunc(
-      this.getRandomArbitrary()).toString(), 
-      'New Card on "'+ column.name+'"',
-      'Tag on "'+ column.name+'"',
-      'Description on "'+ column.name+'"',
-      'Attachment on "'+ column.name+'"',
-      'Activity on "'+ column.name+'"',
-    ))
+  newCard(column: ListCard) {
+    // column.cards.push(new Card(Math.trunc(
+    //   this.getRandomArbitrary()).toString(), 
+    //   'New Card on "'+ column.name+'"',
+    //   'Tag on "'+ column.name+'"',
+    //   'Description on "'+ column.name+'"',
+    //   'Attachment on "'+ column.name+'"',
+    //   'Activity on "'+ column.name+'"',
+    // ))
   }
 
   getRandomArbitrary() {
@@ -52,7 +52,7 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   deleteList(index: any) {
-    this.kanban.boards[0].columns.splice(index, 1)
+    this.kanban.boardList[0].listCardList.splice(index, 1)
   }
 
   

@@ -25,7 +25,7 @@ export class PersonFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private personService: PersonService,
-    private ngxService: NgxUiLoaderService,
+    // private ngxService: NgxUiLoaderService,
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +58,7 @@ export class PersonFormComponent implements OnInit {
   }
 
   async save() {
-    this.ngxService.startBackground()
+    // this.ngxService.startBackground()
     if (this.document.length == 11) {
       this.entity.cpf = this.document
     } else {
@@ -76,11 +76,13 @@ export class PersonFormComponent implements OnInit {
         error => {this.errorModal()}
       )
     } else {
-      this.personService.createJuridicalPerson(this.entity)
+      this.personService.createJuridicalPerson(this.entity).subscribe(
+        success => {this.sucessModal(); this.back()},
+        error => {this.errorModal()}
+      )
     }
 
-    this.ngxService.stop()
-    
+    // this.ngxService.stop()
   }
 
   sucessModal() {

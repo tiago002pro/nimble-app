@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Card } from '../../kanban-board/models/card.model';
+import { CardInterface } from '../../kanban-board/interface/kanban.card.interface';
+import { ListCard } from '../../kanban-board/interface/kanban.listcard.interface';
 
 @Component({
   selector: 'app-modal-card',
@@ -7,8 +8,8 @@ import { Card } from '../../kanban-board/models/card.model';
   styleUrls: ['./modal-card.component.scss']
 })
 export class ModalCardComponent implements OnInit {
-  @Input() card!: Card
-  @Input() columnName!: String
+  @Input() card!: CardInterface
+  @Input() columnName!: ListCard
 
   sizeInputName!: Number
   row!: Number
@@ -16,7 +17,7 @@ export class ModalCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.sizeInputName = this.card.title.length
+    // this.sizeInputName = this.card.title.length
     this.row = 1
   }
 

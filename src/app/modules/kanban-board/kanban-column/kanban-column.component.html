@@ -10,15 +10,16 @@
     <div class="dropzone"
         (cdkDropListDropped)="drop($event)"
         [cdkDropListConnectedTo]="culumnDropList"
-        [cdkDropListData]="column.cards"
+        [cdkDropListData]="column.cardList"
         id="{{column.name}}" 
         cdkDropList>
-        <div class="kanban-cards" *ngFor="let card of column.cards" (click)="openModal(card.title)" cdkDrag>
+        <div class="kanban-cards" *ngFor="let card of column.cardList" cdkDrag>
             <div class="cards">
-                <div class="content">#{{card.reference}} - {{card.title}}</div>
+                <div class="content">#{{card.id}} - {{card.title}}</div>
+                <div class="content">#{{column.name}}</div>
                 <div class="status red"></div>
                 <app-modal id="{{card.title}}" [card]="card">
-                    <app-modal-card [card]="card" [columnName]="column.name"></app-modal-card>
+                    <app-modal-card [card]="card" [columnName]="column"></app-modal-card>
                 </app-modal>
             </div>
         </div>

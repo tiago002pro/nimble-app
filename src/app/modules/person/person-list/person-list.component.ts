@@ -73,6 +73,5 @@ export class PersonListComponent implements OnInit {
 
   insertMask(valeu: String) {
     console.log(valeu);
-    
   }
 }
