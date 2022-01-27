@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Card } from "../interface/kanban.card.interface";
 import { Kanban } from "../interface/kanban.interface";
+import { ListCard } from "../interface/kanban.listcard.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -29,5 +30,21 @@ export class KanbanSevice {
 
     getAllCards() {
         return this.http.get<Array<Card>>((this.url) + '/api/card/all')
+    }
+
+    getListByIndex(index: Number) {
+        return this.http.get<ListCard>((this.url) + '/api/listCard/' + (index))
+    }
+
+    getAllListCard() {
+        return this.http.get<Array<ListCard>>((this.url) + '/api/listCard/all')
+    }
+
+    movList(previousIndex: number, currentIndex: number) {
+        return this.http.put<ListCard>((this.url) + `/api/listCard/change-index-list?previous=${previousIndex +1}`, currentIndex +1)
+    }
+
+    newListCard(name: String) {
+        return this.http.post<ListCard>((this.url) + `/api/listCard/newlist`, name)
     }
 }

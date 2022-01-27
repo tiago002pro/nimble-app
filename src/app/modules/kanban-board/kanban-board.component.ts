@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { KanbanSevice } from './service/kanban.service';
 import { Kanban } from './interface/kanban.interface';
@@ -12,23 +12,28 @@ export class KanbanBoardComponent implements OnInit {
  
   culumnDropList!: any 
   showInput: boolean = false
-  list!: String
+  nameList!: String
   kanban!: Kanban
+  listCard!: Array<ListCard>
 
   constructor(
     private kanbanService: KanbanSevice,
   ) { }
 
   async ngOnInit() {
-    this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
-    console.log("this.kanban", this.kanban);
-    console.log("this.boardList", this.kanban.boardList[0].listCardList);
     
-    this.culumnDropList = [...this.kanban.boardList[0].listCardList.map(col => col.name)];
+    this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
+    this.listCard = await this.kanbanService.getAllListCard().toPromise().then(response => response)
+    this.culumnDropList = [...this.listCard.map(col => col.indexList)];
   }
 
-  drop(event: CdkDragDrop<ListCard[]>) {
-    moveItemInArray(this.kanban.boardList[0].listCardList, event.previousIndex, event.currentIndex);
+  async drop(event: CdkDragDrop<ListCard[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(this.listCard, event.previousIndex, event.currentIndex);
+        this.kanbanService.movList(event.previousIndex, event.currentIndex).toPromise().then(response => response)
+    } else {
+      console.log("noo");
+    }
   }
 
   newList() {
@@ -39,13 +44,14 @@ export class KanbanBoardComponent implements OnInit {
     this.showInput = !this.showInput
   }
 
-  saveList() {
-    // this.kanban.boardList[0].listCardList.push(new Column(this.list, []))
+  async saveList() {
+    await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response)
     this.showInput = !this.showInput
-    this.list = ''
+    this.nameList = ''
+    // this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
   }
 
   onChange(value: String) {
-    this.list = value
+    this.nameList = value
   }
 }

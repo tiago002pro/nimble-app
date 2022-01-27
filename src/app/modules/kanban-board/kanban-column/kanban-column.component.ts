@@ -14,7 +14,6 @@ import { KanbanSevice } from '../service/kanban.service';
 export class KanbanColumnComponent implements OnInit {
 
   @Input() column!: ListCard
-  @Input() indexColumn!: number
   @Input() kanban!: Kanban
   @Input() culumnDropList!: any
   cards!: Array<Card>
