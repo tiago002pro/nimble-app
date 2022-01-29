@@ -1,57 +1,39 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { Board } from './models/board.model';
-import { Column } from './models/column.model';
-import { Kanban } from './models/kanban.model';
-import { Card } from './models/card.model';
+import { KanbanSevice } from './service/kanban.service';
+import { Kanban } from './interface/kanban.interface';
+import { ListCard } from './interface/kanban.listcard.interface';
 @Component({
   selector: 'app-kanban-board',
   templateUrl: './kanban-board.component.html',
   styleUrls: ['./kanban-board.component.scss']
 })
 export class KanbanBoardComponent implements OnInit {
-
-  kanban: Kanban = new Kanban("Quadro 1", [
-    new Board("Board 1", [
-      new Column('Ideas', [
-        new Card('258745', 'Ideas that I need to make', 'Tag', 'Description', 'Anexo', 'Activity'),
-      ]),
-      new Column('Todo', [
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-        new Card('654789', 'What I have todo', 'Tag', 'Description', 'Anexo', 'Activity'),
-
-      ]),
-      new Column('Done', [
-        new Card( '321456', 'I finish this thinks', 'Tag', 'Description', 'Anexo', 'Activity'),
-      ]),
-      new Column('Done', [
-      ]),
-    ])
-  ])
-
-  culumnDropList = [...this.kanban.boards[0].columns.map(col => col.name)];
-
+ 
+  culumnDropList!: any 
   showInput: boolean = false
-  list!: String
+  nameList!: String
+  kanban!: Kanban
+  listCard!: Array<ListCard>
 
-  constructor() { }
+  constructor(
+    private kanbanService: KanbanSevice,
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    
+    this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
+    this.listCard = await this.kanbanService.getAllListCard().toPromise().then(response => response)
+    this.culumnDropList = [...this.listCard.map(col => col.indexList)];
   }
 
-  drop(event: CdkDragDrop<Column[]>) {
-    moveItemInArray(this.kanban.boards[0].columns, event.previousIndex, event.currentIndex);
+  async drop(event: CdkDragDrop<ListCard[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(this.listCard, event.previousIndex, event.currentIndex);
+        this.kanbanService.movList(event.previousIndex, event.currentIndex).toPromise().then(response => response)
+    } else {
+      console.log("noo");
+    }
   }
 
   newList() {
@@ -62,13 +44,20 @@ export class KanbanBoardComponent implements OnInit {
     this.showInput = !this.showInput
   }
 
-  saveList() {
-    this.kanban.boards[0].columns.push(new Column(this.list, []))
+  async saveList() {
+    this.listCard = await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response)
+    console.log("listCard", this.listCard);
     this.showInput = !this.showInput
-    this.list = ''
+    this.nameList = ''
+    // this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
   }
 
   onChange(value: String) {
-    this.list = value
+    this.nameList = value
+  }
+
+  async deleteList(index: any) {
+    this.listCard = await this.kanbanService.deleteListCard(index).toPromise().then(response => response)
+    // this.kanban.boardList[0].listCardList.splice(index, 1)
   }
 }

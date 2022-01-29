@@ -1,13 +1,21 @@
 <div class="kanban-board" cdkDropListGroup>
     <app-nb-title [title]="'Kanban'"></app-nb-title>
     <div class="frame-zone">
-        <div *ngFor="let board of kanban.boards">
+        <div>
             <div class="frame-dropzone content-area " 
                 cdkDropList
                 cdkDropListOrientation = "horizontal"
                 (cdkDropListDropped)="drop($event)">
-                <div class="frame-data" *ngFor="let column of board.columns, ; let i = index" cdkDrag>
-                    <app-kanban-column [column]="column" [indexColumn]="i" [kanban]="kanban" [culumnDropList]="culumnDropList"></app-kanban-column>
+                <div class="frame-data" *ngFor="let column of listCard" cdkDrag>
+                    <div class="frame-title">
+                        {{ column.name }}
+                        <a (click)="deleteList(column.indexList)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <app-kanban-column [column]="column" [kanban]="kanban" [culumnDropList]="culumnDropList"></app-kanban-column>
                 </div>
                 <div class="last-board">
                     <div [ngClass]="showInput == false ? 'new-column' : 'new-column-input'">
@@ -22,7 +30,7 @@
                             <input type="text"
                                 placeholder="Insira o título da lista.."
                                 class="form-control"
-                                [ngModel]="list"
+                                [ngModel]="nameList"
                                 (ngModelChange)="onChange($event)"
                                 (keyup.enter)="saveList()">
                             <div class="new-list-bottom">

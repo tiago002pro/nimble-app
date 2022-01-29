@@ -7,7 +7,7 @@
               </svg>
             <textarea type="text" value="{{card.title}}" [(ngModel)]="card.title" (ngModelChange)="modelChanged($event)" [rows]="row" cols="56" (keyup.enter)="saveCard()"></textarea>
         </div>
-        <div class="name-list-card">Na lista <a href="#">{{columnName}}</a></div>
+        <div class="name-list-card">Na lista <a href="#">{{columnName.name}}</a></div>
     </div>
     <div class="description">
         <div class="description-title">
