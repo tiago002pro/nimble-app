@@ -1,1 +1,23 @@
-<h1>Receivement</h1>
+<div class="receivement-component">
+    <app-nb-title title="Contas a Receber"></app-nb-title>
+    <div class="receivement-area content-area">
+        <div class="row">
+            <div class="col-md-5">
+                <app-nb-input-date [label]="'Data de emissão'" [placeholder]="'Ex.: 01/01/2000'"></app-nb-input-date>
+            </div>
+            <div class="col-md-7">
+                <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Nimble LTDA'"></app-nb-input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <app-nb-input-text [label]="'Histórico'" [placeholder]="'Ex.: '"></app-nb-input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <app-nb-input-number [label]="'Valor'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-number>
+            </div>
+        </div>
+    </div>
+</div>

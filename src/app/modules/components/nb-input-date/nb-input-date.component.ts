@@ -11,8 +11,6 @@ export class NbInputDateComponent implements OnInit {
   @Input() value: String | undefined;
   @Output() ngModel = new EventEmitter()
 
-  public date = [/\d/, /\d/, '/',/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]
-
   constructor() { }
 
   ngOnInit(): void {

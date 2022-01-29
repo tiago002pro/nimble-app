@@ -1,15 +1,15 @@
 <div class="loader">
   <!-- <ngx-ui-loader></ngx-ui-loader> -->
-    <div class="app-component" *ngIf="!validated">
+    <div class="app-component" *ngIf="validated">
       <app-login (validatedLogin)="reciveValidatedLogin($event)"></app-login>
     </div>
 </div>
 
-<div class="app-component" *ngIf="!validated">
+<div class="app-component" *ngIf="validated">
   <app-login (validatedLogin)="reciveValidatedLogin($event)"></app-login>
 </div>
 
-<div class="app-component" *ngIf="validated">
+<div class="app-component" *ngIf="!validated">
   <app-navbar [showMenuIn]="showMenu" (showMenuOut)="reciveShowMenuOut($event)"></app-navbar>
   <main>
     <app-sidebar [showMenuIn]="showMenu"></app-sidebar>
