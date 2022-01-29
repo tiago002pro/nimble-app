@@ -45,7 +45,8 @@ export class KanbanBoardComponent implements OnInit {
   }
 
   async saveList() {
-    await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response)
+    this.listCard = await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response)
+    console.log("listCard", this.listCard);
     this.showInput = !this.showInput
     this.nameList = ''
     // this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
@@ -53,5 +54,10 @@ export class KanbanBoardComponent implements OnInit {
 
   onChange(value: String) {
     this.nameList = value
+  }
+
+  async deleteList(index: any) {
+    this.listCard = await this.kanbanService.deleteListCard(index).toPromise().then(response => response)
+    // this.kanban.boardList[0].listCardList.splice(index, 1)
   }
 }

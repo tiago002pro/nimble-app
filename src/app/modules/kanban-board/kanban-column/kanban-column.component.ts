@@ -61,6 +61,7 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   deleteList(index: any) {
+    this.kanbanService.deleteListCard(index).toPromise().then(response => response)
     this.kanban.boardList[0].listCardList.splice(index, 1)
   }
 
