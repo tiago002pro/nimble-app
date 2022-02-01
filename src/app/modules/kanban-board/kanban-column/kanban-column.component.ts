@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'stream';
 import { ModalService } from '../../modal';
 import { Card } from '../interface/kanban.card.interface';
 import { Kanban } from '../interface/kanban.interface';
@@ -17,6 +18,7 @@ export class KanbanColumnComponent implements OnInit {
   @Input() kanban!: Kanban
   @Input() culumnDropList!: any
   cards!: Array<Card>
+  @Output() index = new EventEmitter();
 
   constructor(
     public modalService: ModalService,
@@ -61,8 +63,9 @@ export class KanbanColumnComponent implements OnInit {
   }
 
   deleteList(index: any) {
-    this.kanbanService.deleteListCard(index).toPromise().then(response => response)
-    this.kanban.boardList[0].listCardList.splice(index, 1)
+    // this.kanbanService.deleteListCard(index).toPromise().then(response => response)
+    // this.kanban.boardList[0].listCardList.splice(index, 1)
+    this.index.emit(index)
   }
 
   

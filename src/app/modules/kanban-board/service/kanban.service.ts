@@ -8,7 +8,8 @@ import { ListCard } from "../interface/kanban.listcard.interface";
     providedIn: 'root'
 })
 export class KanbanSevice {
-    url: String = 'http://localhost:8080'
+    url: String = 'https://nimble-back.herokuapp.com' 
+    // url: String = 'http://localhost:8080'
 
     httpOptions = {
         headers: new HttpHeaders({

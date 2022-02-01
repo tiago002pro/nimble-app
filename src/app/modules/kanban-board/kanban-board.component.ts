@@ -1,8 +1,9 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { KanbanSevice } from './service/kanban.service';
 import { Kanban } from './interface/kanban.interface';
 import { ListCard } from './interface/kanban.listcard.interface';
+import { EventEmitter } from 'stream';
 @Component({
   selector: 'app-kanban-board',
   templateUrl: './kanban-board.component.html',
@@ -15,6 +16,7 @@ export class KanbanBoardComponent implements OnInit {
   nameList!: String
   kanban!: Kanban
   listCard!: Array<ListCard>
+  @Output() deleteListByIndex = new EventEmitter();
 
   constructor(
     private kanbanService: KanbanSevice,
@@ -54,6 +56,11 @@ export class KanbanBoardComponent implements OnInit {
 
   onChange(value: String) {
     this.nameList = value
+  }
+
+  reciveIndexList(value: any) {
+    console.log("valueeee", value);
+    
   }
 
   async deleteList(index: any) {
