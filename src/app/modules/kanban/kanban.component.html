@@ -1,0 +1,16 @@
+<div class="kanban">
+    <app-nb-title [title]="'Kanban'"></app-nb-title>
+    <div class="frame-zone">
+        <div>
+            <div class="frame-dropzone content-area"
+                cdkDropList
+                cdkDropListOrientation = "horizontal"
+                (cdkDropListDropped)="drop($event)">
+                <div class="frame-date" *ngFor="let list of listCard" cdkDrag>
+                    <app-list [list]="list" [kanban]="kanban" [culumnDropList]="culumnDropList"></app-list>
+                </div>
+                <app-new-list (list)="reciveListCards($event)"></app-new-list>
+            </div>
+        </div>
+    </div>
+</div>
