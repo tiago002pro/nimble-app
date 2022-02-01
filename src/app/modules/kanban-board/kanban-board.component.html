@@ -7,7 +7,7 @@
                 cdkDropListOrientation = "horizontal"
                 (cdkDropListDropped)="drop($event)">
                 <div class="frame-data" *ngFor="let column of listCard" cdkDrag>
-                    <app-kanban-column [column]="column" [kanban]="kanban" [culumnDropList]="culumnDropList" (index)="reciveIndexList($event)"
+                    <app-kanban-column [column]="column" [kanban]="kanban" [culumnDropList]="culumnDropList"
                     
                     ></app-kanban-column>
                 </div>

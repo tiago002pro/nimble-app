@@ -1,7 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { ListCard } from 'src/app/modules/kanban-board/interface/kanban.listcard.interface';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { KanbanSevice } from 'src/app/modules/kanban-board/service/kanban.service';
-import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-new-list',
@@ -11,7 +9,6 @@ import { EventEmitter } from 'stream';
 export class NewListComponent implements OnInit {
 
   showInput: boolean = false
-  listCard!: Array<ListCard>
   nameList!: String
   @Output() list = new EventEmitter()
 
@@ -27,12 +24,9 @@ export class NewListComponent implements OnInit {
   }
 
   async saveList() {
-    this.listCard = await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response)
-    this.list.emit('this.listCard')
-    console.log("listCard", this.listCard);
+    this.list.emit(await this.kanbanService.newListCard(this.nameList).toPromise().then(response => response))
     this.showInput = !this.showInput
     this.nameList = ''
-    // this.kanban = await this.kanbanService.getKanbanBoardById().toPromise().then(response => response)
   }
 
   onChange(value: String) {

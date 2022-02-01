@@ -27,13 +27,10 @@ export class KanbanComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(this.listCard, event.previousIndex, event.currentIndex);
         this.kanbanService.movList(event.previousIndex, event.currentIndex).toPromise().then(response => response)
-    } else {
-      console.log("noo");
     }
   }
 
-  reciveListCards(value: String) {
-    console.log("aaa", value);
-    
+  reciveListCards(value: any) {
+    this.listCard = value
   }
 }
