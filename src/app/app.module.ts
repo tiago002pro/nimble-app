@@ -39,6 +39,10 @@ import { NbTitleComponent } from './modules/components/nb-title/nb-title.compone
 import { LoginComponent } from './views/login/login.component';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ReportComponent } from './modules/report/report/report.component';
+import { KanbanComponent } from './modules/kanban/kanban.component';
+import { ListComponent } from './modules/kanban/components/list/list.component';
+import { CardComponent } from './modules/kanban/components/card/card.component';
+import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -101,6 +105,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NbTitleComponent,
     LoginComponent,
     ReportComponent,
+    KanbanComponent,
+    ListComponent,
+    CardComponent,
+    NewListComponent,
   ],
   imports: [
     BrowserModule,

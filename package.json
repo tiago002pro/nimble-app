@@ -26,12 +26,16 @@
         "bootstrap-icons": "^1.7.1",
         "bulma": "^0.9.3",
         "chart.js": "^3.6.0",
+        "crypto-browserify": "^3.12.0",
         "firebase": "^9.1.1",
         "ng-chartjs": "^0.2.3",
         "ngx-ui-loader": "^11.0.0",
+        "path-browserify": "^1.0.1",
         "rxjs": "~6.6.0",
+        "stream-browserify": "^3.0.0",
         "sweetalert2": "^11.1.7",
         "tslib": "^2.3.0",
+        "util": "^0.12.4",
         "zone.js": "~0.11.4"
     },
     "devDependencies": {

@@ -1,0 +1,110 @@
+.last-board {
+    color: #3d4465;
+
+    .new-column {
+        height: 40px;
+        margin: 5px;
+        border-radius: 3px;
+        background: rgba(129, 129, 129, 0.199);
+        transition: 0.3s ease;
+    }
+    
+    .new-column-input {
+        width: 260px;
+        height: 135px;
+        margin: 10px;
+        border-radius: 3px;
+        background: #ebecf0;
+        transition: 0.3s ease;
+        display: table;
+    }
+
+    .new-board {
+        width: 280px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #6e7899;
+        box-shadow: 1px 1px 2px 1px rgb(36 41 57 / 48%);
+    }
+
+    .new-board:hover {
+        color: #ced2df;
+        background-color: #242939;
+    }
+    
+    .new-board a {
+        display: flex;
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .active {
+        color: #3d4465;
+    }
+    
+    .button-new-board {
+        font-weight: 800;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+    
+    input {
+        background: transparent;
+    }
+    
+    input:focus { 
+        outline: none !important;
+        border-color: #fff;
+        box-shadow: 0 0 2px #fff;
+    }
+    
+    .hide-input {
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    
+    .input-text {
+        width: 280px;
+        transition: 0.3s ease;
+        box-shadow: 3px 3px 2px 1px rgb(36 41 57 / 48%);
+    }
+    
+    .input-text input {
+        width: 90%;
+        height: 40px;
+        font-size: 18px;
+        margin: auto;
+        border-radius: 4px;
+        border: 1px solid rgba(145, 145, 145, 0.589);
+        color: #121212;
+    }
+       
+    .new-list-bottom {
+        color: #ced2df;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    
+    .new-list-bottom .close-input {
+        cursor: pointer;
+    }
+    
+    .close-input svg {
+        width: 25px;
+        height: 25px;
+        transition: 0.3s ease;
+        margin: 0.3rem;
+    }
+    
+    .close-input svg:hover {
+        width: 30px;
+        height: 30px;
+        transition: 0.3s ease;
+        transform: rotate(360deg);
+        color: #3d4465;
+        margin: 0.3rem;
+    }
+}

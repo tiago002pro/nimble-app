@@ -63,6 +63,13 @@ export class SidebarComponent implements OnInit {
         drop: false,
         sub: []
       },
+      {
+        name: "Kanban",
+        icon: "fa fa-table",
+        router: "/kanban",
+        drop: false,
+        sub: []
+      },
     ]
   }
 
