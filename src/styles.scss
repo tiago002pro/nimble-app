@@ -26,6 +26,8 @@ body {
   scroll-behavior: smooth;
   display: flex;  
   background: #f2f3f8;
+  font-family: 'Poppins','Roboto', sans-serif;
+  color: rgba(#3d4465, .9);
 
   $bg-color:#f2f3f8;
   $navbar-bg-color : #242939;
@@ -74,4 +76,23 @@ html {
   font-size: 20px;
   font-weight: 600;
   color: #242939;
+}
+
+.nimble-table {
+  color: rgba(#3d4465, .9);
+
+  thead {
+    text-align: center;
+    color: #fff;
+    background-color: #3d4465;
+  }
+
+  tbody {
+    text-align: center;
+    color: rgba(#3d4465, .9);
+  }
+}
+
+.row {
+  margin-bottom: 10px;
 }

@@ -1,10 +1,16 @@
 .btn {
   margin: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 1vw;
 
-  &.btn-lightning {
+
+  &.btn-nimble {
     color: #f0f3ff;
-    background-color: #5b6582;
-    border-color: #5b6582;
+    background-color: #3d4465;
+    border-color: #3d4465;
 
     &:hover {
       background-color: #4c5671;

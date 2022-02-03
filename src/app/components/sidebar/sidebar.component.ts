@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
       },
       {
         name: "Cadastros",
-        icon: "bi bi-plus-circle",
+        icon: "bi bi-plus-circle-fill",
         router: "#",
         drop: false,
         sub: [
@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
       },
       {
         name: "Financeiro",
-        icon: "bi bi-cash-coin",
+        icon: "fas fa-money-bill-alt",
         router: "#",
         drop: false,
         sub: [
@@ -44,25 +44,32 @@ export class SidebarComponent implements OnInit {
       },
       {
         name: "Kanban",
-        icon: "bi bi-kanban",
+        icon: "fa fa-table",
         router: "/kanban-board",
         drop: false,
         sub: []
       },
       {
         name: "Relatórios",
-        icon: "bi bi-clipboard-data",
-        router: "",
+        icon: "fas fa-chart-pie",
+        router: "/report",
         drop: false,
         sub: []
       },
-      // {
-      //   name: " Display Card",
-      //   icon: "bi bi-clipboard-data",
-      //   router: "modal-card",
-      //   drop: false,
-      //   sub: []
-      // },
+      {
+        name: " Display Card",
+        icon: "bi bi-clipboard-data",
+        router: "modal-card",
+        drop: false,
+        sub: []
+      },
+      {
+        name: "Kanban",
+        icon: "fa fa-table",
+        router: "/kanban",
+        drop: false,
+        sub: []
+      },
     ]
   }
 

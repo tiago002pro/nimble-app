@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import Swal from 'sweetalert2';
 import { PersonAddress } from '../interface/person.address.interface';
 import { Person } from '../interface/person.interface';
@@ -19,14 +20,26 @@ export class PersonFormComponent implements OnInit {
   rule!: String
   document: String = ''
   typePerson: String = 'pf'
+  ruleTitle: String = '########'
   
   constructor(
     private route: ActivatedRoute,
     private personService: PersonService,
+    // private ngxService: NgxUiLoaderService,
   ) { }
 
   ngOnInit(): void {
     this.rule = this.route.snapshot.params.rule
+    switch(this.rule) {
+      case "Clientes": 
+        this.ruleTitle = "Cliente"
+        break;
+      case "Fornecedores": 
+        this.ruleTitle = "Fornecedor"
+        break
+      default:
+        this.ruleTitle = "Funcionário"
+    }
 
     if (this.route.snapshot.params.id) {
       this.getPersonById(this.route.snapshot.params.id)
@@ -44,7 +57,8 @@ export class PersonFormComponent implements OnInit {
     }
   }
 
-  save() {
+  async save() {
+    // this.ngxService.startBackground()
     if (this.document.length == 11) {
       this.entity.cpf = this.document
     } else {
@@ -57,18 +71,40 @@ export class PersonFormComponent implements OnInit {
     this.entity.ruleList = [{rule: this.rule}]
 
     if (this.typePerson == 'pf') {
-      this.personService.createIndividual(this.entity)
+      this.personService.createIndividual(this.entity).subscribe(
+        success => {this.sucessModal(); this.back()},
+        error => {this.errorModal()}
+      )
     } else {
-      this.personService.createJuridicalPerson(this.entity)
+      this.personService.createJuridicalPerson(this.entity).subscribe(
+        success => {this.sucessModal(); this.back()},
+        error => {this.errorModal()}
+      )
     }
+
+    // this.ngxService.stop()
+  }
+
+  sucessModal() {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'Concluído',
+      text: this.ruleTitle + ' cadastrado com sucesso!',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2500
     })
-    history.back()
+  }
+
+  errorModal() {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Erro',
+      text: 'Verifique os dados e tente novamente.',
+      showConfirmButton: false,
+      timer: 2500
+    })
   }
 
   back() {

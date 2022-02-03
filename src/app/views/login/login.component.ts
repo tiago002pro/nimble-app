@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
       setTimeout(() => {
         this.validatedLogin.emit(this.validated)
-      }, 2200)
+      }, 2000)
 
       let timerInterval: any
       Swal.fire({

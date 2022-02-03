@@ -37,7 +37,45 @@ import { NbButtonComponent } from './modules/components/nb-button/nb-button.comp
 import { NbButtonBackComponent } from './modules/components/nb-button-back/nb-button-back.component';
 import { NbTitleComponent } from './modules/components/nb-title/nb-title.component';
 import { LoginComponent } from './views/login/login.component';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ReportComponent } from './modules/report/report/report.component';
+import { KanbanComponent } from './modules/kanban/kanban.component';
+import { ListComponent } from './modules/kanban/components/list/list.component';
+import { CardComponent } from './modules/kanban/components/card/card.component';
+import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
 registerLocaleData(ptBr)
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig =
+{
+  "bgsColor": "#00ff89",
+  "bgsOpacity": 1,
+  "bgsPosition": "center-center",
+  "bgsSize": 150,
+  "bgsType": "ball-spin-fade-rotating",
+  "blur": 9,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#77ffc0",
+  "fgsPosition": "center-center",
+  "fgsSize": 140,
+  "fgsType": "three-strings",
+  "gap": 40,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgb(32,27,44)",
+  "pbColor": "#6f3de7",
+  "pbDirection": "rtl",
+  "pbThickness": 10,
+  "hasProgressBar": false,
+  "text": "CARREGANDO",
+  "textColor": "#77ffc0",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+}
 
 @NgModule({
   declarations: [
@@ -66,6 +104,11 @@ registerLocaleData(ptBr)
     NbButtonBackComponent,
     NbTitleComponent,
     LoginComponent,
+    ReportComponent,
+    KanbanComponent,
+    ListComponent,
+    CardComponent,
+    NewListComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +119,8 @@ registerLocaleData(ptBr)
     BrowserAnimationsModule,
     DragDropModule,
     ModalModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

@@ -11,5 +11,4 @@ export class ReceivementComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

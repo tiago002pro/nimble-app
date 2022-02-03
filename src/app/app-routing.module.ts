@@ -8,6 +8,8 @@ import { PersonListComponent } from './modules/person/person-list/person-list.co
 import { PaymentComponent } from './modules/finance/payment/payment.component';
 import { ReceivementComponent } from './modules/finance/receivement/receivement.component';
 import { ExtractComponent } from './modules/finance/extract/extract.component';
+import { ReportComponent } from './modules/report/report/report.component';
+import { KanbanComponent } from './modules/kanban/kanban.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,10 +20,12 @@ const routes: Routes = [
   { path: 'person-list/employee/:rule', component: PersonListComponent },
   { path: 'person-form/edit/:id', component: PersonFormComponent },
   { path: 'kanban-board', component: KanbanBoardComponent},
+  { path: 'kanban', component: KanbanComponent},
   { path: 'payment', component: PaymentComponent},
   { path: 'extract', component: ExtractComponent},
   { path: 'receivement', component: ReceivementComponent},
   { path: 'modal-card', component: ModalCardTestComponent},
+  { path: 'report', component: ReportComponent},
 ];
 
 @NgModule({

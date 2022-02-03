@@ -7,7 +7,7 @@ import { Person } from '../interface/person.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  url: String = 'https://nimble-back.herokuapp.com/' 
+  url: String = 'https://nimble-back.herokuapp.com' 
   // url: String = 'http://localhost:8080'
 
   httpOptions = {
@@ -21,15 +21,15 @@ export class PersonService {
   ) { }
 
   createJuridicalPerson(entity: any) {
-    return this.http.post((this.url) + '/api/person-juridica/form', entity).subscribe(result => {console.log(result)})
+    return this.http.post((this.url) + '/api/person-juridica/form', entity)
   }
 
   createIndividual(entity: any)  {
-    return this.http.post((this.url) + '/api/person-individual/form', entity).subscribe(result => {console.log(result)})
+    return this.http.post((this.url) + '/api/person-individual/form', entity)
   }
 
   updateIndividual(entity: any)  {
-    return this.http.put((this.url) + '/api/person-individual/form', entity).subscribe(result => {console.log(result)})
+    return this.http.put((this.url) + '/api/person-individual/form', entity)
   }
 
   getPersonListByRule(rule: String, page: number) {
@@ -45,7 +45,7 @@ export class PersonService {
   }
 
   validateLogin(login: String, password: String) {
-    return this.http.get((this.url) + '/api/user/validate-login?login='+(login)+'&password='+(password)).subscribe(result => result)
+    return this.http.get((this.url) + '/api/user/validate-login?login='+(login)+'&password='+(password))
   }
 
   authenticatedUser(username: String) {

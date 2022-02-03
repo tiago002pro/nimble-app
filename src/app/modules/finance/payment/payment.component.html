@@ -1,35 +1,4 @@
-<div class="nb-finance-component">
-    <div class="title">Nova Conta</div>
-    <div class="finance-form">
-        <div class="row">
-            <div class="col-md-6">
-                <app-nb-input-text [label]="'Descrição'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-            <div class="col-md-6">
-                <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3">
-                <app-nb-input-text [label]="'Data Competência'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-            <div class="col-md-3">
-                <app-nb-input-text [label]="'Data Vencimento'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-            <div class="col-md-4">
-                <app-nb-input-text [label]="'Conta'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-            <div class="col-md-2">
-                <app-nb-input-text [label]="'Valor'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="name" (ngModel)="reciveName($event)"></app-nb-input-text>
-            </div>
-        </div>
-    </div>
+<div class="payment-component">
+    <app-nb-title title="Contas a Pagar"></app-nb-title>
+    <div class="payment-area content-area"></div>
 </div>
-
-
-
-
-
-
-

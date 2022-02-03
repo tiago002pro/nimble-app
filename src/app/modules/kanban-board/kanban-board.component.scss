@@ -4,6 +4,30 @@
         font-family: 'Quicksand', sans-serif;
         font-weight: 400;
     }
+
+    .frame-title {
+        font-weight: 800;
+        color: #131313;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+    
+    .frame-title svg {
+        float: right;
+        width: 20px;
+        height: 20px;
+        transition: 0.3s ease;
+        cursor: pointer;
+        color: #bcbdc4;
+    }
+    
+    .frame-title svg:hover {
+        width: 26px;
+        height: 26px;
+        transition: 0.3s ease;
+        color: #121212;
+        transform: rotate(360deg);
+    }
   
     .frame-dropzone {
         width: 100%;
