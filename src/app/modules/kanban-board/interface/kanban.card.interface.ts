@@ -8,4 +8,5 @@ export interface Card {
     creationDate?: Date,
     activityList: Array<Activity>,
     listCard?: ListCard,
+    indexCard?: Number,
 }

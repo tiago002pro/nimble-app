@@ -4,6 +4,7 @@ import { Card } from 'src/app/modules/kanban-board/interface/kanban.card.interfa
 import { Kanban } from 'src/app/modules/kanban-board/interface/kanban.interface';
 import { ListCard } from 'src/app/modules/kanban-board/interface/kanban.listcard.interface';
 import { KanbanSevice } from 'src/app/modules/kanban-board/service/kanban.service';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +15,7 @@ export class ListComponent implements OnInit {
 
   @Input() listOfCards!: ListCard
   @Input() kanban!: Kanban
-  @Input() culumnDropList!: any
+  @Input() listDropCard!: any
   @Output() list = new EventEmitter()
   cards!: Array<Card>
   
@@ -23,7 +24,6 @@ export class ListComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
-    console.log("list", this.list);
     this.cards = await this.kanbanService.getAllCards().toPromise().then(response => response)
   }
 
@@ -35,25 +35,29 @@ export class ListComponent implements OnInit {
     return card.listCard?.id === id;
   }
 
-  newCard(column: ListCard) {
-    // column.cards.push(new Card(Math.trunc(
-    //   this.getRandomArbitrary()).toString(), 
-    //   'New Card on "'+ column.name+'"',
-    //   'Tag on "'+ column.name+'"',
-    //   'Description on "'+ column.name+'"',
-    //   'Attachment on "'+ column.name+'"',
-    //   'Activity on "'+ column.name+'"',
-    // ))
+  async newCard(indexList: number) {
+    this.listOfCards = await this.kanbanService.newCard(indexList, 'Teste Card', ).toPromise().then(response => response)
   }
 
-  drop(event: CdkDragDrop<Card[]>) {
+  async drop(event: CdkDragDrop<Card[]>, listOfCards: ListCard) {
+    console.log("listOfCards", listOfCards);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      this.listOfCards = await this.kanbanService.movCard(event.previousIndex, event.currentIndex, listOfCards.indexList).toPromise().then(response => response)
     } else {
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
+                        const nameListPrevious = event.item.dropContainer.id
+                        const nameListCurrent = event.container.id
+                        const indexCardPrevious = event.previousIndex +1
+                        const indexCardCurrent = event.currentIndex +1
+        this.list.emit(await this.kanbanService.movCardBetweenLists(nameListPrevious, nameListCurrent, indexCardPrevious, indexCardCurrent).toPromise().then(response => response))
     }
+  }
+
+  sortByIndex(cardList: Array<Card>) {
+    return _.sortBy(cardList, 'indexCard')
   }
 }

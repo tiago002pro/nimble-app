@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Board } from "../interface/kanban.board.interface";
 import { Card } from "../interface/kanban.card.interface";
 import { Kanban } from "../interface/kanban.interface";
 import { ListCard } from "../interface/kanban.listcard.interface";
@@ -45,11 +46,23 @@ export class KanbanSevice {
         return this.http.put<ListCard>((this.url) + `/api/listCard/change-index-list?previous=${previousIndex +1}`, currentIndex +1)
     }
 
+    movCard(previousIndex: number, currentIndex: number, indexList: Number) {
+        return this.http.put<ListCard>((this.url) + `/api/card/change-index-card?previous=${previousIndex +1}&current=${currentIndex +1}`, indexList)
+    }
+
+    movCardBetweenLists(nameListPrevious: String, nameListCurrent: String, indexCardPrevious: Number, indexCardCurrent: Number) {
+        return this.http.put<Array<ListCard>>((this.url) + `/api/card/change-card-ofList?nameListPrevious=${nameListPrevious}&nameListCurrent=${nameListCurrent}&indexCardPrevious=${indexCardPrevious}`, indexCardCurrent)
+    }
+
     newListCard(name: String) {
         return this.http.post<Array<ListCard>>((this.url) + `/api/listCard/newlist`, name)
     }
 
     deleteListCard(index: number) {
         return this.http.delete<Array<ListCard>>((this.url) + `/api/listCard/delete?index=${index}`)
+    }
+
+    newCard(indexList:Number, titleCard: String) {
+        return this.http.post<ListCard>((this.url) + `/api/card/listCard/${indexList}/new`, titleCard)
     }
 }

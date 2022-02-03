@@ -50,6 +50,10 @@
         transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
     }
 
+    .dropzone:last-child {
+        border: none;
+      }
+
     .dropzone.cdk-drop-list-dragging .kanban-cards:not(.cdk-drag-placeholder) {
         transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
     }

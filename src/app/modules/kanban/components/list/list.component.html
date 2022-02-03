@@ -8,24 +8,25 @@
         </a>
     </div>
     <div class="dropzone"
-        (cdkDropListDropped)="drop($event)"
-        [cdkDropListConnectedTo]="culumnDropList"
+        (cdkDropListDropped)="drop($event, listOfCards)"
+        [cdkDropListConnectedTo]="listDropCard"
         [cdkDropListData]="listOfCards.cardList"
         id="{{listOfCards.name}}" 
-        cdkDropList>
-        <div class="kanban-cards" *ngFor="let card of cards" cdkDrag>
-            <div class="cards" *ngIf="getCard(card, listOfCards.id)">
-                <div class="content">#{{card.id}} - {{card.title}}</div>
-                <div class="content">#{{listOfCards.name}}</div>
+        cdkDropList
+        >
+        <div class="kanban-cards" *ngFor="let card of sortByIndex(listOfCards.cardList)" cdkDrag [cdkDragData]="card">
+            <div class="cards">
+                <div class="content">#{{card.indexCard}} - {{card.title}}</div>
+                <!-- <div class="content">#{{listOfCards.name}}</div> -->
                 <div class="status red"></div>
-                <app-modal id="{{card.title}}" [card]="card">
+                <!-- <app-modal id="{{card.title}}" [card]="card">
                     <app-modal-card [card]="card" [columnName]="list"></app-modal-card>
-                </app-modal>
+                </app-modal> -->
             </div>
         </div>
     </div>
     <div class="new-card">
-        <a (click)="newCard(listOfCards)">
+        <a (click)="newCard(listOfCards.indexList)">
             <div class="button-new-card">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
