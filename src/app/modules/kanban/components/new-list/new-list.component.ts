@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { KanbanSevice } from 'src/app/modules/kanban-board/service/kanban.service';
-
 @Component({
   selector: 'app-new-list',
   templateUrl: './new-list.component.html',
@@ -14,9 +13,11 @@ export class NewListComponent implements OnInit {
 
   constructor(
     private kanbanService: KanbanSevice,
+    private elementRef: ElementRef
   ) { }
 
   ngOnInit(): void {
+    this.elementRef.nativeElement.focus()
   }
 
   newList() {
@@ -35,5 +36,6 @@ export class NewListComponent implements OnInit {
 
   closeInputNewList() {
     this.showInput = !this.showInput
+    this.nameList = ''
   }
 }

@@ -57,7 +57,7 @@ export class KanbanSevice {
     newListCard(name: String) {
         return this.http.post<Array<ListCard>>((this.url) + `/api/listCard/newlist`, name)
     }
-
+    
     deleteListCard(index: number) {
         return this.http.delete<Array<ListCard>>((this.url) + `/api/listCard/delete?index=${index}`)
     }
