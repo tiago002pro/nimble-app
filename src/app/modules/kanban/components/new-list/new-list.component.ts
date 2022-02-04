@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { KanbanSevice } from 'src/app/modules/kanban-board/service/kanban.service';
+import { KanbanSevice } from 'src/app/modules/kanban/service/kanban.service';
 @Component({
   selector: 'app-new-list',
   templateUrl: './new-list.component.html',
