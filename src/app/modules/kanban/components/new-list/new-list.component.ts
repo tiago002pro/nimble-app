@@ -13,11 +13,9 @@ export class NewListComponent implements OnInit {
 
   constructor(
     private kanbanService: KanbanSevice,
-    private elementRef: ElementRef
   ) { }
 
   ngOnInit(): void {
-    this.elementRef.nativeElement.focus()
   }
 
   newList() {
