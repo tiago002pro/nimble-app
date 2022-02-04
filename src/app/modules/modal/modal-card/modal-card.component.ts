@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Card } from '../../kanban-board/interface/kanban.card.interface';
-import { ListCard } from '../../kanban-board/interface/kanban.listcard.interface';
+import { Card } from '../../kanban/interface/kanban.card.interface';
+import { ListCard } from '../../kanban/interface/kanban.listcard.interface';
 
 @Component({
   selector: 'app-modal-card',

@@ -1,7 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { ListCard } from '../kanban-board/interface/kanban.listcard.interface';
-import { KanbanSevice } from '../kanban-board/service/kanban.service';
+import { ListCard } from './interface/kanban.listcard.interface';
+import { KanbanSevice } from './service/kanban.service';
 
 @Component({
   selector: 'app-kanban',

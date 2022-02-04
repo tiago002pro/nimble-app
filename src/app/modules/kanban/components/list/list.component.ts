@@ -1,8 +1,8 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Card } from 'src/app/modules/kanban-board/interface/kanban.card.interface';
-import { ListCard } from 'src/app/modules/kanban-board/interface/kanban.listcard.interface';
-import { KanbanSevice } from 'src/app/modules/kanban-board/service/kanban.service';
+import { Card } from 'src/app/modules/kanban/interface/kanban.card.interface';
+import { ListCard } from 'src/app/modules/kanban/interface/kanban.listcard.interface';
+import { KanbanSevice } from 'src/app/modules/kanban/service/kanban.service';
 import Swal from 'sweetalert2';
 import * as _ from 'underscore';
 

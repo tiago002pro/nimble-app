@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Board } from "../interface/kanban.board.interface";
 import { Card } from "../interface/kanban.card.interface";
 import { Kanban } from "../interface/kanban.interface";
 import { ListCard } from "../interface/kanban.listcard.interface";
