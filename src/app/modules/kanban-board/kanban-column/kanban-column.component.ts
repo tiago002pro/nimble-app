@@ -1,10 +1,10 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../modal';
-import { Card } from '../interface/kanban.card.interface';
-import { Kanban } from '../interface/kanban.interface';
-import { ListCard } from '../interface/kanban.listcard.interface';
-import { KanbanSevice } from '../service/kanban.service';
+import { Card } from '../../kanban/interface/kanban.card.interface';
+import { Kanban } from '../../kanban/interface/kanban.interface';
+import { ListCard } from '../../kanban/interface/kanban.listcard.interface';
+import { KanbanSevice } from '../../kanban/service/kanban.service';
 
 @Component({
   selector: 'app-kanban-column',
