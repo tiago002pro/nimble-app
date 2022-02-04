@@ -7,13 +7,14 @@
                 </div>
             </a>
         </div>
-        <div [ngClass]="showInput == true ? 'input-text' : 'hide-input'">
+        <div class="input-text" *ngIf="showInput == true">
             <input type="text"
                 placeholder="Insira o título da lista.."
                 class="form-control"
                 [ngModel]="nameList"
                 (ngModelChange)="onChange($event)"
-                (keyup.enter)="saveList()">
+                (keyup.enter)="saveList()"
+                ng-show="showInput == true">
             <div class="new-list-bottom">
                 <app-nb-button [label]="'Nova Lista'" (click)="saveList()" ></app-nb-button>
                 <div class="close-input">
