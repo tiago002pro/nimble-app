@@ -36,7 +36,6 @@ export class SidebarComponent implements OnInit {
         router: "#",
         drop: false,
         sub: [
-          {name: "Carteira", router: "#"},
           {name: "Extrato", router: "extract"},
           {name: "Contas a Pagar", router: "payment"},
           {name: "Contas a Receber", router: "receivement"},
