@@ -1,22 +1,16 @@
 .last-board {
     color: #3d4465;
+    box-shadow: 1px 1px 2px 1px rgb(36 41 57 / 48%);
+    background: #ebecf0;
+    width: 280px;
+    margin: 5px;
+    border-radius: 5px;
 
     .new-column {
-        height: 40px;
-        margin: 5px;
-        border-radius: 3px;
-        background: rgba(129, 129, 129, 0.199);
         transition: 0.3s ease;
     }
     
     .new-column-input {
-        width: 260px;
-        height: 135px;
-        margin: 10px;
-        border-radius: 3px;
-        background: #ebecf0;
-        transition: 0.3s ease;
-        display: table;
     }
 
     .new-board {
@@ -24,7 +18,6 @@
         border-radius: 5px;
         cursor: pointer;
         background-color: #6e7899;
-        box-shadow: 1px 1px 2px 1px rgb(36 41 57 / 48%);
     }
 
     .new-board:hover {
@@ -61,7 +54,6 @@
     .input-text {
         width: 280px;
         transition: 0.3s ease;
-        box-shadow: 3px 3px 2px 1px rgb(36 41 57 / 48%);
     }
     
     .input-text input {
@@ -80,7 +72,7 @@
         margin: auto;
         display: flex;
         justify-content: space-between;
-        padding-top: 10px;
+        padding: 10px 0px;
     }
     
     .new-list-bottom .close-input {
