@@ -1,22 +1,45 @@
 <div class="receivement-component">
     <app-nb-title title="Contas a Receber"></app-nb-title>
-    <div class="receivement-area content-area">
-        <div class="row">
-            <div class="col-md-5">
-                <app-nb-input-date [label]="'Data de emissão'" [placeholder]="'Ex.: 01/01/2000'"></app-nb-input-date>
+    <div class="content-area">
+        <div class="receivement-area">
+            <div class="data">
+                <div class="row">
+                    <div class="col-md-8">
+                        <app-nb-input-text [label]="'Numero do documento'" [placeholder]="''"></app-nb-input-text>
+                    </div>
+                    <div class="col-md-4">
+                        <app-nb-input-date [label]="'Data de emissão'" [placeholder]="'Ex.: 01/01/2000'"></app-nb-input-date>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <app-nb-input-text [label]="'Cliente'" [placeholder]="'Ex.: '"></app-nb-input-text>
+                    </div>
+                    <div class="col-md-6">
+                        <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: '"></app-nb-input-text>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <app-nb-input-number [label]="'Valor'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-number>
+                    </div>
+                    <div class="col-md-4">
+                        <app-nb-input-number [label]="'Qtd. parcelas'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-number>
+                    </div>
+                    <div class="col-md-4">
+                        <app-nb-input-date [label]="'1º Vencimento'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-date>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-nb-input-number [label]="'Histórico'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-number>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-7">
-                <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Nimble LTDA'"></app-nb-input-text>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <app-nb-input-text [label]="'Histórico'" [placeholder]="'Ex.: '"></app-nb-input-text>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <app-nb-input-number [label]="'Valor'" [placeholder]="'Ex.: R$ 1.000,00'"></app-nb-input-number>
+            <div class="data">
+                <div class="row">
+                    <h1>Parcelas</h1>
+                </div>
             </div>
         </div>
     </div>
