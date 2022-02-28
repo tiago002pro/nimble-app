@@ -23,6 +23,13 @@
         justify-content: center;
         text-align: center;
         margin-top: 40px;
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            max-width: 175px;
+            margin: 0 auto;
+        }
     }
 
     .button-back {
