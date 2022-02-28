@@ -1,10 +1,8 @@
 <div class="nb-person-document">
-    <div class="row">
-        <div class="col-md-12 sub-title">
-            Documentos
-        </div>
+    <div class="col-md-12 sub-title">
+        Documentos
     </div>
-    <div class="row box">
+    <div class="row">
         <div class="col-md-3">
             <app-nb-input-cpfcnpj [label]="'CPF ou CNPJ'" [placeholder]="''" [value]="document" (ngModel)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-input-cpfcnpj>
         </div>

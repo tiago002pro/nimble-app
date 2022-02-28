@@ -1,14 +1,13 @@
 <div class="nb-input-date">
-    <label class="input-label">{{label}}</label>
-    <div class="input-text">
+    <div class="form-group">
+        <label class="input-label">{{label}}</label>
         <input type="text"
-               placeholder="{{placeholder}}"
-               value="{{value}}"
-               [ngModel]="value"
-               (ngModelChange)="onChange($event)"
-               date="dd-MM-yyyy"
-               onfocus="(this.type='date')">
+            class="form-control"
+            placeholder="{{placeholder}}"
+            value="{{value}}"
+            [ngModel]="value"
+            (ngModelChange)="onChange($event)"
+            date="dd-MM-yyyy"
+            onfocus="(this.type='date')">
     </div>
 </div>
-
-<!-- onblur="(this.type='text')" -->
