@@ -1,31 +1,58 @@
-<div class="finance-form-component">
+<div class="finance-form">
     <app-nb-title title="Contas a Pagar"></app-nb-title>
-    <div class="content-area">
-        <div class="row">
-            <div class="col-md-8">
-                <app-nb-input-text [label]="'Nº do Documento'" [placeholder]="'Ex.: 15166354'"></app-nb-input-text>
+    <div class="content">
+        <div class="content-area data">
+            <div class="row">
+                <div class="col-md-8">
+                    <app-nb-input-text [label]="'Nº do Documento'" [placeholder]="'Ex.: 15166354'" (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
+                </div>
+                <div class="col-md-4">
+                    <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>            
+                </div>
+                <div class="col-md-6">
+                    <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveProvider($event)"></app-nb-input-text>
+                </div>
+                <div class="col-md-6">
+                    <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
+                </div>
+                <div class="col-md-4">
+                    <app-nb-input-number [label]="'Valor'" (ngModel)="reciveValue($event)"></app-nb-input-number>
+                </div>  
+                <div class="col-md-4">
+                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveParcel($event)"></app-nb-input-number>
+                </div>  
+                <div class="col-md-4">
+                    <app-nb-input-date [label]="'Vencimento'" (ngModel)="reciveDueDate($event)"></app-nb-input-date>
+                </div> 
+                <div class="col-md-12">
+                    <app-nb-input-text [label]="'Histórico'" [placeholder]="'Histórico'" (ngModel)="reciveHistoric($event)"></app-nb-input-text>
+                </div> 
             </div>
-            <div class="col-md-4">
-                <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'"></app-nb-input-date>            
+            <div class="button">
+                <div class="form-group">
+                    <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
+                    <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back>
+                </div>
             </div>
-            <div class="col-md-6">
-                <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Fornecedor'"></app-nb-input-text>
-            </div>
-            <div class="col-md-6">
-                <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'"></app-nb-input-text>        
-            </div>
-            <div class="col-md-4">
-                <app-nb-input-number [label]="'Valor'"></app-nb-input-number>
-            </div>  
-            <div class="col-md-4">
-                <app-nb-input-number [label]="'Qtd. parcelas'"></app-nb-input-number>
-            </div>  
-            <div class="col-md-4">
-                <app-nb-input-date [label]="'Vencimento'"></app-nb-input-date>
-            </div> 
-            <div class="col-md-12">
-                <app-nb-input-text [label]="'Histórico'" [placeholder]="'Histórico'"></app-nb-input-text>
-            </div> 
-          </div>
+        </div>
+        <div class="content-area  parcel-list" *ngIf="showParcels()">
+            <app-nb-title title="Parcelas"></app-nb-title>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Parcela</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Vencimento</th>
+                    </tr>
+                </thead>
+                <tbody  *ngFor="let parcel of parcels">
+                    <tr>
+                        <td>{{parcel.parcel}}/{{title.parcel}}</td>
+                        <td>{{parcel.value}}</td>
+                        <td>{{parcel.duoDate | date:"dd/MM/yyyy"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
