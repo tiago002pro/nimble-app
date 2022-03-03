@@ -1,0 +1,74 @@
+.finance-form {
+    
+    .content {
+        display: flex;
+        align-content: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        // overflow: auto;
+    }
+
+    .content-area {
+        height: auto;
+    }
+
+    .data {
+        width: 65%;
+        margin: 0 5px 0 0;
+    }
+
+    .parcel-list {
+        width: 35%;
+        margin: 0 0 0 5px;
+    }
+
+    .button {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        justify-content: center;
+        text-align: center;
+        // margin-top: 6vh;
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            max-width: 175px;
+            margin: 0 auto;
+        }
+    }
+
+    .table {
+        border-radius: 3px;
+        thead {
+            background-color: #3d4465;
+            border: #3d4465;
+            color: #fff;
+            text-align: center;
+        }
+
+        tbody {
+            background-color: #f2f3f8;
+            border: #f2f3f8;
+            text-align: center;
+            color: #3d4465;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .content {
+            flex-direction: column;
+            align-content: space-around;
+        }
+
+        .data {
+            width: auto;
+            margin-bottom: 3vh;
+        }
+    
+        .parcel-list {
+            width: auto;
+        }
+
+    }
+}

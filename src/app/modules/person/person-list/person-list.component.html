@@ -20,7 +20,7 @@
                     <tr *ngFor="let person of listPerson">
                         <td>{{person.id}}</td>
                         <td class="align-items">{{person.name}}</td>
-                        <td>{{person.dateofbirthorfondation | date:"MM/dd/yyyy"}}</td>
+                        <td>{{person.dateofbirthorfondation | date:"dd/MM/yyyy"}}</td>
                         <td>{{person.cpf}}{{person.cnpj}}</td>
                         <td class="icon-edit">
                             <a routerLink="/person-form/edit/{{person.id}}">

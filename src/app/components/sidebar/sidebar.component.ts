@@ -39,6 +39,8 @@ export class SidebarComponent implements OnInit {
           {name: "Extrato", router: "extract"},
           {name: "Contas a Pagar", router: "payment"},
           {name: "Contas a Receber", router: "receivement"},
+          {name: "Finance-form", router: "finance-form"},
+          {name: "Finance-history", router: "finance-history"},
         ]
       },
       {
