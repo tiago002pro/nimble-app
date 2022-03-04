@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import moment from 'moment';
 import { FinanceParcel } from '../interface/parcel.interface';
 import { FinanceTitle } from '../interface/title.interface';
 
@@ -50,46 +50,26 @@ export class FinanceFormComponent implements OnInit {
     this.title.parcel = value
   }
 
-  reciveDueDate(value: any) {
+  reciveDueDate(value: Date) {
     this.title.duoDate = value
+    this.createParcels()
   }
 
   reciveHistoric(value: any) {
     this.title.historic = value
   }
 
-  showParcels() {
-    // if (this.title.value && this.title.parcel && this.title.duoDate) {
-      return true
-    // }
-  }
-
   createParcels() {
     this.parcels = []
     for(let x = 0; x < this.title.parcel; x++) {
-      console.log("xxx", x, "/", this.title.parcel);
-      // const today = new Date();
-      // const tomorrow = new Date();
-      // tomorrow.setDate(today.getDate() + 1);
-      // console.log("today", today);
-      // console.log("tomorrow", tomorrow);
-      
-      // console.log("getDate()",  this.title.duoDate.getDate());
       const parcel: FinanceParcel = {}
       parcel.parcel = x+1
       parcel.value = this.title.value
 
       if (x===0) {
-        parcel.duoDate = this.title.duoDate
+        parcel.duoDate = moment(this.title.duoDate, "YYYY-MM-DD").format();
       } else {
-        const date = new Date(this.title.duoDate);
-        console.log("date", date);
-
-        const dateParcel = date.getDay() + (30 * x)
-        console.log("dateParcel", dateParcel);
-        
-        parcel.duoDate= date.getDay() + (30 * x)
-        // .getDate() + 30 * x
+        parcel.duoDate = moment(this.title.duoDate).add(x, 'month').format();
       }
       this.parcels.push(parcel)
     }
