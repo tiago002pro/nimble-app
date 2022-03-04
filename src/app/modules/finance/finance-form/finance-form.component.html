@@ -1,7 +1,7 @@
 <div class="finance-form">
     <app-nb-title title="Contas a Pagar"></app-nb-title>
     <div class="content">
-        <div class="content-area data">
+        <div class="content-area data" [ngStyle]="title.duoDate ? {'width': '65%'} : {'width': '100%'}">
             <div class="row">
                 <div class="col-md-8">
                     <app-nb-input-text [label]="'Nº do Documento'" [placeholder]="'Ex.: 15166354'" (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
