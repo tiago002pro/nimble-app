@@ -24,34 +24,18 @@
     }
 
     .button {
-        grid-column-start: 1;
-        grid-column-end: 5;
+        // grid-column-start: 1;
+        // grid-column-end: 5;
         justify-content: center;
-        text-align: center;
-        // margin-top: 6vh;
+        display: flex;
+        // text-align: center;
+        margin-top: 3vh;
 
         .form-group {
             display: flex;
-            justify-content: space-between;
-            max-width: 175px;
-            margin: 0 auto;
-        }
-    }
-
-    .table {
-        border-radius: 3px;
-        thead {
-            background-color: #3d4465;
-            border: #3d4465;
-            color: #fff;
-            text-align: center;
-        }
-
-        tbody {
-            background-color: #f2f3f8;
-            border: #f2f3f8;
-            text-align: center;
-            color: #3d4465;
+            // justify-content: space-between;
+            // max-width: 175px;
+            // margin: 0 auto;
         }
     }
 
@@ -69,6 +53,5 @@
         .parcel-list {
             width: auto;
         }
-
     }
 }

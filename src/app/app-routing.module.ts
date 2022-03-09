@@ -28,8 +28,9 @@ const routes: Routes = [
   { path: 'receivement', component: ReceivementComponent},
   { path: 'modal-card', component: ModalCardTestComponent},
   { path: 'report', component: ReportComponent},
-  { path: 'finance-form', component: FinanceFormComponent},
-  { path: 'finance-history', component: FinanceHistoryComponent},
+  { path: 'finance-form/:rule', component: FinanceFormComponent},
+  { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
+  { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
 ];
 
 @NgModule({

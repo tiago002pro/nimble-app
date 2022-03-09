@@ -1,5 +1,12 @@
 <div class="nb-person-form">
-    <app-nb-title [title]="'Cadastrar ' + rule"></app-nb-title>
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title [title]="'Cadastrar ' + ruleTitle"></app-nb-title>
+        </div>
+        <div class="col-md-6">
+            <app-nb-button-return></app-nb-button-return>
+        </div>
+    </div>
     <div class="content-form content-area">
         <div class="content-data-left">
             <div class="content">
@@ -31,7 +38,7 @@
         <div class="button">
             <div class="form-group">
                 <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
-                <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back>
+                <!-- <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back> -->
             </div>
         </div>
     </div>

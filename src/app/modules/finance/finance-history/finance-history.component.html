@@ -1,10 +1,46 @@
 <div class="finance-history-component">
-    <app-nb-title title="Contas a Pagar"></app-nb-title>
-    <div class="content-area">
-        <div class="row">
-          <div class="col-md-12">
-              <app-nb-input-text [label]="'Doc. Number'" [placeholder]="'Ex.: 15166354'"></app-nb-input-text>
-          </div>  
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Contas a {{currentRoute}}"></app-nb-title>
         </div>
+    </div>
+    <div class="content-area">
+        <div class="new-person-button">
+            <app-nb-button [label]="'Novo'" routerLink="/finance-form/{{currentRoute}}" ></app-nb-button>
+        </div>
+        <table class="table nimble-table">
+            <thead>
+                <tr>
+                    <th scope="col">Doc.</th>
+                    <th scope="col">Fornecedor</th>
+                    <th scope="col">Vencimento</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123456</td>
+                    <td>Casas Bahia</td>
+                    <td>20/02/2022</td>
+                    <td>500,00</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>123456</td>
+                    <td>Casas Bahia</td>
+                    <td>20/02/2022</td>
+                    <td>500,00</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>123456</td>
+                    <td>Casas Bahia</td>
+                    <td>20/02/2022</td>
+                    <td>500,00</td>
+                    <td>P</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

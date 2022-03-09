@@ -1,13 +1,16 @@
+import { Person } from "../../person/interface/person.interface";
+
 export interface FinanceTitle {
-    docuNumber?: any,
-    emissionDate?: any,
-    provider?: any,
+    docuNumber?: String,
+    emissionDate?: Date,
+    value?: DoubleRange,
+    parcel?: Boolean,
+    parcelNumber?: Number,
+    duoDate?: Date,
+    historic?: String,
+    type?: String,
+    status?: String,
+    payDay?: Date,
+    person?: Person,
     category?: any,
-    value?: any,
-    parcel?: any,
-    duoDate?: any,
-    historic?: any,
-    type?: any,
-    status?: any,
-    payDay?: any,
 }

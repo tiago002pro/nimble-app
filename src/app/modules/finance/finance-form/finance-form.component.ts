@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
+import { Pageable } from 'src/app/model/pageable.model';
+import { Person } from '../../person/interface/person.interface';
+import { PersonService } from '../../person/service/person.service';
 import { FinanceParcel } from '../interface/parcel.interface';
 import { FinanceTitle } from '../interface/title.interface';
 
@@ -11,20 +15,31 @@ import { FinanceTitle } from '../interface/title.interface';
 export class FinanceFormComponent implements OnInit {
   title: FinanceTitle = {}
   parcels: Array<FinanceParcel> = []
+  type!: any
+  personList!: Pageable
+  numberParcels!: Number
+  currentRoute!: any
+  backHistory!: any
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private personService: PersonService,
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.currentRoute = this.route.snapshot.params.rule
+    this.type = this.route.snapshot.params.rule === 'pagar'? 'pay' : 'receive'
+    this.personList = await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)
   }
 
   save() {
-    this.createParcels()
-    console.log("titles", this.title);
-    console.log("parcels", this.parcels);
-
+    console.log("title", this.title);
+    
   }
 
-  back() {}
+  back() {
+    history.back()  
+  }
 
   reciveDocNumber(value: any) {
     this.title.docuNumber = value
@@ -34,8 +49,8 @@ export class FinanceFormComponent implements OnInit {
     this.title.emissionDate = value
   }
 
-  reciveProvider(value: any) {
-    this.title.provider = value
+  recivePerson(value: Person) {
+    this.title.person = value
   }
 
   reciveCategory(value: any) {
@@ -46,8 +61,8 @@ export class FinanceFormComponent implements OnInit {
     this.title.value = value
   }
 
-  reciveParcel(value: any) {
-    this.title.parcel = value
+  reciveNumberParcels(value: any) {
+    this.numberParcels = value
   }
 
   reciveDueDate(value: Date) {
@@ -61,7 +76,7 @@ export class FinanceFormComponent implements OnInit {
 
   createParcels() {
     this.parcels = []
-    for(let x = 0; x < this.title.parcel; x++) {
+    for(let x = 0; x < this.numberParcels; x++) {
       const parcel: FinanceParcel = {}
       parcel.parcel = x+1
       parcel.value = this.title.value

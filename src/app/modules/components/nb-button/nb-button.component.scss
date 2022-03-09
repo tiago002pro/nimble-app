@@ -1,13 +1,21 @@
 .btn {
   text-transform: uppercase;
+  font-weight: 500;
 
   &.btn-nimble {
-    color: #f0f3ff;
-    background-color: #3d4465;
-    border-color: #3d4465;
+    color: #3d4465;
+    background-color: #00ff88;
+    border-color: #00ff88;
 
     &:hover {
-      background-color: #4c5671;
+      background-color: #77ffc0;
+      border-color: #77ffc0;
     }
+  }
+
+  .label {
+    width: 8vw;
+    height: 3vh;
+    line-height: 3vh;
   }
 }

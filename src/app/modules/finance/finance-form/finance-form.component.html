@@ -1,5 +1,13 @@
 <div class="finance-form">
-    <app-nb-title title="Contas a Pagar"></app-nb-title>
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Contas a {{currentRoute}}"></app-nb-title>
+
+        </div>
+        <div class="col-md-6">
+            <app-nb-button-return></app-nb-button-return>
+        </div>
+    </div>
     <div class="content">
         <div class="content-area data" [ngStyle]="title.duoDate ? {'width': '65%'} : {'width': '100%'}">
             <div class="row">
@@ -10,8 +18,8 @@
                     <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>            
                 </div>
                 <div class="col-md-6">
-                    <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveProvider($event)"></app-nb-input-text>
-                </div>
+                    <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="recivePerson($event)"></app-nb-input-text>
+                </div>                
                 <div class="col-md-6">
                     <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
                 </div>
@@ -19,7 +27,7 @@
                     <app-nb-input-number [label]="'Valor'" (ngModel)="reciveValue($event)"></app-nb-input-number>
                 </div>  
                 <div class="col-md-4">
-                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveParcel($event)"></app-nb-input-number>
+                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
                 </div>  
                 <div class="col-md-4">
                     <app-nb-input-date [label]="'Vencimento'" (ngModel)="reciveDueDate($event)"></app-nb-input-date>
@@ -31,13 +39,12 @@
             <div class="button">
                 <div class="form-group">
                     <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
-                    <app-nb-button-back [label]="'Voltar'" (click)="back()"  ></app-nb-button-back>
                 </div>
             </div>
         </div>
         <div class="content-area  parcel-list" *ngIf="title.duoDate">
             <app-nb-title title="Parcelas"></app-nb-title>
-            <table class="table">
+            <table class="table nimble-table">
                 <thead>
                     <tr>
                         <th scope="col">Parcela</th>
@@ -47,7 +54,7 @@
                 </thead>
                 <tbody  *ngFor="let parcel of parcels">
                     <tr>
-                        <td>{{parcel.parcel}}/{{title.parcel}}</td>
+                        <td>{{parcel.parcel}}/{{numberParcels}}</td>
                         <td>{{parcel.value}}</td>
                         <td>{{parcel.duoDate | date:"dd/MM/yyyy"}}</td>
                     </tr>

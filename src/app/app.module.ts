@@ -46,6 +46,7 @@ import { NewListComponent } from './modules/kanban/components/new-list/new-list.
 import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
 import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
 import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
+import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -115,6 +116,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     FinanceFormComponent,
     FinanceHistoryComponent,
     NbSelectComponent,
+    NgButtonReturnComponent,
   ],
   imports: [
     BrowserModule,
