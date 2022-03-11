@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Person } from '../../person/interface/person.interface';
 
 @Component({
   selector: 'app-nb-select-object',

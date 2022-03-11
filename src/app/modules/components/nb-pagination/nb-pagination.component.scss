@@ -1,0 +1,40 @@
+.nb-pagination {
+    .area {
+        justify-content: center;
+        display: flex;
+    }
+
+    .pagination-item {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: #3d4465;
+        cursor: pointer;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    
+    .pagination-item {
+        color: #fff;
+        font-weight: 400;
+        float: left;
+    }
+    
+    .pagination-item a:hover {
+        text-decoration: none;
+    }
+    
+    .pagination-arrow {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        // cursor: pointer;
+        float: left;
+    }
+    
+    .pagination-arrow svg {
+        color: #3d4465;
+    }
+}
