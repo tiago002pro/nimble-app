@@ -10,6 +10,8 @@ import { ReceivementComponent } from './modules/finance/receivement/receivement.
 import { ExtractComponent } from './modules/finance/extract/extract.component';
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
+import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
+import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +28,9 @@ const routes: Routes = [
   { path: 'receivement', component: ReceivementComponent},
   { path: 'modal-card', component: ModalCardTestComponent},
   { path: 'report', component: ReportComponent},
+  { path: 'finance-form/:rule', component: FinanceFormComponent},
+  { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
+  { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
 ];
 
 @NgModule({

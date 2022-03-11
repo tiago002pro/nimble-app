@@ -1,0 +1,15 @@
+.buttonBack {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: #6c757d;
+
+    span {
+        margin-left: 5px;
+    }
+}
+
+.buttonBack:hover{
+    color: #3d4465;
+}

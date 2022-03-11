@@ -14,6 +14,7 @@ export class NbPersonDataComponent implements OnInit {
   @Input() email!: PersonEmail
   @Input() typePerson!: String
   @Output() ngModel = new EventEmitter()
+  sex = ["Feminino", "Masculino"]
 
   constructor() { }
 
@@ -28,16 +29,12 @@ export class NbPersonDataComponent implements OnInit {
     this.entity.shortName = value
   }
 
-  reciveGender(value: String) {
+  reciveGender(value: any) {
     this.entity.gender = value
   }
 
   reciveEmail(value: String) {
     this.email.email = value
-  }
-
-  recivePhoneType(value: String) {
-    this.phone.phoneType = value
   }
 
   recivePhone(value: String) {

@@ -80,17 +80,19 @@ html {
 }
 
 .nimble-table {
-  color: rgba(#3d4465, .9);
-
+  border-radius: 3px;
   thead {
-    text-align: center;
-    color: #fff;
     background-color: #3d4465;
+    border: #3d4465;
+    color: #fff;
+    text-align: center;
   }
 
   tbody {
+    background-color: #f2f3f8;
+    border: #f2f3f8;
     text-align: center;
-    color: rgba(#3d4465, .9);
+    color: #3d4465;
   }
 }
 

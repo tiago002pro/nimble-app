@@ -26,10 +26,11 @@ export class PersonFormComponent implements OnInit {
     private route: ActivatedRoute,
     private personService: PersonService,
     // private ngxService: NgxUiLoaderService,
-  ) { }
+  ) { 
+    this.rule = this.route.snapshot.params.rule
+  }
 
   ngOnInit(): void {
-    this.rule = this.route.snapshot.params.rule
     switch(this.rule) {
       case "Clientes": 
         this.ruleTitle = "Cliente"
@@ -92,7 +93,7 @@ export class PersonFormComponent implements OnInit {
       title: 'Concluído',
       text: this.ruleTitle + ' cadastrado com sucesso!',
       showConfirmButton: false,
-      timer: 2500
+      timer: 1500
     })
   }
 
@@ -103,7 +104,7 @@ export class PersonFormComponent implements OnInit {
       title: 'Erro',
       text: 'Verifique os dados e tente novamente.',
       showConfirmButton: false,
-      timer: 2500
+      timer: 1500
     })
   }
 
