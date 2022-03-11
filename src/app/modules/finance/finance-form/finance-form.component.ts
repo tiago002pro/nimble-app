@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
 import { Pageable } from 'src/app/model/pageable.model';
+import Swal from 'sweetalert2';
 import { Person } from '../../person/interface/person.interface';
 import { PersonService } from '../../person/service/person.service';
+import { EnumTitleType } from '../enum/EnumTitleType';
 import { FinanceParcel } from '../interface/parcel.interface';
 import { FinanceTitle } from '../interface/title.interface';
+import { FinanceService } from '../service/finance.service';
 
 @Component({
   selector: 'app-finance-form',
@@ -13,36 +16,60 @@ import { FinanceTitle } from '../interface/title.interface';
   styleUrls: ['./finance-form.component.scss']
 })
 export class FinanceFormComponent implements OnInit {
+  titleList: Array<FinanceTitle> = []
   title: FinanceTitle = {}
-  parcels: Array<FinanceParcel> = []
+  parcels!: Array<FinanceParcel>
   type!: any
   personList!: Pageable
   numberParcels!: Number
+  firstDuoDate!: Date
   currentRoute!: any
-  backHistory!: any
 
   constructor(
     private route: ActivatedRoute,
     private personService: PersonService,
-  ) { }
-
-  async ngOnInit() {
+    private financeService: FinanceService
+  ) {
     this.currentRoute = this.route.snapshot.params.rule
     this.type = this.route.snapshot.params.rule === 'pagar'? 'pay' : 'receive'
+  }
+
+  async ngOnInit() {
+    this.title.type = this.type === 'pay' ? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.title.paid = false
     this.personList = await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)
   }
 
   save() {
-    console.log("title", this.title);
-    
+    this.parcels.forEach((parcel) => {
+      this.createTitle(parcel)
+    })
+    this.financeService.createTitle(this.titleList).subscribe(
+      success => {this.sucessModal(); this.back()},
+      error => {this.errorModal()}
+    )
   }
 
-  back() {
-    history.back()  
+  createTitle(parcel: FinanceParcel) {
+    const title: FinanceTitle = {}
+    title.docNumber = this.title.docNumber
+    title.emissionDate = this.title.emissionDate
+    title.value = this.title.value
+    title.parcel = this.title.parcel
+    title.parcelNumber = parcel.parcelNumber
+    title.duoDate = parcel.parcelDuoDate
+    title.historic = this.title.historic
+    title.type = this.title.type
+    title.payDay = this.title.payDay
+    title.person = this.title.person
+    title.category = this.title.category
+    title.paid = this.title.paid
+
+    this.titleList.push(title)
   }
 
   reciveDocNumber(value: any) {
-    this.title.docuNumber = value
+    this.title.docNumber = value
   }
 
   reciveEmissionDate(value: any) {
@@ -61,32 +88,62 @@ export class FinanceFormComponent implements OnInit {
     this.title.value = value
   }
 
-  reciveNumberParcels(value: any) {
-    this.numberParcels = value
-  }
-
-  reciveDueDate(value: Date) {
-    this.title.duoDate = value
-    this.createParcels()
-  }
-
   reciveHistoric(value: any) {
     this.title.historic = value
   }
+
+  reciveNumberParcels(value: any) {
+    this.numberParcels = value
+    console.log("aaaa", this.numberParcels > 1);
+    
+    this.title.parcel = this.numberParcels > 1 ? true : false
+  }
+
+  reciveDueDate(value: Date) {
+    this.firstDuoDate = value
+    this.createParcels()
+  }
+
 
   createParcels() {
     this.parcels = []
     for(let x = 0; x < this.numberParcels; x++) {
       const parcel: FinanceParcel = {}
-      parcel.parcel = x+1
-      parcel.value = this.title.value
+      parcel.parcelNumber = x+1
+      parcel.parcelValue = this.title.value
 
       if (x===0) {
-        parcel.duoDate = moment(this.title.duoDate, "YYYY-MM-DD").format();
+        parcel.parcelDuoDate = moment(this.firstDuoDate, "YYYY-MM-DD").format();
       } else {
-        parcel.duoDate = moment(this.title.duoDate).add(x, 'month').format();
+        parcel.parcelDuoDate = moment(this.firstDuoDate).add(x, 'month').format();
       }
       this.parcels.push(parcel)
     }
+  }
+
+  sucessModal() {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Concluído',
+      text: 'Título cadastrado com sucesso!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  errorModal() {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Erro',
+      text: 'Verifique os dados e tente novamente.',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  back() {
+    history.back()  
   }
 }

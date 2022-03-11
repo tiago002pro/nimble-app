@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="content">
-        <div class="content-area data" [ngStyle]="title.duoDate ? {'width': '65%'} : {'width': '100%'}">
+        <div class="content-area data" [ngStyle]="firstDuoDate ? {'width': '65%'} : {'width': '100%'}">
             <div class="row">
                 <div class="col-md-8">
                     <app-nb-input-text [label]="'Nº do Documento'" [placeholder]="'Ex.: 15166354'" (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
@@ -18,7 +18,7 @@
                     <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>            
                 </div>
                 <div class="col-md-6">
-                    <app-nb-input-text [label]="'Fornecedor'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="recivePerson($event)"></app-nb-input-text>
+                    <app-nb-select-object [label]="'Fornecedor'" [list]="personList.content" (ngModel)="recivePerson($event)"></app-nb-select-object>
                 </div>                
                 <div class="col-md-6">
                     <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="content-area  parcel-list" *ngIf="title.duoDate">
+        <div class="content-area  parcel-list" *ngIf="firstDuoDate">
             <app-nb-title title="Parcelas"></app-nb-title>
             <table class="table nimble-table">
                 <thead>
@@ -54,9 +54,9 @@
                 </thead>
                 <tbody  *ngFor="let parcel of parcels">
                     <tr>
-                        <td>{{parcel.parcel}}/{{numberParcels}}</td>
-                        <td>{{parcel.value}}</td>
-                        <td>{{parcel.duoDate | date:"dd/MM/yyyy"}}</td>
+                        <td>{{parcel.parcelNumber}}/{{numberParcels}}</td>
+                        <td>{{parcel.parcelValue}}</td>
+                        <td>{{parcel.parcelDuoDate | date:"dd/MM/yyyy"}}</td>
                     </tr>
                 </tbody>
             </table>

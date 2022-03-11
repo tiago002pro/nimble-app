@@ -1,9 +1,9 @@
 import { Person } from "../../person/interface/person.interface";
 
 export interface FinanceTitle {
-    docuNumber?: String,
+    docNumber?: String,
     emissionDate?: Date,
-    value?: DoubleRange,
+    value?: Number,
     parcel?: Boolean,
     parcelNumber?: Number,
     duoDate?: Date,
@@ -12,5 +12,6 @@ export interface FinanceTitle {
     status?: String,
     payDay?: Date,
     person?: Person,
-    category?: any,
+    category?: String,
+    paid?: boolean,
 }
