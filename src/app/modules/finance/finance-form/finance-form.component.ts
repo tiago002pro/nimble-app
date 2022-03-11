@@ -37,7 +37,8 @@ export class FinanceFormComponent implements OnInit {
   async ngOnInit() {
     this.title.type = this.type === 'pay' ? EnumTitleType.PAY : EnumTitleType.RECEIVE
     this.title.paid = false
-    this.personList = await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)
+    const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
+    this.personList = await this.personService.getPersonListByRule(searchPerson, 1, 100).toPromise().then(response => response)
   }
 
   save() {

@@ -48,6 +48,7 @@ import { FinanceHistoryComponent } from './modules/finance/finance-history/finan
 import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
 import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
 import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
+import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -119,6 +120,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NbSelectComponent,
     NgButtonReturnComponent,
     NbSelectObjectComponent,
+    NbPaginationComponent,
   ],
   imports: [
     BrowserModule,

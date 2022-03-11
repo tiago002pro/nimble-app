@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Pageable } from 'src/app/model/pageable.model';
 import { EnumTitleType } from '../enum/EnumTitleType';
 import { FinanceTitle } from '../interface/title.interface';
 import { FinanceService } from '../service/finance.service';
@@ -10,9 +11,11 @@ import { FinanceService } from '../service/finance.service';
   styleUrls: ['./finance-history.component.scss']
 })
 export class FinanceHistoryComponent implements OnInit {
+  list!: Pageable
   currentRoute!: any
   type!: string
   titles!: Array<FinanceTitle>
+  totalPages!: any
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +25,13 @@ export class FinanceHistoryComponent implements OnInit {
     this.type = this.route.snapshot.params.rule === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
   }
 
-  async ngOnInit(): Promise<void> {
-    this.titles = await this.financeService.getTitlesByType(this.type).toPromise().then(response => response)
+  ngOnInit() {
+    this.getTitleList(0)
+  }
+
+  async getTitleList(page: number) {
+    this.list = await this.financeService.getTitlesByType(this.type, page, 10).toPromise().then(response => response)
+    this.titles = this.list.content
+    this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }
 }
