@@ -7,8 +7,8 @@ import { Person } from '../interface/person.interface';
   providedIn: 'root'
 })
 export class PersonService {
-  // url: String = 'https://nimble-back.herokuapp.com' 
-  url: String = 'http://localhost:8080'
+  url: String = 'https://nimble-back.herokuapp.com' 
+  // url: String = 'http://localhost:8080'
 
   httpOptions = {
     headers: new HttpHeaders({

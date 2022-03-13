@@ -7,7 +7,8 @@ import { FinanceTitle } from '../interface/title.interface';
   providedIn: 'root'
 })
 export class FinanceService {
-  url: String = 'http://localhost:8080'
+  url: String = 'https://nimble-back.herokuapp.com' 
+  // url: String = 'http://localhost:8080'
 
   constructor(
     private http: HttpClient,
