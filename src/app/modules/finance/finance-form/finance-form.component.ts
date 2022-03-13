@@ -95,8 +95,6 @@ export class FinanceFormComponent implements OnInit {
 
   reciveNumberParcels(value: any) {
     this.numberParcels = value
-    console.log("aaaa", this.numberParcels > 1);
-    
     this.title.parcel = this.numberParcels > 1 ? true : false
   }
 
