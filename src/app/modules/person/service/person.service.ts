@@ -32,8 +32,8 @@ export class PersonService {
     return this.http.put((this.url) + '/api/person-individual/form', entity)
   }
 
-  getPersonListByRule(rule: String, page: number) {
-    return this.http.get<Pageable>((this.url) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size=10') 
+  getPersonListByRule(rule: String, page: number, size: number) {
+    return this.http.get<Pageable>((this.url) + '/api/person/get/person-list/rule?rule='+(rule)+'&page='+(page)+'&size='+(size)) 
   }
 
   loadById(id: any) {

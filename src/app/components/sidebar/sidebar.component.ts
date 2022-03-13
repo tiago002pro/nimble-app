@@ -12,13 +12,13 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.sidebarItem = [
-      {
-        name: "Dashboard",
-        icon: "bi bi-grid-1x2-fill",
-        router: "",
-        drop: false,
-        sub: []
-      },
+      // {
+      //   name: "Dashboard",
+      //   icon: "bi bi-grid-1x2-fill",
+      //   router: "",
+      //   drop: false,
+      //   sub: []
+      // },
       {
         name: "Cadastros",
         icon: "bi bi-plus-circle",
@@ -36,25 +36,27 @@ export class SidebarComponent implements OnInit {
         router: "#",
         drop: false,
         sub: [
-          {name: "Carteira", router: "#"},
-          {name: "Extrato", router: "extract"},
-          {name: "Contas a Pagar", router: "payment"},
-          {name: "Contas a Receber", router: "receivement"},
+          {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
+          {name: "Contas a Receber", router: "finance-history/receive/receber"},
         ]
       },
       {
         name: "Kanban",
         icon: "bi bi-kanban",
-        router: "/kanban",
+        router: "#",
         drop: false,
-        sub: []
+        sub: [
+          {name: "Quadro", router: "/kanban"},
+        ]
       },
       {
         name: "Relatórios",
         icon: "fas fa-chart-pie",
-        router: "/report",
+        router: "#",
         drop: false,
-        sub: []
+        sub: [
+          {name: "Quadro", router: "/report"},
+        ]
       },
     ]
   }

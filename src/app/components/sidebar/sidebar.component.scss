@@ -16,6 +16,19 @@
         left: 0;
     }
 
+    .sidebar-image img{
+        position: absolute;
+        // z-index: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0.2;
+    }
+
     .menu {
         margin-top: 80px;
     }

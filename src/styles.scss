@@ -26,7 +26,7 @@ body {
   scroll-behavior: smooth;
   display: flex;  
   background: #f2f3f8;
-  font-family: 'Poppins','Roboto', sans-serif;
+  font-family: 'proxima-nova';
   color: rgba(#3d4465, .9);
 
   $bg-color:#f2f3f8;
@@ -39,7 +39,7 @@ body {
 }
 
 html {
-  font-family: 'Roboto Condensed', sans-serif;
+  // font-family: 'Roboto Condensed', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -70,6 +70,7 @@ html {
   background: #fff;
   height: calc(100vh - 180px);
   box-shadow: 7px 7px 2px rgb(91 101 130 / 10%);
+  overflow: auto;
 }
 
 .sub-title {
@@ -79,20 +80,27 @@ html {
 }
 
 .nimble-table {
-  color: rgba(#3d4465, .9);
-
+  border-radius: 3px;
   thead {
-    text-align: center;
-    color: #fff;
     background-color: #3d4465;
+    border: #3d4465;
+    color: #fff;
+    text-align: center;
   }
 
   tbody {
+    background-color: #f2f3f8;
+    border: #f2f3f8;
     text-align: center;
-    color: rgba(#3d4465, .9);
+    color: #3d4465;
   }
 }
 
 .row {
   margin-bottom: 10px;
+}
+
+@font-face {
+  font-family: "proxima-nova";
+  src: url("../src/assets/Proxima\ Nova\ Font.otf");
 }

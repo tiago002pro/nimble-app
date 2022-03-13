@@ -22,17 +22,17 @@ export class PersonListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private personService: PersonService,
-  ) { }
+  ) { 
+    this.rule = this.route.snapshot.params.rule
+  }
 
   async ngOnInit() {
-    this.rule = this.route.snapshot.params.rule
     this.getListPerson(0)
-
     switch(this.rule) {
-      case "Clientes": 
+      case "client": 
         this.ruleTitle = "Cliente"
         break;
-      case "Fornecedores": 
+      case "provider": 
         this.ruleTitle = "Fornecedor"
         break
       default:
@@ -41,7 +41,7 @@ export class PersonListComponent implements OnInit {
   }
 
   async getListPerson(page: number) {
-    this.list = await this.personService.getPersonListByRule(this.rule, page).toPromise().then(response => response)
+    this.list = await this.personService.getPersonListByRule(this.rule, page, 10).toPromise().then(response => response)
     this.listPerson = this.list.content
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }

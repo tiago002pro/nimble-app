@@ -1,32 +1,25 @@
 <div class="nb-person-data">
-    <div class="row">
-        <div class="col-md-12 sub-title">
-            Dados pessoais
-        </div>
+    <div class="col-md-12 sub-title">
+        Dados pessoais
     </div>
-    <div class="row box">
+    <div class="row">
         <div class="col-md-6" *ngIf="typePerson == 'pj'">
             <app-nb-input-text [label]="'Razão Social'" [placeholder]="'Ex.: Nimble Sistemas'" [value]="entity?.name" (ngModel)="reciveName($event)"></app-nb-input-text>
         </div>
         <div class="col-md-6" *ngIf="typePerson == 'pj'">
             <app-nb-input-text [label]="'NoNome Fantasiame'" [placeholder]="'Ex.: Nimble LTDA'" [value]="entity?.shortName" (ngModel)="reciveShortName($event)"></app-nb-input-text>
         </div>
-        <div class="col-md-9" *ngIf="typePerson == 'pf'">
+        <div class="col-md-8" *ngIf="typePerson == 'pf'">
             <app-nb-input-text [label]="'Nome'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="entity?.name" (ngModel)="reciveName($event)"></app-nb-input-text>
         </div>
-        <div class="col-md-3" *ngIf="typePerson == 'pf'">
-            <app-nb-input-text [label]="'Gênero'" [placeholder]="'Ex.: Masculino'" [value]="entity?.gender" (ngModel)="reciveGender($event)"></app-nb-input-text>
+        <div class="col-md-4" *ngIf="typePerson == 'pf'">
+            <app-nb-select [label]="'Gênero'" [options]="sex" [value]="entity?.gender" (ngModel)="reciveGender($event)"></app-nb-select>
         </div>
-    </div>
-    <div class="row box">
-        <div class="col-md-6" *ngFor="let email of entity?.emails">
+        <div class="col-md-8" *ngFor="let email of entity?.emails">
             <app-nb-input-text [label]="'Email'" [placeholder]="'Ex.: email@outlook.com'" [value]="email.email" (ngModel)="reciveEmail($event)"></app-nb-input-text>
         </div>
-        <div class="col-md-3" *ngFor="let phone of entity?.phones">
+        <div class="col-md-4" *ngFor="let phone of entity?.phones">
             <app-nb-input-phone [label]="'Telefone'" [placeholder]="'Ex.: +55 (44) 95555-4444'" [value]="phone.phone" (ngModel)="recivePhone($event)"></app-nb-input-phone>
-        </div>
-        <div class="col-md-3" *ngFor="let phone of entity?.phones">
-            <app-nb-input-text [label]="'Tipo'" [placeholder]="'Ex.: Celular'" [value]="phone.phoneType" (ngModel)="recivePhoneType($event)"></app-nb-input-text>
         </div>
     </div>
 </div>

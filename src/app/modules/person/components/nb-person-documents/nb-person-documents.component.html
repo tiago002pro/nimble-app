@@ -1,23 +1,21 @@
 <div class="nb-person-document">
-    <div class="row">
-        <div class="col-md-12 sub-title">
-            Documentos
-        </div>
+    <div class="col-md-12 sub-title">
+        Documentos
     </div>
-    <div class="row box">
-        <div class="col-md-3">
+    <div class="row">
+        <div class="col-md-4">
             <app-nb-input-cpfcnpj [label]="'CPF ou CNPJ'" [placeholder]="''" [value]="document" (ngModel)="reciveDocument($event)" (type)="reciveTypePerson($event)"></app-nb-input-cpfcnpj>
         </div>
-        <div class="col-md-3" *ngIf="typePerson == 'pf'">
+        <div class="col-md-4" *ngIf="typePerson == 'pf'">
             <app-nb-input-text [label]="'RG'" [placeholder]="''" [value]="entity?.rg" (ngModel)="reciveRg($event)"></app-nb-input-text>
         </div>
-        <div class="col-md-3" *ngIf="typePerson == 'pj'">
+        <div class="col-md-4" *ngIf="typePerson == 'pj'">
             <app-nb-input-text [label]="'IE'" [placeholder]="''" [value]="entity?.ie" (ngModel)="reciveIe($event)"></app-nb-input-text>
         </div>
-        <div class="col-md-3" *ngIf="typePerson == 'pf'">
-            <app-nb-input-date [label]="'Data de Nascimento'" [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation" (ngModel)="reciveDate($event)"></app-nb-input-date>
+        <div class="col-md-4" *ngIf="typePerson == 'pf'">
+            <app-nb-input-date [label]="'Nascimento'" [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation" (ngModel)="reciveDate($event)"></app-nb-input-date>
         </div>
-        <div class="col-md-3" *ngIf="typePerson == 'pj'">
+        <div class="col-md-4" *ngIf="typePerson == 'pj'">
             <app-nb-input-date [label]="'Data de Fundação'" [placeholder]="'Ex.: 22/09/2021'" [value]="entity?.dateofbirthorfondation" (ngModel)="reciveDate($event)"></app-nb-input-date>
         </div>
     </div>

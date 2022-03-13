@@ -10,8 +10,6 @@ import { HomeComponent } from './modules/dashboard/home.component';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { APP_BASE_HREF } from '@angular/common';
-import { KanbanBoardComponent } from './modules/kanban-board/kanban-board.component';
-import { KanbanColumnComponent } from './modules/kanban-board/kanban-column/kanban-column.component';
 import { ModalModule } from './modules/modal';
 import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -25,9 +23,6 @@ import { NbInputZipcodeComponent } from './modules/components/nb-input-zipcode/n
 import { NbPersonDataComponent } from './modules/person/components/nb-person-data/nb-person-data.component';
 import { NbPersonDocumentsComponent } from './modules/person/components/nb-person-documents/nb-person-documents.component';
 import { NbPersonLocationComponent } from './modules/person/components/nb-person-location/nb-person-location.component';
-import { PaymentComponent } from './modules/finance/payment/payment.component';
-import { ReceivementComponent } from './modules/finance/receivement/receivement.component';
-import { ExtractComponent } from './modules/finance/extract/extract.component';
 import { PersonFormComponent } from './modules/person/person-form/person-form.component';
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 import {LOCALE_ID} from '@angular/core';
@@ -43,6 +38,12 @@ import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
 import { CardComponent } from './modules/kanban/components/card/card.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
+import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
+import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
+import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
+import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
+import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
+import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -81,8 +82,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
   declarations: [
     AppComponent,
     HomeComponent,
-    KanbanBoardComponent,
-    KanbanColumnComponent,
     ModalCardTestComponent,
     NavbarComponent,
     SidebarComponent,
@@ -95,9 +94,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NbPersonDataComponent,
     NbPersonDocumentsComponent,
     NbPersonLocationComponent,
-    PaymentComponent,
-    ReceivementComponent,
-    ExtractComponent,
     PersonFormComponent,
     PersonListComponent,
     NbButtonComponent,
@@ -109,6 +105,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ListComponent,
     CardComponent,
     NewListComponent,
+    FinanceFormComponent,
+    FinanceHistoryComponent,
+    NbSelectComponent,
+    NgButtonReturnComponent,
+    NbSelectObjectComponent,
+    NbPaginationComponent,
   ],
   imports: [
     BrowserModule,
