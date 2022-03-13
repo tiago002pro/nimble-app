@@ -26,7 +26,7 @@ body {
   scroll-behavior: smooth;
   display: flex;  
   background: #f2f3f8;
-  font-family: 'Poppins','Roboto', sans-serif;
+  font-family: 'proxima-nova';
   color: rgba(#3d4465, .9);
 
   $bg-color:#f2f3f8;
@@ -39,7 +39,7 @@ body {
 }
 
 html {
-  font-family: 'Roboto Condensed', sans-serif;
+  // font-family: 'Roboto Condensed', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -98,4 +98,9 @@ html {
 
 .row {
   margin-bottom: 10px;
+}
+
+@font-face {
+  font-family: "proxima-nova";
+  src: url("../src/assets/Proxima\ Nova\ Font.otf");
 }
