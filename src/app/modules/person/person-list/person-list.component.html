@@ -12,22 +12,22 @@
             <table class="table nimble-table">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Data de Nasc/Fund</th>
-                        <th scope="col">Editar</th>
-                        <th scope="col">Excluir</th>
+                        <th scope="col" class="left">Name</th>
+                        <!-- <th scope="col" class="left">Data de Nasc/Fund</th> -->
+                        <th scope="col" class="center">Editar</th>
+                        <th scope="col" class="center">Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let person of listPerson">
-                        <td class="align-items">{{person.name}}</td>
-                        <td>{{person.dateofbirthorfondation | date:"dd/MM/yyyy"}}</td>
-                        <td class="icon-edit">
+                        <td class="align-items left">{{person.name}}</td>
+                        <!-- <td>{{person.dateofbirthorfondation | date:"dd/MM/yyyy"}}</td> -->
+                        <td class="icon center">
                             <a routerLink="/person-form/edit/{{person.id}}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>
-                        <td class="icon-edit">
+                        <td class="icon center">
                             <a (click)="deletePersonById(person.id)">
                                 <i class="bi bi-trash"></i>
                             </a>

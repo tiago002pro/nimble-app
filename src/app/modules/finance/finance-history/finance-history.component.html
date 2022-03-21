@@ -12,20 +12,20 @@
             <table class="table nimble-table">
                 <thead>
                     <tr>
-                        <th scope="col">Doc.</th>
-                        <th scope="col">Fornecedor</th>
-                        <th scope="col">Parcela</th>
-                        <th scope="col">Vencimento</th>
-                        <th scope="col">Valor</th>
+                        <th scope="col" class="left">Doc.</th>
+                        <th scope="col" class="left">Fornecedor</th>
+                        <th scope="col" class="center">Parcela</th>
+                        <th scope="col" class="center">Vencimento</th>
+                        <th scope="col" class="right">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let title of titles">
-                        <td>{{title.docNumber}}</td>
-                        <td>{{title.person.name}}</td>
-                        <td>{{title.parcelNumber}}</td>
-                        <td>{{title.duoDate | date: "dd/MM/YYYY"}}</td>
-                        <td>{{title.value}}</td>
+                        <td class="left">{{title.docNumber}}</td>
+                        <td class="left">{{title.person.name}}</td>
+                        <td class="center">{{title.parcelNumber}}</td>
+                        <td class="center">{{title.duoDate | date: "dd/MM/YYYY"}}</td>
+                        <td class="right">{{title.value}}</td>
                     </tr>
                 </tbody>
             </table>

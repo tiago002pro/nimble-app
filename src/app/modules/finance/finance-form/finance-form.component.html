@@ -18,7 +18,7 @@
                     <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>            
                 </div>
                 <div class="col-md-6">
-                    <app-nb-select-object [label]="'Fornecedor'" [list]="personList.content" (ngModel)="recivePerson($event)"></app-nb-select-object>
+                    <app-nb-select-object [label]="'Fornecedor'" [list]="personList" (ngModel)="recivePerson($event)"></app-nb-select-object>
                 </div>                
                 <div class="col-md-6">
                     <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
@@ -43,7 +43,9 @@
             </div>
         </div>
         <div class="content-area  parcel-list" *ngIf="firstDuoDate">
-            <app-nb-title title="Parcelas"></app-nb-title>
+            <div class="row col-md-12">
+                <span class="sub-title">Parcelas</span>
+            </div>
             <table class="table nimble-table">
                 <thead>
                     <tr>

@@ -1,16 +1,14 @@
 .finance-form {
-    
     .content {
         display: flex;
         align-content: flex-end;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
-        // overflow: auto;
     }
 
     .content-area {
-        height: auto;
+        // height: auto;
     }
 
     .data {
@@ -24,19 +22,17 @@
     }
 
     .button {
-        // grid-column-start: 1;
-        // grid-column-end: 5;
         justify-content: center;
         display: flex;
-        // text-align: center;
         margin-top: 3vh;
 
         .form-group {
             display: flex;
-            // justify-content: space-between;
-            // max-width: 175px;
-            // margin: 0 auto;
         }
+    }
+
+    .nimble-table thead, tbody {
+        text-align: center;
     }
 
     @media only screen and (max-width: 1000px) {
@@ -45,13 +41,26 @@
             align-content: space-around;
         }
 
+        .content-area {
+            height: auto;
+        }
+
         .data {
-            width: auto;
+            width: auto !important;
             margin-bottom: 3vh;
         }
     
         .parcel-list {
             width: auto;
+            height: 30px;
         }
+    }
+
+    .sub-title {
+        font-weight: 700;
+        text-align: center;
+        font-size: 23px;
+        text-transform: uppercase;
+        color: #3d4465;
     }
 }

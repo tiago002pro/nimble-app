@@ -20,7 +20,7 @@ export class FinanceFormComponent implements OnInit {
   title: FinanceTitle = {}
   parcels!: Array<FinanceParcel>
   type!: any
-  personList!: Pageable
+  personList!: Array<Person>
   numberParcels!: Number
   firstDuoDate!: Date
   currentRoute!: any
@@ -38,7 +38,7 @@ export class FinanceFormComponent implements OnInit {
     this.title.type = this.type === 'pay' ? EnumTitleType.PAY : EnumTitleType.RECEIVE
     this.title.paid = false
     const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
-    this.personList = await this.personService.getPersonListByRule(searchPerson, 1, 100).toPromise().then(response => response)
+    this.personList = (await this.personService.getPersonListByRule(searchPerson, 1, 100).toPromise().then(response => response)).content
   }
 
   save() {
