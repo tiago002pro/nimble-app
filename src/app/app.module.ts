@@ -10,8 +10,6 @@ import { HomeComponent } from './modules/dashboard/home.component';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { APP_BASE_HREF } from '@angular/common';
-import { ModalModule } from './modules/modal';
-import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/nb-input-cpfcnpj.component';
@@ -36,7 +34,6 @@ import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
-import { CardComponent } from './modules/kanban/components/card/card.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
 import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
 import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
@@ -44,6 +41,7 @@ import { NbSelectComponent } from './modules/components/nb-select/nb-select.comp
 import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
 import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
 import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
+import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -82,7 +80,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
   declarations: [
     AppComponent,
     HomeComponent,
-    ModalCardTestComponent,
     NavbarComponent,
     SidebarComponent,
     NbInputCpfcnpjComponent,
@@ -103,7 +100,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ReportComponent,
     KanbanComponent,
     ListComponent,
-    CardComponent,
     NewListComponent,
     FinanceFormComponent,
     FinanceHistoryComponent,
@@ -111,6 +107,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NgButtonReturnComponent,
     NbSelectObjectComponent,
     NbPaginationComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,7 +117,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     TextMaskModule,
     BrowserAnimationsModule,
     DragDropModule,
-    ModalModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],

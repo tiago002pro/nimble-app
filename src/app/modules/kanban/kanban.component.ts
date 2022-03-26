@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { Card } from './interface/kanban.card.interface';
 import { ListCard } from './interface/kanban.listcard.interface';
 import { KanbanSevice } from './service/kanban.service';
 
@@ -12,6 +13,8 @@ export class KanbanComponent implements OnInit {
 
   listCard!: Array<ListCard> 
   listDropCard!: any 
+  showModalCard!: Boolean
+  card!: Card
 
   constructor(
     private kanbanService: KanbanSevice,
@@ -32,5 +35,13 @@ export class KanbanComponent implements OnInit {
   reciveListCards(value: any) {
     this.listCard = value
     this.listDropCard = [...this.listCard.map(list => list.name)];
+  }
+
+  reciveOpenModalCard(value: any) {
+    this.showModalCard = value
+  }
+
+  reciveCard(value: Card) {
+    this.card = value
   }
 }

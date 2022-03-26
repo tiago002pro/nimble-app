@@ -12,10 +12,9 @@
         [cdkDropListConnectedTo]="listDropCard"
         [cdkDropListData]="listOfCards.cardList"
         id="{{listOfCards.name}}" 
-        cdkDropList
-        >
+        cdkDropList>
         <div class="kanban-cards" *ngFor="let card of sortByIndex(listOfCards.cardList)" cdkDrag [cdkDragData]="card">
-            <div class="cards">
+            <div class="cards" (click)="showCard(card)">
                 <div class="content">#{{card.indexCard}} - {{card.title}}</div>
                 <!-- <div class="content">#{{listOfCards.name}}</div> -->
                 <div class="status red"></div>

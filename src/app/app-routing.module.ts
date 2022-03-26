@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/dashboard/home.component';
-import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { PersonFormComponent } from './modules/person/person-form/person-form.component';
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 import { ReportComponent } from './modules/report/report/report.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path: 'person-list/employee/:rule', component: PersonListComponent },
   { path: 'person-form/edit/:id', component: PersonFormComponent },
   { path: 'kanban', component: KanbanComponent},
-  { path: 'modal-card', component: ModalCardTestComponent},
   { path: 'report', component: ReportComponent},
   { path: 'finance-form/:rule', component: FinanceFormComponent},
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
