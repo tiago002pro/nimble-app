@@ -1,21 +1,45 @@
 <div class="modal-component" *ngIf="mostrar">
+  <div class="modal-card">
+    <div (click)="close()" class="bnt-close">
+      <!-- <i class="bi bi-x-lg"></i> -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </svg>
+    </div>
 
-
-    <div class="modallll">
-      <div (click)="close()">
-        <i class="bi bi-x-lg"></i>
+    <div class="area">
+      <div class="icon" style="padding-top: 10px;">
+        <i class="bi bi-lightning-charge-fill"></i>
       </div>
-
-
-      <h1>{{card.title}}</h1>
-      <!-- <nb-input-text [label]="'Nome'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="'Tiago'" (ngModel)="reciveName($event)"></nb-input-text> -->
-      <div>
-        Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit.
-          Aliquam, sunt.
-
+      <div class="area-input-title">
+        <textarea id="textArea" (keyup)="autoGrow($event)" value="{{card.title}}" [rows]="getHeight(card.title) || 2"></textarea>
+        <span class="sub-title">na lista 
+          <span>{{listNameCard}}</span>
+          <!-- <span>{{teste2}}</span> -->
+        </span>
       </div>
+    </div>
+
+    <div class="area">
+      <div class="icon">
+        <i class="bi bi-file-text-fill" style="padding-right: 11px;"></i>
       </div>
-      <div class="overlay"></div>
-    <!-- <ng-content></ng-content> -->
+      <div class="area-title">Descrição</div>
+      <div class="area-input">
+        <textarea id="textArea" (keyup)="autoGrow($event)" value="{{teste1}}" [rows]="getHeight(teste1) || 2" style="border: none; background: #a6afca45;"></textarea>
+      </div>
+    </div>
+
+    <div class="area">
+      <div class="icon">
+        <i class="bi bi-chat-right-dots-fill" style="padding-right: 11px;"></i>
+      </div>
+      <div class="area-title">Atividades</div>
+      <div class="area-input">
+        <textarea id="textArea" (keyup)="autoGrow($event)" value="{{teste1}}" [rows]="getHeight(teste1) || 2"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
 </div>

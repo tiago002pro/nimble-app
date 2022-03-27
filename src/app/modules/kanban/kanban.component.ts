@@ -15,6 +15,7 @@ export class KanbanComponent implements OnInit {
   listDropCard!: any 
   showModalCard!: Boolean
   card!: Card
+  listNameOfCard!: String
 
   constructor(
     private kanbanService: KanbanSevice,
@@ -43,5 +44,9 @@ export class KanbanComponent implements OnInit {
 
   reciveCard(value: Card) {
     this.card = value
+  }
+
+  reciveListName(value: String) {
+    this.listNameOfCard = value
   }
 }
