@@ -8,7 +8,7 @@
     position: fixed;
     left: 50%;
     padding: 30px;
-    top: 30%;
+    top: 45%;
     transform: translate(-50%, -50%);
     z-index: 11;
   }
@@ -29,22 +29,23 @@
     right: 0;
     top: 0;
     cursor: pointer;
+    padding: 10px;
   }
 
   .bnt-close svg {
-    width: 22px;
-    height: 22px;
-    margin: 0.3rem;
+    width: 20px;
+    height: 20px;
+    margin: 4px;
     transition: 0.3s ease;
   }
 
   .bnt-close svg:hover {
-    transform: rotate(360deg);
+    // transform: rotate(360deg);
     transition: 0.3s ease;
     color: #4c5fa0;
-    margin: 0.3rem;
-    width: 25px;
-    height: 25px;
+    margin: 0px;
+    width: 28px;
+    height: 28px;
   }
 
   .area {
@@ -57,7 +58,7 @@
 
   .icon i {
     font-size: 25px;
-    color: #3d4465;
+    // color: #3d4465;
   }
 
   .area-input-title {
@@ -65,41 +66,42 @@
 
   .area-input-title textarea {
     width: 95%; 
-    float: right; 
+    // float: right; 
     border: none; 
     font-size: 30px;
     padding: 5px 5px 0px 5px;
-    color: #242939;
+    // color: #242939;
     resize: none;
-    font-weight: 700;
+    font-weight: 600;
+    color: #505674;
   }
 
-  .sub-title {
-    color: #242939;
-    font-size: 13px;
-    display: inline-block;
-    padding-left: 45px;
-  }
+  // .sub-title {
+  //   font-size: 13px;
+  //   display: inline-block;
+  //   padding-left: 45px;
+  // }
 
   .sub-title span {
     text-transform: uppercase;
   }
 
   .area-title {
-    width: 94%; 
+    // width: 94%; 
     font-size: 20px; 
     line-height: 35px; 
     font-weight: 700;
   }
 
   .area-input {
-    display: flex;
+    // display: flex;
+    // margin-top: 10px;
   }
 
   .area-input textarea {
     width: 100%; 
     padding: 10px;
-    color: #242939;
+    // color: #242939;
     resize: none;
     overflow: hidden;
   }

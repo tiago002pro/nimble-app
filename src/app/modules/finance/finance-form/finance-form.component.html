@@ -23,17 +23,20 @@
                 <div class="col-md-6">
                     <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
                 </div>
-                <div class="col-md-4">
-                    <app-nb-input-number [label]="'Valor'" (ngModel)="reciveValue($event)"></app-nb-input-number>
+                <div class="col-md-3">
+                    <app-nb-select [label]="'Tipo'" (ngModel)="reciveValue($event)"></app-nb-select>
                 </div>  
-                <div class="col-md-4">
-                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
-                </div>  
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <app-nb-input-date [label]="'Vencimento'" (ngModel)="reciveDueDate($event)"></app-nb-input-date>
                 </div> 
+                <div class="col-md-3">
+                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
+                </div>  
+                <div class="col-md-3">
+                    <app-nb-input-number [label]="'Valor'" (ngModel)="reciveValue($event)"></app-nb-input-number>
+                </div>  
                 <div class="col-md-12">
-                    <app-nb-input-text [label]="'Histórico'" [placeholder]="'Histórico'" (ngModel)="reciveHistoric($event)"></app-nb-input-text>
+                    <app-nb-input-text [label]="'Observações'" [placeholder]="' '" (ngModel)="reciveHistoric($event)"></app-nb-input-text>
                 </div> 
             </div>
             <div class="button">
@@ -46,22 +49,24 @@
             <div class="row col-md-12">
                 <span class="sub-title">Parcelas</span>
             </div>
-            <table class="table nimble-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Parcela</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Vencimento</th>
-                    </tr>
-                </thead>
-                <tbody  *ngFor="let parcel of parcels">
-                    <tr>
-                        <td>{{parcel.parcelNumber}}/{{numberParcels}}</td>
-                        <td>{{parcel.parcelValue}}</td>
-                        <td>{{parcel.parcelDuoDate | date:"dd/MM/yyyy"}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">Parcela</th>
+                            <th class="right">Valor</th>
+                            <th class="center">Vencimento</th>
+                        </tr>
+                    </thead>
+                    <tbody  *ngFor="let parcel of parcels">
+                        <tr>
+                            <td class="center">{{parcel.parcelNumber}}/{{numberParcels}}</td>
+                            <td class="right">{{parcel.parcelValue}}</td>
+                            <td class="center">{{parcel.parcelDuoDate | date:"dd/MM/yyyy"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
