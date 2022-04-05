@@ -7,10 +7,10 @@
     <div class="content">
         <div class="content-area">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card card-stats">
-                        <div class="card-header card-header-warning card-header-icon">
-                            <div class="card-icon">
+                <div class="col-md-4" (click)="getListPerson(0, 'Clientes')">
+                    <div [ngClass]="rule === 'Clientes' ? 'card green2' : 'card'">
+                        <div class="card-header card-header-icon">
+                            <div class="card-icon green">
                                 <i class="bi bi-person-lines-fill"></i>
                             </div>
                             <p class="card-category">Clientes</p>
@@ -18,10 +18,10 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card card-stats">
-                        <div class="card-header card-header-warning card-header-icon">
-                            <div class="card-icon">
+                <div class="col-md-4" (click)="getListPerson(0, 'Fornecedores')">
+                    <div [ngClass]="rule === 'Fornecedores' ? 'card red2' : 'card'">
+                        <div class="card-header card-header-icon">
+                            <div class="card-icon red">
                                 <i class="bi bi-building"></i>
                             </div>
                             <p class="card-category">Fornecedores</p>
@@ -29,10 +29,10 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card card-stats">
-                        <div class="card-header card-header-warning card-header-icon">
-                            <div class="card-icon">
+                <div class="col-md-4" (click)="getListPerson(0, 'Funcionários')">
+                    <div [ngClass]="rule === 'Funcionários' ? 'card blue2' : 'card'">
+                        <div class="card-header card-header-icon">
+                            <div class="card-icon blue">
                                 <i class="bi bi-person-workspace"></i>
                             </div>
                             <p class="card-category">Funcionários</p>
@@ -54,12 +54,12 @@
                         <tr *ngFor="let person of listPerson">
                             <td class="align-items left">{{person.name}}</td>
                             <td class="icon center">
-                                <a routerLink="">
+                                <a routerLink="/person-form/edit/{{person.id}}">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                             </td>
                             <td class="icon center">
-                                <a >
+                                <a (click)="deletePersonById(person.id)">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>
@@ -67,8 +67,7 @@
                     </tbody>
                 </table>
             </div>
-            <app-nb-pagination [totalPages]="0" (page)="3"></app-nb-pagination>
+            <app-nb-pagination [totalPages]="totalPages" (page)="getListPersonPagination($event)" ></app-nb-pagination>
         </div>
-
     </div>
 </div>

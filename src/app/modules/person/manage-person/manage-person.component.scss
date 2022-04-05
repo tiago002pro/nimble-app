@@ -7,20 +7,59 @@
         margin-right: 15px;
         float: left;
     }
-    .card .card-header-warning .card-icon, .card .card-header-warning .card-text, .card .card-header-warning:not(.card-header-icon):not(.card-header-text) {
-        box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(255 152 0 / 40%);
-    }
-    .card .card-header-warning .card-icon, .card .card-header-warning .card-text, .card .card-header-warning:not(.card-header-icon):not(.card-header-text), .card.bg-warning, .card.card-rotate.bg-warning .back, .card.card-rotate.bg-warning .front {
-        background: linear-gradient(60deg,#ffa726,#fb8c00);
+    
+    .card {
+        cursor: pointer;
     }
 
     .card-header {
         height: 100px;
+
+        .card-category {
+            font-size: 2rem;
+        }
     }
 
-    .card-category {
-        font-size: 2rem;
-
+    .card-icon {
+        i {
+            color: #fff;
+            font-size: 30px;
+        }
     }
 
+    .orange {
+        background: linear-gradient(60deg,#ffa726,#fb8c00);
+        box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(255 152 0 / 40%);
+    }
+
+    .green {
+        background: linear-gradient(60deg,#66bb6a,#43a047);
+        box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(76 175 80 / 40%);
+    }
+
+    .red {
+        background: linear-gradient(60deg,#ef5350,#e53935);
+        box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(244 67 54 / 40%);
+    }
+
+    .blue {
+        background: linear-gradient(60deg,#26c6da,#00acc1);
+        box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(0 188 212 / 40%);
+    }
+
+    .orange2 {
+        box-shadow: 0 0px 9px 0 rgb(0 0 0 / 35%), 0 7px 10px 0px rgb(255 152 0 / 70%);
+    }
+
+    .green2 {
+        box-shadow: 0 0px 9px 0 rgb(0 0 0 / 35%), 0 7px 10px 0px rgb(76 175 80 / 70%);
+    }
+    
+    .red2 {
+        box-shadow: 0 0px 9px 0 rgb(0 0 0 / 35%), 0 7px 10px 0px rgb(244 67 54 / 70%);
+    }
+    
+    .blue2 {
+        box-shadow: 0 0px 9px 0 rgb(0 0 0 / 35%), 0 7px 10px 0px rgb(0 188 212 / 70%);
+    }
 }
