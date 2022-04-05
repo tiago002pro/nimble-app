@@ -7,10 +7,13 @@ import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
 import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
+import { AccountsComponent } from './modules/finance/accounts/accounts.component';
+import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'manage-person', component: ManagePersonComponent },
   { path: 'person-form/:rule', component: PersonFormComponent },
   { path: 'person-list/client/:rule', component: PersonListComponent },
   { path: 'person-list/provider/:rule', component: PersonListComponent },
@@ -21,6 +24,7 @@ const routes: Routes = [
   { path: 'finance-form/:rule', component: FinanceFormComponent},
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
   { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
+  { path: 'accounts', component: AccountsComponent},
 ];
 
 @NgModule({

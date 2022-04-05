@@ -20,6 +20,13 @@ export class SidebarComponent implements OnInit {
       //   sub: []
       // },
       {
+        name: "Cadastross",
+        icon: "bi bi-person-fill",
+        router: "manage-person",
+        drop: false,
+        sub: []
+      },
+      {
         name: "Cadastros",
         icon: "bi bi-plus-circle",
         router: "#",
@@ -36,10 +43,10 @@ export class SidebarComponent implements OnInit {
         router: "#",
         drop: false,
         sub: [
+          {name: "Contas bancárias", router: "accounts"},
+          {name: "Lançamentos", router: "#"},
           {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
           {name: "Contas a Receber", router: "finance-history/receive/receber"},
-          {name: "Lançamentos", router: "#"},
-          {name: "Contas bancárias", router: "#"},
         ]
       },
       {

@@ -71,6 +71,7 @@ html {
 }
 
 .content-area {
+  margin-top: 20px;
   padding: 20px;
   background: #fff;
   height: calc(100vh - 180px);
@@ -125,6 +126,24 @@ html {
 
   tbody, td, tfoot, th, thead, tr {
     border: none;
+  }
+
+  tbody, td {
+    .icon a {
+      color: rgba(#3d4465, .9);
+      cursor: pointer;
+    }
+
+    .icon a i:hover {
+      color: #242939;
+    }
+  }
+
+  .form-check-input {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0em;
+    cursor: pointer;
   }
 }
 

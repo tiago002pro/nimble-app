@@ -1,0 +1,53 @@
+<div class="accounts">
+    <div class="row">
+        <div class="col-md-12">
+            <app-nb-title title="Contas financeiras"></app-nb-title>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-area">
+            <div class="btn-new">
+                <app-nb-button [label]="'Novo'"></app-nb-button>
+            </div>
+            <div class="table-responsive-md">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="left">Nome</th>
+                            <th class="left">Agência</th>
+                            <th class="left">Conta</th>
+                            <th class="center">Banco</th>
+                            <th class="center">Extrato</th>
+                            <th class="center">Editar</th>
+                            <th class="center">Deletar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let account of bankAccounts">
+                            <td class="left">{{account.name}}</td>
+                            <td class="left">{{account.ag}}</td>
+                            <td class="left">{{account.account}} - {{account.accountDv}}</td>
+                            <td class="center">{{account.bankNumber}}</td>
+                            <td class="center icon">
+                                <a href="#">
+                                    <i class="bi bi-journal-text"></i>
+                                </a>
+                            </td>
+                            <td class="center icon">
+                                <a href="#">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            </td>
+                            <td class="center icon">
+                                <a href="#">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <app-nb-pagination  [totalPages]="3" (page)="2"></app-nb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

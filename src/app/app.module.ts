@@ -42,6 +42,8 @@ import { NgButtonReturnComponent } from './modules/components/ng-button-return/n
 import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
 import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
 import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
+import { AccountsComponent } from './modules/finance/accounts/accounts.component';
+import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -108,6 +110,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NbSelectObjectComponent,
     NbPaginationComponent,
     ModalComponent,
+    AccountsComponent,
+    ManagePersonComponent,
   ],
   imports: [
     BrowserModule,
