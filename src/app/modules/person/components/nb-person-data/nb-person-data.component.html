@@ -7,7 +7,7 @@
             <app-nb-input-text [label]="'Razão Social'" [placeholder]="'Ex.: Nimble Sistemas'" [value]="entity?.name" (ngModel)="reciveName($event)"></app-nb-input-text>
         </div>
         <div class="col-md-6" *ngIf="typePerson == 'pj'">
-            <app-nb-input-text [label]="'NoNome Fantasiame'" [placeholder]="'Ex.: Nimble LTDA'" [value]="entity?.shortName" (ngModel)="reciveShortName($event)"></app-nb-input-text>
+            <app-nb-input-text [label]="'Nome Fantasia'" [placeholder]="'Ex.: Nimble LTDA'" [value]="entity?.shortName" (ngModel)="reciveShortName($event)"></app-nb-input-text>
         </div>
         <div class="col-md-8" *ngIf="typePerson == 'pf'">
             <app-nb-input-text [label]="'Nome'" [placeholder]="'Ex: Tiago Oliveira Barbosa'" [value]="entity?.name" (ngModel)="reciveName($event)"></app-nb-input-text>

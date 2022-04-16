@@ -1,3 +1,9 @@
 .nb-select-component {
+    color: #242939;
     margin: 5px;
+
+    input::placeholder {
+        color: rgb(110 120 153 / 57%);
+        font-style: italic;
+    }
 }
