@@ -9,43 +9,61 @@
         </div>
     </div>
     <div class="content">
-        <div class="content-area data" [ngStyle]="firstDuoDate ? {'width': '65%'} : {'width': '100%'}">
+        <div class="content-area data"
+             [ngStyle]="firstDuoDate ? {'width': '65%'} : {'width': '100%'}">
             <div class="row">
-                <div class="col-md-8">
-                    <app-nb-input-text [label]="'Nº do Documento'" [placeholder]="'Ex.: 15166354'" (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
-                </div>
-                <div class="col-md-4">
-                    <app-nb-input-date [label]="'Emissão'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>            
+                <div class="col-md-6">
+                    <app-nb-input-text [label]="'Nº do Documento'"
+                                       [placeholder]="'Ex.: 15166354'"
+                                       (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
                 </div>
                 <div class="col-md-6">
-                    <app-nb-select-object [label]="'Fornecedor'" [list]="personList" (ngModel)="recivePerson($event)"></app-nb-select-object>
-                </div>                
+                    <app-nb-input-date [label]="'Emissão'"
+                                       [placeholder]="'Ex.: Fornecedor'"
+                                       (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>
+                </div>
                 <div class="col-md-6">
-                    <app-nb-input-text [label]="'Categoria'" [placeholder]="'Ex.: Fornecedor'" (ngModel)="reciveCategory($event)"></app-nb-input-text>        
+                    <app-nb-select-object [label]="'Fornecedor'"
+                                          [list]="personList"
+                                          (ngModel)="recivePerson($event)"></app-nb-select-object>
+                </div>
+                <div class="col-md-6">
+                    <app-nb-select-object [label]="'Categoria'"
+                                          [list]="categoryList"
+                                          (ngModel)="reciveCategory($event)"></app-nb-select-object>
                 </div>
                 <div class="col-md-3">
-                    <app-nb-select [label]="'Tipo'" (ngModel)="reciveValue($event)"></app-nb-select>
-                </div>  
+                    <app-nb-select-object [label]="'Tipo'"
+                                    [list]="typeList"
+                                    (ngModel)="reciveType($event)"></app-nb-select-object>
+                </div>
                 <div class="col-md-3">
-                    <app-nb-input-date [label]="'Vencimento'" (ngModel)="reciveDueDate($event)"></app-nb-input-date>
-                </div> 
+                    <app-nb-input-date [label]="'Vencimento'"
+                                       (ngModel)="reciveDueDate($event)"></app-nb-input-date>
+                </div>
                 <div class="col-md-3">
-                    <app-nb-input-number [label]="'Qtd. parcelas'" (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
-                </div>  
+                    <app-nb-input-number [label]="'Qtd. parcelas'"
+                                         (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
+                </div>
                 <div class="col-md-3">
-                    <app-nb-input-number [label]="'Valor'" (ngModel)="reciveValue($event)"></app-nb-input-number>
-                </div>  
+                    <app-nb-input-number [label]="'Valor'"
+                                         (ngModel)="reciveValue($event)"></app-nb-input-number>
+                </div>
                 <div class="col-md-12">
-                    <app-nb-input-text [label]="'Observações'" [placeholder]="' '" (ngModel)="reciveHistoric($event)"></app-nb-input-text>
-                </div> 
+                    <app-nb-input-text [label]="'Observações'"
+                                       [placeholder]="' '"
+                                       (ngModel)="reciveHistoric($event)"></app-nb-input-text>
+                </div>
             </div>
             <div class="button">
                 <div class="form-group">
-                    <app-nb-button [label]="'Salvar'" (click)="save()"  ></app-nb-button>
+                    <app-nb-button [label]="'Salvar'"
+                                   (click)="save()"></app-nb-button>
                 </div>
             </div>
         </div>
-        <div class="content-area  parcel-list" *ngIf="firstDuoDate">
+        <div class="content-area  parcel-list"
+             *ngIf="showTableParcels()">
             <div class="row col-md-12">
                 <span class="sub-title">Parcelas</span>
             </div>
@@ -58,7 +76,7 @@
                             <th class="center">Vencimento</th>
                         </tr>
                     </thead>
-                    <tbody  *ngFor="let parcel of parcels">
+                    <tbody *ngFor="let parcel of parcels">
                         <tr>
                             <td class="center">{{parcel.parcelNumber}}/{{numberParcels}}</td>
                             <td class="right">{{parcel.parcelValue}}</td>

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
-import { Pageable } from 'src/app/model/pageable.model';
 import Swal from 'sweetalert2';
 import { Person } from '../../person/interface/person.interface';
 import { PersonService } from '../../person/service/person.service';
 import { EnumTitleType } from '../enum/EnumTitleType';
+import { CategoryTitle } from '../interface/category.interface';
 import { FinanceParcel } from '../interface/parcel.interface';
 import { FinanceTitle } from '../interface/title.interface';
 import { FinanceService } from '../service/finance.service';
@@ -24,6 +24,8 @@ export class FinanceFormComponent implements OnInit {
   numberParcels!: Number
   firstDuoDate!: Date
   currentRoute!: any
+  categoryList!: Array<CategoryTitle>
+  typeList = [{name:'Receita', key: 'receive'},  {name: 'Despesa', key: 'pay'}]
 
   constructor(
     private route: ActivatedRoute,
@@ -35,10 +37,14 @@ export class FinanceFormComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.title.type = this.type === 'pay' ? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.title.type = this.type === 'receive' ? this.typeList[0].key :  this.typeList[1].key
     this.title.paid = false
     const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.personList = (await this.personService.getPersonListByRule(searchPerson, 1, 100).toPromise().then(response => response)).content
+    this.getAllcategories()
+
+    console.log("type", this.type);
+    console.log("type2", this.title.type);
   }
 
   save() {
@@ -46,8 +52,13 @@ export class FinanceFormComponent implements OnInit {
       this.createTitle(parcel)
     })
     this.financeService.createTitle(this.titleList).subscribe(
-      success => {this.sucessModal(); this.back()},
-      error => {this.errorModal()}
+      success => {
+        this.sucessModal(); 
+        this.back()
+      },
+      error => {
+        this.errorModal()
+      }
     )
   }
 
@@ -60,7 +71,7 @@ export class FinanceFormComponent implements OnInit {
     title.parcelNumber = parcel.parcelNumber
     title.duoDate = parcel.parcelDuoDate
     title.historic = this.title.historic
-    title.type = this.title.type
+    title.type = this.type
     title.payDay = this.title.payDay
     title.person = this.title.person
     title.category = this.title.category
@@ -81,8 +92,12 @@ export class FinanceFormComponent implements OnInit {
     this.title.person = value
   }
 
-  reciveCategory(value: any) {
+  reciveCategory(value: CategoryTitle) {
     this.title.category = value
+  }
+
+  reciveType(value: any) {
+    this.title.type = value
   }
 
   reciveValue(value: any) {
@@ -100,9 +115,14 @@ export class FinanceFormComponent implements OnInit {
 
   reciveDueDate(value: Date) {
     this.firstDuoDate = value
-    this.createParcels()
   }
 
+  showTableParcels() {
+    if (this.firstDuoDate && this.numberParcels && this.title.value) {
+      this.createParcels()
+    }
+    return this.firstDuoDate && this.numberParcels && this.title.value
+  }
 
   createParcels() {
     this.parcels = []
@@ -144,5 +164,9 @@ export class FinanceFormComponent implements OnInit {
 
   back() {
     history.back()  
+  }
+
+  async getAllcategories() {
+    this.categoryList = await this.financeService.getAllCategories().toPromise().then((response) => response);
   }
 }
