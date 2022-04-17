@@ -27,6 +27,13 @@ export class SidebarComponent implements OnInit {
         sub: []
       },
       {
+        name: "Lançamentoss",
+        icon: "bi bi-person-fill",
+        router: "finance-releases",
+        drop: false,
+        sub: []
+      },
+      {
         name: "Cadastros",
         icon: "bi bi-plus-circle",
         router: "#",

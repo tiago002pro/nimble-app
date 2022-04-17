@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'person-form/edit/:id', component: PersonFormComponent },
   { path: 'kanban', component: KanbanComponent},
   { path: 'report', component: ReportComponent},
+  { path: 'finance-releases', component: FinanceFormComponent},
   { path: 'finance-form/:rule', component: FinanceFormComponent},
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
   { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
