@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
+import { SwalModalService } from 'src/app/service/swal-modal.service';
 import Swal from 'sweetalert2';
 import { Person } from '../../person/interface/person.interface';
 import { PersonService } from '../../person/service/person.service';
@@ -10,30 +10,34 @@ import { FinanceParcel } from '../interface/parcel.interface';
 import { FinanceTitle } from '../interface/title.interface';
 import { FinanceService } from '../service/finance.service';
 
+
 @Component({
-  selector: 'app-finance-form',
-  templateUrl: './finance-form.component.html',
-  styleUrls: ['./finance-form.component.scss']
+  selector: 'app-title-form',
+  templateUrl: './title-form.component.html',
+  styleUrls: ['./title-form.component.scss']
 })
-export class FinanceFormComponent implements OnInit {
+export class TitleFormComponent implements OnInit {
   titleList: Array<FinanceTitle> = []
   title: FinanceTitle = {}
   parcels!: Array<FinanceParcel>
   type!: any
+  category
   personList!: Array<Person>
   numberParcels!: Number
   firstDuoDate!: Date
   currentRoute!: any
   categoryList!: Array<CategoryTitle>
-  typeList = [{name:'Receita', key: 'receive'},  {name: 'Despesa', key: 'pay'}]
+  typeList = [{label:'Receita', key: 'receive'},  {label: 'Despesa', key: 'pay'}]
+  showModalCategoty: boolean = false
 
   constructor(
     private personService: PersonService,
-    private financeService: FinanceService
-  ) {}
+    private financeService: FinanceService, 
+    private swalModalService: SwalModalService,
+  ) { }
 
   async ngOnInit() {
-    this.title.type = this.type === 'receive' ? this.typeList[0].key :  this.typeList[1].key
+    this.type = 'pay'
     this.title.paid = false
     const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.personList = (await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)).content
@@ -46,11 +50,11 @@ export class FinanceFormComponent implements OnInit {
     })
     this.financeService.createTitle(this.titleList).subscribe(
       success => {
-        this.sucessModal(); 
+        this.swalModalService.sucessModal('Concluído', 'Título cadastrado com sucesso!', false, 1500)
         this.back()
       },
       error => {
-        this.errorModal()
+        this.swalModalService.errorModal('Erro', 'Verifique os dados e tente novamente!', false, 1500)
       }
     )
   }
@@ -86,10 +90,12 @@ export class FinanceFormComponent implements OnInit {
   }
 
   reciveCategory(value: CategoryTitle) {
+    this.category = value
     this.title.category = value
   }
 
   reciveType(value: any) {
+    this.type = value
     this.title.type = value
   }
 
@@ -133,33 +139,16 @@ export class FinanceFormComponent implements OnInit {
     }
   }
 
-  sucessModal() {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Concluído',
-      text: 'Título cadastrado com sucesso!',
-      showConfirmButton: false,
-      timer: 1500
-    })
-  }
-
-  errorModal() {
-    Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Erro',
-      text: 'Verifique os dados e tente novamente.',
-      showConfirmButton: false,
-      timer: 1500
-    })
-  }
-
   back() {
     history.back()  
   }
 
   async getAllcategories() {
     this.categoryList = await this.financeService.getAllCategoriesByType('pay').toPromise().then((response) => response);
+  }
+
+  openModalCategory(value?) {
+    this.showModalCategoty = value
+    this.getAllcategories()
   }
 }

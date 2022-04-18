@@ -19,13 +19,13 @@ export class SidebarComponent implements OnInit {
       //   drop: false,
       //   sub: []
       // },
-      {
-        name: "Cadastross",
-        icon: "bi bi-person-fill",
-        router: "manage-person",
-        drop: false,
-        sub: []
-      },
+      // {
+      //   name: "Cadastross",
+      //   icon: "bi bi-person-fill",
+      //   router: "manage-person",
+      //   drop: false,
+      //   sub: []
+      // },
       {
         name: "Lançamentoss",
         icon: "bi bi-person-fill",

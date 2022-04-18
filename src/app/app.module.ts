@@ -44,6 +44,10 @@ import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pag
 import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { CategoryFormModalComponent } from './modules/finance/modals/category-form-modal/category-form-modal.component';
+import { TitleFormComponent } from './modules/finance/title-form/title-form.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -112,6 +116,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ModalComponent,
     AccountsComponent,
     ManagePersonComponent,
+    CategoryFormModalComponent,
+    TitleFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,6 +129,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     DragDropModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    MatSelectModule,
+    NgxMatSelectSearchModule,
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

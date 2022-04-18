@@ -19,11 +19,15 @@ export class FinanceService {
     return this.http.post((this.url) + '/api/title/form', titles)
   }
 
+  createCategory(category: CategoryTitle) {
+    return this.http.post((this.url) + '/api/category/category-form', category)
+  }
+
   getTitlesByType(type: String, page: number, size: number)  {
     return this.http.get<Pageable>((this.url) + '/api/title/history?type='+(type)+'&page='+(page)+'&size='+(size)) 
   }
 
-  getAllCategories() {
-    return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all')
+  getAllCategoriesByType(type: String) {
+    return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all?type='+(type))
   }
 }

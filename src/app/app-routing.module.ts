@@ -9,6 +9,7 @@ import { FinanceFormComponent } from './modules/finance/finance-form/finance-for
 import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
+import { TitleFormComponent } from './modules/finance/title-form/title-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'person-form/edit/:id', component: PersonFormComponent },
   { path: 'kanban', component: KanbanComponent},
   { path: 'report', component: ReportComponent},
-  { path: 'finance-releases', component: FinanceFormComponent},
+  { path: 'finance-releases', component: TitleFormComponent},
   { path: 'finance-form/:rule', component: FinanceFormComponent},
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
   { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
