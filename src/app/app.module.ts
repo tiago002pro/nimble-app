@@ -48,6 +48,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { CategoryFormModalComponent } from './modules/finance/modals/category-form-modal/category-form-modal.component';
 import { TitleFormComponent } from './modules/finance/title-form/title-form.component';
+import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
+import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -118,6 +120,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ManagePersonComponent,
     CategoryFormModalComponent,
     TitleFormComponent,
+    ExtractEntriesComponent,
+    AccountFormComponent,
   ],
   imports: [
     BrowserModule,

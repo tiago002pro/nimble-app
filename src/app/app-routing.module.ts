@@ -10,6 +10,8 @@ import { FinanceHistoryComponent } from './modules/finance/finance-history/finan
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 import { TitleFormComponent } from './modules/finance/title-form/title-form.component';
+import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
+import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
   { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
   { path: 'accounts', component: AccountsComponent},
+  { path: 'account-new', component: AccountFormComponent},
+  { path: 'extract', component: ExtractEntriesComponent},
 ];
 
 @NgModule({
