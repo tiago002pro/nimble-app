@@ -22,7 +22,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let title of titles">
-                        <td class="left"><input  class="form-check-input" type="checkbox"></td>
+                        <td class="left">
+                            <input  class="form-check-input" 
+                                    type="checkbox" 
+                                    [value]="title.selected"
+                                    (change)="title.selected = !title.selected">
+                        </td>
                         <td class="left">{{title.docNumber}}</td>
                         <td class="left">{{title.person.name}}</td>
                         <td class="center">{{title.parcelNumber}}</td>

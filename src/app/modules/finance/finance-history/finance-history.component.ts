@@ -34,4 +34,15 @@ export class FinanceHistoryComponent implements OnInit {
     this.titles = this.list.content
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }
+
+  onChange(value, title) {
+    title.selected = !title.selected
+    console.log("value", value);
+    console.log("title", title);
+    console.log("index");
+    this.titles.forEach(title => {
+      // title.selected = false
+    });
+    
+  }
 }
