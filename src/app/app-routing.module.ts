@@ -5,11 +5,11 @@ import { PersonFormComponent } from './modules/person/person-form/person-form.co
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
-import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
-import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
+import { FinanceFormComponent } from './modules/finance/titles/finance-form/finance-form.component';
+import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
-import { TitleFormComponent } from './modules/finance/title-form/title-form.component';
+import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
 import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 
