@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import moment from 'moment';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
-import Swal from 'sweetalert2';
-import { Person } from '../../person/interface/person.interface';
-import { PersonService } from '../../person/service/person.service';
+import { Person } from '../../../person/interface/person.interface';
+import { PersonService } from '../../../person/service/person.service';
 import { EnumTitleType } from '../enum/EnumTitleType';
 import { CategoryTitle } from '../interface/category.interface';
 import { FinanceParcel } from '../interface/parcel.interface';

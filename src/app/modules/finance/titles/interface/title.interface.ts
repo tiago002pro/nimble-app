@@ -1,4 +1,4 @@
-import { Person } from "../../person/interface/person.interface";
+import { Person } from "../../../person/interface/person.interface";
 import { CategoryTitle } from "./category.interface";
 
 export interface FinanceTitle {

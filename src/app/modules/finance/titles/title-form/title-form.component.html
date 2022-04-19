@@ -36,9 +36,8 @@
                                 class="form-select form-control"  
                                 [ngModel]="category"           
                                 (ngModelChange)="reciveCategory($event)">
-                                <option>Novo +</option>
                                 <option *ngFor="let item of categoryList;" 
-                                    [ngValue]="item">
+                                        [ngValue]="item">
                                     {{item.name}}
                                 </option>
                                 <li>aa</li>
