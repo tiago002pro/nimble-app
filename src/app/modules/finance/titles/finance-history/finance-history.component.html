@@ -25,8 +25,9 @@
                         <td class="left">
                             <input  class="form-check-input" 
                                     type="checkbox" 
-                                    [value]="title.selected"
-                                    (change)="title.selected = !title.selected">
+                                    formArrayName="selectedTitles" 
+                                    [value]="title.id"
+                                    (change)="onChange($event)">
                         </td>
                         <td class="left">{{title.docNumber}}</td>
                         <td class="left">{{title.person.name}}</td>
