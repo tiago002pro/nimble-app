@@ -1,0 +1,16 @@
+export interface Account {
+    id?: any,
+    accountName?: String,
+    holder?: String,
+    holderDocument?: String,
+    limit?: Number,
+    modality?: String,
+    bank?: String,
+    type?: String,
+    agency?: String,
+    agencyDv?: String,
+    account?: String,
+    accountDv?: String,
+    balance?: Number,
+    active?: Boolean,
+}

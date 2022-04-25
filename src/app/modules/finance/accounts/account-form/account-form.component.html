@@ -12,74 +12,80 @@
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Nome da conta'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveAccountName($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Titular'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveHolder($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Documento do titular'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveHolderDocument($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
-                        <app-nb-input-text [label]="'Limite'"
+                        <app-nb-input-number [label]="'Limite'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
-                        </app-nb-input-text>
+                                           (ngModel)="reciveLimit($event)">
+                        </app-nb-input-number>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Modalidade'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveModality($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Banco'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveBank($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Tipo'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveType($event)">
                         </app-nb-input-text>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <app-nb-input-text [label]="'Agência'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveAgency($event)">
                         </app-nb-input-text>
                     </div>
-                    <div class="col-md-1">
-                        <app-nb-input-text [label]="'D'"
+                    <div class="col-md-2">
+                        <app-nb-input-text [label]="'Dv'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveAgencyDv($event)">
                         </app-nb-input-text>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <app-nb-input-text [label]="'Conta'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveAccount($event)">
                         </app-nb-input-text>
                     </div>
-                    <div class="col-md-1">
-                        <app-nb-input-text [label]="'D'"
+                    <div class="col-md-2">
+                        <app-nb-input-text [label]="'Dv'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
+                                           (ngModel)="reciveAccountDv($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
-                        <app-nb-input-text [label]="'Saldo inicial'"
+                        <app-nb-input-number [label]="'Saldo inicial'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveCategoryName($event)">
-                        </app-nb-input-text>
+                                           (ngModel)="reciveBalance($event)">
+                        </app-nb-input-number>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="form-group">
+                        <app-nb-button [label]="'Salvar'"
+                                       (click)="save()"></app-nb-button>
                     </div>
                 </div>
             </div>

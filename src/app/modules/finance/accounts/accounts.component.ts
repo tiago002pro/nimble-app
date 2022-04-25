@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SwalModalService } from 'src/app/service/swal-modal.service';
+import { Account } from './interface/account.interface';
+import { AccountService } from './service/account.service';
 
 @Component({
   selector: 'app-accounts',
@@ -6,47 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.scss']
 })
 export class AccountsComponent implements OnInit {
-  bankAccounts = []
-  constructor() { }
+  accountsList: Array<Account> = []
 
-  ngOnInit(): void {
-    this.bankAccounts = [
-      {
-        name: 'Carteira',
-        ag: '####',
-        account: '#####',
-        accountDv: '#',
-        bankNumber: '341',
-      },
-      {
-        name: 'Itaú',
-        ag: 3788,
-        account: 24353,
-        accountDv: 7,
-        bankNumber: '341',
-      },
-      {
-        name: 'Sicoob',
-        ag: 4568,
-        account: 984685,
-        accountDv: 6,
-        bankNumber: '987',
-      },
-      {
-        name: 'Santander',
-        ag: 1301,
-        account: 13013714,
-        accountDv: 8,
-        bankNumber: '698',
-      },
-      {
-        name: 'Caixa Econômica',
-        ag: 1413,
-        account: 9876,
-        accountDv: 7,
-        bankNumber: '001',
-      }
-    ]
+  constructor(
+    private accountService: AccountService,
+    private swalModalService: SwalModalService,
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    this.accountsList = (await this.accountService.getAccountList(0, 10).toPromise().then(response => response)).content
   }
-
 }

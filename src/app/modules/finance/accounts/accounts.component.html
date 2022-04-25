@@ -7,29 +7,29 @@
     <div class="content">
         <div class="content-area">
             <div class="btn-new">
-                <app-nb-button [label]="'Novo'" routerLink="/account-new"></app-nb-button>
+                <app-nb-button [label]="'Novo'" routerLink="/account-form"></app-nb-button>
             </div>
             <div class="table-responsive-md">
                 <table class="table">
                     <thead>
                         <tr>
                             <th class="left">Nome</th>
-                            <th class="left">Agência</th>
-                            <th class="left">Conta</th>
                             <th class="center">Banco</th>
+                            <th class="left">Saldo</th>
+                            <th class="left">Limite</th>
                             <th class="center">Extrato</th>
                             <th class="center">Editar</th>
-                            <th class="center">Deletar</th>
+                            <!-- <th class="center">Deletar</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let account of bankAccounts">
-                            <td class="left">{{account.name}}</td>
-                            <td class="left">{{account.ag}}</td>
-                            <td class="left">{{account.account}} - {{account.accountDv}}</td>
-                            <td class="center">{{account.bankNumber}}</td>
+                        <tr *ngFor="let account of accountsList">
+                            <td class="left">{{account.accountName}}</td>
+                            <td class="left">{{account.bank}}</td>
+                            <td class="left">{{account.balance}}</td>
+                            <td class="left">{{account.limit}}</td>
                             <td class="center icon">
-                                <a href="#">
+                                <a href="account-extract">
                                     <i class="bi bi-journal-text"></i>
                                 </a>
                             </td>
@@ -38,11 +38,11 @@
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                             </td>
-                            <td class="center icon">
+                            <!-- <td class="center icon">
                                 <a href="#">
                                     <i class="bi bi-trash"></i>
                                 </a>
-                            </td>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
