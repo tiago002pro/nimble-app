@@ -36,7 +36,7 @@ export class SidebarComponent implements OnInit {
       // },
       {
         name: "Cadastros",
-        icon: "bi bi-plus-circle-fill",
+        icon: "bi bi-plus-circle",
         router: "#",
         drop: false,
         sub: [
@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit {
       },
       {
         name: "Financeiro",
-        icon: "fas fa-coins",
+        icon: "bi bi-coin",
         router: "#",
         drop: false,
         sub: [
@@ -59,7 +59,7 @@ export class SidebarComponent implements OnInit {
       },
       {
         name: "Kanban",
-        icon: "bi bi-kanban-fill",
+        icon: "bi bi-kanban",
         router: "#",
         drop: false,
         sub: [
