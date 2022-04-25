@@ -1,17 +1,27 @@
 <div class="sidebar-component">
     <div [ngClass]="showMenuIn ? 'sidebar active' : 'sidebar'">
-        <div class="sidebar-image">
-            <!-- <img src="https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/sidebar-5.jpg?alt=media&token=285da48e-f5e8-4024-97ae-41639555a87f" alt=""> -->
-        </div>
         <div class="menu" >
+            <!-- <div class="sidebar-top">
+                <div class="logo">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/nimble-34cd9.appspot.com/o/Nimble-logo3.png?alt=media&token=a449a356-7664-4f2b-9f3d-ebc08ea222ca" 
+                      alt="Nimble logo">
+                </div>
+                <div class="bnt">
+                    <a class="btn nav-link" (click)="showMenu()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div> -->
             <div class="item" *ngFor="let item of sidebarItem, let i = index">
                 <a class="sub-btn" (click)="dropDown(item.name)" routerLink="{{item.router}}">
                     <i class="{{item.icon}}"></i>
                     {{item.name}}
-                    <i *ngIf="item.sub.length > 0 && showMenuIn" [ngClass]="item.drop ? 'bi bi-caret-right-fill dropdown rotate' : 'bi bi-caret-right-fill dropdown'"></i>
+                    <i *ngIf="item.sub.length > 0 && showMenuIn" [ngClass]="item.drop ? 'bi bi-chevron-left dropdown rotate' : 'bi bi-chevron-left dropdown'" style=""></i>
                 </a>
                 <div [ngClass]="item.drop ? 'sub-menu active' : 'sub-menu'" *ngFor="let sub of item.sub">
-                    <a class="sub-item" routerLink="{{sub.router}}">{{sub.name}}</a>
+                    <a class="sub-item" routerLink="{{sub.router}}">
+                        {{sub.name}}
+                    </a>
                 </div>
             </div>
         </div>

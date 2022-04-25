@@ -201,10 +201,12 @@ nav.navbar {
     }
 
     .navbar-header {
-      width: 260px;
+      width: 230px;
       margin-left: 0!important;
-      .navbar-brand span {
-        display: inline-block;
+      .navbar-brand {
+        img {
+          width: 120px;
+        }
       }
     }
 
