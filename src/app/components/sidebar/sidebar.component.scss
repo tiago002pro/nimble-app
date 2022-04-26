@@ -30,7 +30,8 @@
     }
 
     .menu {
-        margin-top: 80px;
+        border-right: 5px solid rgba(0, 0, 0, 0.08);
+        height: calc(100vh - 70px);
     }
 
     .sidebar-top {
@@ -70,8 +71,7 @@
     }
 
     .itens {
-        border-right: 5px solid rgba(0,0,0,.08);
-        height: calc(100vh - 70px);
+        margin-top: 70px;
     }
         
     .item {
@@ -101,7 +101,6 @@
     }
 
     .item i {
-        margin-right: 3px;
     }
 
     a .dropdown {

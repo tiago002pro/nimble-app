@@ -11,8 +11,8 @@
 
 <div class="app-component" *ngIf="!validated">
   <main>
-    <app-navbar [showMenuIn]="showMenu" (showMenuOut)="reciveShowMenuOut($event)"></app-navbar>
     <app-sidebar [showMenuIn]="showMenu"></app-sidebar>
+    <app-navbar [showMenuIn]="showMenu" (showMenuOut)="reciveShowMenuOut($event)"></app-navbar>
     <div [ngClass]="showMenu ? 'page' : 'page hide'">
       <div class="board">
         <router-outlet></router-outlet>
