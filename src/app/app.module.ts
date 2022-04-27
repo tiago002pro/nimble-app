@@ -44,6 +44,7 @@ import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pag
 import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
+import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -112,6 +113,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ModalComponent,
     AccountsComponent,
     ManagePersonComponent,
+    NbButtonV2Component,
   ],
   imports: [
     BrowserModule,

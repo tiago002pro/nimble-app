@@ -1,44 +1,21 @@
-$bg-color:#f2f3f8;
-$navbar-bg-color : #242939;
-$navbar-color:#6e7899;
-$sidebar-bg-color:#fff;
-$sidebar-color:#3d4465;
-$sidebar-icon-color:#c4cff9;
-$border-color: #f2f3f8;
-
 nav.navbar {
-  background: $navbar-bg-color;
-  border-color: rgba($navbar-color, .3);
-
-  .navbar-brand {
-    color: lighten($navbar-color, 25%);
-  }
-
-  .left-nav {
-    input.navbar-search {
-    background: #282f48;
-    color:$navbar-color;
-
-      &::placeholder{
-        color:rgba($navbar-color, .6);
-      }
-    }
-  }
-
-  .right-nav {
-    background: $navbar-bg-color;
-  }
+  background: #242939;
+  border-color: rgba(#6e7899, .3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 
   .nav-link {
-    color: $navbar-color;
+    color: #6e7899;
 
     i {
-      border-color: $navbar-color;
+      border-color: #6e7899;
       background: #282f48;
     }
 
     &:hover {
-      color: lighten($navbar-color, 15%);
+      color: lighten(#6e7899, 15%);
     }
   }
 
@@ -58,50 +35,12 @@ nav.navbar {
 }
   
 .navbar {
-  height: 60px;
+  height: 70px;
   padding: 0;
   border-bottom: 1px solid;
 
-  .navbar-header {
-    .navbar-brand {
-      font-size: 1rem;
-      font-weight: normal;
-      letter-spacing: 2px;
-
-      span {
-        display: none;
-      }
-    }
-  }
-
-  .nav-toggler-right {
-    position: relative;
-
-    button {
-      width: 35px;
-      height: 35px;
-      padding: 0;
-      border: none;
-      overflow: hidden;
-      border-radius: 50%;
-      border: 1px solid #fff;
-
-      img {
-
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-
-      }
-    }
-
-    .nav-alert {
-      right: 0px;
-      border-width: 1px;
-      width: 9px;
-      height: 9px;
-    }
+  .fixed-top {
+    z-index: 0 !important;
   }
 
   .nav-alert {
@@ -128,13 +67,6 @@ nav.navbar {
     height: 100%;
     display: flex;
     align-items: center;
-
-  }
-
-  .user-profile {
-    span {
-      display: none;
-    }
   }
 
   .right-nav {
@@ -183,18 +115,6 @@ nav.navbar {
     }
   }
 
-  .left-nav {
-    display: none;
-
-    input.navbar-search {
-      max-width: 500px;
-      border-radius: 0;
-      border: none;
-      height: 40px;
-      font-size: .9rem;
-    }
-  }
-
   @media (min-width: 768px) {
     .sidebar-toggler {
       display: none;
@@ -203,8 +123,10 @@ nav.navbar {
     .navbar-header {
       width: 260px;
       margin-left: 0!important;
-      .navbar-brand span {
-        display: inline-block;
+      .navbar-brand {
+        img {
+          width: 120px;
+        }
       }
     }
 

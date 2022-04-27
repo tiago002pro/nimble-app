@@ -8,7 +8,7 @@
         position: fixed;
         overflow: auto;
         transition: 0.2s ease;
-        background: #242939;
+        background: #f2f3f8;
         box-shadow: 1px 1px 2px rgba(#5b6582, .1);
     }
     
@@ -30,62 +30,97 @@
     }
 
     .menu {
-        margin-top: 80px;
+        border-right: 5px solid rgba(0, 0, 0, 0.08);
+        height: calc(100vh - 70px);
     }
-    
+
+    .sidebar-top {
+        height: 70px;
+        line-height: 70px;
+        border-bottom: 2px solid #3d4465;
+        display: flex;
+        justify-content: space-between;
+        background: #242939;
+    }
+
+    .logo {
+        padding-left: 15px;
+        img {
+            width: 120px;
+        }
+    }
+
+    .toggle {
+        .nav-link {
+            color: #6e7899;
+            background: #282f48;
+            display: inline-grid;
+            padding: 15px;
+        
+            i {
+                font-size: 20px;
+                border-color: #6e7899;
+                line-height: 20px;
+                border-radius: 0;
+            }
+        
+            &:hover {
+              color: lighten(#6e7899, 15%);
+            }
+        }
+    }
+
+    .itens {
+        margin-top: 70px;
+    }
+        
     .item {
         position: relative;
         cursor: pointer;
     }
     
     .item a {
-        padding: 15px 30px;
+        padding: 5px 20px;
         line-height: 40px;
         font-size: 16px;
         display: block;
         text-decoration: none;
-        color: #fff
+        color: #3d4465;
+
+        i {
+            font-size: 20px;
+
+        }
     }
     
     .item a:hover {
         transition: 0.2s ease;
-        background: #8621F8;
-        color: #fff;
+        background-color: rgba(0,0,0,.08);
 
-        i {
-            color: #fff;
-        }
+        i { }
     }
 
     .item i {
-        margin-right: 1rem;
-        font-size: 1rem;
-        color: #fff;
-        // color: rgba(140, 165, 239, 0.6);
     }
 
     a .dropdown {
-        position: absolute;
-        right: 0;
+        float: right;
         transition: 0.2s ease;
     }
-    
+
     .sub-menu {
-        // background: #3d4465;
         display: none;
         transition: 0.2s ease;
     }
 
     .sub-menu.active {
-        // height: 70px;
         display: block;
+        padding: 0px 20px;
     }
     
-    .sub-menu a {
-        padding-left: 70px;
-    }
+    .sub-menu a { }
 
     .rotate {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
 }
