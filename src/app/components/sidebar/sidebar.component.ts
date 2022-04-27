@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,30 +8,51 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   sidebarItem : Array<any> = []
   @Input() showMenuIn!: Boolean
+  @Output() showMenuOut = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
     this.sidebarItem = [
+      // {
+      //   name: "Dashboard",
+      //   icon: "bi bi-grid-1x2-fill",
+      //   router: "",
+      //   drop: false,
+      //   sub: []
+      // },
+      // {
+      //   name: "Cadastross",
+      //   icon: "bi bi-person-fill",
+      //   router: "manage-person",
+      //   drop: false,
+      //   sub: []
+      // },
+      // {
+      //   name: "Lançamentoss",
+      //   icon: "bi bi-person-fill",
+      //   router: "finance-releases",
+      //   drop: false,
+      //   sub: []
+      // },
       {
         name: "Cadastros",
         icon: "bi bi-plus-circle",
         router: "#",
         drop: false,
         sub: [
-          {name: "Cadastros", router: "/manage-person"},
-          {name: "Cliente", router: "/person-list/client/Clientes"},
-          {name: "Fornecedor", router: "/person-list/provider/Fornecedores"},
-          {name: "Funcionário", router: "/person-list/employee/Funcionários"},
+          {name: "Clientes", router: "/person-list/client/Clientes"},
+          {name: "Fornecedores", router: "/person-list/provider/Fornecedores"},
+          {name: "Funcionários", router: "/person-list/employee/Funcionários"},
         ]
       },
       {
         name: "Financeiro",
-        icon: "bi bi-cash-coin",
+        icon: "bi bi-coin",
         router: "#",
         drop: false,
         sub: [
-          {name: "Lançamentos", router: "finance-releases"},
-          {name: "Contas bancárias", router: "account-list"},
+          {name: "Contas", router: "accounts"},
+          {name: "Lançamentos", router: "#"},
           {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
           {name: "Contas a Receber", router: "finance-history/receive/receber"},
           {name: "Extrato", router: "account-extract"},
@@ -52,7 +73,7 @@ export class SidebarComponent implements OnInit {
       //   router: "#",
       //   drop: false,
       //   sub: [
-      //     {name: "Relatórios", router: "/report"},
+      //     {name: "Quadro", router: "/report"},
       //   ]
       // },
     ]
@@ -64,5 +85,10 @@ export class SidebarComponent implements OnInit {
         item.drop = !item.drop
       }
     })
+  }
+
+  showMenu() {
+    this.showMenuIn = !this.showMenuIn
+    this.showMenuOut.emit(this.showMenuIn)  
   }
 }

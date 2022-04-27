@@ -50,6 +50,7 @@ import { CategoryFormModalComponent } from './modules/finance/titles/modals/cate
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
 import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
+import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -122,6 +123,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     TitleFormComponent,
     ExtractEntriesComponent,
     AccountFormComponent,
+    NbButtonV2Component,
   ],
   imports: [
     BrowserModule,

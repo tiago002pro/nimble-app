@@ -107,18 +107,18 @@ html {
 
   tbody {
     border-top: 0px !important;
-    background-color: #fff;
+    background-color: #3d446529;
   }
 
   tbody > tr > td:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    // border-top-left-radius: 5px;
+    // border-bottom-left-radius: 5px;
     padding-left: 20px;
   }
 
   tbody > tr > td:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    // border-top-right-radius: 5px;
+    // border-bottom-right-radius: 5px;
     padding-right: 20px;
   }
 
@@ -131,6 +131,9 @@ html {
   }
 
   tbody, td {
+    height: 60px;
+    line-height: 60px;
+
     .icon a {
       color: rgba(#3d4465, .9);
       cursor: pointer;
