@@ -35,7 +35,6 @@ import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
-import { FinanceFormComponent } from './modules/finance/titles/finance-form/finance-form.component';
 import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
 import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
 import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
@@ -51,6 +50,8 @@ import { TitleFormComponent } from './modules/finance/titles/title-form/title-fo
 import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
+import { NbInputCurrencyComponent } from './modules/components/nb-input-currency/nb-input-currency.component';
+import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -85,6 +86,21 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
   "minTime": 300
 }
 
+export const customCurrencyMaskConfig = {
+  align: "right",
+  allowNegative: true,
+  allowZero: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: ".",
+  nullable: false,
+  min: 0,
+  max: 99999999999,
+  inputMode: CurrencyMaskInputMode.NATURAL
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,7 +126,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     KanbanComponent,
     ListComponent,
     NewListComponent,
-    FinanceFormComponent,
     FinanceHistoryComponent,
     NbSelectComponent,
     NgButtonReturnComponent,
@@ -124,6 +139,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ExtractEntriesComponent,
     AccountFormComponent,
     NbButtonV2Component,
+    NbInputCurrencyComponent,
   ],
   imports: [
     BrowserModule,
@@ -136,7 +152,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     MatSelectModule,
-    NgxMatSelectSearchModule,
+    NgxMatSelectSearchModule, 
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

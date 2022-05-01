@@ -14,7 +14,7 @@ export class NbPersonDataComponent implements OnInit {
   @Input() email!: PersonEmail
   @Input() typePerson!: String
   @Output() ngModel = new EventEmitter()
-  sex = ["Feminino", "Masculino"]
+  sex = ["", "Feminino", "Masculino"]
 
   constructor() { }
 

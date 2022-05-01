@@ -15,8 +15,8 @@
                         <tr>
                             <th class="left">Nome</th>
                             <th class="center">Banco</th>
-                            <th class="left">Saldo</th>
-                            <th class="left">Limite</th>
+                            <th class="right">Saldo</th>
+                            <th class="right">Limite</th>
                             <th class="center">Extrato</th>
                             <th class="center">Editar</th>
                             <!-- <th class="center">Deletar</th> -->
@@ -26,15 +26,15 @@
                         <tr *ngFor="let account of accountsList">
                             <td class="left">{{account.accountName}}</td>
                             <td class="left">{{account.bank}}</td>
-                            <td class="left">{{account.balance}}</td>
-                            <td class="left">{{account.limit}}</td>
+                            <td class="right">{{account.balance | currency: 'R$'}}</td>
+                            <td class="right">{{account.limit | currency: 'R$'}}</td>
                             <td class="center icon">
                                 <a href="account-extract">
                                     <i class="bi bi-journal-text"></i>
                                 </a>
                             </td>
                             <td class="center icon">
-                                <a href="#">
+                                <a routerLink="/account-form/edit/{{account.id}}">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                             </td>

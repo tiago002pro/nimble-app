@@ -38,7 +38,7 @@ export class SidebarComponent implements OnInit {
         name: "Cadastros",
         icon: "bi bi-plus-circle",
         router: "#",
-        drop: false,
+        drop: true,
         sub: [
           {name: "Clientes", router: "/person-list/client/Clientes"},
           {name: "Fornecedores", router: "/person-list/provider/Fornecedores"},
@@ -49,10 +49,10 @@ export class SidebarComponent implements OnInit {
         name: "Financeiro",
         icon: "bi bi-coin",
         router: "#",
-        drop: false,
+        drop: true,
         sub: [
-          {name: "Contas", router: "accounts"},
-          {name: "Lançamentos", router: "#"},
+          {name: "Contas", router: "account-list"},
+          {name: "Lançamentos", router: "title-releases/pay"},
           {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
           {name: "Contas a Receber", router: "finance-history/receive/receber"},
           {name: "Extrato", router: "account-extract"},
@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
         name: "Kanban",
         icon: "bi bi-kanban",
         router: "#",
-        drop: false,
+        drop: true,
         sub: [
           {name: "Quadro", router: "/kanban"},
         ]

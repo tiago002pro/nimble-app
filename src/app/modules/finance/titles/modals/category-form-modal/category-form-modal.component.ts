@@ -10,11 +10,11 @@ import { FinanceService } from '../../service/finance.service';
 })
 export class CategoryFormModalComponent implements OnInit {
   @Input() show!: Boolean
+  @Input() type!: String
   @Output() showModal = new EventEmitter()
 
   typeList = []
   category: CategoryTitle = {}
-  type!: String
   categoryName!: String
 
   constructor(
@@ -23,7 +23,6 @@ export class CategoryFormModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.type = 'pay'
     this.typeList = [
       {label:'Receita', key: 'receive'},  
       {label: 'Despesa', key: 'pay'}

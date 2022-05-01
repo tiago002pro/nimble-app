@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { Account } from '../interface/account.interface';
 import { AccountService } from '../service/account.service';
@@ -10,13 +11,19 @@ import { AccountService } from '../service/account.service';
 })
 export class AccountFormComponent implements OnInit {
   account: Account = {}
+  modality = ["", "PF", "PJ"]
+  type = ["", "Corrente", "Poupança"]
 
   constructor(
     private accountService: AccountService,
     private swalModalService: SwalModalService,
+    private route: ActivatedRoute,
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    if (this.route.snapshot.params.id) {
+      this.account = await this.accountService.getById(this.route.snapshot.params.id).toPromise().then(response => response)
+    }
   }
 
   reciveAccountName(value: String) {

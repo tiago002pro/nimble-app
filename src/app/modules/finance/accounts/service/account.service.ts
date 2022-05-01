@@ -21,4 +21,8 @@ export class AccountService {
   getAccountList(page: number, size: number)  {
     return this.http.get<Pageable>((this.url) + '/api/account/list?page='+(page)+'&size='+(size)) 
   }
+
+  getById(id) {
+    return this.http.get<Account>((this.url) +'/api/account/' + (id))
+  }
 }

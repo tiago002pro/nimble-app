@@ -6,13 +6,17 @@
     </div>
     <div class="content-area">
         <div class="new-title-button">
-            <app-nb-button [label]="'Novo'" routerLink="/finance-form/{{currentRoute}}"></app-nb-button>
+            <app-nb-button [label]="'Novo'" routerLink="/title-releases/{{currentRoute}}"></app-nb-button>
         </div>
         <div class="table-responsive-md">
             <table class="table">
                 <thead>
                     <tr>
-                        <th class="left"></th>
+                        <th class="left">
+                            <input  class="form-check-input" 
+                            type="checkbox" 
+                            (change)="onChange($event)">
+                        </th>
                         <th class="left">Doc.</th>
                         <th class="left">Fornecedor</th>
                         <th class="center">Parcela</th>
@@ -33,7 +37,7 @@
                         <td class="left">{{title.person.name}}</td>
                         <td class="center">{{title.parcelNumber}}</td>
                         <td class="center">{{title.duoDate | date: "dd/MM/YYYY"}}</td>
-                        <td class="right">{{title.value}}</td>
+                        <td class="right">{{title.value | currency: 'R$'}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -41,7 +45,7 @@
         <app-nb-pagination [totalPages]="totalPages" (page)="getTitleList($event)"></app-nb-pagination>
         <div class="button">
             <div class="form-group">
-                <app-nb-button [label]="'Baixar'"></app-nb-button>
+                <app-nb-button-v2 [label]="'Baixar'"></app-nb-button-v2>
             </div>
         </div>
     </div>

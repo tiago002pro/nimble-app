@@ -37,7 +37,7 @@
     height: 28px;
   }
 
-.overlay {
+  .overlay {
     background: #000;
     height: 100vh;
     left: 0;
@@ -46,5 +46,15 @@
     top: 0;
     width: 100vw;
     z-index: 10;
+  }
+
+  .btn {
+    background-color: #626b99;
+    font-weight: 700;
+    color: #fff ;
+  }
+
+  .btn:hover {
+    background-color: #242939;
   }
 }

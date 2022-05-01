@@ -12,80 +12,92 @@
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Nome da conta'"
                                            [placeholder]="''"
+                                           [value]="account?.accountName"
                                            (ngModel)="reciveAccountName($event)">
+                        </app-nb-input-text>
+                    </div>
+                    <div class="col-md-6">
+                        <app-nb-input-text [label]="'Banco'"
+                                           [placeholder]="''"
+                                           [value]="account?.bank"
+                                           (ngModel)="reciveBank($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Titular'"
                                            [placeholder]="''"
+                                           [value]="account?.holder"
                                            (ngModel)="reciveHolder($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-6">
                         <app-nb-input-text [label]="'Documento do titular'"
                                            [placeholder]="''"
+                                           [value]="account?.holderDocument"
                                            (ngModel)="reciveHolderDocument($event)">
                         </app-nb-input-text>
                     </div>
-                    <div class="col-md-6">
-                        <app-nb-input-number [label]="'Limite'"
+                    <div class="col-md-3">
+                        <app-nb-input-currency [label]="'Limite'"
                                            [placeholder]="''"
+                                           [value]="account?.limit"
                                            (ngModel)="reciveLimit($event)">
-                        </app-nb-input-number>
+                        </app-nb-input-currency>
                     </div>
-                    <div class="col-md-6">
-                        <app-nb-input-text [label]="'Modalidade'"
+                    <div class="col-md-3">
+                        <app-nb-input-currency [label]="'Saldo inicial'"
                                            [placeholder]="''"
-                                           (ngModel)="reciveModality($event)">
-                        </app-nb-input-text>
+                                           [value]="account?.balance"
+                                           (ngModel)="reciveBalance($event)">
+                        </app-nb-input-currency>
                     </div>
-                    <div class="col-md-6">
-                        <app-nb-input-text [label]="'Banco'"
-                                           [placeholder]="''"
-                                           (ngModel)="reciveBank($event)">
-                        </app-nb-input-text>
+                    <div class="col-md-3">
+                        <app-nb-select [label]="'Modalidade'" 
+                                       [options]="modality" 
+                                       [value]="account?.modality" 
+                                       (ngModel)="reciveModality($event)">
+                        </app-nb-select>
                     </div>
-                    <div class="col-md-6">
-                        <app-nb-input-text [label]="'Tipo'"
-                                           [placeholder]="''"
-                                           (ngModel)="reciveType($event)">
-                        </app-nb-input-text>
+                    <div class="col-md-3">
+                        <app-nb-select [label]="'Tipo'" 
+                                       [options]="type" 
+                                       [value]="account?.type" 
+                                       (ngModel)="reciveType($event)">
+                        </app-nb-select>
                     </div>
                     <div class="col-md-4">
                         <app-nb-input-text [label]="'Agência'"
                                            [placeholder]="''"
+                                           [value]="account?.agency"
                                            (ngModel)="reciveAgency($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-2">
                         <app-nb-input-text [label]="'Dv'"
                                            [placeholder]="''"
+                                           [value]="account?.agencyDv"
                                            (ngModel)="reciveAgencyDv($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-4">
                         <app-nb-input-text [label]="'Conta'"
                                            [placeholder]="''"
+                                           [value]="account?.account"
                                            (ngModel)="reciveAccount($event)">
                         </app-nb-input-text>
                     </div>
                     <div class="col-md-2">
                         <app-nb-input-text [label]="'Dv'"
                                            [placeholder]="''"
+                                           [value]="account?.accountDv"
                                            (ngModel)="reciveAccountDv($event)">
                         </app-nb-input-text>
-                    </div>
-                    <div class="col-md-6">
-                        <app-nb-input-number [label]="'Saldo inicial'"
-                                           [placeholder]="''"
-                                           (ngModel)="reciveBalance($event)">
-                        </app-nb-input-number>
                     </div>
                 </div>
                 <div class="button">
                     <div class="form-group">
-                        <app-nb-button [label]="'Salvar'"
-                                       (click)="save()"></app-nb-button>
+                        <app-nb-button-v2 [label]="'Salvar'"
+                                       (click)="save()"></app-nb-button-v2>
                     </div>
                 </div>
             </div>

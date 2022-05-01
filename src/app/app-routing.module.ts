@@ -5,7 +5,6 @@ import { PersonFormComponent } from './modules/person/person-form/person-form.co
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
-import { FinanceFormComponent } from './modules/finance/titles/finance-form/finance-form.component';
 import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
@@ -22,12 +21,12 @@ const routes: Routes = [
   { path: 'person-list/client/:rule', component: PersonListComponent },
   { path: 'person-list/provider/:rule', component: PersonListComponent },
   { path: 'person-list/employee/:rule', component: PersonListComponent },
-  { path: 'finance-releases', component: TitleFormComponent},
-  { path: 'finance-form/:rule', component: FinanceFormComponent},
+  { path: 'title-releases/:rule', component: TitleFormComponent},
   { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
   { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
   { path: 'account-list', component: AccountsComponent},
   { path: 'account-form', component: AccountFormComponent},
+  { path: 'account-form/edit/:id', component: AccountFormComponent},
   { path: 'account-extract', component: ExtractEntriesComponent},
   { path: 'kanban', component: KanbanComponent},
   { path: 'report', component: ReportComponent},
