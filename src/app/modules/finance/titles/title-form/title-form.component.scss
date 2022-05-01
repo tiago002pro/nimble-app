@@ -17,8 +17,19 @@
     }
 
     .parcel-list {
-        width: 35%;
+        width: 40vw;
         margin: 0 0 0 5px;
+    }
+
+    .without-data {
+        display: flex;
+        justify-content: center;
+        line-height: 500px;
+        color: #a4adc8;
+
+        i {
+            font-size: 150px;
+        }
     }
 
     .button {
@@ -31,9 +42,19 @@
         }
     }
 
-    .nimble-table thead, tbody {
-        text-align: center;
+    .btn {
+        background-color: #626b99;
+        font-weight: 700;
+        color: #fff;
+    } 
+    
+    .btn:hover {
+        background-color: #242939;
     }
+
+    // .nimble-table thead, tbody {
+    //     text-align: center;
+    // }
 
     @media only screen and (max-width: 1000px) {
         .content {
@@ -42,7 +63,7 @@
         }
 
         .content-area {
-            height: auto;
+            height: 50vh;
         }
 
         .data {
@@ -52,8 +73,17 @@
     
         .parcel-list {
             width: auto;
-            height: auto;
+            height: 30vh;
         }
+
+        .without-data {
+            line-height: 190px;
+    
+            i {
+                font-size: 100px;
+            }
+        }
+    
     }
   
 

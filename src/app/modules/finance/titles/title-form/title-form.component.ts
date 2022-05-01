@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { Person } from '../../../person/interface/person.interface';
@@ -19,6 +20,7 @@ export class TitleFormComponent implements OnInit {
   titleList: Array<FinanceTitle> = []
   title: FinanceTitle = {}
   parcels!: Array<FinanceParcel>
+  rule
   type!: any
   category
   personList!: Array<Person>
@@ -30,13 +32,16 @@ export class TitleFormComponent implements OnInit {
   showModalCategoty: boolean = false
 
   constructor(
+    private route: ActivatedRoute,
     private personService: PersonService,
     private financeService: FinanceService, 
     private swalModalService: SwalModalService,
-  ) { }
+  ) { 
+    this.rule = this.route.snapshot.params.rule
+  }
 
   async ngOnInit() {
-    this.type = 'pay'
+    this.type = this.rule 
     this.title.paid = false
     const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.personList = (await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)).content
@@ -96,6 +101,7 @@ export class TitleFormComponent implements OnInit {
   reciveType(value: any) {
     this.type = value
     this.title.type = value
+    this.getAllcategories()
   }
 
   reciveValue(value: any) {
@@ -119,7 +125,12 @@ export class TitleFormComponent implements OnInit {
     if (this.firstDuoDate && this.numberParcels && this.title.value) {
       this.createParcels()
     }
-    return this.firstDuoDate && this.numberParcels && this.title.value
+    // console.log("this.firstDuoDate && this.numberParcels && this.title.value", this.firstDuoDate && this.numberParcels && this.title.value);
+    console.log("this.firstDuoDate", this.firstDuoDate == undefined);
+    console.log("this.numberParcels", this.numberParcels);
+    console.log("this.title.value", this.title.value);
+    
+    return this.firstDuoDate != undefined && this.numberParcels != undefined && this.title.value != undefined
   }
 
   createParcels() {
@@ -143,7 +154,7 @@ export class TitleFormComponent implements OnInit {
   }
 
   async getAllcategories() {
-    this.categoryList = await this.financeService.getAllCategoriesByType('pay').toPromise().then((response) => response);
+    this.categoryList = await this.financeService.getAllCategoriesByType(this.type).toPromise().then((response) => response);
   }
 
   openModalCategory(value?) {
