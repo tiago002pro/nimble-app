@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Input() showMenuIn!: Boolean
   @Output() showMenuOut = new EventEmitter()
+  logoImg = './assets/img/Logo.png'
 
   constructor() { }
 
