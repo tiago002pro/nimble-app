@@ -12,11 +12,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th class="left">
-                            <input  class="form-check-input" 
-                            type="checkbox" 
-                            (change)="onChange($event)">
-                        </th>
+                        <th class="left"></th>
                         <th class="left">Doc.</th>
                         <th class="left">Fornecedor</th>
                         <th class="center">Parcela</th>
@@ -43,10 +39,11 @@
             </table>
         </div>
         <app-nb-pagination [totalPages]="totalPages" (page)="getTitleList($event)"></app-nb-pagination>
-        <div class="button">
+        <div class="button" *ngIf="selectedTitles.length > 0">
             <div class="form-group">
-                <app-nb-button-v2 [label]="'Baixar'"></app-nb-button-v2>
+                <app-nb-button-v2 [label]="'Baixar'" (click)="baixar()"></app-nb-button-v2>
             </div>
         </div>
+        <app-modal-paid-title [show]="showModalPaidTitle" (showModal)="openModalCategory($event)"></app-modal-paid-title>
     </div>
 </div>

@@ -18,6 +18,8 @@ export class FinanceHistoryComponent implements OnInit {
   titles!: Array<FinanceTitle>
   totalPages!: any
   form: FormGroup
+  selectedTitles = []
+  showModalPaidTitle = false
 
   constructor(
     private route: ActivatedRoute,
@@ -51,5 +53,14 @@ export class FinanceHistoryComponent implements OnInit {
       .findIndex(x => x.value === event.target.id);
       selectedTitles.removeAt(index);
     }
+
+    this.selectedTitles = selectedTitles.value
+  }
+
+  baixar() {
+    this.showModalPaidTitle = true
+  }
+  openModalCategory(value) {
+    this.showModalPaidTitle = false
   }
 }
