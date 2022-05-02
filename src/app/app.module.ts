@@ -52,6 +52,7 @@ import { AccountFormComponent } from './modules/finance/accounts/account-form/ac
 import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
 import { NbInputCurrencyComponent } from './modules/components/nb-input-currency/nb-input-currency.component';
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
+import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -140,6 +141,7 @@ export const customCurrencyMaskConfig = {
     AccountFormComponent,
     NbButtonV2Component,
     NbInputCurrencyComponent,
+    ModalPaidTitleComponent,
   ],
   imports: [
     BrowserModule,
