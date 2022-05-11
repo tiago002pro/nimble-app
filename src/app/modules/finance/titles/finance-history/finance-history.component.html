@@ -18,6 +18,7 @@
                         <th class="center">Parcela</th>
                         <th class="center">Vencimento</th>
                         <th class="right">Valor</th>
+                        <th class="right">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,13 +28,14 @@
                                     type="checkbox" 
                                     formArrayName="selectedTitles" 
                                     [value]="title.id"
-                                    (change)="onChange($event)">
+                                    (change)="onChange(title)">
                         </td>
                         <td class="left">{{title.docNumber}}</td>
                         <td class="left">{{title.person.name}}</td>
                         <td class="center">{{title.parcelNumber}}</td>
                         <td class="center">{{title.duoDate | date: "dd/MM/YYYY"}}</td>
                         <td class="right">{{title.value | currency: 'R$'}}</td>
+                        <td class="center">{{title.status}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -44,6 +46,6 @@
                 <app-nb-button-v2 [label]="'Baixar'" (click)="baixar()"></app-nb-button-v2>
             </div>
         </div>
-        <app-modal-paid-title [show]="showModalPaidTitle" (showModal)="openModalCategory($event)"></app-modal-paid-title>
+        <app-modal-paid-title [show]="showModalPaidTitle" (showModal)="openModalCategory($event)" [titles]="selectedTitles"></app-modal-paid-title>
     </div>
 </div>

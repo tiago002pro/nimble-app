@@ -77,6 +77,7 @@ export class TitleFormComponent implements OnInit {
     title.person = this.title.person
     title.category = this.title.category
     title.paid = this.title.paid
+    title.status = "OPEN"
 
     this.titleList.push(title)
   }
@@ -125,11 +126,6 @@ export class TitleFormComponent implements OnInit {
     if (this.firstDuoDate && this.numberParcels && this.title.value) {
       this.createParcels()
     }
-    // console.log("this.firstDuoDate && this.numberParcels && this.title.value", this.firstDuoDate && this.numberParcels && this.title.value);
-    console.log("this.firstDuoDate", this.firstDuoDate == undefined);
-    console.log("this.numberParcels", this.numberParcels);
-    console.log("this.title.value", this.title.value);
-    
     return this.firstDuoDate != undefined && this.numberParcels != undefined && this.title.value != undefined
   }
 

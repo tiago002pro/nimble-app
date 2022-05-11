@@ -43,18 +43,12 @@ export class FinanceHistoryComponent implements OnInit {
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }
 
-  onChange(event: any) {
-    const selectedTitles = (this.form.controls.selectedTitles as FormArray);
-    
-    if (event.target.checked) {
-      selectedTitles.push(new FormControl(event.target.value));
+  onChange(value: any) {
+    if (this.selectedTitles.includes(value)) {
+      this.selectedTitles.splice(this.selectedTitles.indexOf(value));
     } else {
-      const index = selectedTitles.controls
-      .findIndex(x => x.value === event.target.id);
-      selectedTitles.removeAt(index);
+      this.selectedTitles.push(value);
     }
-
-    this.selectedTitles = selectedTitles.value
   }
 
   baixar() {

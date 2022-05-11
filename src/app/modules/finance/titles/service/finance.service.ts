@@ -30,4 +30,7 @@ export class FinanceService {
   getAllCategoriesByType(type: String) {
     return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all?type='+(type))
   }
+  paidTitle(titles) {
+    return this.http.put((this.url) + '/api/title/paid', titles)
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { AccountService } from '../../../accounts/service/account.service';
+import { FinanceTitle } from '../../interface/title.interface';
 import { FinanceService } from '../../service/finance.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { FinanceService } from '../../service/finance.service';
 })
 export class ModalPaidTitleComponent implements OnInit {
   @Input() show!: Boolean
+  @Input() titles!: Array<FinanceTitle>
   @Output() showModal = new EventEmitter()
   accountList = []
   accountId
@@ -34,17 +36,22 @@ export class ModalPaidTitleComponent implements OnInit {
   }
 
   save() {
-    console.log("paidDate", this.paidDate);
-    console.log("accountId", this.accountId);
-    
-    // this.financeService.createCategory(this.category).subscribe(
-    //   success => {
-    //     this.swalModalService.sucessModal('Concluído', 'Categoria cadastrada com sucesso!', false, 1500)
-    //     this.category = {}
-    //     this.close()
-    //   },
-    //   error => {}
-    // )
+    this.titles.forEach(title => {
+      title.account = this.accountId
+      title.payDay = this.paidDate
+      title.paid = true
+      title.status = "PAID"
+    });
+
+    this.financeService.paidTitle(this.titles).subscribe(
+      success => {
+        this.swalModalService.sucessModal('Concluído', 'Título cadastrado com sucesso!', false, 1500)
+        this.close()
+      },
+      error => {
+        this.swalModalService.errorModal('Erro', 'Verifique os dados e tente novamente!', false, 1500)
+      }
+    )
   }
 
   close() {

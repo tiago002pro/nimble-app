@@ -3,7 +3,7 @@ export interface Account {
     accountName?: String,
     holder?: String,
     holderDocument?: String,
-    limit?: Number,
+    limitValue?: Number,
     modality?: String,
     bank?: String,
     type?: String,

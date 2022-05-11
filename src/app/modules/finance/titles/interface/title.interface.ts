@@ -1,4 +1,5 @@
 import { Person } from "../../../person/interface/person.interface";
+import { Account } from "../../accounts/interface/account.interface";
 import { CategoryTitle } from "./category.interface";
 
 export interface FinanceTitle {
@@ -12,7 +13,8 @@ export interface FinanceTitle {
     type?: String,
     status?: String,
     payDay?: Date,
+    paid?: boolean,
     person?: Person,
     category?: CategoryTitle,
-    paid?: boolean,
+    account?: Account,
 }

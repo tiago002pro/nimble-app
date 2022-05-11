@@ -39,7 +39,7 @@ export class AccountFormComponent implements OnInit {
   }
 
   reciveLimit(value: any) {
-    this.account.limit = value
+    this.account.limitValue = value
   }
 
   reciveModality(value: String) {

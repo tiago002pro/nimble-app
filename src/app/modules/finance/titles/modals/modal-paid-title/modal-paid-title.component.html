@@ -10,7 +10,7 @@
                 <span class="sub-title">Baixar Título</span>
             </div>
             <br/>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="nb-select-object-component">
                     <div class="form-group">
                         <label class="input-label">Conta</label>
@@ -19,7 +19,7 @@
                             [ngModel]="accountId"           
                             (ngModelChange)="reciveAccount($event)">
                             <option *ngFor="let account of accountList;" 
-                                    [ngValue]="account.id">
+                                    [ngValue]="account">
                                 {{account.accountName}}
                             </option>
                         </select>
@@ -27,14 +27,14 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <app-nb-input-date [label]="'Data'"
                                    [placeholder]="''"
                                    (ngModel)="recivePaidDate($event)">
                 </app-nb-input-date>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label class="input-label"></label>
                 <div class="form-group">
                     <button type="button" class="btn form-control" (click)="save()">
