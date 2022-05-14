@@ -47,12 +47,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { CategoryFormModalComponent } from './modules/finance/titles/modals/category-form-modal/category-form-modal.component';
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
-import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
+import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
 import { NbInputCurrencyComponent } from './modules/components/nb-input-currency/nb-input-currency.component';
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
 import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -156,6 +157,7 @@ export const customCurrencyMaskConfig = {
     MatSelectModule,
     NgxMatSelectSearchModule, 
     NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
+    MatTooltipModule,
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

@@ -9,7 +9,7 @@ import { FinanceHistoryComponent } from './modules/finance/titles/finance-histor
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
-import { ExtractEntriesComponent } from './modules/finance/extract-entries/extract-entries.component';
+import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
 
 const routes: Routes = [
