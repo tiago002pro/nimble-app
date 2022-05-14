@@ -12,18 +12,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th class="left"></th>
+                        <th class="center"></th>
                         <th class="left">Doc.</th>
                         <th class="left">Fornecedor</th>
                         <th class="center">Parcela</th>
                         <th class="center">Vencimento</th>
                         <th class="right">Valor</th>
-                        <th class="right">Status</th>
+                        <th class="center">Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let title of titles">
-                        <td class="left">
+                        <td class="center">
                             <input  class="form-check-input" 
                                     type="checkbox" 
                                     formArrayName="selectedTitles" 
@@ -35,7 +35,22 @@
                         <td class="center">{{title.parcelNumber}}</td>
                         <td class="center">{{title.duoDate | date: "dd/MM/YYYY"}}</td>
                         <td class="right">{{title.value | currency: 'R$'}}</td>
-                        <td class="center">{{title.status}}</td>
+                        <td class="center">
+                            <div class="status open"
+                                *ngIf="title.status == 'OPEN'"
+                                #tooltip="matTooltip"
+                                matTooltip="Aberta"
+                                matTooltipPosition="right">
+                                <label>A</label>
+                            </div>
+                            <div class="status paid" 
+                                *ngIf="title.status == 'PAID'"
+                                #tooltip="matTooltip"
+                                matTooltip="Paga"
+                                matTooltipPosition="right">
+                                <label>P</label>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
