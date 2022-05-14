@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Pageable } from 'src/app/model/pageable.model';
 import { EnumTitleType } from '../enum/EnumTitleType';
@@ -16,13 +17,20 @@ export class FinanceHistoryComponent implements OnInit {
   type!: string
   titles!: Array<FinanceTitle>
   totalPages!: any
+  form: FormGroup
+  selectedTitles = []
+  showModalPaidTitle = false
 
   constructor(
     private route: ActivatedRoute,
-    private financeService: FinanceService
+    private financeService: FinanceService,
+    fb: FormBuilder
   ) {
     this.currentRoute = this.route.snapshot.params.rule
     this.type = this.route.snapshot.params.rule === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.form = fb.group({
+      selectedTitles:  new FormArray([])
+    });
   }
 
   ngOnInit() {
@@ -30,8 +38,23 @@ export class FinanceHistoryComponent implements OnInit {
   }
 
   async getTitleList(page: number) {
-    this.list = await this.financeService.getTitlesByType(this.type, page, 10).toPromise().then(response => response)
+    this.list = await this.financeService.getTitlesByType(this.type.toLocaleLowerCase(), page, 6).toPromise().then(response => response)
     this.titles = this.list.content
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
+  }
+
+  onChange(value: any) {
+    if (this.selectedTitles.includes(value)) {
+      this.selectedTitles.splice(this.selectedTitles.indexOf(value));
+    } else {
+      this.selectedTitles.push(value);
+    }
+  }
+
+  baixar() {
+    this.showModalPaidTitle = true
+  }
+  openModalCategory(value) {
+    this.showModalPaidTitle = false
   }
 }

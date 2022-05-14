@@ -14,13 +14,15 @@
             </div> -->
             <div class="itens">
                 <div class="item" *ngFor="let item of sidebarItem, let i = index">
-                    <a class="sub-btn" (click)="dropDown(item.name)" routerLink="{{item.router}}">
-                        <i class="{{item.icon}}"></i>
-                        {{item.name}}
+                    <a (click)="dropDown(item.name)" routerLink="{{item.router}}">
+                            <label class="label">
+                                <i class="{{item.icon}}"></i>
+                                {{item.name}}
+                            </label>
                         <i *ngIf="item.sub.length > 0 && showMenuIn" [ngClass]="item.drop ? 'bi bi-chevron-left dropdown rotate' : 'bi bi-chevron-left dropdown'" style=""></i>
                     </a>
                     <div [ngClass]="item.drop ? 'sub-menu active' : 'sub-menu'" *ngFor="let sub of item.sub">
-                        <a class="sub-item" routerLink="{{sub.router}}">
+                        <a routerLink="{{sub.router}}">
                             {{sub.name}}
                         </a>
                     </div>

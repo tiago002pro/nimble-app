@@ -35,6 +35,8 @@
         "firebase": "^9.1.1",
         "moment": "^2.29.1",
         "ng-chartjs": "^0.2.3",
+        "ngx-currency": "^2.5.3",
+        "ngx-mat-select-search": "^4.1.1",
         "ngx-ui-loader": "^11.0.0",
         "path-browserify": "^1.0.1",
         "rxjs": "~6.6.0",

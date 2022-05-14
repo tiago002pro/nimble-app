@@ -1,0 +1,66 @@
+<div class="finance-history-component">
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Contas a {{currentRoute}}"></app-nb-title>
+        </div>
+    </div>
+    <div class="content-area">
+        <div class="new-title-button">
+            <app-nb-button [label]="'Novo'" routerLink="/title-releases/{{currentRoute}}"></app-nb-button>
+        </div>
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center"></th>
+                        <th class="left">Doc.</th>
+                        <th class="left">Fornecedor</th>
+                        <th class="center">Parcela</th>
+                        <th class="center">Vencimento</th>
+                        <th class="right">Valor</th>
+                        <th class="center">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let title of titles">
+                        <td class="center">
+                            <input  class="form-check-input" 
+                                    type="checkbox" 
+                                    formArrayName="selectedTitles" 
+                                    [value]="title.id"
+                                    (change)="onChange(title)">
+                        </td>
+                        <td class="left">{{title.docNumber}}</td>
+                        <td class="left">{{title.person.name}}</td>
+                        <td class="center">{{title.parcelNumber}}</td>
+                        <td class="center">{{title.duoDate | date: "dd/MM/YYYY"}}</td>
+                        <td class="right">{{title.value | currency: 'R$'}}</td>
+                        <td class="center">
+                            <div class="status open"
+                                *ngIf="title.status == 'OPEN'"
+                                #tooltip="matTooltip"
+                                matTooltip="Aberta"
+                                matTooltipPosition="right">
+                                <label>A</label>
+                            </div>
+                            <div class="status paid" 
+                                *ngIf="title.status == 'PAID'"
+                                #tooltip="matTooltip"
+                                matTooltip="Paga"
+                                matTooltipPosition="right">
+                                <label>P</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <app-nb-pagination [totalPages]="totalPages" (page)="getTitleList($event)"></app-nb-pagination>
+        <div class="button" *ngIf="selectedTitles.length > 0">
+            <div class="form-group">
+                <app-nb-button-v2 [label]="'Baixar'" (click)="baixar()"></app-nb-button-v2>
+            </div>
+        </div>
+        <app-modal-paid-title [show]="showModalPaidTitle" (showModal)="openModalCategory($event)" [titles]="selectedTitles"></app-modal-paid-title>
+    </div>
+</div>
