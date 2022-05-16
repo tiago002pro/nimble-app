@@ -9,19 +9,21 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th class="left">Data</th>
-                        <th class="left">Pessoa</th>
-                        <!-- <th class="left">Histórico</th> -->
+                        <th class="left">Vencimento</th>
+                        <th class="left">Nome</th>
+                        <th class="left">Parcela</th>
+                        <th class="left">Histórico</th>
                         <th class="right">Crédito</th>
                         <th class="right">Débito</th>
                         <th class="right">Saldo</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let title of titles, let i = index">
-                    <tr>
-                        <td class="left">{{title.payDay | date: 'dd/MM/yyyy'}}</td>
+                <tbody>
+                    <tr *ngFor="let title of titles, let i = index">
+                        <td class="left">{{title.duoDate | date: 'dd/MM/yyyy'}}</td>
                         <td class="left">{{title.person.name}}</td>
-                        <!-- <td class="left">{{title.historic}}</td> -->
+                        <td class="left">{{title.parcel}}</td>
+                        <td class="left">{{title.historic}}</td>
                         <td class="right">
                             <label class="receive" *ngIf="title.type == 'receive'">{{title.value | currency: 'R$ '}}</label>
                             <label *ngIf="title.type != 'receive'"></label>

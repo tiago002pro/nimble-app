@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'account-list', component: AccountsComponent},
   { path: 'account-form', component: AccountFormComponent},
   { path: 'account-form/edit/:id', component: AccountFormComponent},
-  { path: 'account-extract', component: ExtractEntriesComponent},
+  { path: 'account-extract/:id', component: ExtractEntriesComponent},
   { path: 'kanban', component: KanbanComponent},
   { path: 'report', component: ReportComponent},
 ];

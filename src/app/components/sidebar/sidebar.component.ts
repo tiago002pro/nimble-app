@@ -55,7 +55,6 @@ export class SidebarComponent implements OnInit {
           {name: "Lançamentos", router: "title-releases/pay"},
           {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
           {name: "Contas a Receber", router: "finance-history/receive/receber"},
-          {name: "Extrato", router: "account-extract"},
         ]
       },
       {

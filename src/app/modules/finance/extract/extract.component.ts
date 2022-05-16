@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Pageable } from 'src/app/model/pageable.model';
 import { FinanceTitle } from '../titles/interface/title.interface';
 import { ExtractService } from './service/extract.service';
@@ -16,14 +17,15 @@ export class ExtractEntriesComponent implements OnInit {
 
   constructor(
     public extractService: ExtractService,
-  ) { }
-
-  ngOnInit() {
-    this.getTitleList(0)
+    public activatedRoute: ActivatedRoute
+  ) {
+    this.getTitleList(this.activatedRoute.snapshot.params.id, 0)
   }
 
-  async getTitleList(page: number) {
-    this.list = await this.extractService.getTitlesByAccountId(1, page, 6).toPromise().then(response => response)
+  ngOnInit() {}
+
+  async getTitleList(accountId, page: number) {
+    this.list = await this.extractService.getTitlesByAccountId(accountId, page, 6).toPromise().then(response => response)
     this.titles = this.list.content
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }

@@ -68,8 +68,8 @@ export class TitleFormComponent implements OnInit {
     title.docNumber = this.title.docNumber
     title.emissionDate = this.title.emissionDate
     title.value = this.title.value
-    title.parcel = this.title.parcel
     title.parcelNumber = parcel.parcelNumber
+    title.parcel = parcel.parcelNumber.toString() + "/" + this.numberParcels.toString()
     title.duoDate = parcel.parcelDuoDate
     title.historic = this.title.historic
     title.type = this.type
@@ -115,7 +115,6 @@ export class TitleFormComponent implements OnInit {
 
   reciveNumberParcels(value: any) {
     this.numberParcels = value
-    this.title.parcel = this.numberParcels > 1 ? true : false
   }
 
   reciveDueDate(value: Date) {
