@@ -20,13 +20,7 @@ export class ModalComponent implements OnInit {
     private kanbanSevice: KanbanSevice
   ) { }
 
-
-
-  ngOnInit() {
-    console.log("card", this.card);
-    console.log("el", this.el);
-    
-   }
+  ngOnInit() {}
 
   close() {
     this.mostrar = !this.mostrar
@@ -58,21 +52,19 @@ export class ModalComponent implements OnInit {
 
   doSomething() {
     this.showSaveButton = !this.showSaveButton
-    console.log("tl", this.el);    
   }
 
   isUndefined(value) {
-    console.log(value);
     return !value 
   }
 
   toggleEditable(): void {
     this.showSaveButton = !this.showSaveButton;
- }
+  }
 
- ngAfterViewChecked(){
-   if(this.showSaveButton){
-        this.el.nativeElement.focus();
-   }
- }
+  ngAfterViewChecked(){
+    if(this.showSaveButton){
+      this.el.nativeElement.focus();
+    }
+  }
 }

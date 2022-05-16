@@ -10,7 +10,6 @@
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,100;1,200;1,300&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +27,7 @@ body {
   background: #f2f3f8;
   font-family: 'proxima-nova';
   color: rgba(#3d4465, .9);
+  font-size: 20px;
 
   $bg-color:#f2f3f8;
   $navbar-bg-color : #242939;

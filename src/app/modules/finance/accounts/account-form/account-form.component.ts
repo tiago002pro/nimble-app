@@ -80,7 +80,6 @@ export class AccountFormComponent implements OnInit {
 
   save() {
     this.account.active = true
-    console.log("account", this.account);
     this.accountService.createAccount(this.account).subscribe(
       success => {
         this.swalModalService.sucessModal('Concluído', 'Conta cadastrada com sucesso!', false, 1500)
