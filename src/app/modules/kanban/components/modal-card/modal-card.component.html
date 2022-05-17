@@ -1,0 +1,82 @@
+<div class="modal-component" *ngIf="mostrar">
+  <div class="modal-card">
+    <div (click)="close()" class="bnt-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+      </svg>
+    </div>
+
+    <div class="area">
+      <div class="icon" style="padding-top: 10px;">
+        <i class="bi bi-lightning-charge-fill"></i>
+      </div>
+      <div class="area-input-title">
+        <textarea id="textArea" 
+          (keyup)="autoGrow($event)" 
+          value="{{card.title}}" 
+          [ngModel]="card.title" 
+          (ngModelChange)="updateCardTitle($event)" 
+          [rows]="getHeight(card.title) || 2">
+        </textarea>
+        <!-- <div class="sub-title">na lista 
+          <span>{{listNameCard}}</span>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="area">
+      <div class="icon">
+        <i class="bi bi-file-text-fill" style="padding-right: 11px;"></i>
+      </div>
+      <div class="area-title">Descrição</div>
+      <div class="area-input">
+        <textarea 
+          id="textArea" 
+          (keyup)="autoGrow($event)" 
+          value="{{card.description}}" 
+          [ngModel]="card.description" 
+          [rows]="getHeight(card.description) || 1" 
+          style="border: none; background: #a6afca45;"
+          (click)="toggleEditable()"
+          #bntsave>
+        </textarea>
+      </div>
+      <div  *ngIf="showSaveButton">
+        <app-nb-button [label]="'Salvar'" ></app-nb-button>
+          <i class="bi bi-x-lg" style="padding-left: 20px;
+          font-size: 20px;
+          vertical-align: middle; cursor: pointer;"
+          (click)="showSaveButton = false"></i>
+
+      </div>
+    </div>
+
+    <div class="area">
+      <div class="icon">
+        <i class="bi bi-chat-right-dots-fill" style="padding-right: 11px;"></i>
+      </div>
+      <div class="area-title">Atividades</div>
+      <div class="area-input">
+        <textarea 
+          id="textArea" 
+          (keyup)="autoGrow($event)" 
+          [ngModel]="newActivity" 
+          value="{{newActivity}}" 
+          [rows]="getHeight(newActivity) || 1">
+        </textarea>
+      </div>
+    </div>
+
+    <div class="area">
+      <div class="area-input" *ngFor="let activity of card.activityList">
+        <div class="icon">
+          <i class="bi bi-person-circle" style="padding-right: 11px;"></i>
+        </div>
+        <div class="">Tiago Barbosa</div>
+        {{activity.activity}}
+        <!-- <textarea id="textArea" (keyup)="autoGrow($event)" value="{{activity.activity}}" [rows]="getHeight(activity) || 2"></textarea> -->
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</div>

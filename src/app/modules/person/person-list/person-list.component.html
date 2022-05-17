@@ -1,6 +1,6 @@
 <div class="person-list-component">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <app-nb-title [title]="'Lista de ' + rule"></app-nb-title>
         </div>
     </div>
@@ -9,25 +9,23 @@
             <app-nb-button [label]="'Novo'" routerLink="/person-form/{{rule}}" ></app-nb-button>
         </div>
         <div class="table-responsive-md">
-            <table class="table nimble-table">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Data de Nasc/Fund</th>
-                        <th scope="col">Editar</th>
-                        <th scope="col">Excluir</th>
+                        <th class="left">Name</th>
+                        <th class="center">Editar</th>
+                        <th class="center">Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let person of listPerson">
-                        <td class="align-items">{{person.name}}</td>
-                        <td>{{person.dateofbirthorfondation | date:"dd/MM/yyyy"}}</td>
-                        <td class="icon-edit">
+                        <td class="align-items left">{{person.name}}</td>
+                        <td class="icon center">
                             <a routerLink="/person-form/edit/{{person.id}}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>
-                        <td class="icon-edit">
+                        <td class="icon center">
                             <a (click)="deletePersonById(person.id)">
                                 <i class="bi bi-trash"></i>
                             </a>

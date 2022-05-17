@@ -8,8 +8,8 @@ import { ListCard } from "../interface/kanban.listcard.interface";
     providedIn: 'root'
 })
 export class KanbanSevice {
-    url: String = 'https://nimble-back.herokuapp.com' 
-    // url: String = 'http://localhost:8080'
+    // url: String = 'https://nimble-back.herokuapp.com' 
+    url: String = 'http://localhost:8080'
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -63,5 +63,9 @@ export class KanbanSevice {
 
     newCard(indexList:Number, titleCard: String) {
         return this.http.post<ListCard>((this.url) + `/api/card/listCard/${indexList}/new`, titleCard)
+    }
+
+    updateCard(card: Card) {
+        return this.http.post<Card>((this.url) + `/api/card/update-card`, card)
     }
 }

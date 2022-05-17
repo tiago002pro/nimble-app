@@ -1,0 +1,116 @@
+
+.modal-component {
+  .modal-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #4c5fa0;
+    width: 40vw;
+    position: fixed;
+    left: 50%;
+    padding: 30px;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
+    
+  .overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  .bnt-close {
+    position: fixed;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .bnt-close svg {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    transition: 0.3s ease;
+  }
+
+  .bnt-close svg:hover {
+    // transform: rotate(360deg);
+    transition: 0.3s ease;
+    color: #4c5fa0;
+    margin: 0px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .area {
+    margin-bottom: 20px;
+  }
+
+  .icon {
+    float: left;
+  }
+
+  .icon i {
+    font-size: 25px;
+    // color: #3d4465;
+  }
+
+  .area-input-title {
+  }
+
+  .area-input-title textarea {
+    width: 95%; 
+    // float: right; 
+    border: none; 
+    font-size: 30px;
+    padding: 5px 5px 0px 5px;
+    // color: #242939;
+    resize: none;
+    font-weight: 600;
+    color: #505674;
+  }
+
+  // .sub-title {
+  //   font-size: 13px;
+  //   display: inline-block;
+  //   padding-left: 45px;
+  // }
+
+  .sub-title span {
+    text-transform: uppercase;
+  }
+
+  .area-title {
+    // width: 94%; 
+    font-size: 20px; 
+    line-height: 35px; 
+    font-weight: 700;
+  }
+
+  .area-input {
+    // display: flex;
+    // margin-top: 10px;
+  }
+
+  .area-input textarea {
+    width: 100%; 
+    padding: 10px;
+    // color: #242939;
+    resize: none;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1400px) {
+    .modal-card {
+      width: 70vw;
+      top: 50%;
+
+    }
+  }
+}

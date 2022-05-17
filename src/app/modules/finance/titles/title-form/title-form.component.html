@@ -1,0 +1,125 @@
+<div class="title-form">
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Lançamentos"></app-nb-title>
+
+        </div>
+        <div class="col-md-6">
+            <app-nb-button-return></app-nb-button-return>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-area data">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-nb-input-text [label]="'Nº do Documento'"
+                                       [placeholder]="'Ex.: 15166354'"
+                                       (ngModel)="reciveDocNumber($event)"></app-nb-input-text>
+                </div>
+                <div class="col-md-6">
+                    <app-nb-input-date [label]="'Emissão'"
+                                       [placeholder]="'Ex.: Fornecedor'"
+                                       (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>
+                </div>
+                <div class="col-md-6">
+                    <app-nb-select-object [label]="'Fornecedor'"
+                                          [list]="personList"
+                                          (ngModel)="recivePerson($event)"></app-nb-select-object>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="nb-select-object-component">
+                        <div class="form-group">
+                            <label class="input-label">Categoria</label>
+                            <div style="display: flex;">
+                                <select 
+                                    class="form-select form-control"  
+                                    [ngModel]="category"           
+                                    (ngModelChange)="reciveCategory($event)">
+                                    <option></option>
+                                    <option *ngFor="let item of categoryList;" 
+                                            [ngValue]="item">
+                                        {{item.name}}
+                                    </option>
+                                    <li>aa</li>
+                                    <ul *ngFor="let item of categoryList" >
+                                        <li>{{item.name}}</li>
+                                    </ul>
+                                </select>
+
+                                <button type="button" class="btn" (click)="showModalCategoty = true">+</button>
+                                <app-category-form-modal [show]="showModalCategoty" [type]="type" (showModal)="openModalCategory($event)"></app-category-form-modal>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="nb-select-object-component">
+                        <div class="form-group">
+                            <label class="input-label">Tipo</label>
+                            <select 
+                                class="form-select form-control"  
+                                [ngModel]="type"           
+                                (ngModelChange)="reciveType($event)">
+                                <option *ngFor="let item of typeList;" 
+                                    [ngValue]="item.key">
+                                    {{item.label}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <app-nb-input-date [label]="'Vencimento'"
+                                       (ngModel)="reciveDueDate($event)"></app-nb-input-date>
+                </div>
+                <div class="col-md-3">
+                    <app-nb-input-number [label]="'Qtd. parcelas'"
+                                         (ngModel)="reciveNumberParcels($event)"></app-nb-input-number>
+                </div>
+                <div class="col-md-3">
+                    <app-nb-input-currency [label]="'Valor'"
+                                         (ngModel)="reciveValue($event)"></app-nb-input-currency>
+                </div>
+                <div class="col-md-12">
+                    <app-nb-input-text [label]="'Observações'"
+                                       [placeholder]="' '"
+                                       (ngModel)="reciveHistoric($event)"></app-nb-input-text>
+                </div>
+            </div>
+            <div class="button">
+                <div class="form-group">
+                    <app-nb-button-v2 [label]="'Salvar'"
+                                   (click)="save()"></app-nb-button-v2>
+                </div>
+            </div>
+        </div>
+        <div class="content-area parcel-list">
+            <div class="row col-md-12">
+                <span class="sub-title">Parcelas</span>
+            </div>
+            <div class="without-data" *ngIf="!showTableParcels()">
+                <i class="bi bi-file-bar-graph-fill"></i>
+            </div>
+            <div class="table-responsive-md" *ngIf="showTableParcels()">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="center">Parcela</th>
+                            <th class="right">Valor</th>
+                            <th class="center">Vencimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let parcel of parcels">
+                            <td class="center">{{parcel.parcelNumber}}/{{numberParcels}}</td>
+                            <td class="right">{{parcel.parcelValue | currency: 'R$'}}</td>
+                            <td class="center">{{parcel.parcelDuoDate | date:"dd/MM/yyyy"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,9 @@
 .app-component {
     .page {
         width: calc(100vw - 260px);
-        height: calc(100vh - 60px);
+        height: calc(100vh - 70px);
         left: 260px;
-        top: 60px;
+        top: 70px;
         position: fixed;
         transition: 0.2s ease;
     }
@@ -15,6 +15,6 @@
     }
 
     .board {
-        padding: 30px;
+        padding: 10px;
     }
 }

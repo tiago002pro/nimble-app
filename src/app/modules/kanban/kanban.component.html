@@ -11,10 +11,11 @@
                 cdkDropListOrientation = "horizontal"
                 (cdkDropListDropped)="drop($event)">
                 <div class="frame-date" *ngFor="let list of listCard" cdkDrag>
-                    <app-list [listOfCards]="list" [listDropCard]="listDropCard" (list)="reciveListCards($event)"></app-list>
+                    <app-list [listOfCards]="list" [showModalCard]="showModalCard"  [listDropCard]="listDropCard" (list)="reciveListCards($event)" (openModalCard)="reciveOpenModalCard($event)" (cardToShow)="reciveCard($event)" (listName)="reciveListName($event)"></app-list>
                 </div>
                 <app-new-list (list)="reciveListCards($event)"></app-new-list>
             </div>
         </div>
     </div>
+    <app-modal-card [mostrar]="showModalCard" [card]="card" [listNameCard]="listNameOfCard" (openModalCard)="reciveOpenModalCard($event)"></app-modal-card>
 </div>

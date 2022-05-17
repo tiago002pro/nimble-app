@@ -12,7 +12,7 @@ export class NbSelectObjectComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
   change(value: any) {

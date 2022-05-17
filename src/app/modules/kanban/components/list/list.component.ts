@@ -15,8 +15,12 @@ export class ListComponent implements OnInit {
 
   @Input() listOfCards!: ListCard
   @Input() listDropCard!: any
+  @Input() showModalCard = false
   @Output() list = new EventEmitter()
   @Output() arrayListCards = new EventEmitter()
+  @Output() openModalCard = new EventEmitter()
+  @Output() cardToShow = new EventEmitter()
+  @Output() listName = new EventEmitter()
   cards!: Array<Card>
   
   constructor(
@@ -76,5 +80,12 @@ export class ListComponent implements OnInit {
 
   sortByIndex(cardList: Array<Card>) {
     return _.sortBy(cardList, 'indexCard')
+  }
+
+  showCard(card) {
+    this.showModalCard = !this.showModalCard
+    this.openModalCard.emit(this.showModalCard)
+    this.cardToShow.emit(card)
+    this.listName.emit(this.listOfCards.name)
   }
 }

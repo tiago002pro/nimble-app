@@ -10,8 +10,6 @@ import { HomeComponent } from './modules/dashboard/home.component';
 import { FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { APP_BASE_HREF } from '@angular/common';
-import { ModalModule } from './modules/modal';
-import { ModalCardTestComponent } from './modules/modal-card-test/modal-card-test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/nb-input-cpfcnpj.component';
@@ -36,14 +34,26 @@ import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
-import { CardComponent } from './modules/kanban/components/card/card.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
-import { FinanceFormComponent } from './modules/finance/finance-form/finance-form.component';
-import { FinanceHistoryComponent } from './modules/finance/finance-history/finance-history.component';
+import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
 import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
 import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
 import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
 import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
+import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
+import { AccountsComponent } from './modules/finance/accounts/accounts.component';
+import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { CategoryFormModalComponent } from './modules/finance/titles/modals/category-form-modal/category-form-modal.component';
+import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
+import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
+import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
+import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
+import { NbInputCurrencyComponent } from './modules/components/nb-input-currency/nb-input-currency.component';
+import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
+import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -78,11 +88,25 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
   "minTime": 300
 }
 
+export const customCurrencyMaskConfig = {
+  align: "right",
+  allowNegative: true,
+  allowZero: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: ".",
+  nullable: false,
+  min: 0,
+  max: 99999999999,
+  inputMode: CurrencyMaskInputMode.NATURAL
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ModalCardTestComponent,
     NavbarComponent,
     SidebarComponent,
     NbInputCpfcnpjComponent,
@@ -103,14 +127,22 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     ReportComponent,
     KanbanComponent,
     ListComponent,
-    CardComponent,
     NewListComponent,
-    FinanceFormComponent,
     FinanceHistoryComponent,
     NbSelectComponent,
     NgButtonReturnComponent,
     NbSelectObjectComponent,
     NbPaginationComponent,
+    ModalComponent,
+    AccountsComponent,
+    ManagePersonComponent,
+    CategoryFormModalComponent,
+    TitleFormComponent,
+    ExtractEntriesComponent,
+    AccountFormComponent,
+    NbButtonV2Component,
+    NbInputCurrencyComponent,
+    ModalPaidTitleComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,9 +152,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig =
     TextMaskModule,
     BrowserAnimationsModule,
     DragDropModule,
-    ModalModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), 
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    MatSelectModule,
+    NgxMatSelectSearchModule, 
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
+    MatTooltipModule,
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [

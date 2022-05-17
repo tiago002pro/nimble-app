@@ -1,11 +1,14 @@
-<div class="nb-select-component">
+<div class="nb-select-object-component">
     <div class="form-group">
         <label class="input-label">{{label}}</label>
         <select 
             class="form-select form-control"             
             [ngModel]="ngModel"
             (ngModelChange)="change($event)">
-            <option *ngFor="let item of list;" [ngValue]="item">{{item.name}}</option>
+            <option *ngFor="let item of list;" 
+                [ngValue]="item">
+                {{item.name}}
+            </option>
         </select>
     </div>
 </div>

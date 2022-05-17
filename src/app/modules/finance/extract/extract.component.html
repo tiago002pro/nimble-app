@@ -1,0 +1,41 @@
+<div class="extract-entries-component">
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Extrato"></app-nb-title>
+        </div>
+    </div>
+    <div class="content-area">
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="left">Vencimento</th>
+                        <th class="left">Nome</th>
+                        <th class="left">Parcela</th>
+                        <th class="left">Histórico</th>
+                        <th class="right">Crédito</th>
+                        <th class="right">Débito</th>
+                        <th class="right">Saldo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let title of titles, let i = index">
+                        <td class="left">{{title.duoDate | date: 'dd/MM/yyyy'}}</td>
+                        <td class="left">{{title.person.name}}</td>
+                        <td class="left">{{title.parcel}}</td>
+                        <td class="left">{{title.historic}}</td>
+                        <td class="right">
+                            <label class="receive" *ngIf="title.type == 'receive'">{{title.value | currency: 'R$ '}}</label>
+                            <label *ngIf="title.type != 'receive'"></label>
+                        </td>
+                        <td class="right">
+                            <label class="pay" *ngIf="title.type == 'pay'">{{title.value *-1 | currency: 'R$ '}}</label>
+                            <label *ngIf="title.type != 'pay'"></label>
+                        </td>
+                        <td class="right">{{title.value | currency: 'R$ '}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
