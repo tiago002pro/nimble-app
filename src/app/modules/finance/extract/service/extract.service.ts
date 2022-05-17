@@ -6,8 +6,8 @@ import { Pageable } from 'src/app/model/pageable.model';
   providedIn: 'root'
 })
 export class ExtractService {
-  // url: String = 'https://nimble-back.herokuapp.com' 
-  url: String = 'http://localhost:8080'
+  url: String = 'https://nimble-back.herokuapp.com' 
+  // url: String = 'http://localhost:8080'
 
   constructor(
     private http: HttpClient,

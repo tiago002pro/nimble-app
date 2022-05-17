@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import moment from 'moment';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { Person } from '../../../person/interface/person.interface';
@@ -32,16 +32,19 @@ export class TitleFormComponent implements OnInit {
   showModalCategoty: boolean = false
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
+    private route: Router,
     private personService: PersonService,
     private financeService: FinanceService, 
     private swalModalService: SwalModalService,
   ) { 
-    this.rule = this.route.snapshot.params.rule
+    this.rule = this.activatedRoute.snapshot.params.rule
   }
 
   async ngOnInit() {
     this.type = this.rule 
+    console.log("t", this.type);
+    
     this.title.paid = false
     const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.personList = (await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)).content
@@ -55,7 +58,7 @@ export class TitleFormComponent implements OnInit {
     this.financeService.createTitle(this.titleList).subscribe(
       success => {
         this.swalModalService.sucessModal('Concluído', 'Título cadastrado com sucesso!', false, 1500)
-        this.back()
+        this.type == 'pagar' ? this.route.navigate(['finance-history/pay/pagar']) : this.route.navigate(['finance-history/pay/receber'])
       },
       error => {
         this.swalModalService.errorModal('Erro', 'Verifique os dados e tente novamente!', false, 1500)
