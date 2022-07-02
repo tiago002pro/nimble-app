@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th class="left">Nome</th>
-                            <th class="center">Banco</th>
+                            <th class="left">Banco</th>
                             <th class="right">Saldo</th>
                             <th class="right">Limite</th>
                             <th class="center">Extrato</th>
@@ -53,7 +53,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <app-nb-pagination  [totalPages]="3" (page)="2"></app-nb-pagination>
+                <app-nb-pagination  [totalPages]="totalPages" (page)="getAccountListPagination($event)"></app-nb-pagination>
             </div>
         </div>
     </div>

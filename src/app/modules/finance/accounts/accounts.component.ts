@@ -10,6 +10,8 @@ import { AccountService } from './service/account.service';
 })
 export class AccountsComponent implements OnInit {
   accountsList: Array<Account> = []
+  data
+  totalPages
 
   constructor(
     private accountService: AccountService,
@@ -17,6 +19,16 @@ export class AccountsComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
-    this.accountsList = (await this.accountService.getAccountList(0, 10).toPromise().then(response => response)).content
+    this.getAccountList(0)
+  }
+
+  async getAccountList(page: number) {
+    this.data = await this.accountService.getAccountList(page, 10).toPromise().then(response => response)
+    this.accountsList = this.data.content
+    this.totalPages = Array(this.data.totalPages).map((x,i)=>i);
+  }
+
+  getAccountListPagination(page: number) {
+    this.getAccountList(page)
   }
 }
