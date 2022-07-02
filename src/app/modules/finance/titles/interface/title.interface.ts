@@ -3,10 +3,11 @@ import { Account } from "../../accounts/interface/account.interface";
 import { CategoryTitle } from "./category.interface";
 
 export interface FinanceTitle {
+    id?: number,
     docNumber?: String,
     emissionDate?: Date,
-    value?: Number,
-    parcelNumber?: Number,
+    value?: number,
+    parcelNumber?: number,
     parcel?: String,
     duoDate?: Date,
     historic?: String,

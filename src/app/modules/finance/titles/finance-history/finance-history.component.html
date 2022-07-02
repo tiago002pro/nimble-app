@@ -28,7 +28,8 @@
                                     type="checkbox" 
                                     formArrayName="selectedTitles" 
                                     [value]="title.id"
-                                    (change)="onChange(title)">
+                                    (change)="onChange(title)"
+                                    *ngIf="!title.paid">
                         </td>
                         <td class="left">{{title.docNumber}}</td>
                         <td class="left">{{title.person.name}}</td>

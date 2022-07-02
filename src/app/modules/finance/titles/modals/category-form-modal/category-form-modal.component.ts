@@ -24,8 +24,8 @@ export class CategoryFormModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.typeList = [
-      {label:'Receita', key: 'receive'},  
-      {label: 'Despesa', key: 'pay'}
+      {label:'Receita', key: 'RECEIVE'},  
+      {label: 'Despesa', key: 'PAY'}
     ]
   }
 

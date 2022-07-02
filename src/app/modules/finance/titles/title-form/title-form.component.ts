@@ -24,12 +24,13 @@ export class TitleFormComponent implements OnInit {
   type!: any
   category
   personList!: Array<Person>
-  numberParcels!: Number
+  numberParcels!: number
   firstDuoDate!: Date
   currentRoute!: any
   categoryList!: Array<CategoryTitle>
-  typeList = [{label:'Receita', key: 'receive'},  {label: 'Despesa', key: 'pay'}]
+  typeList = [{label:'Receita', key: 'RECEIVE'},  {label: 'Despesa', key: 'PAY'}]
   showModalCategoty: boolean = false
+  searchPerson
 
   constructor(
     private route: ActivatedRoute,
@@ -41,11 +42,16 @@ export class TitleFormComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.type = this.rule 
+    this.type = this.rule === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
     this.title.paid = false
-    const searchPerson: String = this.title.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
-    this.personList = (await this.personService.getPersonListByRule('Fornecedores', 1, 100).toPromise().then(response => response)).content
+    const searchPerson: String = this.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
+    this.searchPerson = searchPerson === 'Fornecedores'? 'Fornecedor' : 'Cliente'
+    this.getPersonListByRule(searchPerson)
     this.getAllcategories()
+  }
+
+  async getPersonListByRule(searchPerson) {
+    this.personList = (await this.personService.getPersonListByRule(searchPerson, 1, 100).toPromise().then(response => response)).content
   }
 
   save() {
@@ -67,7 +73,7 @@ export class TitleFormComponent implements OnInit {
     const title: FinanceTitle = {}
     title.docNumber = this.title.docNumber
     title.emissionDate = this.title.emissionDate
-    title.value = this.title.value
+    title.value = parcel.parcelValue
     title.parcelNumber = parcel.parcelNumber
     title.parcel = parcel.parcelNumber.toString() + "/" + this.numberParcels.toString()
     title.duoDate = parcel.parcelDuoDate
@@ -102,7 +108,14 @@ export class TitleFormComponent implements OnInit {
   reciveType(value: any) {
     this.type = value
     this.title.type = value
+    const searchPerson: String = value === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
+
     this.getAllcategories()
+    this.getPersonListByRule(searchPerson)
+    
+    this.type = value === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.title.type = this.type
+    this.searchPerson = searchPerson === 'Fornecedores'? 'Fornecedor' : 'Cliente'
   }
 
   reciveValue(value: any) {
@@ -133,7 +146,7 @@ export class TitleFormComponent implements OnInit {
     for(let x = 0; x < this.numberParcels; x++) {
       const parcel: FinanceParcel = {}
       parcel.parcelNumber = x+1
-      parcel.parcelValue = this.title.value
+      parcel.parcelValue = Math.floor(this.title.value / this.numberParcels)
 
       if (x===0) {
         parcel.parcelDuoDate = moment(this.firstDuoDate, "YYYY-MM-DD").format();

@@ -1,5 +1,5 @@
 export interface FinanceParcel {
-    parcelValue?: Number,
-    parcelNumber?: Number,
+    parcelValue?: number,
+    parcelNumber?: number,
     parcelDuoDate?: any,
 }

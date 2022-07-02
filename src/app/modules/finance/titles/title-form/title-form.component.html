@@ -21,13 +21,31 @@
                                        [placeholder]="'Ex.: Fornecedor'"
                                        (ngModel)="reciveEmissionDate($event)"></app-nb-input-date>
                 </div>
+
                 <div class="col-md-6">
-                    <app-nb-select-object [label]="'Fornecedor'"
+                    <div class="nb-select-object-component">
+                        <div class="form-group">
+                            <label class="input-label">Tipo</label>
+                            <select 
+                                class="form-select form-control"  
+                                [ngModel]="type"           
+                                (ngModelChange)="reciveType($event)">
+                                <option *ngFor="let item of typeList;" 
+                                    [ngValue]="item.key">
+                                    {{item.label}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <app-nb-select-object [label]="searchPerson"
                                           [list]="personList"
                                           (ngModel)="recivePerson($event)"></app-nb-select-object>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="nb-select-object-component">
                         <div class="form-group">
                             <label class="input-label">Categoria</label>
@@ -54,22 +72,6 @@
                     </div>
                 </div>
                 
-                <div class="col-md-3">
-                    <div class="nb-select-object-component">
-                        <div class="form-group">
-                            <label class="input-label">Tipo</label>
-                            <select 
-                                class="form-select form-control"  
-                                [ngModel]="type"           
-                                (ngModelChange)="reciveType($event)">
-                                <option *ngFor="let item of typeList;" 
-                                    [ngValue]="item.key">
-                                    {{item.label}}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-3">
                     <app-nb-input-date [label]="'Vencimento'"
                                        (ngModel)="reciveDueDate($event)"></app-nb-input-date>
