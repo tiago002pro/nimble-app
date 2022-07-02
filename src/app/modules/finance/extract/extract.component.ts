@@ -13,7 +13,7 @@ export class ExtractEntriesComponent implements OnInit {
   list!: Pageable
   titles!: Array<FinanceTitle>
   totalPages!: any
-  balance = 0
+  balanceList = []
 
   constructor(
     public extractService: ExtractService,
@@ -27,10 +27,20 @@ export class ExtractEntriesComponent implements OnInit {
   async getTitleList(accountId, page: number) {
     this.list = await this.extractService.getTitlesByAccountId(accountId, page, 6).toPromise().then(response => response)
     this.titles = this.list.content
+    this.getBalance()    
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }
 
-  getBalance(value) {
-    console.log("value", value);
+  getBalance() {
+    let balance = 0
+    this.titles.forEach(title => {
+      balance = (title.type == 'PAY' ? (title.value * -1) : title.value) + balance
+      const balanceItem = {id: title.id, value: title.value, type:  title.type, balanceValue: balance}
+      this.balanceList.push(balanceItem)
+    })
+  }
+
+  getBalanceValue(title) {
+    return (this.balanceList.filter((balance) => balance.id === title.id))[0]
   }
 }
