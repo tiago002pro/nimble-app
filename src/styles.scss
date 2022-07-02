@@ -89,9 +89,10 @@ html {
 
 .table {
   thead {
-    font-weight: 700;
     background-color: #3d4465;
-    color: #fff;
+    color: #f2f3f8;
+    text-transform: uppercase;
+    line-height: 20px;
   }
 
   thead > tr > th:first-child {
@@ -127,8 +128,9 @@ html {
     background-color: #f2f3f8;
   }
 
-  tbody, td, tfoot, th, thead, tr {
-    border: none;
+  tbody, td {
+    border-color: #3d4465;
+    border-style: solid;
   }
 
   tbody, td {
