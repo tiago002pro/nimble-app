@@ -38,7 +38,7 @@ export class FinanceHistoryComponent implements OnInit {
   }
 
   async getTitleList(page: number) {
-    this.list = await this.financeService.getTitlesByType(this.type.toLocaleLowerCase(), page, 6).toPromise().then(response => response)
+    this.list = await this.financeService.getTitlesByType(this.type, page, 6).toPromise().then(response => response)
     this.titles = this.list.content
     this.totalPages = Array(this.list.totalPages).map((x,i)=>i);
   }
