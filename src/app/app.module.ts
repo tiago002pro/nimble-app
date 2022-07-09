@@ -1,3 +1,4 @@
+import { ComponentsModule } from './modules/components/components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,12 +13,6 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { APP_BASE_HREF } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NbInputCpfcnpjComponent } from './modules/components/nb-input-cpfcnpj/nb-input-cpfcnpj.component';
-import { NbInputDateComponent } from './modules/components/nb-input-date/nb-input-date.component';
-import { NbInputNumberComponent } from './modules/components/nb-input-number/nb-input-number.component';
-import { NbInputPhoneComponent } from './modules/components/nb-input-phone/nb-input-phone.component';
-import { NbInputTextComponent } from './modules/components/nb-input-text/nb-input-text.component';
-import { NbInputZipcodeComponent } from './modules/components/nb-input-zipcode/nb-input-zipcode.component';
 import { NbPersonDataComponent } from './modules/person/components/nb-person-data/nb-person-data.component';
 import { NbPersonDocumentsComponent } from './modules/person/components/nb-person-documents/nb-person-documents.component';
 import { NbPersonLocationComponent } from './modules/person/components/nb-person-location/nb-person-location.component';
@@ -26,9 +21,6 @@ import { PersonListComponent } from './modules/person/person-list/person-list.co
 import {LOCALE_ID} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
-import { NbButtonComponent } from './modules/components/nb-button/nb-button.component';
-import { NbButtonBackComponent } from './modules/components/nb-button-back/nb-button-back.component';
-import { NbTitleComponent } from './modules/components/nb-title/nb-title.component';
 import { LoginComponent } from './views/login/login.component';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ReportComponent } from './modules/report/report/report.component';
@@ -36,10 +28,6 @@ import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
 import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
-import { NbSelectComponent } from './modules/components/nb-select/nb-select.component';
-import { NgButtonReturnComponent } from './modules/components/ng-button-return/nb-button-return.component';
-import { NbSelectObjectComponent } from './modules/components/nb-select-object/nb-select-object.component';
-import { NbPaginationComponent } from './modules/components/nb-pagination/nb-pagination.component';
 import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
 import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
@@ -49,8 +37,6 @@ import { CategoryFormModalComponent } from './modules/finance/titles/modals/cate
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
 import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
 import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
-import { NbButtonV2Component } from './modules/components/nb-button-v2/nb-button-v2.component';
-import { NbInputCurrencyComponent } from './modules/components/nb-input-currency/nb-input-currency.component';
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
 import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -111,30 +97,17 @@ export const customCurrencyMaskConfig = {
     HomeComponent,
     NavbarComponent,
     SidebarComponent,
-    NbInputCpfcnpjComponent,
-    NbInputDateComponent,
-    NbInputNumberComponent,
-    NbInputPhoneComponent,
-    NbInputTextComponent,
-    NbInputZipcodeComponent,
     NbPersonDataComponent,
     NbPersonDocumentsComponent,
     NbPersonLocationComponent,
     PersonFormComponent,
     PersonListComponent,
-    NbButtonComponent,
-    NbButtonBackComponent,
-    NbTitleComponent,
     LoginComponent,
     ReportComponent,
     KanbanComponent,
     ListComponent,
     NewListComponent,
     FinanceHistoryComponent,
-    NbSelectComponent,
-    NgButtonReturnComponent,
-    NbSelectObjectComponent,
-    NbPaginationComponent,
     ModalComponent,
     AccountsComponent,
     ManagePersonComponent,
@@ -142,8 +115,6 @@ export const customCurrencyMaskConfig = {
     TitleFormComponent,
     ExtractEntriesComponent,
     AccountFormComponent,
-    NbButtonV2Component,
-    NbInputCurrencyComponent,
     ModalPaidTitleComponent,
     CustomerAttentionComponent,
     CustomerAttentionListComponent,
@@ -162,6 +133,7 @@ export const customCurrencyMaskConfig = {
     NgxMatSelectSearchModule, 
     NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
     MatTooltipModule,
+    ComponentsModule,
   ],
   // providers: [{provide: APP_BASE_HREF, useValue : 'nimble'}],
   providers: [
