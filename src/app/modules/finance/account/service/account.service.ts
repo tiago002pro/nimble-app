@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pageable } from 'src/app/model/pageable.model';
-import { Account } from '../interface/account.interface';
+import { Account } from '../../interface/account.interface';
 
 @Injectable({
   providedIn: 'root'

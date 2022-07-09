@@ -1,8 +1,8 @@
+import { FinanceTitle } from './../../interface/title.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pageable } from 'src/app/model/pageable.model';
-import { CategoryTitle } from '../interface/category.interface';
-import { FinanceTitle } from '../interface/title.interface';
+import { CategoryTitle } from '../../interface/category.interface';
 
 @Injectable({
   providedIn: 'root'

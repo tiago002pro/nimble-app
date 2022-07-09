@@ -1,17 +1,17 @@
+import { FinanceTitle } from '../../interface/title.interface';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Pageable } from 'src/app/model/pageable.model';
-import { EnumTitleType } from '../enum/EnumTitleType';
-import { FinanceTitle } from '../interface/title.interface';
+import { EnumTitleType } from '../../enum/EnumTitleType';
 import { FinanceService } from '../service/finance.service';
 
 @Component({
-  selector: 'app-finance-history',
-  templateUrl: './finance-history.component.html',
-  styleUrls: ['./finance-history.component.scss']
+  selector: 'app-title-list',
+  templateUrl: './title-list.component.html',
+  styleUrls: ['./title-list.component.scss']
 })
-export class FinanceHistoryComponent implements OnInit {
+export class TitleListComponent implements OnInit {
   list!: Pageable
   currentRoute!: any
   type!: string

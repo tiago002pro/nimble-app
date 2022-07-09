@@ -1,13 +1,13 @@
+import { FinanceParcel } from './../../interface/parcel.interface';
+import { FinanceTitle } from './../../interface/title.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { Person } from '../../../person/interface/person.interface';
 import { PersonService } from '../../../person/service/person.service';
-import { EnumTitleType } from '../enum/EnumTitleType';
-import { CategoryTitle } from '../interface/category.interface';
-import { FinanceParcel } from '../interface/parcel.interface';
-import { FinanceTitle } from '../interface/title.interface';
+import { EnumTitleType } from '../../enum/EnumTitleType';
+import { CategoryTitle } from '../../interface/category.interface';
 import { FinanceService } from '../service/finance.service';
 
 

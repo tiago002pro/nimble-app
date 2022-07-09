@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
-import { Account } from '../interface/account.interface';
+import { Account } from '../../interface/account.interface';
 import { AccountService } from '../service/account.service';
 
 @Component({

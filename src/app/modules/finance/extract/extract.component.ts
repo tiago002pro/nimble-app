@@ -1,7 +1,7 @@
+import { FinanceTitle } from './../interface/title.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pageable } from 'src/app/model/pageable.model';
-import { FinanceTitle } from '../titles/interface/title.interface';
 import { ExtractService } from './service/extract.service';
 
 @Component({

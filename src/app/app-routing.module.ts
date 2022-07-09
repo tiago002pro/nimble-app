@@ -1,3 +1,4 @@
+import { AccountListComponent } from './modules/finance/account/account-list/account-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/dashboard/home.component';
@@ -5,12 +6,11 @@ import { PersonFormComponent } from './modules/person/person-form/person-form.co
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
 import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
-import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
-import { AccountsComponent } from './modules/finance/accounts/accounts.component';
+import { TitleListComponent } from './modules/finance/titles/title-list/title-list.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
 import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
-import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
+import { AccountFormComponent } from './modules/finance/account/account-form/account-form.component';
 import { CustomerAttentionComponent } from './modules/customer-attention/customer-attention.component';
 
 const routes: Routes = [
@@ -23,9 +23,9 @@ const routes: Routes = [
   { path: 'person-list/provider/:rule', component: PersonListComponent },
   { path: 'person-list/employee/:rule', component: PersonListComponent },
   { path: 'title-releases/:rule', component: TitleFormComponent},
-  { path: 'finance-history/pay/:rule', component: FinanceHistoryComponent},
-  { path: 'finance-history/receive/:rule', component: FinanceHistoryComponent},
-  { path: 'account-list', component: AccountsComponent},
+  { path: 'finance-history/pay/:rule', component: TitleListComponent},
+  { path: 'finance-history/receive/:rule', component: TitleListComponent},
+  { path: 'account-list', component: AccountListComponent},
   { path: 'account-form', component: AccountFormComponent},
   { path: 'account-form/edit/:id', component: AccountFormComponent},
   { path: 'account-extract/:id', component: ExtractEntriesComponent},

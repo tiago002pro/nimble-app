@@ -1,3 +1,4 @@
+import { AccountListComponent } from './modules/finance/account/account-list/account-list.component';
 import { ComponentsModule } from './modules/components/components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,16 +28,15 @@ import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { ListComponent } from './modules/kanban/components/list/list.component';
 import { NewListComponent } from './modules/kanban/components/new-list/new-list.component';
-import { FinanceHistoryComponent } from './modules/finance/titles/finance-history/finance-history.component';
+import { TitleListComponent } from './modules/finance/titles/title-list/title-list.component';
 import { ModalComponent } from './modules/kanban/components/modal-card/modal-cardcomponent';
-import { AccountsComponent } from './modules/finance/accounts/accounts.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { CategoryFormModalComponent } from './modules/finance/titles/modals/category-form-modal/category-form-modal.component';
 import { TitleFormComponent } from './modules/finance/titles/title-form/title-form.component';
 import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
-import { AccountFormComponent } from './modules/finance/accounts/account-form/account-form.component';
+import { AccountFormComponent } from './modules/finance/account/account-form/account-form.component';
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
 import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -107,9 +107,9 @@ export const customCurrencyMaskConfig = {
     KanbanComponent,
     ListComponent,
     NewListComponent,
-    FinanceHistoryComponent,
+    TitleListComponent,
     ModalComponent,
-    AccountsComponent,
+    AccountListComponent,
     ManagePersonComponent,
     CategoryFormModalComponent,
     TitleFormComponent,

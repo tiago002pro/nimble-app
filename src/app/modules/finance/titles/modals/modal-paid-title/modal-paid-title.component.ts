@@ -1,7 +1,7 @@
+import { AccountService } from '../../../account/service/account.service';
+import { FinanceTitle } from './../../../interface/title.interface';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
-import { AccountService } from '../../../accounts/service/account.service';
-import { FinanceTitle } from '../../interface/title.interface';
 import { FinanceService } from '../../service/finance.service';
 
 @Component({
