@@ -54,6 +54,8 @@ import { NbInputCurrencyComponent } from './modules/components/nb-input-currency
 import { CurrencyMaskInputMode, NgxCurrencyModule } from 'ngx-currency';
 import { ModalPaidTitleComponent } from './modules/finance/titles/modals/modal-paid-title/modal-paid-title.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CustomerAttentionComponent } from './modules/customer-attention/customer-attention.component';
+import { CustomerAttentionListComponent } from './modules/customer-attention/customer-attention-list/customer-attention-list.component';
 registerLocaleData(ptBr)
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig =
@@ -143,6 +145,8 @@ export const customCurrencyMaskConfig = {
     NbButtonV2Component,
     NbInputCurrencyComponent,
     ModalPaidTitleComponent,
+    CustomerAttentionComponent,
+    CustomerAttentionListComponent,
   ],
   imports: [
     BrowserModule,

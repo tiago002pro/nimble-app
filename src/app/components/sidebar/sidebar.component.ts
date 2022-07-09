@@ -45,6 +45,18 @@ export class SidebarComponent implements OnInit {
           {name: "Funcionários", router: "/person-list/employee/Funcionários"},
         ]
       },
+      // {
+      //   name: "Comercial",
+      //   icon: "bi bi-bag-check-fill",
+      //   router: "#",
+      //   drop: true,
+      //   sub: [
+      //     {name: "Vendas", router: "#"},
+      //     {name: "Order de serviço", router: "#"},
+      //     {name: "Estoque", router: "#"},
+      //     {name: "Nota", router: "#"},
+      //   ]
+      // },
       {
         name: "Financeiro",
         icon: "bi bi-piggy-bank-fill",
@@ -52,7 +64,9 @@ export class SidebarComponent implements OnInit {
         drop: true,
         sub: [
           {name: "Contas", router: "account-list"},
-          {name: "Lançamentos", router: "title-releases/pay"},
+          // {name: "Lançamentos", router: "title-releases/pay"},
+          // {name: "Cobrança", router: "#"},
+          // {name: "Boleto", router: "#"},
           {name: "Contas a Pagar", router: "finance-history/pay/pagar"},
           {name: "Contas a Receber", router: "finance-history/receive/receber"},
         ]
@@ -67,12 +81,39 @@ export class SidebarComponent implements OnInit {
         ]
       },
       // {
+      //   name: "Suporte",
+      //   icon: "bi bi-headset",
+      //   router: "#",
+      //   drop: true,
+      //   sub: [
+      //     {name: "Atendimento", router: "customer-attention"},
+      //   ]
+      // },
+      // {
+      //   name: "Qualidade",
+      //   icon: "bi bi-clipboard-fill",
+      //   router: "#",
+      //   drop: true,
+      //   sub: [
+      //     {name: "Ordem de serciço", router: "#"},
+      //   ]
+      // },
+      // {
+      //   name: "Dev",
+      //   icon: "bi bi-laptop",
+      //   router: "#",
+      //   drop: true,
+      //   sub: [
+      //     {name: "Tarefas", router: "#"},
+      //   ]
+      // },
+      // {
       //   name: "Relatórios",
       //   icon: "fas fa-chart-pie",
       //   router: "#",
-      //   drop: false,
+      //   drop: true,
       //   sub: [
-      //     {name: "Quadro", router: "/report"},
+      //     {name: "Relatórios", router: "/report"},
       //   ]
       // },
     ]

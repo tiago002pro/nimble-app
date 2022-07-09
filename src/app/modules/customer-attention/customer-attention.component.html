@@ -1,0 +1,44 @@
+<div class="customer-attention">
+    <div class="row">
+        <div class="col-md-12">
+            <app-nb-title title="Atendimento"></app-nb-title>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-area">
+            <div class="row">
+                <div class="chat-box">
+                    <div *ngFor="let chat of chat">
+                        <div class="chat-client" *ngIf="chat.type == 'client'">
+                            <div class="name">{{chat.name}}</div>
+                            <div class="box">
+                                <div class="image">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                                <div class="chat">
+                                    <div class="triangulo"></div>
+                                    <div class="text">{{chat.chat}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-atendente" *ngIf="chat.type == 'atendente'">
+                            <div class="name">{{chat.name}}</div>
+                            <div class="box">
+                                <div class="image">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div class="chat">
+                                    <div class="triangulo"></div>
+                                    <div class="text">{{chat.chat}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-box-insert">
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
