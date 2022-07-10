@@ -7,7 +7,7 @@ import { KanbanSevice } from '../../service/kanban.service';
   templateUrl: './modal-card.component.html',
   styleUrls: ['./modal-card.component.scss'],
 })
-export class ModalComponent implements OnInit {
+export class ModalCardComponent implements OnInit {
   @Input() card!: Card
   @Input() mostrar!: Boolean
   @Input() listNameCard!: String

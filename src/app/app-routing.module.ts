@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/dashboard/home.component';
 import { PersonFormComponent } from './modules/person/person-form/person-form.component';
 import { PersonListComponent } from './modules/person/person-list/person-list.component';
-import { ReportComponent } from './modules/report/report/report.component';
 import { KanbanComponent } from './modules/kanban/kanban.component';
 import { TitleListComponent } from './modules/finance/titles/title-list/title-list.component';
 import { ManagePersonComponent } from './modules/person/manage-person/manage-person.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
   { path: 'account-form/edit/:id', component: AccountFormComponent},
   { path: 'account-extract/:id', component: ExtractEntriesComponent},
   { path: 'kanban', component: KanbanComponent},
-  { path: 'report', component: ReportComponent},
   { path: 'customer-attention', component: CustomerAttentionComponent},
 ];
 
