@@ -8,8 +8,8 @@ import { CategoryTitle } from '../../interface/category.interface';
   providedIn: 'root'
 })
 export class FinanceService {
-  url: String = 'https://nimble-back.herokuapp.com' 
-  // url: String = 'http://localhost:8080'
+  // url: String = 'https://nimble-back.herokuapp.com' 
+  url: String = 'http://localhost:8080'
 
   constructor(
     private http: HttpClient,
@@ -30,6 +30,11 @@ export class FinanceService {
   getAllCategoriesByType(type: String) {
     return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all?type='+(type))
   }
+
+  getAllSubCategoriesByType(type: String) {
+    return this.http.get<Array<any>>((this.url) + `/api/sub-category/all?type=`+(type))
+  }
+  
   paidTitle(titles) {
     return this.http.put((this.url) + '/api/title/paid', titles)
   }

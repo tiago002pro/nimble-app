@@ -7,8 +7,8 @@ import { Account } from '../../interface/account.interface';
   providedIn: 'root'
 })
 export class AccountService {
-  url: String = 'https://nimble-back.herokuapp.com' 
-  // url: String = 'http://localhost:8080'
+  // url: String = 'https://nimble-back.herokuapp.com' 
+  url: String = 'http://localhost:8080'
 
   constructor(
     private http: HttpClient,
