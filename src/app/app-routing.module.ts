@@ -11,6 +11,7 @@ import { TitleFormComponent } from './modules/finance/titles/title-form/title-fo
 import { ExtractEntriesComponent } from './modules/finance/extract/extract.component';
 import { AccountFormComponent } from './modules/finance/account/account-form/account-form.component';
 import { CustomerAttentionComponent } from './modules/customer-attention/customer-attention.component';
+import { CategoryListComponent } from './modules/finance/category/category-list/category-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'account-extract/:id', component: ExtractEntriesComponent},
   { path: 'kanban', component: KanbanComponent},
   { path: 'customer-attention', component: CustomerAttentionComponent},
+  { path: 'category-list', component: CategoryListComponent},
 ];
 
 @NgModule({

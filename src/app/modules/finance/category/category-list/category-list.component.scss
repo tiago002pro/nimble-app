@@ -1,0 +1,33 @@
+.finance-cetegory-list-component {
+
+    .new-title-button {
+        margin-bottom: 10px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        padding: 60px;
+    }
+
+    .status {
+        width: 10px;
+        height: 10px;
+        padding: 20px;
+        margin: auto;
+        display: flex;
+        border-radius: 50%;
+        line-height: 5px;
+        justify-content: center;
+        color: #FFF;
+        font-weight: 400;
+    }
+
+    .revenue {
+        background-color: #69A8E3;
+    }
+
+    .expense {
+        background-color: #ec0813c2;
+    }
+}

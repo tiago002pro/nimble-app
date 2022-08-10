@@ -1,0 +1,92 @@
+<div class="finance-cetegory-list-component">
+    <div class="row">
+        <div class="col-md-6">
+            <app-nb-title title="Categorias"></app-nb-title>
+        </div>
+    </div>
+    <div class="content-area">
+        <div class="new-title-button">
+            <app-nb-button [label]="'Novo'" routerLink=""></app-nb-button>
+        </div>
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="left"></th>
+                        <th class="left">Nome</th>
+                        <th class="center">Tipo</th>
+                        <th class="center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let category of categoryList">
+                    <tr>
+                        <td class="center">
+                            <div class="icon center">
+                                <a (click)="showSubCategoies(category)">
+                                    <i class="bi bi-caret-right-fill"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="left">{{category.name}}</td>
+                        <td class="center">
+                            <div class="status expense"
+                                *ngIf="category.type == 'expense'"
+                                #tooltip="matTooltip"
+                                matTooltip="Despesa"
+                                matTooltipPosition="right">
+                                <label>D</label>
+                            </div>
+                            <div class="status revenue" 
+                                *ngIf="category.type == 'revenue'"
+                                #tooltip="matTooltip"
+                                matTooltip="Receita"
+                                matTooltipPosition="right">
+                                <label>R</label>
+                            </div>
+                        </td>
+                        <td class="center">
+                            <div class="icon center">
+                                <a>
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a href="">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="true">
+                        <td [attr.colspan]="4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="left">Sub-categoria</th>
+                                        <th class="left">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let subCategory of category.subCategoryList">
+                                        <td class="left">{{subCategory.name}}</td>
+                                        <td class="left">aaa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="chart">
+            <canvas id="myChart2"></canvas>
+        </div>
+        <button type="button" class="btn" (click)="showModalCategoty = true">+</button> -->
+        <!-- <app-category-form-modal [show]="showModalCategoty" [type]="type" (showModal)="openModalCategory($event)"></app-category-form-modal> -->
+        <!-- <app-nb-pagination [totalPages]="totalPages" (page)="getTitleList($event)"></app-nb-pagination>
+        <div class="button" *ngIf="selectedTitles.length > 0">
+            <div class="form-group">
+                <app-nb-button-v2 [label]="'Baixar'" (click)="baixar()"></app-nb-button-v2>
+            </div>
+        </div> -->
+        <!-- <app-modal-paid-title [show]="showModalPaidTitle" (showModal)="openModalCategory($event)" [titles]="selectedTitles"></app-modal-paid-title> -->
+    </div>
+</div>

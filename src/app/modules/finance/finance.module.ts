@@ -13,6 +13,7 @@ import { AccountFormComponent } from './account/account-form/account-form.compon
 import { ExtractEntriesComponent } from './extract/extract.component';
 import { CategoryFormModalComponent } from './titles/modals/category-form-modal/category-form-modal.component';
 import { ModalPaidTitleComponent } from './titles/modals/modal-paid-title/modal-paid-title.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ModalPaidTitleComponent } from './titles/modals/modal-paid-title/modal-
     ExtractEntriesComponent,
     CategoryFormModalComponent,
     ModalPaidTitleComponent,
+    CategoryListComponent,
   ],
   imports: [
     CommonModule,
