@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SwalModalService } from 'src/app/service/swal-modal.service';
-import { CategoryTitle } from '../../../interface/category.interface';
+import { Category } from '../../../interface/category.interface';
 import { FinanceService } from '../../service/finance.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class CategoryFormModalComponent implements OnInit {
   @Output() showModal = new EventEmitter()
 
   typeList = []
-  category: CategoryTitle = {}
+  category: Category = {}
   categoryName!: String
 
   constructor(

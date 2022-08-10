@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CategoryTitle } from '../../interface/category.interface';
+import { Category } from '../../interface/category.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,16 @@ export class CategoryService {
     private http: HttpClient,
   ) { }
 
+  newCategory(category: Category) {
+    return this.http.post((this.url) + '/api/category/new', category)
+  }
+
   getAllCategories() {
-    return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/get-all')
+    return this.http.get<Array<Category>>((this.url) + '/api/category/all')
   }
 
   getAllCategoriesByType(type: String) {
-    return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all?type='+(type))
+    return this.http.get<Array<Category>>((this.url) + '/api/category/all/type/'+(type))
   }
 
   getAllSubCategories() {

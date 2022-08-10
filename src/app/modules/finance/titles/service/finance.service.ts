@@ -2,7 +2,7 @@ import { FinanceTitle } from './../../interface/title.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pageable } from 'src/app/model/pageable.model';
-import { CategoryTitle } from '../../interface/category.interface';
+import { Category } from '../../interface/category.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class FinanceService {
     return this.http.post((this.url) + '/api/title/form', titles)
   }
 
-  createCategory(category: CategoryTitle) {
+  createCategory(category: Category) {
     return this.http.post((this.url) + '/api/category/category-form', category)
   }
 
@@ -28,7 +28,7 @@ export class FinanceService {
   }
 
   getAllCategoriesByType(type: String) {
-    return this.http.get<Array<CategoryTitle>>((this.url) + '/api/category/all?type='+(type))
+    return this.http.get<Array<Category>>((this.url) + '/api/category/all?type='+(type))
   }
 
   getAllSubCategoriesByType(type: String) {

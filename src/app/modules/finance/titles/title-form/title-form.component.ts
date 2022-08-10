@@ -7,7 +7,6 @@ import { SwalModalService } from 'src/app/service/swal-modal.service';
 import { Person } from '../../../person/interface/person.interface';
 import { PersonService } from '../../../person/service/person.service';
 import { EnumTitleType } from '../../enum/EnumTitleType';
-import { CategoryTitle } from '../../interface/category.interface';
 import { FinanceService } from '../service/finance.service';
 import { SubCategoryTitle } from '../../interface/sub-category.interface';
 
