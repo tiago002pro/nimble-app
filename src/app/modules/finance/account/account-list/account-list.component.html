@@ -1,7 +1,7 @@
 <div class="accounts">
     <div class="row">
         <div class="col-md-12">
-            <app-nb-title title="Contas financeiras"></app-nb-title>
+            <app-nb-title title="Contas Bancárias"></app-nb-title>
         </div>
     </div>
     <div class="content">
@@ -15,18 +15,15 @@
                         <tr>
                             <th class="left">Nome</th>
                             <th class="left">Banco</th>
-                            <th class="right">Saldo</th>
                             <th class="right">Limite</th>
                             <th class="center">Extrato</th>
                             <th class="center">Ações</th>
-                            <!-- <th class="center">Deletar</th> -->
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let account of accountsList">
                             <td class="left">{{account.accountName}}</td>
                             <td class="left">{{account.bank}}</td>
-                            <td class="right">{{account.balance | currency: 'R$'}}</td>
                             <td class="right">{{account.limitValue | currency: 'R$'}}</td>
                             <td class="center icon">
                                 <a routerLink="/account-extract/{{account.id}}">
@@ -35,25 +32,22 @@
                             </td>
                             <td class="center icon">
                                 <a routerLink="/account-form/edit/{{account.id}}"
-                                    matTooltip="Editar"
-                                    matTooltipPosition="right">
+                                   matTooltip="Editar"
+                                   matTooltipPosition="right">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <a routerLink=""
-                                    matTooltip="Excluir"
-                                    matTooltipPosition="right">
+                                <!-- <a routerLink=""
+                                   matTooltip="Excluir"
+                                   matTooltipPosition="right">
                                     <i class="bi bi-trash"></i>
-                                </a>
+                                </a> -->
                             </td>
-                            <!-- <td class="center icon">
-                                <a href="#">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-                            </td> -->
                         </tr>
                     </tbody>
                 </table>
-                <app-nb-pagination  [totalPages]="totalPages" (page)="getAccountListPagination($event)"></app-nb-pagination>
+                <app-nb-pagination [totalPages]="totalPages" 
+                                   (page)="getAccountListPagination($event)">
+                </app-nb-pagination>
             </div>
         </div>
     </div>

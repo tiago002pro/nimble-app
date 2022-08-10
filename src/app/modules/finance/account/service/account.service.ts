@@ -15,11 +15,11 @@ export class AccountService {
   ) { }
 
   createAccount(account: Account)  {
-    return this.http.post((this.url) + '/api/account/form', account)
+    return this.http.post((this.url) + '/api/account/new', account)
   }
 
   getAccountList(page: number, size: number)  {
-    return this.http.get<Pageable>((this.url) + '/api/account/list?page='+(page)+'&size='+(size)) 
+    return this.http.get<Pageable>((this.url) + '/api/account/all?page='+(page)+'&size='+(size)) 
   }
 
   getById(id) {
