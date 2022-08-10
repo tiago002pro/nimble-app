@@ -9,6 +9,7 @@ import { PersonService } from '../../../person/service/person.service';
 import { EnumTitleType } from '../../enum/EnumTitleType';
 import { CategoryTitle } from '../../interface/category.interface';
 import { FinanceService } from '../service/finance.service';
+import { SubCategoryTitle } from '../../interface/sub-category.interface';
 
 
 @Component({
@@ -22,12 +23,12 @@ export class TitleFormComponent implements OnInit {
   parcels!: Array<FinanceParcel>
   rule
   type!: any
-  category
+  subCategory
   personList!: Array<Person>
   numberParcels!: number
   firstDuoDate!: Date
   currentRoute!: any
-  categoryList!: Array<CategoryTitle>
+  subCategoryList!: Array<SubCategoryTitle>
   typeList = [{label:'Receita', key: 'RECEIVE'},  {label: 'Despesa', key: 'PAY'}]
   showModalCategoty: boolean = false
   searchPerson
@@ -47,7 +48,7 @@ export class TitleFormComponent implements OnInit {
     const searchPerson: String = this.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.searchPerson = searchPerson === 'Fornecedores'? 'Fornecedor' : 'Cliente'
     this.getPersonListByRule(searchPerson)
-    this.getAllcategories()
+    this.getAllSubcategories()
   }
 
   async getPersonListByRule(searchPerson) {
@@ -81,7 +82,7 @@ export class TitleFormComponent implements OnInit {
     title.type = this.type
     title.payDay = this.title.payDay
     title.person = this.title.person
-    title.category = this.title.category
+    title.subCategory = this.title.subCategory
     title.paid = this.title.paid
     title.status = "OPEN"
 
@@ -100,9 +101,9 @@ export class TitleFormComponent implements OnInit {
     this.title.person = value
   }
 
-  reciveCategory(value: CategoryTitle) {
-    this.category = value
-    this.title.category = value
+  reciveSubCategory(value: SubCategoryTitle) {
+    this.subCategory = value
+    this.title.subCategory = value
   }
 
   reciveType(value: any) {
@@ -110,7 +111,7 @@ export class TitleFormComponent implements OnInit {
     this.title.type = value
     const searchPerson: String = value === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
 
-    this.getAllcategories()
+    this.getAllSubcategories()
     this.getPersonListByRule(searchPerson)
     
     this.type = value === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
@@ -161,12 +162,12 @@ export class TitleFormComponent implements OnInit {
     history.back()  
   }
 
-  async getAllcategories() {
-    this.categoryList = await this.financeService.getAllCategoriesByType(this.type).toPromise().then((response) => response);
+  async getAllSubcategories() {
+    this.subCategoryList = await this.financeService.getAllSubCategoriesByType(this.type).toPromise().then((response) => response);
   }
 
   openModalCategory(value?) {
     this.showModalCategoty = value
-    this.getAllcategories()
+    this.getAllSubcategories()
   }
 }

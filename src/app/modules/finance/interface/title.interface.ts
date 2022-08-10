@@ -1,6 +1,6 @@
 import { Account } from './account.interface';
 import { Person } from './../../person/interface/person.interface';
-import { CategoryTitle } from "./category.interface";
+import { SubCategoryTitle } from './sub-category.interface';
 
 export interface FinanceTitle {
     id?: number,
@@ -16,6 +16,6 @@ export interface FinanceTitle {
     payDay?: Date,
     paid?: boolean,
     person?: Person,
-    category?: CategoryTitle,
+    subCategory?: SubCategoryTitle,
     account?: Account,
 }

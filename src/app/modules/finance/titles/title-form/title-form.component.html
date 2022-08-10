@@ -52,15 +52,15 @@
                             <div style="display: flex;">
                                 <select 
                                     class="form-select form-control"  
-                                    [ngModel]="category"           
-                                    (ngModelChange)="reciveCategory($event)">
+                                    [ngModel]="subCategory"           
+                                    (ngModelChange)="reciveSubCategory($event)">
                                     <option></option>
-                                    <option *ngFor="let item of categoryList;" 
+                                    <option *ngFor="let item of subCategoryList;" 
                                             [ngValue]="item">
                                         {{item.name}}
                                     </option>
                                     <li>aa</li>
-                                    <ul *ngFor="let item of categoryList" >
+                                    <ul *ngFor="let item of subCategoryList" >
                                         <li>{{item.name}}</li>
                                     </ul>
                                 </select>
