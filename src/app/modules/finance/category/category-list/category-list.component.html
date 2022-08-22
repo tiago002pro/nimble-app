@@ -22,22 +22,27 @@
                     <tr>
                         <td class="center">
                             <div class="icon center">
-                                <a (click)="showSubCategoies(category)">
-                                    <i class="bi bi-caret-right-fill"></i>
+                                <a (click)="showSubCategoies(category)"
+                                    *ngIf="category.subCategoryList.length > 0">
+                                    <span [ngClass]="category.showSub ? 'icon rotate-down' : 'icon rotate-right'">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                          </svg>
+                                    </span>
                                 </a>
                             </div>
                         </td>
                         <td class="left">{{category.name}}</td>
                         <td class="center">
                             <div class="status expense"
-                                *ngIf="category.type == 'expense'"
+                                *ngIf="category.type == 'EXPENSE'"
                                 #tooltip="matTooltip"
                                 matTooltip="Despesa"
                                 matTooltipPosition="right">
                                 <label>D</label>
                             </div>
                             <div class="status revenue" 
-                                *ngIf="category.type == 'revenue'"
+                                *ngIf="category.type == 'REVENUE'"
                                 #tooltip="matTooltip"
                                 matTooltip="Receita"
                                 matTooltipPosition="right">
@@ -52,10 +57,13 @@
                                 <a href="">
                                     <i class="bi bi-trash"></i>
                                 </a>
+                                <a href="">
+                                    <i class="bi bi-plus-circle-fill"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
-                    <tr *ngIf="true">
+                    <tr *ngIf="category.showSub">
                         <td [attr.colspan]="4">
                             <table class="table">
                                 <thead>

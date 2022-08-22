@@ -25,7 +25,12 @@ export class CategoryListComponent implements OnInit {
 
   showSubCategoies(category) {
     console.log("category", category);
-    
+
+    if (!category.showSub) {
+      category.showSub = true
+    } else {
+      category.showSub = !category.showSub 
+    }
   }
 
   openModalCategory(value?) {

@@ -30,4 +30,22 @@
     .expense {
         background-color: #ec0813c2;
     }
+
+    .icon {
+        transition: 0.3s ease;
+    }
+
+    .rotate-down {
+        svg {
+            transform: rotate(90deg);
+            transition: 0.3s ease;
+        }
+    }
+
+    .rotate-right {
+        svg {
+            transform: rotate(0deg);
+            transition: 0.3s ease;
+        }
+    }
 }

@@ -40,7 +40,7 @@ export class SidebarComponent implements OnInit {
         router: "#",
         drop: true,
         sub: [
-          {name: "Pessoa", router: "/manage-person"},
+          // {name: "Pessoa", router: "/manage-person"},
           {name: "Clientes", router: "/person-list/client/Clientes"},
           {name: "Fornecedores", router: "/person-list/provider/Fornecedores"},
           {name: "Funcionários", router: "/person-list/employee/Funcionários"},

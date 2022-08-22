@@ -9,6 +9,8 @@ import { PersonService } from '../../../person/service/person.service';
 import { EnumTitleType } from '../../enum/EnumTitleType';
 import { FinanceService } from '../service/finance.service';
 import { SubCategoryTitle } from '../../interface/sub-category.interface';
+import { CategoryType } from '../../enum/type-title.enum';
+import { SubCategoryService } from '../../category/service/sub-category.service';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class TitleFormComponent implements OnInit {
   parcels!: Array<FinanceParcel>
   rule
   type!: any
+  categoryType
   subCategory
   personList!: Array<Person>
   numberParcels!: number
@@ -36,6 +39,7 @@ export class TitleFormComponent implements OnInit {
     private route: ActivatedRoute,
     private personService: PersonService,
     private financeService: FinanceService, 
+    private subCategoryService: SubCategoryService,
     private swalModalService: SwalModalService,
   ) { 
     this.rule = this.route.snapshot.params.rule
@@ -43,6 +47,7 @@ export class TitleFormComponent implements OnInit {
 
   async ngOnInit() {
     this.type = this.rule === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.categoryType = this.rule === 'pagar'? CategoryType.EXPENSE : CategoryType.REVENUE
     this.title.paid = false
     const searchPerson: String = this.type === EnumTitleType.PAY ? 'Fornecedores' : 'Clientes'
     this.searchPerson = searchPerson === 'Fornecedores'? 'Fornecedor' : 'Cliente'
@@ -114,6 +119,7 @@ export class TitleFormComponent implements OnInit {
     this.getPersonListByRule(searchPerson)
     
     this.type = value === 'pagar'? EnumTitleType.PAY : EnumTitleType.RECEIVE
+    this.categoryType = value === 'pagar'? CategoryType.EXPENSE : CategoryType.REVENUE
     this.title.type = this.type
     this.searchPerson = searchPerson === 'Fornecedores'? 'Fornecedor' : 'Cliente'
   }
@@ -162,7 +168,7 @@ export class TitleFormComponent implements OnInit {
   }
 
   async getAllSubcategories() {
-    this.subCategoryList = await this.financeService.getAllSubCategoriesByType(this.type).toPromise().then((response) => response);
+    this.subCategoryList = await this.subCategoryService.getAllSubCategoriesByType(this.categoryType).toPromise().then((response) => response);
   }
 
   openModalCategory(value?) {

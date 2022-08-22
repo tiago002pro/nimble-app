@@ -50,21 +50,15 @@
                         <div class="form-group">
                             <label class="input-label">Categoria</label>
                             <div style="display: flex;">
-                                <select 
-                                    class="form-select form-control"  
-                                    [ngModel]="subCategory"           
-                                    (ngModelChange)="reciveSubCategory($event)">
+                                <select class="form-select form-control"  
+                                        [ngModel]="subCategory"           
+                                        (ngModelChange)="reciveSubCategory($event)">
                                     <option></option>
                                     <option *ngFor="let item of subCategoryList;" 
                                             [ngValue]="item">
                                         {{item.name}}
                                     </option>
-                                    <li>aa</li>
-                                    <ul *ngFor="let item of subCategoryList" >
-                                        <li>{{item.name}}</li>
-                                    </ul>
                                 </select>
-
                                 <button type="button" class="btn" (click)="showModalCategoty = true">+</button>
                                 <app-category-form-modal [show]="showModalCategoty" [type]="type" (showModal)="openModalCategory($event)"></app-category-form-modal>
                             </div>
